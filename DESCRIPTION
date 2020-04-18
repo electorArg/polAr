@@ -1,0 +1,24 @@
+Package: polAr
+Title: Explora Datos Electorales de Argentina
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Juan Pablo",
+           family = "Ruiz Nicolini",
+           role = c("aut", "cre"),
+           email = "juanpabloruiznicolini@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Permite explorar y visualizar información electoral de Argentina y sus provincias
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    ggparliament,
+    geofacet,
+    sf,
+    esaps,
+    electoral, 
+    tidyverse, 
+    readr
+RoxygenNote: 6.1.1
+Suggests: 
+    testthat
