@@ -1,8 +1,9 @@
 #'Diccionario de Elecciones
+
 #'@description
 #'Funcion que devuelve un tibble con los parametros para llamar elecciones con funcion `election_get()`
-#'@param `viewer` Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer
-
+#'@param viewer Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer
+#'@export
 
 diccionario_elecciones<- function(viewer = FALSE){
 

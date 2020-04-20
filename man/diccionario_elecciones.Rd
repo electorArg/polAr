@@ -7,7 +7,7 @@
 diccionario_elecciones(viewer = FALSE)
 }
 \arguments{
-\item{`viewer`}{Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer}
+\item{viewer}{Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer}
 }
 \description{
 Funcion que devuelve un tibble con los parametros para llamar elecciones con funcion `election_get()`

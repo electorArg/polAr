@@ -7,18 +7,21 @@ Authors@R:
            role = c("aut", "cre"),
            email = "juanpabloruiznicolini@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: Permite explorar y visualizar información electoral de Argentina y sus provincias
+Description: Explorar y visualizar información electoral de Argentina y sus provincias. 
 License: MIT + file LICENSE
 Encoding: UTF-8
+Language: es
+URL: https://github.com/electorArg/polAr
 LazyData: true
 Imports: 
     ggparliament,
     geofacet,
     sf,
     esaps,
-    electoral, 
-    tidyverse, 
+    electoral,
+    dplyr,
+    tidyr, 
+    magrittr, 
+    formattable, 
     readr
 RoxygenNote: 6.1.1
-Suggests: 
-    testthat

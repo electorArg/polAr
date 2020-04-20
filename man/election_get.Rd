@@ -4,16 +4,18 @@
 \alias{election_get}
 \title{Descarga de Bases de resultados electorales - nivel mesa}
 \usage{
-election_get(distrito, categoria, turno, anio)
+election_get(distrito, categoria, turno, anio, long = FALSE)
 }
 \arguments{
 \item{distrito}{un character con mobre con codigo para argentina y las 24 provincias}
 
-\item{turno}{un integer para el anio de eleccion}
+\item{categoria}{un character para la categoria electoral - diputado, senador o presidente: dip , sen, presi}
 
-\item{cargo}{un character para la categoria electoral - diputado, senador o presidente: dip , sen, presi}
+\item{turno}{tipo de eleccion - primaria o general: paso, gral}
 
-\item{tipo}{tipo de eleccion - primaria o general: paso, gral}
+\item{anio}{un integer para el anio de eleccion}
+
+\item{long}{estructura de los datos. Por default ´long´ == FALSE}
 }
 \description{
 Funcion que descarga bases de resultados electorales nacionales desde el año 2007

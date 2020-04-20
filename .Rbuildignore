@@ -1,5 +1,9 @@
 ^polAr\.Rproj$
 ^\.Rproj\.user$
-^data-raw$
+^\data-raw$
 ^LICENSE\.md$
 ^\.httr-oauth$
+
+^hex$
+^wip_code$
+^data_raw$
