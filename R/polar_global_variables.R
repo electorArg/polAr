@@ -10,4 +10,9 @@ NULL
 
 ## quiets concerns of R CMD check re: the .'s that appear in pipelines
 
-if(getRversion() >= "2.15.1")  utils::globalVariables(c(".")) # elimina nota al hacer build
+if(getRversion() >= "2.15.1")  utils::globalVariables(c(".", 
+                                                        "blancos", 
+                                                        "nulos", 
+                                                        "pct", 
+                                                        "votos")) # elimina nota al hacer build
+

@@ -4,7 +4,7 @@
 \alias{election_get}
 \title{Descarga de Bases de resultados electorales - nivel mesa}
 \usage{
-election_get(distrito, categoria, turno, anio, long = FALSE)
+election_get(distrito, categoria, turno, anio, nivel, long = FALSE)
 }
 \arguments{
 \item{distrito}{un character con mobre con codigo para argentina y las 24 provincias}
@@ -14,6 +14,8 @@ election_get(distrito, categoria, turno, anio, long = FALSE)
 \item{turno}{tipo de eleccion - primaria o general: paso, gral}
 
 \item{anio}{un integer para el anio de eleccion}
+
+\item{nivel}{es un character para seleccionar nivel de agregación de los resultados: provincial, departamental o circuitos electorales}
 
 \item{long}{estructura de los datos. Por default ´long´ == FALSE}
 }

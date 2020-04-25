@@ -23,5 +23,6 @@ Imports:
     tidyr, 
     magrittr, 
     formattable, 
-    readr
+    readr, 
+    stringr
 RoxygenNote: 6.1.1

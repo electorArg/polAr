@@ -3,4 +3,5 @@
 export("%>%")
 export(diccionario_elecciones)
 export(election_get)
+export(nep)
 importFrom(magrittr,"%>%")
