@@ -24,5 +24,10 @@ Imports:
     magrittr, 
     formattable, 
     readr, 
-    stringr
+    stringr, 
+    janitor, 
+    rvest, 
+    xml2, 
+    glue, 
+    tibble
 RoxygenNote: 6.1.1
