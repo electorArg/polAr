@@ -14,11 +14,8 @@ Language: es
 URL: https://github.com/electorArg/polAr
 LazyData: true
 Imports: 
-    ggparliament,
     geofacet,
     sf,
-    esaps,
-    electoral,
     dplyr,
     tidyr, 
     magrittr, 

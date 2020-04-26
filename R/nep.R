@@ -4,7 +4,7 @@
 #'@description
 #'Funcion que calcula el Número Efectivo de Partidos - NEP. Indicador que provee un número "ajustado" de partidos políticos en un sistema de partídos
 #'@param index un character con la fórmula elegida: "Laakso-Taagepera" o "Golosov" 
-#'@param data la base de datos para hacer el cálculo descargada con 'election_get' - relevante el 'nivel' de agregación sobre la que se hará el cálculo: provincia o departamento
+#'@param data la base de datos para hacer el cálculo descargada con 'election_get' - relevante el 'nivel' de agregación sobre la que se hará el cálculo: provincinia, departamento o circuito
 
 
 #'@export

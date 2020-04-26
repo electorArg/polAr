@@ -7,7 +7,7 @@
 nep(data, index = "NULL")
 }
 \arguments{
-\item{data}{la base de datos para hacer el cálculo descargada con 'election_get' - relevante el 'nivel' de agregación sobre la que se hará el cálculo: provincia o departamento}
+\item{data}{la base de datos para hacer el cálculo descargada con 'election_get' - relevante el 'nivel' de agregación sobre la que se hará el cálculo: provincinia, departamento o circuito}
 
 \item{index}{un character con la fórmula elegida: "Laakso-Taagepera" o "Golosov"}
 }
