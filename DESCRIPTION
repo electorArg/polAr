@@ -26,5 +26,7 @@ Imports:
     rvest, 
     xml2, 
     glue, 
-    tibble
+    tibble, 
+    pkgcond, 
+    DT
 RoxygenNote: 6.1.1

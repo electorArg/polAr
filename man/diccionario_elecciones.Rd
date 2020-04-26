@@ -2,13 +2,13 @@
 % Please edit documentation in R/diccionario_elecciones.R
 \name{diccionario_elecciones}
 \alias{diccionario_elecciones}
-\title{Diccionario de Elecciones}
+\title{Diccionario de Elecciones disponibles}
 \usage{
 diccionario_elecciones(viewer = FALSE)
 }
 \arguments{
-\item{viewer}{Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer}
+\item{viewer}{Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer de RStudio}
 }
 \description{
-Funcion que devuelve un tibble con los parametros para llamar elecciones con funcion `election_get()`
+Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con`election_get()`
 }

@@ -7,8 +7,8 @@
 get_lista(data)
 }
 \arguments{
-\item{data}{un data.frame guardado como objeto en el Enviroment luego de consultar `election_get()` habiendo seleccionado parametro `long = TRUE`}
+\item{data}{un tibble guardado como objeto en el Enviroment luego de consultar `election_get()` habiendo seleccionado parametro `long = TRUE`}
 }
 \description{
-Funcion que agrega el nombre de las listas a un data.frame obtenido con `election_get()`
+Funcion que agrega el nombre de las listas a un tibble obtenido con `election_get()`
 }

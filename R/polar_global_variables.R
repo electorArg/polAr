@@ -23,5 +23,6 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c(".",
                                                         "listas", 
                                                         "parDenominacion", 
                                                         "vot_parCodigo",
-                                                        "vot_proCodigoProvincia")) # elimina nota al hacer build
+                                                        "vot_proCodigoProvincia", 
+                                                        "distrito")) # elimina nota al hacer build
 

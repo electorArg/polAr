@@ -1,11 +1,12 @@
 #'Obtener nombres de listas
 
 #'@description
-#'Funcion que agrega el nombre de las listas a un data.frame obtenido con `election_get()`
-#'@param data un data.frame guardado como objeto en el Enviroment luego de consultar `election_get()` habiendo seleccionado parametro `long = TRUE`
+#'Funcion que agrega el nombre de las listas a un tibble obtenido con `election_get()`
+#'@param data un tibble guardado como objeto en el Enviroment luego de consultar `election_get()` habiendo seleccionado parametro `long = TRUE`
 #'@export
 
 get_lista <- function(data){
+  
   
         x <- data %>% 
           dplyr::ungroup() %>% 

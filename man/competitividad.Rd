@@ -7,9 +7,9 @@
 competitividad(data, nivel = "distrito")
 }
 \arguments{
-\item{data}{un data.frame guardado com objeto en el Enviroment luego de consultar `election_get()`}
+\item{data}{un tibble guardado como objeto en el Enviroment luego de consultar `election_get()`}
 
-\item{nivel}{establece el nivel de desagregación sobre el que se quiere calcular el gado de competitividad: 'provincial' mostrará detalle al interior del distrito. 'departmantal' bajará de nivel para calcular al nivel de circuitos electorales.}
+\item{nivel}{establece el nivel de desagregación sobre el que se quiere calcular la competitividad: 'provincial' mostrará detalle al interior del distrito. 'departmantal'  lo hará al nicel de circuitos electorales.}
 }
 \description{
 Funcion que devuelve un valor entre 0 y 1 que describe el grado de competencia de una elección en un distrito determinado

@@ -2,8 +2,8 @@
 
 #'@description
 #'Funcion que devuelve un valor entre 0 y 1 que describe el grado de competencia de una elección en un distrito determinado
-#'@param data un data.frame guardado com objeto en el Enviroment luego de consultar `election_get()`
-#'@param nivel establece el nivel de desagregación sobre el que se quiere calcular el gado de competitividad: 'provincial' mostrará detalle al interior del distrito. 'departmantal' bajará de nivel para calcular al nivel de circuitos electorales. 
+#'@param data un tibble guardado como objeto en el Enviroment luego de consultar `election_get()`
+#'@param nivel establece el nivel de desagregación sobre el que se quiere calcular la competitividad: 'provincial' mostrará detalle al interior del distrito. 'departmantal'  lo hará al nicel de circuitos electorales. 
 #'@export
 
 
@@ -44,7 +44,8 @@ if(nivel != "distrito"){
     dplyr::mutate(competitividad = 1 - (votos - dplyr::lead(votos))) %>% 
     dplyr::slice(1) %>% 
     dplyr::ungroup() %>% 
-    dplyr::select(-c(listas, votos))
+    dplyr::select(-c(listas, votos)) %>%   
+    dplyr::arrange(levels_lista)
   
    
 }
@@ -59,7 +60,8 @@ if(nivel != "distrito"){
       dplyr::mutate(competitividad = 1 - (votos - dplyr::lead(votos))) %>% 
       dplyr::slice(1) %>% 
       dplyr::ungroup() %>% 
-      dplyr::select(-c(listas, votos))
+      dplyr::select(-c(listas, votos))%>%   
+      dplyr::arrange(levels_unique)
     
     
     
