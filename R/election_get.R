@@ -17,7 +17,7 @@ election_get <- function(distrito,
                          categoria,
                          turno,
                          anio,
-                         nivel,
+                         nivel = "provincia",
                          long = FALSE){
   
         # CREO FUNCION TEMPORAL PARA DETERMINAR NIVEL DE AGREGACION DE LOS DATOS 
@@ -34,7 +34,7 @@ election_get <- function(distrito,
                    c("codprov, depto, coddepto, circuito")
                    
                  }else{
-                   c("")
+                   c("codprov")
                  }
                  
                }

@@ -4,7 +4,7 @@
 \alias{diccionario_elecciones}
 \title{Diccionario de Elecciones disponibles}
 \usage{
-diccionario_elecciones(viewer = FALSE)
+diccionario_elecciones(viewer = TRUE)
 }
 \arguments{
 \item{viewer}{Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer de RStudio}

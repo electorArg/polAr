@@ -4,7 +4,8 @@
 \alias{election_get}
 \title{Descarga de Bases de resultados electorales - nivel mesa}
 \usage{
-election_get(distrito, categoria, turno, anio, nivel, long = FALSE)
+election_get(distrito, categoria, turno, anio, nivel = "provincia",
+  long = FALSE)
 }
 \arguments{
 \item{distrito}{un character con mobre con codigo para argentina y las 24 provincias}
