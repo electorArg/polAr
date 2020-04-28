@@ -29,19 +29,26 @@ election_get <- function(district,
                
   levels <- function(level = ""){
                  
-                 if(level == "provincia")
-                   
-                   c("codprov")
-                 
-                 else if(level == "departamento"){
-                   c("codprov, depto, coddepto")
-                   
-                 }else if(level == "circuito"){
-                   c("codprov, depto, coddepto, circuito")
-                   
-                 }else{
-                   c("codprov")
-                 }
+    # Replace if_eses with case_when 
+    dplyr::case_when(
+      level == "provincia" ~ c("codprov"), 
+      level == "departamento" ~ c("codprov, depto, coddepto"),
+      level == "circuito" ~ c("codprov, depto, coddepto, circuito"), 
+      T ~c("codprov")
+    )
+              #   if(level == "provincia")
+              #     
+              #     c("codprov")
+              #   
+              #   else if(level == "departamento"){
+              #     c("codprov, depto, coddepto")
+              #     
+              #   }else if(level == "circuito"){
+              #     c("codprov, depto, coddepto, circuito")
+              #     
+              #   }else{
+              #     c("codprov")
+              #   }
                  
                }
                
@@ -56,9 +63,9 @@ election_get <- function(district,
    
 
   readr::read_csv(paste0("https://github.com/TuQmano/test_data/blob/master/",
-                  distrito, "_",
+                  district, "_",
                   category, "_",
-                  turno,
+                  round,
                   year, ".csv?raw=true")) %>%
       tidyr::pivot_longer(names_to = "listas",
                           values_to = "votos",
@@ -66,19 +73,19 @@ election_get <- function(district,
        dplyr::group_by_at(levels_long) %>% 
       dplyr::summarise_at(.vars = c("votos", "electores"), .funs = sum) %>% 
       dplyr::mutate(category = category,
-             turno = turno, 
+             round = round, 
              year = year)
   }else{
 
     readr::read_csv(paste0("https://github.com/TuQmano/test_data/blob/master/",
-                           distrito, "_",
+                           district, "_",
                            category, "_",
-                           turno,
+                           round,
                            year, ".csv?raw=true")) %>% 
       dplyr::group_by_at(levels) %>% 
       dplyr::summarise_if(is.numeric, .funs = sum) %>% 
       dplyr::mutate(category = category,
-             turno = turno, 
+             round = round, 
              year = year) %>% 
       dplyr::group_by_at(levels)
 

@@ -8,6 +8,10 @@
 elections_collection <- function(viewer = FALSE){
 
   
+  attempt::stop_if_not(.x = curl::has_internet(),
+                       msg = "No se detecto acceso a internet. Por favor checkea tu conexion.")
+    
+  
   pg <- xml2::read_html(glue::glue('https://github.com/TuQmano/test_data'))
   
   

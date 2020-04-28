@@ -28,5 +28,7 @@ Imports:
     glue, 
     tibble, 
     pkgcond, 
-    DT
+    DT,
+    attempt, 
+    curl
 RoxygenNote: 6.1.1
