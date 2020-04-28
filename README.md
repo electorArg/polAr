@@ -11,7 +11,7 @@ La idea gdel paquete es birndar herramientas que faciliten el acceso a datos y f
 
 Este es una versión _beta_ del proyecto que dejamos abierto a comentarios y/o sugerencias. 
 
-*INSTALACIÓN*
+**INSTALACIÓN**
 
 Versión en desarrollo. 
 
@@ -39,14 +39,14 @@ Sus principales funciones son:
 
 
 
-*CREDITOS*
+**CREDITOS**
 
 Parte de la inspiración viene de la libería [`eph`](https://github.com/holatam/eph). 
 
 El acceso a los datos en bruto viene de las bases en archivos `.mdb` del _Atlas Electoral de Andy Tow_. La primera etapa de este proyecto consistió en un procesamiento de esos archivos para convertirlos a otros con formato `sqlite` para maniuplarlos más facilmente desde `R`. Con esa información generamos cuadernos de `RMarkdown` para hacer las consultas de resultados para distintos años, cateogrías, turnos electorales y distrito (pronto una descripción más detallada y documentación de este proceso). 
 
 
-*REFERENCIA*
+**REFERENCIA**
 
 ```r
 @Manual{,
