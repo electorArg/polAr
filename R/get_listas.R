@@ -9,24 +9,24 @@
 
 get_lista <- function(data){
   
-  
+
         x <- data %>% 
           dplyr::ungroup() %>% 
-          dplyr::select(categoria, turno, anio) %>% 
+          dplyr::select(category, round, year) %>% 
           dplyr::distinct()
         
         
-        categoria <- x$categoria
+        category <- x$category
         
-        turno <- x$turno  
+        round <- x$round  
         
-        anio <- x$anio 
+        year <- x$year 
         
 
         listas_gh <- readr::read_csv(glue::glue('https://raw.githubusercontent.com/TuQmano/test_data/master/listas_', #CAMBIAR POR RUTA CORRECTA
-                                          {categoria}, '_',  
-                                          {turno}, 
-                                          {anio}, '.csv')) %>% 
+                                          {category}, '_',  
+                                          {round}, 
+                                          {year}, '.csv')) %>% 
                       dplyr::rename(listas = vot_parCodigo, 
                                     codprov = vot_proCodigoProvincia, 
                                     nombre_lista = parDenominacion) 
@@ -34,10 +34,12 @@ get_lista <- function(data){
         
        
         data %>% 
-          dplyr::left_join(listas_gh)%>% 
+          dplyr::left_join(listas_gh, by = 'listas')%>% 
           dplyr::mutate(nombre_lista = dplyr::case_when(
             is.na(nombre_lista) ~ listas, 
             T ~ nombre_lista
-          ))
+         
+            
+             ))
         }
 

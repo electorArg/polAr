@@ -5,42 +5,60 @@
 #'Function that returns a value between 0 and 1 that describes the degree of competition of an election in a given district
 #'@param data un tibble guardado como objeto en el Enviroment luego de consultar `election_get()` // 
 #'A tibble saved as an object in the Enviroment after querying `election_get ()`
-#'@param nivel establece el nivel de desagregacion sobre el que se quiere calcular la competitividad: por defualt es 'provincia' y se desagregan las observaciones asignando los valores 'departmento'  o 'circuito' al parametro. // 
-#'Wstablishes the level of disaggregation on which you want to calculate competitiveness: by definition it is 'province' and the observations are disaggregated by assigning the values 'department' or 'circuit' to the parameter.
+#'@param level establece el level de desagregacion sobre el que se quiere calcular la competitividad: por defualt es 'provincia' 
+#'y se desagregan las observaciones asignando los valores 'departmento'  o 'circuito' al parametro. // 
+#'Establishes the level of aggregation on which you want to compute competitiveness: by definition it is 'province' 
+#'and the observations are disaggregated by assigning the values 'departamento' or 'circuito' to the parameter.
 #'@export
 
 
 
 competitive<- function(data,
-                           nivel = "provincia"){
+                       level = "provincia"){
   
-  # CREO FUNCION TEMPORAL PARA DETERMINAR NIVEL DE AGREGACION DE LOS DATOS 
+  
+  # CREO FUNCION TEMPORAL PARA DETERMINAR level DE AGREGACION DE LOS DATOS 
 
-  levels <- function(nivel = ""){
-    
-    if(nivel == "provincia")
-      
-      c("codprov")
-    
-    else if(nivel == "departamento"){
-      c("codprov, depto, coddepto")
-      
-    }else if(nivel == "circuito"){
-      c("codprov, depto, coddepto, circuito")
-      
-    }else{
-      c("codprov")
-    }
-    
-  }
   
   
-  levels <- stringr::str_split(string = levels(nivel = nivel), pattern = "\\,")
+  # Temp function:  level selection
+  
+  levels <- function(level = ""){
+    
+    # Replace if_eses with case_when 
+    dplyr::case_when(
+      level == "provincia" ~ c("codprov"), 
+      level == "departamento" ~ c("codprov, depto, coddepto"),
+      level == "circuito" ~ c("codprov, depto, coddepto, circuito"), 
+      T ~c("codprov")
+    )}
+  
+  
+#  levels <- function(level = ""){
+#    
+#    if(level == "provincia")
+#      
+#      c("codprov")
+#    
+#    else if(level == "departamento"){
+#      c("codprov, depto, coddepto")
+#      
+#    }else if(level == "circuito"){
+#      c("codprov, depto, coddepto, circuito")
+#      
+#    }else{
+#      c("codprov")
+#    }
+#    
+#  }
+  
+  
+  levels <- stringr::str_split(string = levels(level = level), pattern = "\\,")
   levels <- stringr::str_squish(levels[[1]])
   levels_lista <- c(levels, "listas")
   levels_unique <- c("codprov", "listas")
   
-if(nivel != "provincia"){ 
+if(level != "provincia"){ 
   
   temp <-  data %>%
     dplyr::group_by_at(levels_lista) %>% 
@@ -72,11 +90,9 @@ if(nivel != "provincia"){
     
   }
   
+  
+  
   temp
-    
+   
+  
 }
-
-
-
-
-

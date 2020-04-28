@@ -1,17 +1,22 @@
 #'Diccionario de Elecciones disponibles // Elections Collection
 
 #'@description
-#'Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con`election_get()` // Function that returns a tibble with the necessary parameters to call elections with `election_get ()`
-#'@param viewer Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer de RStudio // The default is `FALSE`. When `TRUE` returns a table in RStudio Viewer
+#'Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con`election_get()` // 
+#'Function that returns a tibble with the necessary parameters to call elections with `election_get ()`
+#'@param viewer Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer de RStudio // 
+#'The default is `FALSE`. When `TRUE` returns a table in RStudio Viewer
 #'@export
 
 elections_collection <- function(viewer = FALSE){
 
   
-  attempt::stop_if_not(.x = curl::has_internet(),
+  # Check for internet coection
+  attempt::stop_if_not(.x = curl::has_internet(),  # from eph package
                        msg = "No se detecto acceso a internet. Por favor checkea tu conexion.")
     
   
+  
+  # Get list of files from github data repo
   pg <- xml2::read_html(glue::glue('https://github.com/TuQmano/test_data'))
   
   
@@ -24,7 +29,7 @@ elections_collection <- function(viewer = FALSE){
     dplyr::mutate(name = stringr::str_remove(name, pattern = "/TuQmano/test_data/blob/master/")) %>% 
     tidyr::separate(col = name, into = c("distrito", "categoria", "turno"), 
              sep = "\\_", remove = T) %>% 
-    dplyr::filter(distrito != "listas") %>% 
+    dplyr::filter(distrito != "listas") %>%  # remove lists files from collection
     dplyr::mutate(anio = stringr::str_remove_all(turno, "\\D"),
            turno = stringr::str_remove_all(turno, "\\d")) %>% 
     dplyr::mutate(turno = stringr::str_remove_all(turno, ".csv")) %>% 
@@ -41,12 +46,12 @@ elections_collection <- function(viewer = FALSE){
          'Categoria',
          target = 'cell',
          backgroundColor = DT::styleEqual(c("sen","presi", "dip"), 
-                                      c("lightgreen","lightpink","lightblue")))%>% 
+                                      c("#91bfdb","#ffffbf","#fc8d59")))%>% 
        DT::formatStyle( 
          'Turno',
          target = 'cell',
          backgroundColor = DT::styleEqual(c("paso","gral"), 
-                                          c("lightyellow","lightgrey")))
+                                          c("#f1a340","#998ec3")))
 
      print(x)
 

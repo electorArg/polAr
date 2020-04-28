@@ -7,8 +7,10 @@
 elections_collection(viewer = FALSE)
 }
 \arguments{
-\item{viewer}{Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer de RStudio // The default is `FALSE`. When `TRUE` returns a table in RStudio Viewer}
+\item{viewer}{Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer de RStudio // 
+The default is `FALSE`. When `TRUE` returns a table in RStudio Viewer}
 }
 \description{
-Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con`election_get()` // Function that returns a tibble with the necessary parameters to call elections with `election_get ()`
+Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con`election_get()` // 
+Function that returns a tibble with the necessary parameters to call elections with `election_get ()`
 }

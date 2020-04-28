@@ -8,21 +8,21 @@ election_get(district, category, round, year, level = c("provincia",
   "departamento", "circuito"), long = FALSE)
 }
 \arguments{
-\item{district}{un character con mobre con codigo para argentina y las 24 provincias //
+\item{district}{un character con codigo para Argentina y las 24 provincias //
 a named character with code for Argentina and the 24 provinces}
 
-\item{category}{un character para la category electoral: diputado -dip-, senador -sen- o presidente -presi //
+\item{category}{un character para la categoria electoral: diputado -dip-, senador -sen- o presidente -presi //
 a character with a name for the electoral category: deputy-dip-, senator -sen- or president -presi.}
 
 \item{round}{un character para tipo de eleccion: primaria -paso- o general -gral- // 
-a character with a name for the election round: primary -paso- or general -gral}
+a character with a name for the election round: primary -paso- or general -gral.}
 
 \item{year}{un integer para el year de eleccion // an integer for the year of choice}
 
-\item{level}{un character para seleccionar level de agregación de los resultados: provincia, departamento o circuitos electorales //
+\item{level}{un character para seleccionar level de agregacion de los resultados: provincia, departamento o circuito //
 a character to select the level of aggregation of the results: province -provincia-, department -departamento or electoral precints -circuito.}
 
-\item{long}{un boleano para estructura de los datos. Por default ´long´ == FALSE // a boolean for data structure. By default ´long´ == FALSE}
+\item{long}{un boleano para estructura de los datos. Por default long == FALSE // a boolean for data structure. By default long == FALSE}
 }
 \description{
 Funcion que descarga resultados electorales nacionales desde 2007 //

@@ -4,14 +4,16 @@
 \alias{competitive}
 \title{Competitividad // Competitiveness}
 \usage{
-competitive(data, nivel = "provincia")
+competitive(data, level = "provincia")
 }
 \arguments{
 \item{data}{un tibble guardado como objeto en el Enviroment luego de consultar `election_get()` // 
 A tibble saved as an object in the Enviroment after querying `election_get ()`}
 
-\item{nivel}{establece el nivel de desagregacion sobre el que se quiere calcular la competitividad: por defualt es 'provincia' y se desagregan las observaciones asignando los valores 'departmento'  o 'circuito' al parametro. // 
-Wstablishes the level of disaggregation on which you want to calculate competitiveness: by definition it is 'province' and the observations are disaggregated by assigning the values 'department' or 'circuit' to the parameter.}
+\item{level}{establece el level de desagregacion sobre el que se quiere calcular la competitividad: por defualt es 'provincia' 
+y se desagregan las observaciones asignando los valores 'departmento'  o 'circuito' al parametro. // 
+Establishes the level of aggregation on which you want to compute competitiveness: by definition it is 'province' 
+and the observations are disaggregated by assigning the values 'departamento' or 'circuito' to the parameter.}
 }
 \description{
 Funcion que devuelve un valor entre 0 y 1 que describe el grado de competencia de una eleccion en un distrito determinado // 

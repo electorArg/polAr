@@ -13,9 +13,11 @@ a character with name code to select district: Argentina and the 24 provinces}
 \item{category}{un character para la categoria electoral: diputado -'dip' ; senador - 'sen' ; presidente - 'presi' // 
 a character for the electoral category: deputy -'dip '; senator - 'sen'; president - 'presi'}
 
-\item{round}{un integer para el anio de eleccion //  an integer for the year of choice}
+\item{round}{un integer para el anio de eleccion //
+an integer for the year of choice}
 
-\item{year}{tipo de eleccion: primaria -'paso'- o general -'gral'- // election round: primary -'paso'- or general -'gral'}
+\item{year}{tipo de eleccion: primaria -'paso'- o general -'gral'- // 
+election round: primary -'paso'- or general -'gral'}
 }
 \value{
 Un tibble con los resultados a nivel *MESA* para el distrito, turno, tipo y anio de la eleccion. Con variables id 
@@ -34,6 +36,5 @@ Function that downloads national raw data since 2007 national election at "BALLO
                      round = "paso",
                      year = 2011)
       
-      
- 
+   
 }
