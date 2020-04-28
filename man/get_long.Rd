@@ -2,13 +2,13 @@
 % Please edit documentation in R/get_long.R
 \name{get_long}
 \alias{get_long}
-\title{Transforma tabla de resultados a formato largo}
+\title{Transforma tibble a formato largo // transform tibble into long format}
 \usage{
 get_long(data)
 }
 \arguments{
-\item{data}{es el tibble que devuelve `election_get(data = data, LONG = FALSE)`}
+\item{data}{es el tibble que devuelve `election_get(data = data, LONG = FALSE)`// `election_get (data = data, LONG = FALSE)` output tibble}
 }
 \description{
-Funcion auqiliar que transforma el tibble WIDE de `election_get()` a LONG
+Funcion auxiliar que transforma el tibble WIDE obtenido con `election_get()` a LONG // Auxiliary function that transforms a WIDE tibble obtained with `election_get ()` to LONG format
 }

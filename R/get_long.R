@@ -1,9 +1,9 @@
 
-#'Transforma tabla de resultados a formato largo
+#'Transforma tibble a formato largo // transform tibble into long format
 
 #'@description
-#'Funcion auqiliar que transforma el tibble WIDE de `election_get()` a LONG
-#'@param data es el tibble que devuelve `election_get(data = data, LONG = FALSE)`
+#'Funcion auxiliar que transforma el tibble WIDE obtenido con `election_get()` a LONG // Auxiliary function that transforms a WIDE tibble obtained with `election_get ()` to LONG format
+#'@param data es el tibble que devuelve `election_get(data = data, LONG = FALSE)`// `election_get (data = data, LONG = FALSE)` output tibble
 #'@export
 
         get_long <-   function(data){

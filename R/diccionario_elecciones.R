@@ -1,11 +1,11 @@
-#'Diccionario de Elecciones disponibles
+#'Diccionario de Elecciones disponibles // Elections Collection
 
 #'@description
-#'Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con`election_get()`
-#'@param viewer Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer de RStudio
+#'Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con`election_get()` // Function that returns a tibble with the necessary parameters to call elections with `election_get ()`
+#'@param viewer Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer de RStudio // The default is `FALSE`. When `TRUE` returns a table in RStudio Viewer
 #'@export
 
-diccionario_elecciones<- function(viewer = TRUE){
+elections_collection <- function(viewer = TRUE){
 
   
   pg <- xml2::read_html(glue::glue('https://github.com/TuQmano/test_data'))

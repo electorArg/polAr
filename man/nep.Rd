@@ -2,15 +2,24 @@
 % Please edit documentation in R/nep.R
 \name{nep}
 \alias{nep}
-\title{Calcla Número Efectivo de Partidos - NEP}
+\title{Calcla Numero Efectivo de Partidos Politicos - NEP  // ENP - Computes Effective Number of Political Parties}
 \usage{
-nep(data, index = "All")
+nep(data, index = c("Golosov", "Laakso-Taagepera", "All"))
 }
 \arguments{
-\item{data}{la base de datos para hacer el calculo descargada con 'election_get' - relevante el 'nivel' de agregación sobre la que se hará el calculo: provincia, departamento o circuito}
+\item{data}{la base de datos para hacer el calculo obtenida con 'election_get' - 
+**NOTA** el 'nivel' de 'election_get' determina el nivel de agregacion sobre el que se computa el NEP: 'provincia', 'departamento' o 'circuito' // 
+tiblle  downloaded with 'election_get' needed to compute nep - **NOTE**:  'level' at 'election_get' determines aggregation on which NEP calculation will be made: province, department or circuit}
 
-\item{index}{un character con la fórmula elegida: "Laakso-Taagepera" o "Golosov"}
+\item{index}{un character con la fórmula elegida: "Laakso-Taagepera" o "Golosov" // a character with the chosen formula: "Laakso-Taagepera" or "Golosov"}
 }
 \description{
-Funcion que calcula el Numero Efectivo de Partidos - NEP. Indicador que provee un número "ajustado" de partidos políticos en un sistema de partídos
+Funcion que calcula el NEP. Indicador que provee un número "ajustado" de partidos políticos en un sistema de partídos // Function that computes NEP. Indicator that provides a "tight" number of political parties in a party system
+}
+\details{
+El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 
+ The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats.
+
+Impementación de las fórmulas 'Golosov' y 'Laakso-Taagepera' 
+Implementation of the 'Golosov' and 'Laakso-Taagepera' formulas
 }

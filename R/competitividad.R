@@ -1,14 +1,17 @@
-#'Competitividad
+#'Competitividad // Competitiveness
 
 #'@description
-#'Funcion que devuelve un valor entre 0 y 1 que describe el grado de competencia de una eleccion en un distrito determinado
-#'@param data un tibble guardado como objeto en el Enviroment luego de consultar `election_get()`
-#'@param nivel establece el nivel de desagregacion sobre el que se quiere calcular la competitividad: por defualt es 'provincia' y se desagregan las observaciones asignando los valores 'departmento'  o 'circuito' al parametro. 
+#'Funcion que devuelve un valor entre 0 y 1 que describe el grado de competencia de una eleccion en un distrito determinado // 
+#'Function that returns a value between 0 and 1 that describes the degree of competition of an election in a given district
+#'@param data un tibble guardado como objeto en el Enviroment luego de consultar `election_get()` // 
+#'A tibble saved as an object in the Enviroment after querying `election_get ()`
+#'@param nivel establece el nivel de desagregacion sobre el que se quiere calcular la competitividad: por defualt es 'provincia' y se desagregan las observaciones asignando los valores 'departmento'  o 'circuito' al parametro. // 
+#'Wstablishes the level of disaggregation on which you want to calculate competitiveness: by definition it is 'province' and the observations are disaggregated by assigning the values 'department' or 'circuit' to the parameter.
 #'@export
 
 
 
-competitividad <- function(data,
+competitive<- function(data,
                            nivel = "provincia"){
   
   # CREO FUNCION TEMPORAL PARA DETERMINAR NIVEL DE AGREGACION DE LOS DATOS 

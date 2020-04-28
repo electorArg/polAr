@@ -2,24 +2,29 @@
 % Please edit documentation in R/election_get.R
 \name{election_get}
 \alias{election_get}
-\title{Descarga de Bases de resultados electorales - nivel mesa}
+\title{Descarga bases de resultados electorales // Download electoral data}
 \usage{
-election_get(distrito, categoria, turno, anio, nivel = "provincia",
-  long = FALSE)
+election_get(district, category, round, year, level = c("provincia",
+  "departamento", "circuito"), long = FALSE)
 }
 \arguments{
-\item{distrito}{un character con mobre con codigo para argentina y las 24 provincias}
+\item{district}{un character con mobre con codigo para argentina y las 24 provincias //
+a named character with code for Argentina and the 24 provinces}
 
-\item{categoria}{un character para la categoria electoral - diputado, senador o presidente: dip , sen, presi}
+\item{category}{un character para la category electoral: diputado -dip-, senador -sen- o presidente -presi //
+a character with a name for the electoral category: deputy-dip-, senator -sen- or president -presi.}
 
-\item{turno}{tipo de eleccion - primaria o general: paso, gral}
+\item{round}{un character para tipo de eleccion: primaria -paso- o general -gral- // 
+a character with a name for the election round: primary -paso- or general -gral}
 
-\item{anio}{un integer para el anio de eleccion}
+\item{year}{un integer para el year de eleccion // an integer for the year of choice}
 
-\item{nivel}{es un character para seleccionar nivel de agregación de los resultados: provincial, departamental o circuitos electorales}
+\item{level}{un character para seleccionar level de agregación de los resultados: provincia, departamento o circuitos electorales //
+a character to select the level of aggregation of the results: province -provincia-, department -departamento or electoral precints -circuito.}
 
-\item{long}{estructura de los datos. Por default ´long´ == FALSE}
+\item{long}{un boleano para estructura de los datos. Por default ´long´ == FALSE // a boolean for data structure. By default ´long´ == FALSE}
 }
 \description{
-Funcion que descarga bases de resultados electorales nacionales desde el año 2007
+Funcion que descarga resultados electorales nacionales desde el año 2007 //
+Function that downloads national electoral data since 2007
 }

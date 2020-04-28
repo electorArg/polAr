@@ -1,8 +1,10 @@
-#'Obtener nombres de listas
+#'Obtiene nombres de listas // Get party names
 
 #'@description
-#'Funcion que agrega el nombre de las listas a un tibble obtenido con `election_get()`
-#'@param data un tibble guardado como objeto en el Enviroment luego de consultar `election_get()` habiendo seleccionado parametro `long = TRUE`
+#'Funcion que agrega el nombre de las listas o partidos como columna a un tibble obtenido con `election_get(data,long = TRUE)` //
+#'Function that adds the name of the lists or parties as a column to a tibble obtained with `election_get (data, long = TRUE)`
+#'@param data un tibble descargado con `election_get (data, long = TRUE)` guardado como objeto en el Enviroment // 
+#' An `election_get (data, long = TRUE)` tibble saved as an object in the Enviroment
 #'@export
 
 get_lista <- function(data){

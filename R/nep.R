@@ -1,23 +1,29 @@
 
-#'Calcla Número Efectivo de Partidos - NEP 
+#'Calcla Numero Efectivo de Partidos Politicos - NEP  // ENP - Computes Effective Number of Political Parties
 
 #'@description
-#'Funcion que calcula el Numero Efectivo de Partidos - NEP. Indicador que provee un número "ajustado" de partidos políticos en un sistema de partídos
-#'@param index un character con la fórmula elegida: "Laakso-Taagepera" o "Golosov" 
-#'@param data la base de datos para hacer el calculo descargada con 'election_get' - relevante el 'nivel' de agregación sobre la que se hará el calculo: provincia, departamento o circuito
-
-
+#'Funcion que calcula el NEP. Indicador que provee un número "ajustado" de partidos políticos en un sistema de partídos // Function that computes NEP. Indicator that provides a "tight" number of political parties in a party system
+#'@param index un character con la fórmula elegida: "Laakso-Taagepera" o "Golosov" // a character with the chosen formula: "Laakso-Taagepera" or "Golosov"
+#'@param data la base de datos para hacer el calculo obtenida con 'election_get' - 
+#' **NOTA** el 'nivel' de 'election_get' determina el nivel de agregacion sobre el que se computa el NEP: 'provincia', 'departamento' o 'circuito' // 
+#'tiblle  downloaded with 'election_get' needed to compute nep - **NOTE**:  'level' at 'election_get' determines aggregation on which NEP calculation will be made: province, department or circuit
+#'@details El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 
+#'  The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats.
+#'@details Impementación de las fórmulas 'Golosov' y 'Laakso-Taagepera' 
+#' Implementation of the 'Golosov' and 'Laakso-Taagepera' formulas
 #'@export
 
 nep <- function(data,
-               index = "All"){
+               index = c("Golosov", "Laakso-Taagepera", "All")){
   
-
+    index <- "All"
+  
              if(index == "Golosov"){
               
-             golosov <-  data %>%
-               dplyr::mutate(pct = votos/sum(votos)) %>%  # votos en porcentaje sobre el total 
-               dplyr::summarise(value = sum(pct/(pct+max(pct)^2-pct^2))) %>% dplyr::ungroup() %>%
+              golosov <- data %>%
+               dplyr::mutate(pct = votos/sum(votos)) %>%  # pct votes from total. Depends on agregation level (group_by in election_get())
+               dplyr::summarise(value = sum(pct/(pct+max(pct)^2-pct^2))) %>% # NEP FORMULA 
+               dplyr::ungroup() %>%
                dplyr::mutate(index = "Golosov")
              
              golosov
@@ -26,23 +32,25 @@ nep <- function(data,
               
             } else if(index == "Laakso-Taagepera"){
               
-             laakso <- data%>%
-               dplyr::mutate(pct = votos/sum(votos)) %>%  # votos en porcentaje sobre el total 
-               dplyr::summarise(value = 1/sum(pct^2)) %>% dplyr::ungroup() %>%   # formula NEP 
+              laakso <- data %>%
+               dplyr::mutate(pct = votos/sum(votos)) %>%  # pct votes from total. Depends on agregation level (group_by in election_get())
+               dplyr::summarise(value = 1/sum(pct^2)) %>%  # NEP FORMULA
+               dplyr::ungroup() %>%   
                dplyr::mutate(index = "Laakso-Taagepera")
              
              laakso 
               
             } else {
+              
               nep1 <-  data %>%
-                dplyr::mutate(pct = votos/sum(votos)) %>%  # votos en porcentaje sobre el total 
+                dplyr::mutate(pct = votos/sum(votos)) %>%  
                 dplyr::summarise(value = sum(pct/(pct+max(pct)^2-pct^2))) %>% 
                 dplyr::mutate(index = "Golosov")
               
               
               nep2 <- data %>%
-                dplyr::mutate(pct = votos/sum(votos)) %>%  # votos en porcentaje sobre el total 
-                dplyr::summarise(value = 1/sum(pct^2)) %>%  # formula NEP 
+                dplyr::mutate(pct = votos/sum(votos)) %>% 
+                dplyr::summarise(value = 1/sum(pct^2)) %>%  
                 dplyr::mutate(index = "Laakso-Taagepera")
               
               
