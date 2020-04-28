@@ -2,7 +2,7 @@
 #'Calcla Numero Efectivo de Partidos Politicos - NEP  // ENP - Computes Effective Number of Political Parties
 
 #'@description
-#'Funcion que calcula el NEP. Indicador que provee un número "ajustado" de partidos políticos en un sistema de partídos // Function that computes NEP. Indicator that provides a "tight" number of political parties in a party system
+#'Funcion que calcula el NEP. Indicador que provee un numero "ajustado" de partidos politicos en un sistema de partidos // Function that computes NEP. Indicator that provides a "tight" number of political parties in a party system
 #'@param index un character con la fórmula elegida: "Laakso-Taagepera" o "Golosov" // a character with the chosen formula: "Laakso-Taagepera" or "Golosov"
 #'@param data la base de datos para hacer el calculo obtenida con 'election_get' - 
 #' **NOTA** el 'nivel' de 'election_get' determina el nivel de agregacion sobre el que se computa el NEP: 'provincia', 'departamento' o 'circuito' // 

@@ -14,7 +14,7 @@ tiblle  downloaded with 'election_get' needed to compute nep - **NOTE**:  'level
 \item{index}{un character con la fórmula elegida: "Laakso-Taagepera" o "Golosov" // a character with the chosen formula: "Laakso-Taagepera" or "Golosov"}
 }
 \description{
-Funcion que calcula el NEP. Indicador que provee un número "ajustado" de partidos políticos en un sistema de partídos // Function that computes NEP. Indicator that provides a "tight" number of political parties in a party system
+Funcion que calcula el NEP. Indicador que provee un numero "ajustado" de partidos politicos en un sistema de partidos // Function that computes NEP. Indicator that provides a "tight" number of political parties in a party system
 }
 \details{
 El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 

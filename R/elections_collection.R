@@ -5,7 +5,7 @@
 #'@param viewer Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer de RStudio // The default is `FALSE`. When `TRUE` returns a table in RStudio Viewer
 #'@export
 
-elections_collection <- function(viewer = TRUE){
+elections_collection <- function(viewer = FALSE){
 
   
   pg <- xml2::read_html(glue::glue('https://github.com/TuQmano/test_data'))

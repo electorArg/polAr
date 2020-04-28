@@ -7,9 +7,11 @@
 election_get_raw(district, category, round, year)
 }
 \arguments{
-\item{district}{un character con nombre codigo para seleccionar distrito: argentina y las 24 provincias // a character with name code to select district: Argentina and the 24 provinces}
+\item{district}{un character con nombre codigo para seleccionar distrito: argentina y las 24 provincias // 
+a character with name code to select district: Argentina and the 24 provinces}
 
-\item{category}{un character para la categoria electoral: diputado -'dip' ; senador - 'sen' ; presidente - 'presi' // a character for the electoral category: deputy -'dip '; senator - 'sen'; president - 'presi'}
+\item{category}{un character para la categoria electoral: diputado -'dip' ; senador - 'sen' ; presidente - 'presi' // 
+a character for the electoral category: deputy -'dip '; senator - 'sen'; president - 'presi'}
 
 \item{round}{un integer para el anio de eleccion //  an integer for the year of choice}
 
@@ -22,7 +24,8 @@ de una columna por cada lista que participo en la eleccion - con su cordgo numer
 cantidad de electores -'electores'.
 }
 \description{
-Funcion que descarga bases de resultados electorales nacionales desde el año 2007 //Function that downloads national raw data since 2007 national election
+Funcion que descarga bases de resultados electorales nacionales desde el 2007 al nivel de mayor desagregacion *MESA*//
+Function that downloads national raw data since 2007 national election at "BALLOT" level
 }
 \examples{
 

@@ -1,9 +1,12 @@
 #'Descarga de Bases de resultados electorales al nivel de MESA  // Download electoral data at BALLOT level
 
 #'@description
-#'Funcion que descarga bases de resultados electorales nacionales desde el año 2007 //Function that downloads national raw data since 2007 national election
-#'@param district un character con nombre codigo para seleccionar distrito: argentina y las 24 provincias // a character with name code to select district: Argentina and the 24 provinces
-#'@param category un character para la categoria electoral: diputado -'dip' ; senador - 'sen' ; presidente - 'presi' // a character for the electoral category: deputy -'dip '; senator - 'sen'; president - 'presi'
+#'Funcion que descarga bases de resultados electorales nacionales desde el 2007 al nivel de mayor desagregacion *MESA*//
+#'Function that downloads national raw data since 2007 national election at "BALLOT" level
+#'@param district un character con nombre codigo para seleccionar distrito: argentina y las 24 provincias // 
+#'a character with name code to select district: Argentina and the 24 provinces
+#'@param category un character para la categoria electoral: diputado -'dip' ; senador - 'sen' ; presidente - 'presi' // 
+#'a character for the electoral category: deputy -'dip '; senator - 'sen'; president - 'presi'
 #'@param round un integer para el anio de eleccion //  an integer for the year of choice
 #'@param year tipo de eleccion: primaria -'paso'- o general -'gral'- // election round: primary -'paso'- or general -'gral'
 #

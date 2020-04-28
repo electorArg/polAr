@@ -1,7 +1,7 @@
 #'Descarga bases de resultados electorales // Download electoral data 
 
 #'@description
-#'Funcion que descarga resultados electorales nacionales desde el año 2007 //
+#'Funcion que descarga resultados electorales nacionales desde 2007 //
 #'Function that downloads national electoral data since 2007
 #'@param district un character con mobre con codigo para argentina y las 24 provincias //
 #' a named character with code for Argentina and the 24 provinces
