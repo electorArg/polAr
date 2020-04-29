@@ -7,6 +7,9 @@
 
 La idea del paquete es brindar herramientas que faciliten el acceso a datos y el flujo de trabajo para el análisis político - electoral, con ejempos aplicados de Argentina. 
 
+Se espera tener pronto el acceso a datos para todas las elecciones nacionales (diputados, senaodres y presidente) desde el año 2003 a 2019 al nivel disponible de desagregación mayor (mesas). Asimismo incorporar nuevas funciones para calcular indicadores y herramientas de visualización de datos. 
+
+
 ---
 
 **(Esta es una versión _beta_ del proyecto que dejamos abierto a comentarios y/o sugerencias)**. 
@@ -25,13 +28,15 @@ devtools::install_github("electorArg/polAr")
 
 Sus principales funciones son:
 
-- **`get_election_data()`**: Descarga bases de resultados electorales con parametros: `level`para el nivel de agregación (`"provincia"`, `"departamento"`, `"circuito"`) y `long` para el formato de los datos alargados (las listas no van cada una en una columna sino como valores de una variable `listas`). 
+- **`get_election_data()`**: Descarga bases de resultados electorales con parametros obligatorios y otros optativos. 
 
-- **`show_available_elections`**: Diccionario de Elecciones disponibles. El parametro `viewer = TRUE` habilita una tabla en el _Viewer_ de `RStudio`.
+Entre los primeros se deben consignar `district` para el distrito; `category` para la catgoría; `round` para el turno e `year` para el año de la elección. Entre los segundos se puede agregar `level`para el nivel de agregación (`"provincia"`, `"departamento"`, `"circuito"`) y `long` para el formato de los datos alargados (las listas no van cada una en una columna sino como valores de una variable `listas`). 
+
+- **`show_available_elections()`**: Diccionario de Elecciones disponibles. El parametro `viewer = TRUE` habilita una tabla en el _Viewer_ de `RStudio`.
 
 - **`get_names()`**: Obtiene nombres de listas (funciona correctamente cuando los datos fueron obtenidos _LARGOS_: `election_get(data, ...,  long = T)`
 
-- **`compute_nep()`**: Calcula el  Numero Efectivo de Partidos Politico. Es sensible al nivel de agregación de la `data` obtenida. 
+- **`compute_nep()`**: Calcula el  *Numero Efectivo de Partidos Politicos*. Es sensible al nivel de agregación de la `data` obtenida. 
 
 - **`compute_competitiveness()`**: Calcula el nivel de competencia en una elección (0 , 1). Un parámetro `level` permite calcularlo para los distintos niveles de agregación presentes en la `data`.  
 
@@ -39,7 +44,7 @@ Sus principales funciones son:
 
 ### EJEMPLO DE USO
 
-1. La primera función `show_available_elections()`nos muestra cuales son las elecciones disponibles para descargar. Por defecto el parámetro `viewer = FALSE` imprime el resultado en consola. Si en cambio escribimos `viewer = TRUE` los datos se presentan y quedan a mano en el _Viewer_ de `RStudio` como  tabla formateada y con la capacidad de ordenar y filtrar valores. 
+1. La función `show_available_elections()` muestra las elecciones disponibles para descarga. Por defecto el parámetro `viewer = FALSE` imprime el resultado en consola. Si en cambio escribimos `viewer = TRUE` los datos se presentan en el _Viewer_ de `RStudio` y quedan a mano como tabla formateada y con la capacidad de ordenar y filtrar valores. 
 
 ```r
 
@@ -65,9 +70,11 @@ show_available_elections()
 ```
 2. `get_election_data` es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (`district`), la categoría (`category`), el turno (`round`) y el año electoral (`year`). 
 
-Por defecto los datos colapsan a nivel provincial pero podemos definir otros niveles como departamento o circuito electoral con el parámetro `levels`. 
+Por defecto los datos colapsan a nivel provincial, pero podemos definir otros niveles como departamento o circuito electoral con el parámetro `levels`. 
 
-También por defecto los datos se descargan en formato ancho (*wide*). Pero se incluye otro parametro para cambiar a un formato largo (*long*) usando el parametro `long = TRUE`. Abajo el resultado de la consulta solo con los parámetros obligatorios, en el primer caso, y con un nivel de desagregación menor en el segundo:
+También por defecto los datos se descargan en formato ancho (*wide*). Pero se incluye otro parametro para cambiar a un formato largo (*long*) usando `long = TRUE`. 
+
+Abajo el resultado de la consulta solo con los parámetros obligatorios, en el primer caso, y con un nivel de desagregación menor en el segundo:
 
 ```r
 get_election_data(district = "caba", category = "dip", round = "paso", year = "2011")
@@ -106,7 +113,7 @@ get_election_data(district = "caba", category = "dip", round = "paso", year = "2
 
 3.  Si bien se puede usar el parametro `long = T` a la hora de descargar los datos, también podemos usar `get_long()` para conseguir la misma transformación si los datos ya habían sido guardados como un objeto en formato ancho (*wide*). 
 
-Este sería el caso si la llamada anterior hubiese sido guardada así:  
+Este sería el caso si la llamada anterior hubiese sido guardada en un objeto llamado `data`:  
 
 
 `data <- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento" )`
@@ -198,10 +205,13 @@ data %>%
 
 ### CREDITOS
 
-Parte de la inspiración viene de las liberías [`eph`](https://github.com/holatam/eph), [`electoral`](https://cran.r-project.org/web/packages/electoral/index.html) y [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html)
+- Las liberías [`eph`](https://github.com/holatam/eph), [`electoral`](https://cran.r-project.org/web/packages/electoral/index.html) y [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) fueron inspiración de este proyecto. 
 
-El acceso a los datos en bruto viene de las bases en archivos `.mdb` del [_Atlas Electoral de Andy Tow_](https://www.andytow.com/access/index.php?logout=true). La primera etapa de este proyecto consistió en un procesamiento de esos archivos para convertirlos a otros con formato `sqlite` para manipularlos más facilmente desde `R`. Con esa información generamos cuadernos de `RMarkdown` para hacer las consultas de resultados para distintos años, cateogrías, turnos electorales y distrito (pronto una descripción más detallada y documentación de este proceso). Se espera tener un acceso a datos para todas las elecciones nacionales (diputados, senaodres y presidente) desde el año 2003 a 2019 al nivel disponible de desagregación mayor (mesas). 
+- El acceso a los datos en bruto viene de las bases en archivos `.mdb` del [_Atlas Electoral de Andy Tow_](https://www.andytow.com/access/index.php?logout=true). 
 
+- La primera etapa de este proyecto consistió en un procesamiento de esos archivos para convertirlos a otros con formato `sqlite` para manipularlos más facilmente desde `R`. 
+
+- Con esa información generamos cuadernos de `RMarkdown` para hacer las consultas de resultados para distintos años, cateogrías, turnos electorales y distrito (pronto una descripción más detallada y documentación de este proceso). 
 
 ### REFERENCIA
 
