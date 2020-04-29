@@ -13,7 +13,7 @@
 
 
 
-competitive<- function(data,
+compute_competitiveness <- function(data,
                        level = "provincia"){
   
   

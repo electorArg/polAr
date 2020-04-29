@@ -13,17 +13,20 @@
 #'@param level un character para seleccionar level de agregacion de los resultados: provincia, departamento o circuito //
 #' a character to select the level of aggregation of the results: province -provincia-, department -departamento or electoral precints -circuito. 
 #'@param long un boleano para estructura de los datos. Por default long == FALSE // a boolean for data structure. By default long == FALSE
+#'@param raw un boleano para que define si descargar base de datos desagregada a nivel MESA o no con valor default == FALSE // 
+#'a boolean to define whether to download a disaggregated data at  BALLOT level or not with default == FALSE
 
 
 
 #'@export
 
-election_get <- function(district,
+get_elections <- function(district,
                          category,
                          round,
                          year,
                          level = c("provincia", "departamento", "circuito"),
-                         long = FALSE){
+                         long = FALSE, 
+                         raw = FALSE){
   
   
   # Check for internet coection
@@ -35,7 +38,7 @@ election_get <- function(district,
                
   levels <- function(level = ""){
                  
-    # Replace if_eses with case_when 
+    # Replace if_elses with case_when 
     dplyr::case_when(
       level == "provincia" ~ c("codprov"), 
       level == "departamento" ~ c("codprov, depto, coddepto"),
@@ -49,20 +52,42 @@ election_get <- function(district,
               levels <- stringr::str_squish(levels[[1]])
               
               
-              #READ DATA 
+              #READ DATA - RAW or with LEVLES of aggregation
               
-   df <- readr::read_csv(paste0("https://github.com/TuQmano/test_data/blob/master/",
-                                   district, "_",
-                                   category, "_",
-                                   round,
-                                   year, ".csv?raw=true")) %>% 
-     dplyr::group_by_at(levels) %>% 
-     dplyr::summarise_if(is.numeric, .funs = sum) %>% 
-     dplyr::mutate(category = category,
-                   round = round, 
-                   year = year) %>% 
-     dplyr::group_by_at(levels)
-     
+              
+              
+              if(raw == FALSE) {
+         
+           df <-   readr::read_csv(paste0("https://github.com/TuQmano/test_data/blob/master/",
+                                             district, "_",
+                                             category, "_",
+                                             round,
+                                             year, ".csv?raw=true")) %>% 
+               dplyr::group_by_at(levels) %>% 
+               dplyr::summarise_if(is.numeric, .funs = sum) %>% 
+               dplyr::mutate(category = category,
+                             round = round, 
+                             year = year) %>% 
+               dplyr::group_by_at(levels)
+              
+             
+             
+             } else {
+                
+                
+           df <-     readr::read_csv(paste0("https://github.com/TuQmano/test_data/blob/master/",
+                                             district, "_",
+                                             category, "_",
+                                             round,
+                                             year, ".csv?raw=true")) %>% 
+                  dplyr::mutate(category = category,
+                                round = round, 
+                                year = year)
+                
+              }
+              
+             
+              
    # LONG OR WIDE OPTION
 
              if(long == TRUE){
@@ -72,6 +97,5 @@ election_get <- function(district,
              }else{
             
                 df
-
-    }
-              }
+               }
+      }

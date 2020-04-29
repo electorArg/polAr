@@ -7,7 +7,7 @@
 #' An `election_get (data, long = TRUE)` tibble saved as an object in the Enviroment
 #'@export
 
-get_lista <- function(data){
+get_names <- function(data){
   
 
         x <- data %>% 

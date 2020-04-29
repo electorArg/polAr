@@ -13,7 +13,7 @@
 #' Implementation of the 'Golosov' and 'Laakso-Taagepera' formulas
 #'@export
 
-nep <- function(data,
+compute_nep <- function(data,
                index = c("Golosov", "Laakso-Taagepera", "All")){
   
     index <- "Laakso-Taagepera"
