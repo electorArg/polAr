@@ -39,7 +39,7 @@ Sus principales funciones son:
 
 ### EJEMPLO DE USO
 
-La primera función `show_available_elections()`nos muestra cuales son las elecciones disponibles para descargar. Por defecto imprime en consola. El parámetro `viewer = T` presente en el _Viewer_ una tabla formateada con la capacidad de ordenar y filtrar valores. 
+1. La primera función `show_available_elections()`nos muestra cuales son las elecciones disponibles para descargar. Por defecto el parámetro `viewer = FALSE` imprime el resultado en consola. Si en cambio escribimos `viewer = TRUE` los datos se presentan y quedan a mano en el _Viewer_ de `RStudio` como  tabla formateada y con la capacidad de ordenar y filtrar valores. 
 
 ```r
 
@@ -63,7 +63,11 @@ show_available_elections()
 # ... with 11 more row
 
 ```
-2. `get_election_data` es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (`district`), la categoría electoral (`catgegory`), el turno (`round`) y el año electoral (`year`). Por defecto los datos colapsan a nivel provincial pero podemos definir otros niveles como departamento o circuito electoral con el parámetro `levels`. También por defecto los datos se descargan en formato ancho (*widwe*). Pero se incluye otro parametro para cambiar a un formato largo (*long*) usando el parametro `long = TRUE`. 
+2. `get_election_data` es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (`district`), la categoría (`category`), el turno (`round`) y el año electoral (`year`). 
+
+Por defecto los datos colapsan a nivel provincial pero podemos definir otros niveles como departamento o circuito electoral con el parámetro `levels`. 
+
+También por defecto los datos se descargan en formato ancho (*wide*). Pero se incluye otro parametro para cambiar a un formato largo (*long*) usando el parametro `long = TRUE`. Abajo el resultado de la consulta solo con los parámetros obligatorios, en el primer caso, y con un nivel de desagregación menor en el segundo:
 
 ```r
 get_election_data(district = "caba", category = "dip", round = "paso", year = "2011")
@@ -100,9 +104,9 @@ get_election_data(district = "caba", category = "dip", round = "paso", year = "2
 # ... with 1 more variable: year <chr>
 ```
 
-3.  Si bien se puede usar el parametro a la hora de descargar los datos, también podemos usar `get_long` para conseguir la misma transformación si los datos ya habían sido guardados como un objeto en formato ancho (*wide*). 
+3.  Si bien se puede usar el parametro `long = T` a la hora de descargar los datos, también podemos usar `get_long()` para conseguir la misma transformación si los datos ya habían sido guardados como un objeto en formato ancho (*wide*). 
 
-Si la llamada anterior hubiese sido guardada así, por ejemplo:  
+Este sería el caso si la llamada anterior hubiese sido guardada así:  
 
 
 `data <- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento" )`
@@ -129,7 +133,7 @@ data %>%
 # ... with 200 more rows
 ```
 
-4. Siguiendo el ejemplo anterior, una vez transformada `data` a formato *long* se puede incorporar facilmente el nombre de los partios correspondientes al *id* de la columna `listas` con `get_names`: 
+4. Siguiendo el ejemplo anterior, una vez que `data` cambió a formato *long* se puede incorporar facilmente el nombre de los partios correspondientes al *id* de la columna `listas` con `get_names()`: 
 
 ```r
 
@@ -155,7 +159,9 @@ data %>%
 
 
 ```
-5. La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el *Número Efectivo de Partidos Políticos*. El cálculo se realizará el nivel de agregación de los datos descargados con `get_election_data()`. En este caso a nivel departamental. La función `compute_nep()` tiene un parámetro para elegir entre el índice de [Laakso-Taagepera](https://journals.sagepub.com/doi/10.1177/001041407901200101) y/o el de  [Golosov](https://journals.sagepub.com/doi/10.1177/1354068809339538).
+5. La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el *Número Efectivo de Partidos Políticos*. 
+
+El cálculo se realizará el nivel de agregación de los datos descargados con `get_election_data()`. En este caso a nivel departamental. La función `compute_nep()` tiene un parámetro para elegir entre el índice de [Laakso-Taagepera](https://journals.sagepub.com/doi/10.1177/001041407901200101) y/o el de  [Golosov](https://journals.sagepub.com/doi/10.1177/1354068809339538).
 
 
 ```r
