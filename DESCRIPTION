@@ -6,7 +6,7 @@ Authors@R:
            family = "Ruiz Nicolini",
            role = c("aut", "cre"),
            email = "juanpabloruiznicolini@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+           comment = c(ORCID = "0000-0002-3138-6343"))
 Description: Explorar y visualizar información electoral de Argentina y sus provincias. 
 License: MIT + file LICENSE
 Encoding: UTF-8
