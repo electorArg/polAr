@@ -25,17 +25,15 @@ devtools::install_github("electorArg/polAr")
 
 Sus principales funciones son:
 
-- **`election_get()`**: Descarga bases de resultados electorales con parametros: `level`para el nivel de agregación (`"provincia"`, `"departamento"`, `"circuito"`) y `long` para el formato de los datos alargados (las listas no van cada una en una columna sino como valores de una variable `listas`). 
+- **`get_election_data()`**: Descarga bases de resultados electorales con parametros: `level`para el nivel de agregación (`"provincia"`, `"departamento"`, `"circuito"`) y `long` para el formato de los datos alargados (las listas no van cada una en una columna sino como valores de una variable `listas`). 
 
-- **`election_get_raw()`**: Descarga de resultados electorales al nivel de MESA.
+- **`show_available_elections`**: Diccionario de Elecciones disponibles. El parametro `viewer = TRUE` habilita una tabla en el _Viewer_ de `RStudio`.
 
-- **`election_collection()`**: Diccionario de Elecciones disponibles. El parametro `viewer = TRUE` habilita una tabla en el _Viewer_ de `RStudio`.
+- **`get_names()`**: Obtiene nombres de listas (funciona correctamente cuando los datos fueron obtenidos _LARGOS_: `election_get(data, ...,  long = T)`
 
-- **`get_listas()`**: Obtiene nombres de listas (funciona correctamente cuando los datos fueron obtenidos _LARGOS_: `election_get(data, ...,  long = T)`
+- **`compute_nep()`**: Calcula el  Numero Efectivo de Partidos Politico. Es sensible al nivel de agregación de la `data` obtenida. 
 
-- **`nep()`**: Calcula el  Numero Efectivo de Partidos Politico. Es sensible al nivel de agregación de la `data` obtenida. 
-
-- **`competitive()`**: Calcula el nivel de competencia en una elección (0 , 1). Un parámetro `level` permite calcularlo para los distintos niveles de agregación presentes en la `data`.  
+- **`compute_competitiveness()`**: Calcula el nivel de competencia en una elección (0 , 1). Un parámetro `level` permite calcularlo para los distintos niveles de agregación presentes en la `data`.  
 
 
 

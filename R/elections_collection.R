@@ -7,7 +7,7 @@
 #'The default is `FALSE`. When `TRUE` returns a table in RStudio Viewer
 #'@export
 
- get_elections_collection <- function(viewer = FALSE){
+show_available_elections <- function(viewer = FALSE){
 
   
   # Check for internet coection

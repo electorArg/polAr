@@ -20,7 +20,7 @@
 
 #'@export
 
-get_elections <- function(district,
+get_election_data <- function(district,
                          category,
                          round,
                          year,
