@@ -37,6 +37,159 @@ Sus principales funciones son:
 
 
 
+### EJEMPLO DE USO
+
+La primera función `show_available_elections()`nos muestra cuales son las elecciones disponibles para descargar. Por defecto imprime en consola. El parámetro `viewer = T` presente en el _Viewer_ una tabla formateada con la capacidad de ordenar y filtrar valores. 
+
+```r
+
+library(polAr)
+
+show_available_elections()
+
+# A tibble: 21 x 4
+#  Distrito   Categoria Turno Anio 
+#  <chr>      <chr>     <chr> <chr>
+#    1 arg        presi     paso  2011 
+#  2 caba       dip       paso  2011 
+#  3 catamarca  dip       gral  2015 
+#  4 chubut     dip       paso  2013 
+#  5 cordoba    sen       paso  2015 
+#  6 corrientes dip       gral  2017 
+#  7 erios      dip       gral  2013 
+#  8 formosa    dip       gral  2011 
+#  9 jujuy      sen       gral  2017 
+#  10 neuquen    dip       gral  2013 
+# ... with 11 more row
+
+```
+2. `get_election_data` es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (`district`), la categoría electoral (`catgegory`), el turno (`round`) y el año electoral (`year`). Por defecto los datos colapsan a nivel provincial pero podemos definir otros niveles como departamento o circuito electoral con el parámetro `levels`. También por defecto los datos se descargan en formato ancho (*widwe*). Pero se incluye otro parametro para cambiar a un formato largo (*long*) usando el parametro `long = TRUE`. 
+
+```r
+get_election_data(district = "caba", category = "dip", round = "paso", year = "2011")
+
+
+# A tibble: 1 x 19
+# Groups:   codprov [1]
+#  codprov electores blancos nulos `0023` `0036` `0179` `0302` `0501` `0504` `0508` `0509` `0510` `0517` `0518` `0536` category round year 
+#  <chr>       <dbl>   <dbl> <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl> <chr>    <chr> <chr>
+#  1 01      91166   35478 27459 186276  68575   8234  68001 509590  95714  47956 145580 201173  81666 294312 135361 dip      paso  2011 
+
+get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", 
+                  level = "departamento" )
+
+# A tibble: 15 x 21
+# Groups:   codprov, depto, coddepto [15]
+# codprov depto coddepto electores blancos nulos `0023` `0036` `0179` `0302` `0501` `0504` `0508` `0509` `0510` `0517` `0518` `0536` category round
+# <chr>   <chr> <chr>        <dbl>   <dbl> <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl> <chr>    <chr>
+#   1 01      Comu~ 001         185778    2403  1832  13071   5425    563   3784  37804   6829   2876   8847  10629   5094  21335   9064 dip      paso 
+# 2 01      Comu~ 002         149091    1514  1516  10819   4228    318   3454  17102   5728   1947   5091  10459   3241  29611  13378 dip      paso 
+# 3 01      Comu~ 003         167025    2538  1985  11506   4623    548   4455  35901   6758   3469   9229  11750   5871  13997   7181 dip      paso 
+# 4 01      Comu~ 004         175190    2897  2040  11965   4891    601   4323  47381   7012   3178  10902  10436   5956  17230   5879 dip      paso 
+# 5 01      Comu~ 005         152903    1944  1743  10794   3997    533   4388  34081   6412   3220   8769  14543   5858  14325   7900 dip      paso 
+# 6 01      Comu~ 006         153077    1981  1651  11655   3729    527   4490  27769   6681   3361   7959  17016   5924  17983   9702 dip      paso 
+# 7 01      Comu~ 007         169698    2522  1928  13003   4722    617   5064  37849   6908   3396  10880  14229   5888  16926   8011 dip      paso 
+# 8 01      Comu~ 008         133174    2297  1468   9796   4124    493   2669  41678   4043   1833  10850   5714   3453  10917   3484 dip      paso 
+# 9 01      Comu~ 009         144877    2521  1553  11728   4246    610   3709  36870   5013   2865  12124  10096   4696  13601   5509 dip      paso 
+#10 01      Comu~ 010         145632    2722  1647  11564   3757    654   4652  31437   5741   3420  11306  12537   5431  14618   6955 dip      paso 
+#11 01      Comu~ 011         166687    2500  1913  13105   4488    611   5269  32842   6528   3683  11312  15711   5953  19022   8811 dip      paso 
+#12 01      Comu~ 012         172984    2461  1991  13233   4858    567   5386  34576   6477   3857  11321  15376   6333  21860   9568 dip      paso 
+#13 01      Comu~ 013         208929    2366  2156  17286   5828    535   5916  28647   7959   3790   9054  19433   5906  35143  15953 dip      paso 
+#14 01      Comu~ 014         204174    2474  2043  16197   5585    476   5332  30031   7710   3597   8098  17938   5643  33046  16279 dip      paso 
+#15 01      Comu~ 015         161947    2338  1993  10554   4074    581   5110  35622   5915   3464   9838  15306   6419  14698   7687 dip      paso 
+# ... with 1 more variable: year <chr>
+```
+
+3.  Si bien se puede usar el parametro a la hora de descargar los datos, también podemos usar `get_long` para conseguir la misma transformación si los datos ya habían sido guardados como un objeto en formato ancho (*wide*). 
+
+Si la llamada anterior hubiese sido guardada así, por ejemplo:  
+
+
+`data <- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento" )`
+
+
+```r
+data %>% 
+  get_long() 
+
+# A tibble: 210 x 9
+# Groups:   codprov, depto, coddepto [15]
+#  codprov    depto     coddepto electores category round year  listas votos
+#  <chr>     <chr>     <chr>        <dbl> <chr>    <chr> <chr> <chr>  <dbl>
+#  1 01      Comuna 01 001         185778 dip      paso  2011  0023   13071
+#  2 01      Comuna 01 001         185778 dip      paso  2011  0036    5425
+#  3 01      Comuna 01 001         185778 dip      paso  2011  0179     563
+#  4 01      Comuna 01 001         185778 dip      paso  2011  0302    3784
+#  5 01      Comuna 01 001         185778 dip      paso  2011  0501   37804
+#  6 01      Comuna 01 001         185778 dip      paso  2011  0504    6829
+#  7 01      Comuna 01 001         185778 dip      paso  2011  0508    2876
+#  8 01      Comuna 01 001         185778 dip      paso  2011  0509    8847
+#  9 01      Comuna 01 001         185778 dip      paso  2011  0510   10629
+# 10 01      Comuna 01 001         185778 dip      paso  2011  0517    5094
+# ... with 200 more rows
+```
+
+4. Siguiendo el ejemplo anterior, una vez transformada `data` a formato *long* se puede incorporar facilmente el nombre de los partios correspondientes al *id* de la columna `listas` con `get_names`: 
+
+```r
+
+data %>% 
+  get_long() %>% 
+  get_names() 
+
+# A tibble: 210 x 10
+# Groups:   codprov, depto, coddepto [15]
+# codprov   depto     coddepto electores category round year  listas votos nombre_lista                                     
+# <chr>     <chr>     <chr>     <dbl>    <chr>    <chr> <chr> <chr>  <dbl> <chr>                                            
+# 1 01      Comuna 01  001      185778    dip      paso  2011  0023   13071 UNION POPULAR                                    
+# 2 01      Comuna 01  001      185778    dip      paso  2011  0036    5425 AUTONOMISTA                                      
+# 3 01      Comuna 01  001      185778    dip      paso  2011  0179     563 ACCION CIUDADANA                                 
+# 4 01      Comuna 01  001      185778    dip      paso  2011  0302    3784 DE LA CIUDAD EN ACCION                           
+# 5 01      Comuna 01  001      185778    dip      paso  2011  0501   37804 ALIANZA FRENTE PARA LA VICTORIA                  
+# 6 01      Comuna 01  001      185778    dip      paso  2011  0504    6829 ALIANZA UNION PARA EL DESARROLLO SOCIAL          
+# 7 01      Comuna 01  001      185778    dip      paso  2011  0508    2876 ALIANZA PROYECTO SUR                             
+# 8 01      Comuna 01  001      185778    dip      paso  2011  0509    8847 COMPROMISO FEDERAL                               
+# 9 01      Comuna 01  001      185778    dip      paso  2011  0510   10629 FRENTE AMPLIO PROGRESISTA                        
+#10 01      Comuna 01  001      185778    dip      paso  2011  0517    5094 ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES
+# ... with 200 more rows
+
+
+```
+5. La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el *Número Efectivo de Partidos Políticos*. El cálculo se realizará el nivel de agregación de los datos descargados con `get_election_data()`. En este caso a nivel departamental. La función `compute_nep()` tiene un parámetro para elegir entre el índice de [Laakso-Taagepera](https://journals.sagepub.com/doi/10.1177/001041407901200101) y/o el de  [Golosov](https://journals.sagepub.com/doi/10.1177/1354068809339538).
+
+
+```r
+data %>% 
+  get_long() %>% 
+  compute_nep() 
+  
+#   # A tibble: 15 x 5
+#    codprov depto     coddepto value index           
+#    <chr>   <chr>     <chr>    <dbl> <chr>           
+#   1 01    Comuna 01  001       6.82 Laakso-Taagepera
+#   2 01    Comuna 02  002       6.99 Laakso-Taagepera
+#   3 01    Comuna 03  003       7.05 Laakso-Taagepera
+#   4 01    Comuna 04  004       5.86 Laakso-Taagepera
+#   5 01    Comuna 05  005       7.16 Laakso-Taagepera
+#   6 01    Comuna 06  006       8.02 Laakso-Taagepera
+#   7 01    Comuna 07  007       7.18 Laakso-Taagepera
+#   8 01    Comuna 08  008       4.85 Laakso-Taagepera
+#   9 01    Comuna 09  009       6.44 Laakso-Taagepera
+#  10 01    Comuna 10  010       7.58 Laakso-Taagepera
+#  11 01    Comuna 11  011       7.84 Laakso-Taagepera
+#  12 01    Comuna 12  012       7.71 Laakso-Taagepera
+#  13 01    Comuna 13  013       7.85 Laakso-Taagepera
+#  14 01    Comuna 14  014       7.74 Laakso-Taagepera
+#  15 01    Comuna 15  015       7.18 Laakso-Taagepera
+ 
+
+```
+ 
+ 
+ 
+ 
+
+
 ### CREDITOS
 
 Parte de la inspiración viene de las liberías [`eph`](https://github.com/holatam/eph), [`electoral`](https://cran.r-project.org/web/packages/electoral/index.html) y [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html)

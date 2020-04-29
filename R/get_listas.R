@@ -34,7 +34,7 @@ get_names <- function(data){
         
        
         data %>% 
-          dplyr::left_join(listas_gh, by = 'listas')%>% 
+          dplyr::left_join(listas_gh, by = c('listas', 'codprov')) %>% 
           dplyr::mutate(nombre_lista = dplyr::case_when(
             is.na(nombre_lista) ~ listas, 
             T ~ nombre_lista
