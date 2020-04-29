@@ -2,10 +2,10 @@
 
 ## POLítica ARgentina usando `R`
 
-<img src="hex/hex-polAr.png" width="200">
+<img src="https://github.com/electorArg/polAr/blob/master/hex/hex-polAr.png?raw=true" width="200">
 
 
-La idea del paquete es birndar herramientas que faciliten el acceso a datos y flujo de trabajo para el análisis político - electoral, con ejempos aplicados de Argentina. 
+La idea del paquete es brindar herramientas que faciliten el acceso a datos y el flujo de trabajo para el análisis político - electoral, con ejempos aplicados de Argentina. 
 
 ---
 
