@@ -102,9 +102,7 @@
 <div id="ejemplo-de-uso" class="section level3">
 <h3 class="hasAnchor">
 <a href="#ejemplo-de-uso" class="anchor"></a>EJEMPLO DE USO</h3>
-<ol>
-<li>La función <code><a href="reference/show_available_elections.html">show_available_elections()</a></code> muestra las elecciones disponibles para descarga. Por defecto el parámetro <code>viewer = FALSE</code> imprime el resultado en consola. Si en cambio escribimos <code>viewer = TRUE</code> los datos se presentan en el <em>Viewer</em> de <code>RStudio</code> y quedan a mano como tabla formateada y con la capacidad de ordenar y filtrar valores.</li>
-</ol>
+<p>La función <code><a href="reference/show_available_elections.html">show_available_elections()</a></code> muestra las elecciones disponibles para descarga. Por defecto el parámetro <code>viewer = FALSE</code> imprime el resultado en consola. Si en cambio escribimos <code>viewer = TRUE</code> los datos se presentan en el <em>Viewer</em> de <code>RStudio</code> y quedan a mano como tabla formateada y con la capacidad de ordenar y filtrar valores.</p>
 <div class="sourceCode" id="cb2"><pre class="r">
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">polAr</span>)
 
@@ -124,10 +122,11 @@
 <span class="co">#  9 jujuy      sen       gral  2017 </span>
 <span class="co">#  10 neuquen    dip       gral  2013 </span>
 <span class="co"># ... with 11 more row</span></pre></div>
-<ol>
-<li>
-<code>get_election_data</code> es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (<code>district</code>), la categoría (<code>category</code>), el turno (<code>round</code>) y el año electoral (<code>year</code>).</li>
-</ol>
+<div id="get_election_data" class="section level4">
+<h4 class="hasAnchor">
+<a href="#get_election_data" class="anchor"></a><code>get_election_data()</code>
+</h4>
+<p><code><a href="reference/get_election_data.html">get_election_data()</a></code> es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (<code>district</code>), la categoría (<code>category</code>), el turno (<code>round</code>) y el año electoral (<code>year</code>).</p>
 <p>Por defecto los datos colapsan a nivel provincial, pero podemos definir otros niveles como departamento o circuito electoral con el parámetro <code>levels</code>.</p>
 <p>También por defecto los datos se descargan en formato ancho (<em>wide</em>). Pero se incluye otro parametro para cambiar a un formato largo (<em>long</em>) usando <code>long = TRUE</code>.</p>
 <p>Abajo el resultado de la consulta solo con los parámetros obligatorios, en el primer caso, y con un nivel de desagregación menor en el segundo:</p>
@@ -163,9 +162,11 @@
 <span class="co">#14 01      Comu~ 014         204174    2474  2043  16197   5585    476   5332  30031   7710   3597   8098  17938   5643  33046  16279 dip      paso </span>
 <span class="co">#15 01      Comu~ 015         161947    2338  1993  10554   4074    581   5110  35622   5915   3464   9838  15306   6419  14698   7687 dip      paso </span>
 <span class="co"># ... with 1 more variable: year &lt;chr&gt;</span></pre></div>
-<ol>
-<li>Si bien se puede usar el parametro <code>long = T</code> a la hora de descargar los datos, también podemos usar <code><a href="reference/get_long.html">get_long()</a></code> para conseguir la misma transformación si los datos ya habían sido guardados como un objeto en formato ancho (<em>wide</em>).</li>
-</ol>
+</div>
+<div id="show_available_elections" class="section level4">
+<h4 class="hasAnchor">
+<a href="#show_available_elections" class="anchor"></a>show_available_elections()</h4>
+<p>Si bien se puede usar el parametro <code>long = T</code> a la hora de descargar los datos, también podemos usar <code><a href="reference/get_long.html">get_long()</a></code> para conseguir la misma transformación si los datos ya habían sido guardados como un objeto en formato ancho (<em>wide</em>).</p>
 <p>Este sería el caso si la llamada anterior hubiese sido guardada en un objeto llamado <code>data</code>:</p>
 <p><code>data &lt;- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento" )</code></p>
 <div class="sourceCode" id="cb4"><pre class="r"><span class="no">data</span> <span class="kw">%&gt;%</span>
@@ -186,9 +187,12 @@
 <span class="co">#  9 01      Comuna 01 001         185778 dip      paso  2011  0510   10629</span>
 <span class="co"># 10 01      Comuna 01 001         185778 dip      paso  2011  0517    5094</span>
 <span class="co"># ... with 200 more rows</span></pre></div>
-<ol>
-<li>Siguiendo el ejemplo anterior, una vez que <code>data</code> cambió a formato <em>long</em> se puede incorporar facilmente el nombre de los partios correspondientes al <em>id</em> de la columna <code>listas</code> con <code><a href="reference/get_names.html">get_names()</a></code>:</li>
-</ol>
+</div>
+<div id="get_names" class="section level4">
+<h4 class="hasAnchor">
+<a href="#get_names" class="anchor"></a><code>get_names()</code>
+</h4>
+<p>Siguiendo el ejemplo anterior, una vez que <code>data</code> cambió a formato <em>long</em> se puede incorporar facilmente el nombre de los partios correspondientes al <em>id</em> de la columna <code>listas</code> con <code><a href="reference/get_names.html">get_names()</a></code>:</p>
 <div class="sourceCode" id="cb5"><pre class="r">
 <span class="no">data</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/get_long.html">get_long</a></span>() <span class="kw">%&gt;%</span>
@@ -209,9 +213,12 @@
 <span class="co"># 9 01      Comuna 01  001      185778    dip      paso  2011  0510   10629 FRENTE AMPLIO PROGRESISTA                        </span>
 <span class="co">#10 01      Comuna 01  001      185778    dip      paso  2011  0517    5094 ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES</span>
 <span class="co"># ... with 200 more rows</span></pre></div>
-<ol>
-<li>La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el <em>Número Efectivo de Partidos Políticos</em>.</li>
-</ol>
+</div>
+<div id="compute_nep" class="section level4">
+<h4 class="hasAnchor">
+<a href="#compute_nep" class="anchor"></a><code>compute_nep()</code>
+</h4>
+<p>La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el <em>Número Efectivo de Partidos Políticos</em>.</p>
 <p>El cálculo se realizará el nivel de agregación de los datos descargados con <code><a href="reference/get_election_data.html">get_election_data()</a></code>. En este caso a nivel departamental. La función <code><a href="reference/compute_nep.html">compute_nep()</a></code> tiene un parámetro para elegir entre el índice de <a href="https://journals.sagepub.com/doi/10.1177/001041407901200101">Laakso-Taagepera</a> y/o el de <a href="https://journals.sagepub.com/doi/10.1177/1354068809339538">Golosov</a>.</p>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="no">data</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/get_long.html">get_long</a></span>() <span class="kw">%&gt;%</span>
@@ -235,6 +242,7 @@
 <span class="co">#  13 01    Comuna 13  013       7.85 Laakso-Taagepera</span>
 <span class="co">#  14 01    Comuna 14  014       7.74 Laakso-Taagepera</span>
 <span class="co">#  15 01    Comuna 15  015       7.18 Laakso-Taagepera</span></pre></div>
+</div>
 </div>
 <div id="creditos" class="section level3">
 <h3 class="hasAnchor">

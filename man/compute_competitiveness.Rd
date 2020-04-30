@@ -10,8 +10,8 @@ compute_competitiveness(data, level = "provincia")
 \item{data}{un tibble guardado como objeto en el Enviroment luego de consultar `election_get()` // 
 A tibble saved as an object in the Enviroment after querying `election_get ()`}
 
-\item{level}{establece el level de desagregacion sobre el que se quiere calcular la competitividad: por defualt es 'provincia' 
-y se desagregan las observaciones asignando los valores 'departmento'  o 'circuito' al parametro. // 
+\item{level}{un character que establece el nivel de desagregacion sobre el que se quiere calcular la competitividad: por defualt es 'provincia' 
+y se desagregan las observaciones asignando los valores 'departamento'  o 'circuito' al parametro. // 
 Establishes the level of aggregation on which you want to compute competitiveness: by definition it is 'province' 
 and the observations are disaggregated by assigning the values 'departamento' or 'circuito' to the parameter.}
 }

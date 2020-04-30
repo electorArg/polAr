@@ -30,5 +30,6 @@ Imports:
     pkgcond, 
     DT,
     attempt, 
-    curl
+    curl, 
+    assertthat
 RoxygenNote: 6.1.1

@@ -20,18 +20,74 @@
 
 #'@export
 
-get_election_data <- function(district,
-                         category,
-                         round,
-                         year,
-                         level = c("provincia", "departamento", "circuito"),
-                         long = FALSE, 
-                         raw = FALSE){
+get_election_data <- function(district = NULL ,
+                              category = NULL,
+                              round = NULL ,
+                              year = NULL,
+                              level = "provincia",
+                              long = FALSE, 
+                              raw = FALSE){
   
   
   # Check for internet coection
   attempt::stop_if_not(.x = curl::has_internet(),
                        msg = "No se detecto acceso a internet. Por favor checkea tu conexion.")
+  
+  # Check params 
+
+  # year check
+  assertthat::assert_that(is.numeric(year), 
+                          msg = "Please select a correct 'year'. Check them with show_available_elections()")
+  
+  # category check
+  assertthat::assert_that(is.character(category),
+                          msg = "Please select correct category. Check them with show_available_elections()")
+  
+  assertthat::assert_that(category %in% c("dip", "sen", "presi"), 
+                          msg = "Please select correct category. Check them with show_available_elections()")
+  
+  
+  # district check
+  assertthat::assert_that(is.character(district), msg = "Please select correct district Check them with show_available_elections()")
+  
+  assertthat::assert_that(district %in% c("arg",
+                                          "caba",
+                                          "catamarca",
+                                          "chaco",
+                                          "chubut",
+                                          "cordoba",
+                                          "corrientes",
+                                          "erios",
+                                          "formosa",
+                                          "jujuy",
+                                          "mendoza",
+                                          "misiones",
+                                          "neuquen",
+                                          "pampa",
+                                          "pba",
+                                          "rioja",
+                                          "rnegro",
+                                          "salta",
+                                          "santiago",
+                                          "scruz",
+                                          "sfe",
+                                          "sjuan",
+                                          "sluis",
+                                          "tdf",
+                                          "tucuman"), 
+                          msg = "Please select correct district. Check them with show_available_elections()")
+  
+  # round check
+   assertthat::assert_that(is.character(round), msg = "Please select correct round Check them with show_available_elections()")
+
+   assertthat::assert_that(round %in% c("paso", "gral", "balota"), 
+                           msg = "Please select correct category. Check them with show_available_elections()")
+   
+  
+  
+  #controles de los parametros
+ 
+  
   
   
         # Temp function:  level selection
@@ -99,3 +155,5 @@ get_election_data <- function(district,
                 df
                }
       }
+
+

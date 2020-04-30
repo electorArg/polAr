@@ -44,7 +44,7 @@ Entre los primeros se deben consignar `district` para el distrito; `category` pa
 
 ### EJEMPLO DE USO
 
-1. La función `show_available_elections()` muestra las elecciones disponibles para descarga. Por defecto el parámetro `viewer = FALSE` imprime el resultado en consola. Si en cambio escribimos `viewer = TRUE` los datos se presentan en el _Viewer_ de `RStudio` y quedan a mano como tabla formateada y con la capacidad de ordenar y filtrar valores. 
+La función `show_available_elections()` muestra las elecciones disponibles para descarga. Por defecto el parámetro `viewer = FALSE` imprime el resultado en consola. Si en cambio escribimos `viewer = TRUE` los datos se presentan en el _Viewer_ de `RStudio` y quedan a mano como tabla formateada y con la capacidad de ordenar y filtrar valores. 
 
 ```r
 
@@ -68,7 +68,11 @@ show_available_elections()
 # ... with 11 more row
 
 ```
-2. `get_election_data` es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (`district`), la categoría (`category`), el turno (`round`) y el año electoral (`year`). 
+
+
+#### `get_election_data()`
+
+`get_election_data()` es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (`district`), la categoría (`category`), el turno (`round`) y el año electoral (`year`). 
 
 Por defecto los datos colapsan a nivel provincial, pero podemos definir otros niveles como departamento o circuito electoral con el parámetro `levels`. 
 
@@ -111,7 +115,9 @@ get_election_data(district = "caba", category = "dip", round = "paso", year = "2
 # ... with 1 more variable: year <chr>
 ```
 
-3.  Si bien se puede usar el parametro `long = T` a la hora de descargar los datos, también podemos usar `get_long()` para conseguir la misma transformación si los datos ya habían sido guardados como un objeto en formato ancho (*wide*). 
+#### show_available_elections()
+
+Si bien se puede usar el parametro `long = T` a la hora de descargar los datos, también podemos usar `get_long()` para conseguir la misma transformación si los datos ya habían sido guardados como un objeto en formato ancho (*wide*). 
 
 Este sería el caso si la llamada anterior hubiese sido guardada en un objeto llamado `data`:  
 
@@ -140,7 +146,9 @@ data %>%
 # ... with 200 more rows
 ```
 
-4. Siguiendo el ejemplo anterior, una vez que `data` cambió a formato *long* se puede incorporar facilmente el nombre de los partios correspondientes al *id* de la columna `listas` con `get_names()`: 
+#### `get_names()`
+
+Siguiendo el ejemplo anterior, una vez que `data` cambió a formato *long* se puede incorporar facilmente el nombre de los partios correspondientes al *id* de la columna `listas` con `get_names()`: 
 
 ```r
 
@@ -166,7 +174,11 @@ data %>%
 
 
 ```
-5. La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el *Número Efectivo de Partidos Políticos*. 
+
+
+#### `compute_nep()`
+
+La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el *Número Efectivo de Partidos Políticos*. 
 
 El cálculo se realizará el nivel de agregación de los datos descargados con `get_election_data()`. En este caso a nivel departamental. La función `compute_nep()` tiene un parámetro para elegir entre el índice de [Laakso-Taagepera](https://journals.sagepub.com/doi/10.1177/001041407901200101) y/o el de  [Golosov](https://journals.sagepub.com/doi/10.1177/1354068809339538).
 

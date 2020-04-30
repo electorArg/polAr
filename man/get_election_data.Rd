@@ -4,8 +4,8 @@
 \alias{get_election_data}
 \title{Descarga bases de resultados electorales // Download electoral data}
 \usage{
-get_election_data(district, category, round, year, level = c("provincia",
-  "departamento", "circuito"), long = FALSE, raw = FALSE)
+get_election_data(district = NULL, category = NULL, round = NULL,
+  year = NULL, level = "provincia", long = FALSE, raw = FALSE)
 }
 \arguments{
 \item{district}{un character con codigo para Argentina y las 24 provincias //
