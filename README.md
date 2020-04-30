@@ -76,8 +76,6 @@ show_available_elections()
 
 Por defecto los datos colapsan a nivel provincial, pero podemos definir otros niveles como departamento o circuito electoral con el parámetro `levels`. 
 
-También por defecto los datos se descargan en formato ancho (*wide*). Pero se incluye otro parametro para cambiar a un formato largo (*long*) usando `long = TRUE`. 
-
 Abajo el resultado de la consulta solo con los parámetros obligatorios, en el primer caso, y con un nivel de desagregación menor en el segundo:
 
 ```r
@@ -115,15 +113,19 @@ get_election_data(district = "caba", category = "dip", round = "paso", year = "2
 # ... with 1 more variable: year <chr>
 ```
 
-#### show_available_elections()
+#### `get_long()`
 
-Si bien se puede usar el parametro `long = T` a la hora de descargar los datos, también podemos usar `get_long()` para conseguir la misma transformación si los datos ya habían sido guardados como un objeto en formato ancho (*wide*). 
+También por defecto los datos se descargan en formato ancho (*wide*). Pero se incluye la opción de cambiar a un formato largo (*long*) usando `long = TRUE` como parametro de `get_election_data(... , long = T)` a la hora de descargar los datos. 
 
-Este sería el caso si la llamada anterior hubiese sido guardada en un objeto llamado `data`:  
+Otra alternativa es usar la función auxiliar `get_long()` para conseguir la misma transformación,  si los datos ya habían sido guardados como un objeto en formato ancho (*wide*). 
+
+Este sería el caso si la llamada del ejemplo anterior hubiese sido guardada en un objeto con nombre `data`:  
 
 
-`data <- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento" )`
+`data <- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento" )`, donde, por defecto `long = FALSE`.
 
+
+Usamos la función auxiliar para convertir el formato de `data`: 
 
 ```r
 data %>% 

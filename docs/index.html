@@ -128,7 +128,6 @@
 </h4>
 <p><code><a href="reference/get_election_data.html">get_election_data()</a></code> es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (<code>district</code>), la categoría (<code>category</code>), el turno (<code>round</code>) y el año electoral (<code>year</code>).</p>
 <p>Por defecto los datos colapsan a nivel provincial, pero podemos definir otros niveles como departamento o circuito electoral con el parámetro <code>levels</code>.</p>
-<p>También por defecto los datos se descargan en formato ancho (<em>wide</em>). Pero se incluye otro parametro para cambiar a un formato largo (<em>long</em>) usando <code>long = TRUE</code>.</p>
 <p>Abajo el resultado de la consulta solo con los parámetros obligatorios, en el primer caso, y con un nivel de desagregación menor en el segundo:</p>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="reference/get_election_data.html">get_election_data</a></span>(<span class="kw">district</span> <span class="kw">=</span> <span class="st">"caba"</span>, <span class="kw">category</span> <span class="kw">=</span> <span class="st">"dip"</span>, <span class="kw">round</span> <span class="kw">=</span> <span class="st">"paso"</span>, <span class="kw">year</span> <span class="kw">=</span> <span class="st">"2011"</span>)
 
@@ -163,12 +162,15 @@
 <span class="co">#15 01      Comu~ 015         161947    2338  1993  10554   4074    581   5110  35622   5915   3464   9838  15306   6419  14698   7687 dip      paso </span>
 <span class="co"># ... with 1 more variable: year &lt;chr&gt;</span></pre></div>
 </div>
-<div id="show_available_elections" class="section level4">
+<div id="get_long" class="section level4">
 <h4 class="hasAnchor">
-<a href="#show_available_elections" class="anchor"></a>show_available_elections()</h4>
-<p>Si bien se puede usar el parametro <code>long = T</code> a la hora de descargar los datos, también podemos usar <code><a href="reference/get_long.html">get_long()</a></code> para conseguir la misma transformación si los datos ya habían sido guardados como un objeto en formato ancho (<em>wide</em>).</p>
-<p>Este sería el caso si la llamada anterior hubiese sido guardada en un objeto llamado <code>data</code>:</p>
-<p><code>data &lt;- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento" )</code></p>
+<a href="#get_long" class="anchor"></a><code>get_long()</code>
+</h4>
+<p>También por defecto los datos se descargan en formato ancho (<em>wide</em>). Pero se incluye la opción de cambiar a un formato largo (<em>long</em>) usando <code>long = TRUE</code> como parametro de <code><a href="reference/get_election_data.html">get_election_data(... , long = T)</a></code> a la hora de descargar los datos.</p>
+<p>Otra alternativa es usar la función auxiliar <code><a href="reference/get_long.html">get_long()</a></code> para conseguir la misma transformación, si los datos ya habían sido guardados como un objeto en formato ancho (<em>wide</em>).</p>
+<p>Este sería el caso si la llamada del ejemplo anterior hubiese sido guardada en un objeto con nombre <code>data</code>:</p>
+<p><code>data &lt;- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento" )</code>, donde, por defecto <code>long = FALSE</code>.</p>
+<p>Usamos la función auxiliar para convertir el formato de <code>data</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="r"><span class="no">data</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/get_long.html">get_long</a></span>()
 
