@@ -17,7 +17,7 @@ Imports:
     geofacet,
     sf,
     dplyr,
-    tidyr, 
+    tidyr (>= 1.0.0), 
     magrittr, 
     formattable, 
     readr, 

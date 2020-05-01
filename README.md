@@ -5,14 +5,16 @@
 <img src="https://github.com/electorArg/polAr/blob/master/hex/hex-polAr.png?raw=true" width="200">
 
 
-La idea del paquete es brindar herramientas que faciliten el acceso a datos y el flujo de trabajo para el análisis político - electoral, con ejempos aplicados de Argentina. 
+Este paquete brinda herramientas que facilitan el flujo de trabajo para el análisis político - electoral y el acceso a datos de Argentina desde `R`. 
 
-Se espera tener pronto el acceso a datos para todas las elecciones nacionales (diputados, senaodres y presidente) desde el año 2003 a 2019 al nivel disponible de desagregación mayor (mesas). Asimismo incorporar nuevas funciones para calcular indicadores y herramientas de visualización de datos. 
+**(Esta es una versión _beta_ del proyecto que dejamos abierto a comentarios y/o sugerencias)**. 
+
+Se espera pronto tene una primera versión completa con los datos disponible para todas las elecciones nacionales (diputados, senadores y presidente) desde el año 2003 a 2019, al mayor nivel de desagregación posible (mesas). Asimismo incorporar nuevas funciones para calcular indicadores y herramientas de visualización de datos. 
 
 
 ---
 
-**(Esta es una versión _beta_ del proyecto que dejamos abierto a comentarios y/o sugerencias)**. 
+
 
 ### INSTALACIÓN
 
