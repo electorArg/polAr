@@ -1,10 +1,14 @@
 #'Obtiene nombres de listas (\emph{Get party names})
 
 #'@description
-#'Funcion que agrega el nombre de las listas o partidos como columna a un tibble obtenido con \code{\link{get_election_data} = TRUE} 
-#' (\emph{Function that adds the name of the lists or parties as a column to a tibble obtained with \code{\link{get_election_data} = TRUE}})
-#'@param data un tibble descargado con \code{\link{get_election_data} = TRUE} guardado como objeto en el Enviroment  
-#' (\emph{An \code{\link{get_election_data} = TRUE} tibble saved as an object in the Enviroment})
+#'Funcion que agrega el nombre de las listas o partidos como columna a un tibble obtenido con \code{\link{get_election_data}(long = TRUE)} 
+#' (\emph{Function that adds party labels as a column to a tibble obtained with \code{\link{get_election_data}(long = TRUE)}})
+#'@param data un tibble descargado con \code{\link{get_election_data}(long = TRUE)} guardado como objeto en el Enviroment  
+#' (\emph{An \code{\link{get_election_data}(long = TRUE)} tibble saved as an object in the Enviroment})
+#'@details \strong{REQUISITO:} El formato de \code{data} debe ser \code{long} para poder obtener 
+#' nombres de listas con \code{\link{get_names}}. Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}} 
+#' (\emph{\code{long} format of \code{data} is required to get party labels with \code{\link{get_names}}.  If \code{data} is in
+#' \emph{wide} format you can transform it with \code{\link{get_long}}}).   
 #'@export
 
 get_names <- function(data){

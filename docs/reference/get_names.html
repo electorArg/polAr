@@ -40,8 +40,8 @@
 
 
 <meta property="og:title" content="Obtiene nombres de listas (<em>Get party names</em>) — get_names" />
-<meta property="og:description" content="Funcion que agrega el nombre de las listas o partidos como columna a un tibble obtenido con get_election_data = TRUE 
-(Function that adds the name of the lists or parties as a column to a tibble obtained with get_election_data = TRUE)" />
+<meta property="og:description" content="Funcion que agrega el nombre de las listas o partidos como columna a un tibble obtenido con get_election_data(long = TRUE) 
+(Function that adds party labels as a column to a tibble obtained with get_election_data(long = TRUE))" />
 
 
 
@@ -115,8 +115,8 @@
     </div>
 
     <div class="ref-description">
-    <p>Funcion que agrega el nombre de las listas o partidos como columna a un tibble obtenido con <code><a href='get_election_data.html'>get_election_data</a> = TRUE</code> 
-(<em>Function that adds the name of the lists or parties as a column to a tibble obtained with <code><a href='get_election_data.html'>get_election_data</a> = TRUE</code></em>)</p>
+    <p>Funcion que agrega el nombre de las listas o partidos como columna a un tibble obtenido con <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code> 
+(<em>Function that adds party labels as a column to a tibble obtained with <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code></em>)</p>
     </div>
 
     <pre class="usage"><span class='fu'>get_names</span>(<span class='no'>data</span>)</pre>
@@ -126,11 +126,17 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>un tibble descargado con <code><a href='get_election_data.html'>get_election_data</a> = TRUE</code> guardado como objeto en el Enviroment
-(<em>An <code><a href='get_election_data.html'>get_election_data</a> = TRUE</code> tibble saved as an object in the Enviroment</em>)</p></td>
+      <td><p>un tibble descargado con <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code> guardado como objeto en el Enviroment
+(<em>An <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code> tibble saved as an object in the Enviroment</em>)</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p><strong>REQUISITO:</strong> El formato de <code>data</code> debe ser <code>long</code> para poder obtener 
+nombres de listas con <code>get_names</code>. Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code> 
+(<em><code>long</code> format of <code>data</code> is required to get party labels with <code>get_names</code>.  If <code>data</code> is in
+<em>wide</em> format you can transform it with <code><a href='get_long.html'>get_long</a></code></em>).</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

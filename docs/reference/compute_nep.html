@@ -129,12 +129,8 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>la base de datos para hacer el calculo obtenida con <code><a href='get_election_data.html'>get_election_data</a></code> - 
-<strong>NOTA</strong> el <code>level</code> de <code><a href='get_election_data.html'>get_election_data</a></code> determina el nivel de agregacion sobre el que 
-se computa el NEP: <code>provincia</code>, <code>departamento</code> o <code>circuito</code>
-(<em>tiblle  downloaded with <code><a href='get_election_data.html'>get_election_data</a></code> needed to compute nep. 
-<strong>NOTE</strong>:  <code>level</code> at <code><a href='get_election_data.html'>get_election_data</a></code> determines aggregation on which NEP calculation 
-will be made: <code>provincia</code>, <code>departamento</code> or <code>circuito</code></em>).</p></td>
+      <td><p>la base de datos para hacer el calculo obtenida con <code><a href='get_election_data.html'>get_election_data</a></code> 
+(<em>tiblle  downloaded with <code><a href='get_election_data.html'>get_election_data</a></code> needed to compute nep</em>).</p></td>
     </tr>
     <tr>
       <th>index</th>
@@ -155,6 +151,14 @@ y \(p_{max}\) es el porcentaje de votos que sacó la lista más votada
 and \(p_{max}\) the percentage for the most voted party</em>).</p>
 <p>\(\large Laakso-Tagepera\): $$NEP_{Laakso-Tagepera}=\frac{1}{\sum_{i}^{n}p_{i}^2}$$</p>
 <p>\(\large Golosov\): $$NEP_{Golosov}=\frac{p_{i}}{\sum_{i}^{n} p_{i}+p_{max}^2-p_{i}^2}$$</p>
+<p><strong>REQUISITO:</strong> El formato de <code>data</code> debe ser <code>long</code> para calcular <code>compute_nep</code>. 
+Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code>  
+(<em><code>long</code> format of <code>data</code> is required for <code>compute_nep</code>. 
+If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='get_long.html'>get_long</a></code></em>)</p>
+<p><strong>NOTA:</strong> el parámetro <code>level</code> de <code><a href='get_election_data.html'>get_election_data</a></code> determina el nivel de agregacion sobre el que 
+se computa el NEP: <code>provincia</code>, <code>departamento</code> o <code>circuito</code>  
+(<em><code>level</code> at <code><a href='get_election_data.html'>get_election_data</a></code> determines aggregation on which NEP calculation 
+will be made: <code>provincia</code>, <code>departamento</code> or <code>circuito</code></em>).</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

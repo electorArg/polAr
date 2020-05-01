@@ -7,12 +7,8 @@
 #' (\emph{Function that computes NEP: indicator that provides a "tight" number of political parties in a party system})
 #'@param index un character con la fórmula elegida: "Laakso-Taagepera" -default-,  "Golosov" o ambas 
 #' (\emph{a character with the chosen formula: 'Laakso-Taagepera' -dafault-, 'Golosov' or both}).
-#'@param data la base de datos para hacer el calculo obtenida con \code{\link{get_election_data}} - 
-#' \strong{NOTA} el \code{level} de \code{\link{get_election_data}} determina el nivel de agregacion sobre el que 
-#' se computa el NEP: \code{provincia}, \code{departamento} o \code{circuito}
-#' (\emph{tiblle  downloaded with \code{\link{get_election_data}} needed to compute nep. 
-#' \strong{NOTE}:  \code{level} at \code{\link{get_election_data}} determines aggregation on which NEP calculation 
-#' will be made: \code{provincia}, \code{departamento} or \code{circuito}}).
+#'@param data la base de datos para hacer el calculo obtenida con \code{\link{get_election_data}} 
+#' (\emph{tiblle  downloaded with \code{\link{get_election_data}} needed to compute nep}).
 
 #'@details El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 
 #'  (\emph{The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats}).
@@ -24,6 +20,14 @@
 #' and \eqn{p_{max}} the percentage for the most voted party}). 
 #'@details \eqn{\large Laakso-Tagepera}: \deqn{NEP_{Laakso-Tagepera}=\frac{1}{\sum_{i}^{n}p_{i}^2}}
 #'@details  \eqn{\large Golosov}: \deqn{NEP_{Golosov}=\frac{p_{i}}{\sum_{i}^{n} p_{i}+p_{max}^2-p_{i}^2}}
+#'@details \strong{REQUISITO:} El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_nep}}. 
+#' Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}}  
+#' (\emph{\code{long} format of \code{data} is required for \code{\link{compute_nep}}. 
+#' If \code{data} is in \emph{wide} format you can transform it with \code{\link{get_long}}})
+#'@details \strong{NOTA:} el parámetro \code{level} de \code{\link{get_election_data}} determina el nivel de agregacion sobre el que 
+#' se computa el NEP: \code{provincia}, \code{departamento} o \code{circuito}  
+#' (\emph{\code{level} at \code{\link{get_election_data}} determines aggregation on which NEP calculation 
+#' will be made: \code{provincia}, \code{departamento} or \code{circuito}}).    
 #'@export
 
 compute_nep <- function(data,
