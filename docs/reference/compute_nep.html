@@ -147,10 +147,14 @@ will be made: <code>provincia</code>, <code>departamento</code> or <code>circuit
 
     <p>El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 
  (<em>The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats</em>).</p>
-<p>Impementación de las fórmulas <a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Laakso-Taageper"</a>  y 
-<a href='https://journals.sagepub.com/doi/10.1177/135406880933953'>"Golosov"</a>
-(<em>Implementation of the <a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Laakso-Taageper"</a> and
-<a href='https://journals.sagepub.com/doi/10.1177/135406880933953'>"Golosov"</a> formulas</em>).</p>
+<p>Impementación de las fórmulas <a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Laakso-Taagepera"</a>  y 
+<a href='https://journals.sagepub.com/doi/10.1177/135406880933953'>"Golosov"</a> donde \(p_{1}\) es el porcentaje de votos de una lista \(i\)
+y \(p_{max}\) es el porcentaje de votos que sacó la lista más votada 
+(<em>Implementation of the <a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Laakso-Taagepera"</a> and
+<a href='https://journals.sagepub.com/doi/10.1177/135406880933953'>"Golosov"</a> formulas, where \(p_{1}\) is vote percentage for a list \(i\)
+and \(p_{max}\) the percentage for the most voted party</em>).</p>
+<p>\(\large Laakso-Tagepera\): $$NEP_{Laakso-Tagepera}=\frac{1}{\sum_{i}^{n}p_{i}^2}$$</p>
+<p>\(\large Golosov\): $$NEP_{Golosov}=\frac{p_{i}}{\sum_{i}^{n} p_{i}+p_{max}^2-p_{i}^2}$$</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

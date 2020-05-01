@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Transforma tibble a formato largo // transform tibble into long format — get_long • polAr</title>
+<title>Transforma tibble a formato largo (<em>Transforms a tibble into long format</em>) — get_long • polAr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Transforma tibble a formato largo // transform tibble into long format — get_long" />
-<meta property="og:description" content="Funcion auxiliar que transforma el tibble WIDE obtenido con `election_get()` a LONG // Auxiliary function that transforms a WIDE tibble obtained with `election_get ()` to LONG format" />
+<meta property="og:title" content="Transforma tibble a formato largo (<em>Transforms a tibble into long format</em>) — get_long" />
+<meta property="og:description" content="Funcion auxiliar que transforma el tibble WIDE obtenido con get_election_data a LONG 
+(Auxiliary function that transforms a WIDE tibble obtained with get_election_data to LONG format)" />
 
 
 
@@ -108,13 +109,14 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Transforma tibble a formato largo // transform tibble into long format</h1>
+    <h1>Transforma tibble a formato largo (<em>Transforms a tibble into long format</em>)</h1>
     <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/get_long.R'><code>R/get_long.R</code></a></small>
     <div class="hidden name"><code>get_long.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Funcion auxiliar que transforma el tibble WIDE obtenido con `election_get()` a LONG // Auxiliary function that transforms a WIDE tibble obtained with `election_get ()` to LONG format</p>
+    <p>Funcion auxiliar que transforma el tibble WIDE obtenido con <code><a href='get_election_data.html'>get_election_data</a></code> a LONG 
+(<em>Auxiliary function that transforms a WIDE tibble obtained with <code><a href='get_election_data.html'>get_election_data</a></code> to LONG format</em>)</p>
     </div>
 
     <pre class="usage"><span class='fu'>get_long</span>(<span class='no'>data</span>)</pre>
@@ -124,10 +126,15 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>es el tibble que devuelve `election_get(data = data, LONG = FALSE)`// `election_get (data = data, LONG = FALSE)` output tibble</p></td>
+      <td><p>es el tibble que devuelve <code><a href='get_election_data.html'>get_election_data</a></code> con <code>long = FALSE</code> como parámetro
+(<em>tibble output from <code><a href='get_election_data.html'>get_election_data</a></code> with <code>long = FALSE</code> as a parameter</em>).</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>El formato de <code>data</code> debe ser <code>long</code> para calcular tanto <code><a href='compute_nep.html'>compute_nep</a></code> como <code><a href='compute_competitiveness.html'>compute_competitiveness</a></code>
+(<em><code>long</code> format of <code>data</code> is required for both <code><a href='compute_nep.html'>compute_nep</a></code> and <code><a href='compute_competitiveness.html'>compute_competitiveness</a></code></em>)</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

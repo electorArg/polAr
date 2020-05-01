@@ -26,8 +26,14 @@ Funcion que calcula el NEP: indicador que provee un numero "ajustado" de partido
 El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 
  (\emph{The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats}).
 
-Impementación de las fórmulas \href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Laakso-Taageper"}  y 
-\href{https://journals.sagepub.com/doi/10.1177/135406880933953}{"Golosov"}
-(\emph{Implementation of the \href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Laakso-Taageper"} and
-\href{https://journals.sagepub.com/doi/10.1177/135406880933953}{"Golosov"} formulas}).
+Impementación de las fórmulas \href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Laakso-Taagepera"}  y 
+\href{https://journals.sagepub.com/doi/10.1177/135406880933953}{"Golosov"} donde \eqn{p_{1}} es el porcentaje de votos de una lista \eqn{i}
+y \eqn{p_{max}} es el porcentaje de votos que sacó la lista más votada 
+(\emph{Implementation of the \href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Laakso-Taagepera"} and
+\href{https://journals.sagepub.com/doi/10.1177/135406880933953}{"Golosov"} formulas, where \eqn{p_{1}} is vote percentage for a list \eqn{i}
+and \eqn{p_{max}} the percentage for the most voted party}).
+
+\eqn{\large Laakso-Tagepera}: \deqn{NEP_{Laakso-Tagepera}=\frac{1}{\sum_{i}^{n}p_{i}^2}}
+
+\eqn{\large Golosov}: \deqn{NEP_{Golosov}=\frac{p_{i}}{\sum_{i}^{n} p_{i}+p_{max}^2-p_{i}^2}}
 }
