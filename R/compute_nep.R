@@ -30,10 +30,17 @@
 #' will be made: \code{provincia}, \code{departamento} or \code{circuito}}).    
 #'@export
 
+
+
 compute_nep <- function(data,
-               index = c("Golosov", "Laakso-Taagepera", "All")){
+               index = NULL){
   
-    index <- "Laakso-Taagepera"
+  # category check
+  assertthat::assert_that(is.character(index),
+                          msg = "Please select correct index. Options = c('Golosov', 'Laakso-Taagepera', 'All')")
+  
+  assertthat::assert_that(index %in% c("Golosov", "Laakso-Taagepera", "All"), 
+                          msg = "Please select correct index. Options = c('Golosov', 'Laakso-Taagepera', 'All')")
   
              if(index == "Golosov"){
               

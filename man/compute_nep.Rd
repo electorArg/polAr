@@ -5,7 +5,7 @@
 \title{Calcula Número Efectivo de Partidos Politicos - NEP 
 (\emph{Computes Effective Number of Political Parties})}
 \usage{
-compute_nep(data, index = c("Golosov", "Laakso-Taagepera", "All"))
+compute_nep(data, index = NULL)
 }
 \arguments{
 \item{data}{la base de datos para hacer el calculo obtenida con \code{\link{get_election_data}} 
