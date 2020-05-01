@@ -214,7 +214,8 @@ data %>%
 #  15 01    Comuna 15  015       7.18 Laakso-Taagepera
  
 
-
+```
+ 
 
 ### CREDITOS
 
