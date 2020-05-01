@@ -1,14 +1,14 @@
-#'Competitividad // Competitiveness
+#'Competitividad  (\emph{Competitiveness})
 
 #'@description
-#'Funcion que devuelve un valor entre 0 y 1 que describe el grado de competencia de una eleccion en un distrito determinado // 
-#'Function that returns a value between 0 and 1 that describes the degree of competition of an election in a given district
-#'@param data un tibble guardado como objeto en el Enviroment luego de consultar `election_get()` // 
-#'A tibble saved as an object in the Enviroment after querying `election_get ()`
-#'@param level un character que establece el nivel de desagregacion sobre el que se quiere calcular la competitividad: por defualt es 'provincia' 
-#'y se desagregan las observaciones asignando los valores 'departamento'  o 'circuito' al parametro. // 
-#'Establishes the level of aggregation on which you want to compute competitiveness: by definition it is 'province' 
-#'and the observations are disaggregated by assigning the values 'departamento' or 'circuito' to the parameter.
+#'Funcion que devuelve un valor entre 0 y 1 que describe el grado de competencia de una eleccion en un distrito determinado  
+#' (\emph{Function that returns a value between 0 and 1 that describes the degree of competition of an election in a given district})
+#'@param data un tibble guardado como objeto en el Enviroment luego de consultar \code{\link{get_election_data}}` 
+#' (\emph{A tibble saved as an object in the Enviroment after querying \code{\link{get_election_data}}})`
+#'@param level un character que establece el nivel de desagregacion sobre el que se quiere calcular la competitividad: 
+#' por defualt es \code{provincia} y se desagregan las observaciones asignando los valores \code{departamento} o \code{circuito} al parametro
+#' (\emph{Establishes the level of aggregation on which you want to compute competitiveness: by definition it is \code{provincia} 
+#' and the observations are disaggregated by assigning the values \code{departamento} or \code{circuito} to the parameter}).
 #'@export
 
 

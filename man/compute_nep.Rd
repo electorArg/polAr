@@ -2,27 +2,32 @@
 % Please edit documentation in R/compute_nep.R
 \name{compute_nep}
 \alias{compute_nep}
-\title{Calcla Numero Efectivo de Partidos Politicos - NEP  // ENP - Computes Effective Number of Political Parties}
+\title{Calcula Número Efectivo de Partidos Politicos - NEP 
+(\emph{Computes Effective Number of Political Parties})}
 \usage{
 compute_nep(data, index = c("Golosov", "Laakso-Taagepera", "All"))
 }
 \arguments{
-\item{data}{la base de datos para hacer el calculo obtenida con 'election_get()' - 
-*NOTA* el 'level' de 'election_get()' determina el nivel de agregacion sobre el que se computa el NEP: 'provincia', 'departamento' o 'circuito' // 
-tiblle  downloaded with 'election_get()' needed to compute nep - **NOTE**:  'level' at 'election_get' determines aggregation on which NEP calculation 
-will be made: province, department or circuit.}
+\item{data}{la base de datos para hacer el calculo obtenida con \code{\link{get_election_data}} - 
+\strong{NOTA} el \code{level} de \code{\link{get_election_data}} determina el nivel de agregacion sobre el que 
+se computa el NEP: \code{provincia}, \code{departamento} o \code{circuito}
+(\emph{tiblle  downloaded with \code{\link{get_election_data}} needed to compute nep. 
+\strong{NOTE}:  \code{level} at \code{\link{get_election_data}} determines aggregation on which NEP calculation 
+will be made: \code{provincia}, \code{departamento} or \code{circuito}}).}
 
-\item{index}{un character con la fórmula elegida: "Laakso-Taagepera" -default-,  "Golosov" o ambas// 
-a character with the chosen formula: "Laakso-Taagepera"-dafault-, "Golosov" or both.}
+\item{index}{un character con la fórmula elegida: "Laakso-Taagepera" -default-,  "Golosov" o ambas 
+(\emph{a character with the chosen formula: 'Laakso-Taagepera' -dafault-, 'Golosov' or both}).}
 }
 \description{
-Funcion que calcula el NEP. Indicador que provee un numero "ajustado" de partidos politicos en un sistema de partidos // 
-Function that computes NEP. Indicator that provides a "tight" number of political parties in a party system
+Funcion que calcula el NEP: indicador que provee un numero "ajustado" de partidos politicos en un sistema de partidos
+(\emph{Function that computes NEP: indicator that provides a "tight" number of political parties in a party system})
 }
 \details{
 El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 
- The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats.
+ (\emph{The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats}).
 
-Impementación de las fórmulas 'Golosov' y 'Laakso-Taagepera' 
-Implementation of the 'Golosov' and 'Laakso-Taagepera' formulas
+Impementación de las fórmulas \href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Laakso-Taageper"}  y 
+\href{https://journals.sagepub.com/doi/10.1177/135406880933953}{"Golosov"}
+(\emph{Implementation of the \href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Laakso-Taageper"} and
+\href{https://journals.sagepub.com/doi/10.1177/135406880933953}{"Golosov"} formulas}).
 }

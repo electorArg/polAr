@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calcla Numero Efectivo de Partidos Politicos - NEP  // ENP - Computes Effective Number of Political Parties — compute_nep • polAr</title>
+<title>Calcula Número Efectivo de Partidos Politicos - NEP 
+(<em>Computes Effective Number of Political Parties</em>) — compute_nep • polAr</title>
 
 
 <!-- jquery -->
@@ -39,9 +40,10 @@
 
 
 
-<meta property="og:title" content="Calcla Numero Efectivo de Partidos Politicos - NEP  // ENP - Computes Effective Number of Political Parties — compute_nep" />
-<meta property="og:description" content="Funcion que calcula el NEP. Indicador que provee un numero &quot;ajustado&quot; de partidos politicos en un sistema de partidos // 
-Function that computes NEP. Indicator that provides a &quot;tight&quot; number of political parties in a party system" />
+<meta property="og:title" content="Calcula Número Efectivo de Partidos Politicos - NEP 
+(<em>Computes Effective Number of Political Parties</em>) — compute_nep" />
+<meta property="og:description" content="Funcion que calcula el NEP: indicador que provee un numero &quot;ajustado&quot; de partidos politicos en un sistema de partidos
+(Function that computes NEP: indicator that provides a &quot;tight&quot; number of political parties in a party system)" />
 
 
 
@@ -109,14 +111,15 @@ Function that computes NEP. Indicator that provides a &quot;tight&quot; number o
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calcla Numero Efectivo de Partidos Politicos - NEP  // ENP - Computes Effective Number of Political Parties</h1>
+    <h1>Calcula Número Efectivo de Partidos Politicos - NEP 
+(<em>Computes Effective Number of Political Parties</em>)</h1>
     <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/compute_nep.R'><code>R/compute_nep.R</code></a></small>
     <div class="hidden name"><code>compute_nep.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Funcion que calcula el NEP. Indicador que provee un numero "ajustado" de partidos politicos en un sistema de partidos // 
-Function that computes NEP. Indicator that provides a "tight" number of political parties in a party system</p>
+    <p>Funcion que calcula el NEP: indicador que provee un numero "ajustado" de partidos politicos en un sistema de partidos
+(<em>Function that computes NEP: indicator that provides a "tight" number of political parties in a party system</em>)</p>
     </div>
 
     <pre class="usage"><span class='fu'>compute_nep</span>(<span class='no'>data</span>, <span class='kw'>index</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Golosov"</span>, <span class='st'>"Laakso-Taagepera"</span>, <span class='st'>"All"</span>))</pre>
@@ -126,24 +129,28 @@ Function that computes NEP. Indicator that provides a "tight" number of politica
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>la base de datos para hacer el calculo obtenida con 'election_get()' - 
-*NOTA* el 'level' de 'election_get()' determina el nivel de agregacion sobre el que se computa el NEP: 'provincia', 'departamento' o 'circuito' // 
-tiblle  downloaded with 'election_get()' needed to compute nep - **NOTE**:  'level' at 'election_get' determines aggregation on which NEP calculation 
-will be made: province, department or circuit.</p></td>
+      <td><p>la base de datos para hacer el calculo obtenida con <code><a href='get_election_data.html'>get_election_data</a></code> - 
+<strong>NOTA</strong> el <code>level</code> de <code><a href='get_election_data.html'>get_election_data</a></code> determina el nivel de agregacion sobre el que 
+se computa el NEP: <code>provincia</code>, <code>departamento</code> o <code>circuito</code>
+(<em>tiblle  downloaded with <code><a href='get_election_data.html'>get_election_data</a></code> needed to compute nep. 
+<strong>NOTE</strong>:  <code>level</code> at <code><a href='get_election_data.html'>get_election_data</a></code> determines aggregation on which NEP calculation 
+will be made: <code>provincia</code>, <code>departamento</code> or <code>circuito</code></em>).</p></td>
     </tr>
     <tr>
       <th>index</th>
-      <td><p>un character con la fórmula elegida: "Laakso-Taagepera" -default-,  "Golosov" o ambas// 
-a character with the chosen formula: "Laakso-Taagepera"-dafault-, "Golosov" or both.</p></td>
+      <td><p>un character con la fórmula elegida: "Laakso-Taagepera" -default-,  "Golosov" o ambas 
+(<em>a character with the chosen formula: 'Laakso-Taagepera' -dafault-, 'Golosov' or both</em>).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 
- The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats.</p>
-<p>Impementación de las fórmulas 'Golosov' y 'Laakso-Taagepera' 
-Implementation of the 'Golosov' and 'Laakso-Taagepera' formulas</p>
+ (<em>The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats</em>).</p>
+<p>Impementación de las fórmulas <a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Laakso-Taageper"</a>  y 
+<a href='https://journals.sagepub.com/doi/10.1177/135406880933953'>"Golosov"</a>
+(<em>Implementation of the <a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Laakso-Taageper"</a> and
+<a href='https://journals.sagepub.com/doi/10.1177/135406880933953'>"Golosov"</a> formulas</em>).</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

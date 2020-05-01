@@ -231,7 +231,7 @@ data %>%
 
 ```r
 @Manual{,
-    title = {polAr: Explora Datos Electorales de Argentina},
+    title = {polAr: Política Argentina usando R},
     author = {Juan Pablo {Ruiz Nicolini}},
     year = {2020},
     note = {R package version 0.0.0.9000},
