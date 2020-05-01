@@ -1,5 +1,5 @@
 Package: polAr
-Title: Explora Datos Electorales de Argentina
+Title: {polAr} Política Argentina usando R
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Juan Pablo",
@@ -7,11 +7,12 @@ Authors@R:
            role = c("aut", "cre"),
            email = "juanpabloruiznicolini@gmail.com",
            comment = c(ORCID = "0000-0002-3138-6343"))
-Description: Explorar y visualizar información electoral de Argentina y sus provincias. 
+Description: Caja de herramienta para el análisis de datos políticos y electorales de Argentina.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: es
 URL: https://github.com/electorArg/polAr
+BugReports: https://github.com/electorArg/polAr/issues
 LazyData: true
 Imports: 
     geofacet,

@@ -2,32 +2,34 @@
 % Please edit documentation in R/get_election_data.R
 \name{get_election_data}
 \alias{get_election_data}
-\title{Descarga bases de resultados electorales // Download electoral data}
+\title{Descarga bases de resultados electorales 
+(\emph{Download electoral data})}
 \usage{
 get_election_data(district = NULL, category = NULL, round = NULL,
   year = NULL, level = "provincia", long = FALSE, raw = FALSE)
 }
 \arguments{
-\item{district}{un character con codigo para Argentina y las 24 provincias //
-a named character with code for Argentina and the 24 provinces}
+\item{district}{un character con codigo para Argentina y las 24 provincias
+(\emph{a named character with code for Argentina and the 24 provinces})}
 
-\item{category}{un character para la categoria electoral: diputado -dip-, senador -sen- o presidente -presi //
-a character with a name for the electoral category: deputy-dip-, senator -sen- or president -presi.}
+\item{category}{un character para la categoria electoral: diputado \code{dip}, senador  \code{sen} o  presidente \code{presi}
+(\emph{a character with a name for the electoral category: deputy \code{dip}, senator \code{sen} or president \code{presi}}).}
 
-\item{round}{un character para tipo de eleccion: primaria -paso- o general -gral- // 
-a character with a name for the election round: primary -paso- or general -gral.}
+\item{round}{un character para tipo de eleccion: primaria  \code{paso} o general  \code{gral} 
+(\emph{a character with a name for the election round: primary \code{paso} or general \code{gral}}).}
 
-\item{year}{un integer para el year de eleccion // an integer for the year of choice}
+\item{year}{un integer para el year de eleccion (\emph{an integer for the year of choice}).}
 
-\item{level}{un character para seleccionar level de agregacion de los resultados: provincia, departamento o circuito //
-a character to select the level of aggregation of the results: province -provincia-, department -departamento or electoral precints -circuito.}
+\item{level}{un character para seleccionar level de agregacion de los resultados: \code{provincia}, \code{departamento} o \code{circuito}
+(\emph{a character to select the level of aggregation of the results: province \code{provincia}, department -\code{departamento} or electoral precints \code{circuito}}).}
 
-\item{long}{un boleano para estructura de los datos. Por default long == FALSE // a boolean for data structure. By default long == FALSE}
+\item{long}{un boleano para estructura de los datos. Por default \code{long = FALSE} 
+(\emph{a boolean for data structure. By default} \code{long = FALSE})}
 
-\item{raw}{un boleano para que define si descargar base de datos desagregada a nivel MESA o no con valor default == FALSE // 
-a boolean to define whether to download a disaggregated data at  BALLOT level or not with default == FALSE}
+\item{raw}{un boleano \code{TRUE/FALSE} que define si descargar base de datos desagregada a nivel MESA o no 
+(\emph{a \code{TRUE/FALSE} boolean to define whether to download disaggregated data at BALLOT level or not})}
 }
 \description{
-Funcion que descarga resultados electorales nacionales desde 2007 //
-Function that downloads national electoral data since 2007
+Funcion que descarga resultados electorales nacionales desde 2007 
+(\emph{Function that downloads national electoral data since 2007})
 }

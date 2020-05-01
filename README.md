@@ -46,6 +46,8 @@ Entre los primeros se deben consignar `district` para el distrito; `category` pa
 
 ### EJEMPLO DE USO
 
+#### Explorar datos disponibles con `show_available_elections()`
+
 La función `show_available_elections()` muestra las elecciones disponibles para descarga. Por defecto el parámetro `viewer = FALSE` imprime el resultado en consola. Si en cambio escribimos `viewer = TRUE` los datos se presentan en el _Viewer_ de `RStudio` y quedan a mano como tabla formateada y con la capacidad de ordenar y filtrar valores. 
 
 ```r
@@ -72,7 +74,7 @@ show_available_elections()
 ```
 
 
-#### `get_election_data()`
+#### Obtener datos con `get_election_data()`
 
 `get_election_data()` es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (`district`), la categoría (`category`), el turno (`round`) y el año electoral (`year`). 
 
@@ -115,9 +117,9 @@ get_election_data(district = "caba", category = "dip", round = "paso", year = "2
 # ... with 1 more variable: year <chr>
 ```
 
-#### `get_long()`
+#### Transformar estructura de datos anchos (*wide*) a largos (*long*) con `get_long()`
 
-También por defecto los datos se descargan en formato ancho (*wide*). Pero se incluye la opción de cambiar a un formato largo (*long*) usando `long = TRUE` como parametro de `get_election_data(... , long = T)` a la hora de descargar los datos. 
+También por defecto los datos se descargan en formato *wide*. Pero se incluye la opción de cambiar a un formato *long* usando `long = TRUE` como parametro de `get_election_data(... , long = T)` a la hora de descargar los datos.  
 
 Otra alternativa es usar la función auxiliar `get_long()` para conseguir la misma transformación,  si los datos ya habían sido guardados como un objeto en formato ancho (*wide*). 
 
@@ -150,7 +152,7 @@ data %>%
 # ... with 200 more rows
 ```
 
-#### `get_names()`
+#### Obtener nombres de listas o partidos políticos con `get_names()`
 
 Siguiendo el ejemplo anterior, una vez que `data` cambió a formato *long* se puede incorporar facilmente el nombre de los partios correspondientes al *id* de la columna `listas` con `get_names()`: 
 
@@ -180,7 +182,7 @@ data %>%
 ```
 
 
-#### `compute_nep()`
+#### Computar Número Efectivo de Partidos con `compute_nep()`
 
 La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el *Número Efectivo de Partidos Políticos*. 
 
@@ -212,11 +214,6 @@ data %>%
 #  15 01    Comuna 15  015       7.18 Laakso-Taagepera
  
 
-```
- 
- 
- 
- 
 
 
 ### CREDITOS

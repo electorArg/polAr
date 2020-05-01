@@ -1,10 +1,11 @@
-#'Diccionario de Elecciones disponibles // Elections Collection
+#'Diccionario de Elecciones disponibles 
+#' (\emph{Elections Collection})
 
 #'@description
-#'Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con`election_get()` // 
-#' Function that returns a tibble with the necessary parameters to call elections with `election_get ()`
-#'@param viewer Por default es `FALSE`. Cuando `TRUE` devuelve una tabla en el Viewer de RStudio // 
-#' The default is `FALSE`. When `TRUE` returns a table in RStudio Viewer
+#'Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con \code{\link{get_election_data}} 
+#' (\emph{Function that returns a tibble with the necessary parameters to call elections with} \code{\link{get_election_data}})
+#'@param viewer Por default es \code{FALSE}. Cuando \code{TRUE} devuelve una tabla en el Viewer de RStudio 
+#' (\emph{The default is \code{FALSE}. When \code{TRUE} it returns a table in RStudio Viewer})
 #'@export
 
 show_available_elections <- function(viewer = FALSE){
