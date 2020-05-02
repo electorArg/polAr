@@ -32,12 +32,12 @@ get_election_data <- function(district = NULL ,
   
   
   
-  # Check for internet coection
+  ## Check for internet coection
   attempt::stop_if_not(.x = curl::has_internet(),
                        msg = "Internet access was not detected. Please check your connection // 
 No se detecto acceso a internet. Por favor chequear la conexipn.")
   
-  # Check params 
+  ## Check params 
 
   # year check
   
@@ -76,6 +76,13 @@ Por favor seleccione un 'level' correcto. Compruebelos con 'show_available_elect
   
   
   # district check
+  
+  assertthat::assert_that(!is.null(district), 
+                          msg = "You must provide valid character parameters for 'district', 'category' and 'round', and an integer parameter for 'year'. Check them with 'show_available_elections()' //
+Debe proporcionar parametros character validos para 'district', 'category' y 'round', y un parametro integer para 'year'. Compruebelos con  'show_available_elections()'")
+  
+  
+  
   assertthat::assert_that(is.character(district),
                           msg = "'district' must be a character string. Check options with 'show_available_elections()' //
 Por favor seleccione un 'district' correcto. Compruebelos con 'show_available_elections()')")
@@ -124,7 +131,7 @@ Debe proporcionar parametros character validos para 'district', 'category' y 'ro
 Por favor seleccione una 'round' correcta. Compruebelas con 'show_available_elections()'")
   
     
-   # round long
+   # raw check
 
 
    assertthat::assert_that(is.logical(raw),
@@ -164,10 +171,9 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
               levels <- stringr::str_squish(levels[[1]])
               
               
-              #READ DATA - RAW or with LEVLES of aggregation
+              # get import - RAW or with LEVLES of aggregation
               
-              
-              
+
               if(raw == FALSE) {
          
            df <-   readr::read_csv(paste0("https://github.com/TuQmano/test_data/blob/master/",
@@ -187,7 +193,7 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
              } else {
                 
                 
-           df <-     readr::read_csv(paste0("https://github.com/TuQmano/test_data/blob/master/",
+           df <- readr::read_csv(paste0("https://github.com/TuQmano/test_data/blob/master/",
                                              district, "_",
                                              category, "_",
                                              round,
@@ -200,11 +206,12 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
               
              
               
-   # LONG OR WIDE OPTION
+          # LONG or WIDE options
 
              if(long == TRUE){
                
-              df %>% get_long()
+              df %>%
+                 polAr::get_long()
             
              }else{
             
