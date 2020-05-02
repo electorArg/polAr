@@ -57,19 +57,19 @@ library(polAr)
 show_available_elections()
 
 # A tibble: 21 x 4
-#  Distrito   Categoria Turno Anio 
-#  <chr>      <chr>     <chr> <chr>
-#    1 arg        presi     paso  2011 
-#  2 caba       dip       paso  2011 
-#  3 catamarca  dip       gral  2015 
-#  4 chubut     dip       paso  2013 
-#  5 cordoba    sen       paso  2015 
-#  6 corrientes dip       gral  2017 
-#  7 erios      dip       gral  2013 
-#  8 formosa    dip       gral  2011 
-#  9 jujuy      sen       gral  2017 
-#  10 neuquen    dip       gral  2013 
-# ... with 11 more row
+   district   category round year 
+   <chr>      <chr>    <chr> <chr>
+ 1 arg        presi    paso  2011 
+ 2 caba       dip      paso  2011 
+ 3 catamarca  dip      gral  2015 
+ 4 chubut     dip      paso  2013 
+ 5 cordoba    sen      paso  2015 
+ 6 corrientes dip      gral  2017 
+ 7 erios      dip      gral  2013 
+ 8 formosa    dip      gral  2011 
+ 9 jujuy      sen      gral  2017 
+10 neuquen    dip      gral  2013 
+# ... with 11 more rows
 
 ```
 

@@ -108,24 +108,24 @@
 </h4>
 <p>La función <code><a href="reference/show_available_elections.html">show_available_elections()</a></code> muestra las elecciones disponibles para descarga. Por defecto el parámetro <code>viewer = FALSE</code> imprime el resultado en consola. Si en cambio escribimos <code>viewer = TRUE</code> los datos se presentan en el <em>Viewer</em> de <code>RStudio</code> y quedan a mano como tabla formateada y con la capacidad de ordenar y filtrar valores.</p>
 <div class="sourceCode" id="cb2"><pre class="r">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">polAr</span>)
+library(polAr)
 
-<span class="fu"><a href="reference/show_available_elections.html">show_available_elections</a></span>()
+show_available_elections()
 
-<span class="co"># A tibble: 21 x 4</span>
-<span class="co">#  Distrito   Categoria Turno Anio </span>
-<span class="co">#  &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;</span>
-<span class="co">#    1 arg        presi     paso  2011 </span>
-<span class="co">#  2 caba       dip       paso  2011 </span>
-<span class="co">#  3 catamarca  dip       gral  2015 </span>
-<span class="co">#  4 chubut     dip       paso  2013 </span>
-<span class="co">#  5 cordoba    sen       paso  2015 </span>
-<span class="co">#  6 corrientes dip       gral  2017 </span>
-<span class="co">#  7 erios      dip       gral  2013 </span>
-<span class="co">#  8 formosa    dip       gral  2011 </span>
-<span class="co">#  9 jujuy      sen       gral  2017 </span>
-<span class="co">#  10 neuquen    dip       gral  2013 </span>
-<span class="co"># ... with 11 more row</span></pre></div>
+# A tibble: 21 x 4
+   district   category round year 
+   &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;
+ 1 arg        presi    paso  2011 
+ 2 caba       dip      paso  2011 
+ 3 catamarca  dip      gral  2015 
+ 4 chubut     dip      paso  2013 
+ 5 cordoba    sen      paso  2015 
+ 6 corrientes dip      gral  2017 
+ 7 erios      dip      gral  2013 
+ 8 formosa    dip      gral  2011 
+ 9 jujuy      sen      gral  2017 
+10 neuquen    dip      gral  2013 
+# ... with 11 more rows</pre></div>
 </div>
 <div id="obtener-datos-con-get_election_data" class="section level4">
 <h4 class="hasAnchor">

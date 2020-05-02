@@ -28,13 +28,12 @@ show_available_elections <- function(viewer = FALSE){
     tibble::as_tibble()  %>% 
     dplyr::rename(name = V1) %>% 
     dplyr::mutate(name = stringr::str_remove(name, pattern = "/TuQmano/test_data/blob/master/")) %>% 
-    tidyr::separate(col = name, into = c("distrito", "categoria", "turno"), 
+    tidyr::separate(col = name, into = c("district", "category", "round"), 
              sep = "\\_", remove = T) %>% 
-    dplyr::filter(distrito != "listas") %>%  # remove lists files from collection
-    dplyr::mutate(anio = stringr::str_remove_all(turno, "\\D"),
-           turno = stringr::str_remove_all(turno, "\\d")) %>% 
-    dplyr::mutate(turno = stringr::str_remove_all(turno, ".csv")) %>% 
-    janitor::clean_names(case = "big_camel")
+    dplyr::filter(district != "listas") %>%  # remove lists files from collection
+    dplyr::mutate(year = stringr::str_remove_all(round, "\\D"),
+           round = stringr::str_remove_all(round, "\\d")) %>% 
+    dplyr::mutate(round = stringr::str_remove_all(round, ".csv"))
   
   
   
@@ -44,12 +43,12 @@ show_available_elections <- function(viewer = FALSE){
       DT::datatable(options = list( 
                     language = list(url = '//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json')))%>% 
        DT::formatStyle( 
-         'Categoria',
+         'category',
          target = 'cell',
          backgroundColor = DT::styleEqual(c("sen","presi", "dip"), 
                                       c("#91bfdb","#ffffbf","#fc8d59")))%>% 
        DT::formatStyle( 
-         'Turno',
+         'round',
          target = 'cell',
          backgroundColor = DT::styleEqual(c("paso","gral"), 
                                           c("#f1a340","#998ec3")))
