@@ -34,49 +34,51 @@ get_election_data <- function(district = NULL ,
   
   # Check for internet coection
   attempt::stop_if_not(.x = curl::has_internet(),
-                       msg = "Internet access was not detected. Please check your connection")
+                       msg = "Internet access was not detected. Please check your connection // 
+No se detecto acceso a internet. Por favor chequear la conexipn.")
   
   # Check params 
 
   # year check
   
   assertthat::assert_that(!is.null(year), 
-                          msg = "You must provide valid character parameters for 'year', 'category' and 'round', and an integer parameter for 'year'. 
-                          Please select the correct options. Check them with show show_available_elections()")
+                          msg = "You must provide valid character parameters for 'district', 'category' and 'round', and an integer parameter for 'year'. Check them with show 'show_available_elections()' //
+Debe proporcionar parametros character validos para 'district', 'category' y 'round', y un parametro entero para 'year'. Compruebelos con 'show show_available_elections()'")
   
   assertthat::assert_that(is.numeric(year), 
-                          msg = " year must be an integer. Please select a correct option.  Check them with show_available_elections()")
+                          msg = "'year' must be an integer. Please select a correct option.  Check them with 'show_available_elections()' //
+'year' debe ser un integer. Por favor seleccione una opcipn correcta. Verifiquelos con 'show_available_elections()'")
   
   # category check
   
   assertthat::assert_that(!is.null(category), 
-                          msg = "You must provide valid character parameters for 'year', 'category' and 'round', and an integer parameter for 'year'. 
-                          Please select the correct options. Check them with show show_available_elections()")
+                          msg = "You must provide valid character parameters for 'district', 'category' and 'round', and an integer parameter for 'year'. Check them with show 'show_available_elections()' //
+ Debe proporcionar parametros character validos para 'district', 'category' y 'round', y un parametro entero para 'year'. Compruebelos con 'show show_available_elections()'")
   
   assertthat::assert_that(is.character(category),
-                          msg = "category must be a character string. Options = c('paso', 'gral', 'balota')")
+                          msg = "'category' must be an character string Please select a correct option.  Check them with 'show_available_elections()' //
+'category' debe ser un character string Por favor seleccione una opcipn correcta. Verifiquelas con 'show_available_elections()'")
   
   assertthat::assert_that(category %in% c("dip", "sen", "presi"), 
-                          msg = "Please select a correct category.  Check them with show_available_elections()")
+                          msg = "Please select a correct 'category'. Check them with 'show_available_elections()' //
+Por favor seleccione una 'catgeory' correcta. Compruebelas con 'show_available_elections()'")
   
   
   # level check
-  
-  assertthat::assert_that(!is.null(year), 
-                          msg = "You must provide valid character parameters for 'year', 'category' and 'round', and an integer parameter for 'year'. 
-                          Please select the correct options. Check them with show show_available_elections()")
-  
-  
+
   assertthat::assert_that(is.character(level),
-                          msg = "level must be a character string. Options = c('provicina', 'departamento', 'circuito')")
+                          msg = "'level' must be a character string. Options = c('provicina', 'departamento', 'circuito') // 
+'level' tiene que ser un character string. Opciones = c('provincia', 'departamento', 'circuito')")
   
   assertthat::assert_that(level %in%  c('provincia', 'departamento', 'circuito'), 
-                          msg = "Please select a correct level. Check them with show_available_elections()")
+                          msg = "Please select a correct 'level'. Check them with 'show_available_elections'() //
+Por favor seleccione un 'level' correcto. Compruebelos con 'show_available_elections()'")
   
   
   # district check
   assertthat::assert_that(is.character(district),
-                          msg = "district must be a character string. . Check options with show_available_elections()")
+                          msg = "'district' must be a character string. Check options with 'show_available_elections()' //
+Por favor seleccione un 'district' correcto. Compruebelos con 'show_available_elections()')")
   
   assertthat::assert_that(district %in% c("arg",
                                           "caba",
@@ -103,21 +105,33 @@ get_election_data <- function(district = NULL ,
                                           "sluis",
                                           "tdf",
                                           "tucuman"), 
-                          msg = "Please select a correct district. Check them with show_available_elections()")
+                          msg = "Please select a correct 'district.' Check them with 'show_available_elections()' //
+Por favor seleccione un 'district' correcto. Compruebelos con 'show_available_elections()")
   
   # round check
    
   assertthat::assert_that(!is.null(round), 
-                          msg = "You must provide valid character parameters for 'year', 'category' and 'round', and an integer parameter for 'year'. 
-                          Please select the correct options. Check them with show show_available_elections()")
+                          msg = "You must provide valid character parameters for 'district', 'category' and 'round', and an integer parameter for 'year'. Check them with 'show_available_elections()' //
+Debe proporcionar parametros character validos para 'district', 'category' y 'round', y un parametro integer para 'year'. Compruebelos con  'show_available_elections()'")
   
    
    assertthat::assert_that(is.character(round),
-                           msg = "rpund must be a character string. Options = c('paso', 'gral', 'balota')")
+                           msg = "'round' must be a character string. Options = c('paso', 'gral', 'balota') //
+'round' debe ser un character string. Opciones = c('paso', 'gral', 'balota')")
 
    assertthat::assert_that(round %in% c("paso", "gral", "balota"), 
-                           msg = "Please select a correct category. Check them with show_available_elections()")
+                           msg = "Please select a correct 'round' Check them with 'show_available_elections()' //
+Por favor seleccione una 'round' correcta. Compruebelas con 'show_available_elections()'")
   
+    
+   # round long
+
+
+   assertthat::assert_that(is.logical(raw),
+                          msg = "'raw' must be logical. Options = c(TRUE, FALSE) //
+'raw' debe ser un boleano. Opciones = c(TRUE, FALSE)" )
+   
+
     # Check available elections
    
    
@@ -126,13 +140,11 @@ get_election_data <- function(district = NULL ,
    
    
    assertthat::assert_that(glue::glue({district}, {category}, {round}, {year}) %in% check_elections$elections, 
-                           msg = "Please choose a valid election. Check them with show_available_elections()")
+                           msg = "Please choose a valid election. Check them with 'show_available_elections()' //
+Por favor seleccione una eleccipn valida. Consultelas con 'show_available_elections()'")
   
   
-  #controles de los parametros
- 
-  
-  
+
   
         # Temp function:  level selection
                
