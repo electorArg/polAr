@@ -152,6 +152,24 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
   
   
 
+   
+   ### Provincial Electoral codes 
+   
+   
+   
+   codProv <- tibble::tibble(name_prov = 
+                        c("CABA", "CATAMARCA", "CHACO", "CHUBUT", "CORDOBA", "CORRIENTES","ENTRE RIOS","FORMOSA", 
+                          "JUJUY", "LA PAMPA", "LA RIOJA", "MENDOZA", "MISIONES", "NEUQUEN","BUENOS AIRES","RIO NEGRO",
+                          "SALTA", "SANTA CRUZ", "SANTA FE", "SANTIAGO DEL ESTERO", "SAN JUAN", "SAN LUIS", "TIERRA DEL FUEGO", "TUCUMAN"), 
+                      codprov = 
+                        c('01','03','06','07','04','05','08','09',
+                          '10','11','12','13','14','15','02','16',
+                          '17','20','21','22','18','19','24','23')) 
+   
+   
+   
+   
+   
   
         # Temp function:  level selection
                
@@ -174,6 +192,7 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
               # get import - RAW or with LEVLES of aggregation
               
 
+              
               if(raw == FALSE) {
          
            df <-   readr::read_csv(paste0("https://github.com/TuQmano/test_data/blob/master/",
@@ -183,6 +202,8 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
                                              year, ".csv?raw=true")) %>% 
                dplyr::group_by_at(levels) %>% 
                dplyr::summarise_if(is.numeric, .funs = sum) %>% 
+               dplyr::mutate(codprov = as.character(codprov)) %>% 
+               dplyr::left_join(codProv, by = "codprov") %>% 
                dplyr::mutate(category = category,
                              round = round, 
                              year = year) %>% 
@@ -197,7 +218,9 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
                                              district, "_",
                                              category, "_",
                                              round,
-                                             year, ".csv?raw=true")) %>% 
+                                             year, ".csv?raw=true"))%>% 
+                  dplyr::mutate(codprov = as.character(codprov)) %>% 
+                  dplyr::left_join(codProv, by = "codprov")%>% 
                   dplyr::mutate(category = category,
                                 round = round, 
                                 year = year)
@@ -211,11 +234,18 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
              if(long == TRUE){
                
               df %>%
-                 polAr::get_long()
+                 dplyr::ungroup() %>% 
+                 dplyr::mutate(codprov = as.character(codprov)) %>% 
+                 polAr::get_long() %>% 
+                 dplyr::select(category, round, year, codprov, name_prov, dplyr::everything())
             
              }else{
             
-                df
+                df %>%
+                 dplyr::ungroup() %>% 
+                 dplyr::mutate(codprov = as.character(codprov)) %>% 
+                 dplyr::select(category, round, year, codprov, name_prov, dplyr::everything())
+                 
                }
       }
 

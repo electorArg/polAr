@@ -28,5 +28,7 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c(".",
                                                         "district", 
                                                         "category",
                                                         "round", 
-                                                        "year")) # elimina nota al hacer build
+                                                        "year",
+                                                        "codprov", 
+                                                        "name_prov"))
 
