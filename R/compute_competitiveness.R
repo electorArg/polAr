@@ -39,7 +39,7 @@ compute_competitiveness <- function(data,
   
   if(level == "departamento"){
   assertthat::assert_that("coddepto" %in% colnames(data), 
-                          msg = "data input is not at the correct level. Donload it again with parameters: get_election_data(..., level = 'departamento)" )
+                          msg = "data input is not at the correct level. Download it again with parameters: get_election_data(..., level = 'departamento)" )
   
   } else if (level == "circuito") { 
   assertthat::assert_that("circuito" %in% colnames(data), 
