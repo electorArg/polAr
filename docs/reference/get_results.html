@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Competitividad  (<em>Competitiveness</em>) — compute_competitiveness • polAr</title>
+<title>Mostrar resultados (<em>Show results</em>) — get_results • polAr</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,9 @@
 
 
 
-<meta property="og:title" content="Competitividad  (<em>Competitiveness</em>) — compute_competitiveness" />
-<meta property="og:description" content="Funcion que describe el grado de competencia de una eleccion
-(Function that describes the degree of competition of an election)" />
+<meta property="og:title" content="Mostrar resultados (<em>Show results</em>) — get_results" />
+<meta property="og:description" content="Funcion para tabular resultados de la eleccion  
+(Function to tabulate election results)" />
 
 
 
@@ -109,52 +109,49 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Competitividad  (<em>Competitiveness</em>)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/compute_competitiveness.R'><code>R/compute_competitiveness.R</code></a></small>
-    <div class="hidden name"><code>compute_competitiveness.Rd</code></div>
+    <h1>Mostrar resultados (<em>Show results</em>)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/get_results.R'><code>R/get_results.R</code></a></small>
+    <div class="hidden name"><code>get_results.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Funcion que describe el grado de competencia de una eleccion
-(<em>Function that describes the degree of competition of an election</em>)</p>
+    <p>Funcion para tabular resultados de la eleccion  
+(<em>Function to tabulate election results</em>)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>compute_competitiveness</span>(<span class='no'>data</span>, <span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"provincia"</span>)</pre>
+    <pre class="usage"><span class='fu'>get_results</span>(<span class='no'>data</span>, <span class='kw'>LaTeX</span> <span class='kw'>=</span> <span class='no'>F</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>un tibble guardado como objeto en el Enviroment luego de consultar <code><a href='get_election_data.html'>get_election_data</a></code> 
-(<em>A tibble saved as an object in the Enviroment after querying <code><a href='get_election_data.html'>get_election_data</a></code></em>).</p></td>
+      <td><p>un tibble guardado como objeto en el Enviroment luego de consultar <code><a href='get_election_data.html'>get_election_data</a></code> con parametro 
+<code>level</code> en <code>departamento</code> 
+(<em>A tibble saved as an object in the Enviroment after querying <code><a href='get_election_data.html'>get_election_data</a></code></em> with <code>departamento</code> as
+<code>level</code> parameter).</p></td>
     </tr>
     <tr>
-      <th>level</th>
-      <td><p>un character que establece el nivel de desagregacion sobre el que se quiere calcular la competitividad: 
-por defualt es <code>provincia</code> y se desagregan las observaciones asignando los valores <code>departamento</code> o <code>circuito</code> al parametro
-(<em>Establishes the level of aggregation on which you want to compute competitiveness: by definition it is <code>provincia</code> 
-and the observations are disaggregated by assigning the values <code>departamento</code> or <code>circuito</code> to the parameter</em>).</p></td>
+      <th>LaTeX</th>
+      <td><p>parametro para obtener codigo <code>LaTeX</code> de la tabla de salida. 
+Ejemplo de uso en <a href='https://www.overleaf.com/read/vyfgpyrrjmkg'>Overleaf</a> 
+(<em>parameter to get <code>LaTeX</code> code in the ouptut table</em>. <a href='https://www.overleaf.com/read/vyfgpyrrjmkg'>Overleaf</a> example usage).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>devuelve un valor entre 0 y 1 que representa el grado de comeptencia de una eleccion en un distrito determinado 
-(<em>returns a value between 0 and 1 representing degree of competition of an election in a given district </em>).</p>
+    <p>Tabulado con resultados agregados de la eleccion 
+(<em>Table with aggregated election results</em>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>\(Competitividad\) mide la diferencia porcentual de votos válidos obtenidos por los dos partidos más votados \(a\) y \(b\). 
-Puede tomar valores entre \([0,1]\) donde \(1\) es lo más comeptitivo (\(a = 50\%\) y \(b = 50\%\) de los votos).
- La fórmula utilizada es:  $$Competitividad = 1 - (a - b)$$</p>
-<p><strong>REQUISITO:</strong></p>
-<p>El formato de <code>data</code> debe ser <code>long</code> para calcular <code>compute_competitiveness</code>. 
-Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code> 
-(<em><code>long</code> format of <code>data</code> is required for <code>compute_competitiveness</code>. If <code>data</code> is in <em>wide</em> format
-you can transform it with <code><a href='get_long.html'>get_long</a></code></em>).</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='compute_nep.html'>compute_nep</a></code></p></div>
+    <p><strong>REQUISITOS:</strong></p>
+<p><strong>1</strong>. El formato de <code>data</code> debe ser <code>long</code> para calcular resultados. 
+Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code>. 
+(<em><code>long</code> format of <code>data</code> is required for getting results. 
+If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='get_long.html'>get_long</a></code></em>)</p>
+<p><strong>2.</strong> <code>data</code> tiene que haber incorporando los nombres de las listas. Agreguelos con <code><a href='get_names.html'>get_names</a></code> 
+(<em><code>data</code> must have party names. Add them with <code><a href='get_names.html'>get_names</a></code></em>)</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

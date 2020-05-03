@@ -30,5 +30,9 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c(".",
                                                         "round", 
                                                         "year",
                                                         "codprov", 
-                                                        "name_prov"))
+                                                        "name_prov", 
+                                                        "nombre_lista", 
+                                                        "lista", 
+                                                        "electores", 
+                                                        "LaTex"))
 

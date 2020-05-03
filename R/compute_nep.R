@@ -20,14 +20,17 @@
 #' and \eqn{p_{max}} the percentage for the most voted party}). 
 #'@details \eqn{\large Laakso-Tagepera}: \deqn{NEP_{Laakso-Tagepera}=\frac{1}{\sum_{i}^{n}p_{i}^2}}
 #'@details  \eqn{\large Golosov}: \deqn{NEP_{Golosov}=\frac{p_{i}}{\sum_{i}^{n} p_{i}+p_{max}^2-p_{i}^2}}
-#'@details \strong{REQUISITO:} El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_nep}}. 
+#'@details \strong{REQUISITO:} 
+#'@details El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_nep}}. 
 #' Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}}  
 #' (\emph{\code{long} format of \code{data} is required for \code{\link{compute_nep}}. 
 #' If \code{data} is in \emph{wide} format you can transform it with \code{\link{get_long}}})
-#'@details \strong{NOTA:} el parámetro \code{level} de \code{\link{get_election_data}} determina el nivel de agregacion sobre el que 
+#'@details \strong{NOTA:} 
+#'@details el parámetro \code{level} de \code{\link{get_election_data}} determina el nivel de agregacion sobre el que 
 #' se computa el NEP: \code{provincia}, \code{departamento} o \code{circuito}  
 #' (\emph{\code{level} at \code{\link{get_election_data}} determines aggregation on which NEP calculation 
 #' will be made: \code{provincia}, \code{departamento} or \code{circuito}}).    
+#'@seealso  \code{\link{compute_competitiveness}} 
 #'@export
 
 

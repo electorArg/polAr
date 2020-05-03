@@ -32,5 +32,6 @@ Imports:
     DT,
     attempt, 
     curl, 
-    assertthat
+    assertthat, 
+    gt
 RoxygenNote: 6.1.1

@@ -202,6 +202,7 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
                                              year, ".csv?raw=true")) %>% 
                dplyr::group_by_at(levels) %>% 
                dplyr::summarise_if(is.numeric, .funs = sum) %>% 
+               dplyr::ungroup() %>% 
                dplyr::mutate(codprov = as.character(codprov)) %>% 
                dplyr::left_join(codProv, by = "codprov") %>% 
                dplyr::mutate(category = category,
@@ -218,7 +219,8 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
                                              district, "_",
                                              category, "_",
                                              round,
-                                             year, ".csv?raw=true"))%>% 
+                                             year, ".csv?raw=true")) %>% 
+                  dplyr::ungroup() %>% 
                   dplyr::mutate(codprov = as.character(codprov)) %>% 
                   dplyr::left_join(codProv, by = "codprov")%>% 
                   dplyr::mutate(category = category,
