@@ -34,5 +34,6 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c(".",
                                                         "nombre_lista", 
                                                         "lista", 
                                                         "electores", 
-                                                        "LaTex"))
+                                                        "LaTex", 
+                                                        "listas_fct"))
 

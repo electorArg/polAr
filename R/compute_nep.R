@@ -1,4 +1,3 @@
-
 #'Calcula Número Efectivo de Partidos Politicos - NEP 
 #' (\emph{Computes Effective Number of Political Parties})
 
@@ -9,7 +8,6 @@
 #' (\emph{a character with the chosen formula: 'Laakso-Taagepera' -dafault-, 'Golosov' or both}).
 #'@param data la base de datos para hacer el calculo obtenida con \code{\link{get_election_data}} 
 #' (\emph{tiblle  downloaded with \code{\link{get_election_data}} needed to compute nep}).
-
 #'@details El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 
 #'  (\emph{The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats}).
 #'@details Impementación de las fórmulas \href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Laakso-Taagepera"}  y 

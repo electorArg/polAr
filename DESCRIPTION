@@ -31,7 +31,13 @@ Imports:
     pkgcond, 
     DT,
     attempt, 
-    curl, 
+    curl (>= 4.2), 
     assertthat, 
-    gt
+    gt, 
+    forcats, 
+    ggplot2, 
+    hrbrthemes, 
+    purrr, 
+    scales, 
+    rlang(>= 0.4.3) 
 RoxygenNote: 6.1.1

@@ -1,4 +1,3 @@
-
 #'Transforma tibble a formato largo (\emph{Transforms a tibble into long format})
 
 #'@description

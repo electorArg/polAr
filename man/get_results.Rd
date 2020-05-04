@@ -7,14 +7,12 @@
 get_results(data, LaTeX = F)
 }
 \arguments{
-\item{data}{un tibble guardado como objeto en el Enviroment luego de consultar \code{\link{get_election_data}} con parametro 
-\code{level} en \code{departamento} 
-(\emph{A tibble saved as an object in the Enviroment after querying \code{\link{get_election_data}}} with \code{departamento} as
-\code{level} parameter).}
+\item{data}{un tibble guardado como objeto en el Enviroment luego de consultar \code{\link{get_election_data}} con parametro \code{level} en \code{provincia} 
+(\emph{A tibble saved as an object in the Enviroment after querying \code{\link{get_election_data}} with \code{provincia} as \code{level} parameter}).}
 
 \item{LaTeX}{parametro para obtener codigo \code{LaTeX} de la tabla de salida. 
 Ejemplo de uso en \href{https://www.overleaf.com/read/vyfgpyrrjmkg}{Overleaf} 
-(\emph{parameter to get \code{LaTeX} code in the ouptut table}. \href{https://www.overleaf.com/read/vyfgpyrrjmkg}{Overleaf} example usage).}
+(\emph{parameter to get \code{LaTeX} code in the ouptut table. \href{https://www.overleaf.com/read/vyfgpyrrjmkg}{Overleaf} example usage}).}
 }
 \value{
 Tabulado con resultados agregados de la eleccion 
@@ -28,10 +26,16 @@ Funcion para tabular resultados de la eleccion
 \strong{REQUISITOS:}
 
 \strong{1}. El formato de \code{data} debe ser \code{long} para calcular resultados. 
-Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}}. 
+Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}} 
 (\emph{\code{long} format of \code{data} is required for getting results. 
 If \code{data} is in \emph{wide} format you can transform it with \code{\link{get_long}}})
 
-\strong{2.} \code{data} tiene que haber incorporando los nombres de las listas. Agreguelos con \code{\link{get_names}} 
+\strong{2.} \code{data} tiene que haber incorporando los nombres de las listas. Agreguelos con \code{\link{get_names}}
 (\emph{\code{data} must have party names. Add them with \code{\link{get_names}}})
+
+\strong{3.} \code{data} tiene que haber sido descargada con parametro \code{level = provincia} con la funcion \code{\link{get_election_data}}
+(\emph{\code{data} must have \code{level = provincia}  wen downloading it with \code{\link{get_election_data}}})
+}
+\seealso{
+\code{\link{plot_results}}
 }

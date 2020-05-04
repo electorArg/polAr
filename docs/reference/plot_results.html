@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mostrar resultados (<em>Show results</em>) — get_results • polAr</title>
+<title>Mostrar resultados (<em>Show results</em>) — plot_results • polAr</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,8 @@
 
 
 
-<meta property="og:title" content="Mostrar resultados (<em>Show results</em>) — get_results" />
-<meta property="og:description" content="Funcion para tabular resultados de la eleccion  
-(Function to tabulate election results)" />
+<meta property="og:title" content="Mostrar resultados (<em>Show results</em>) — plot_results" />
+<meta property="og:description" content="Funcion para graficar resultados de la eleccion (Function to plot election results)" />
 
 
 
@@ -110,16 +109,15 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Mostrar resultados (<em>Show results</em>)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/get_results.R'><code>R/get_results.R</code></a></small>
-    <div class="hidden name"><code>get_results.Rd</code></div>
+    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/plot_results.R'><code>R/plot_results.R</code></a></small>
+    <div class="hidden name"><code>plot_results.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Funcion para tabular resultados de la eleccion  
-(<em>Function to tabulate election results</em>)</p>
+    <p>Funcion para graficar resultados de la eleccion (<em>Function to plot election results</em>)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_results</span>(<span class='no'>data</span>, <span class='kw'>LaTeX</span> <span class='kw'>=</span> <span class='no'>F</span>)</pre>
+    <pre class="usage"><span class='fu'>plot_results</span>(<span class='no'>data</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -127,34 +125,22 @@
     <tr>
       <th>data</th>
       <td><p>un tibble guardado como objeto en el Enviroment luego de consultar <code><a href='get_election_data.html'>get_election_data</a></code> con parametro <code>level</code> en <code>provincia</code> 
-(<em>A tibble saved as an object in the Enviroment after querying <code><a href='get_election_data.html'>get_election_data</a></code> with <code>provincia</code> as <code>level</code> parameter</em>).</p></td>
-    </tr>
-    <tr>
-      <th>LaTeX</th>
-      <td><p>parametro para obtener codigo <code>LaTeX</code> de la tabla de salida. 
-Ejemplo de uso en <a href='https://www.overleaf.com/read/vyfgpyrrjmkg'>Overleaf</a> 
-(<em>parameter to get <code>LaTeX</code> code in the ouptut table. <a href='https://www.overleaf.com/read/vyfgpyrrjmkg'>Overleaf</a> example usage</em>).</p></td>
+(<em>A tibble saved as an object in the Enviroment after querying <code><a href='get_election_data.html'>get_election_data</a></code></em> with <code>provincia</code> as <code>level</code> parameter).</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Tabulado con resultados agregados de la eleccion 
-(<em>Table with aggregated election results</em>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><strong>REQUISITOS:</strong></p>
-<p><strong>1</strong>. El formato de <code>data</code> debe ser <code>long</code> para calcular resultados. 
-Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code> 
-(<em><code>long</code> format of <code>data</code> is required for getting results. 
-If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='get_long.html'>get_long</a></code></em>)</p>
-<p><strong>2.</strong> <code>data</code> tiene que haber incorporando los nombres de las listas. Agreguelos con <code><a href='get_names.html'>get_names</a></code>
+<p><strong>1</strong>. El formato de <code>data</code> debe ser <code>long</code> para pdoer graficar. Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code> 
+(<em><code>long</code> format of <code>data</code> is required for plotting results. If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='get_long.html'>get_long</a></code></em>)</p>
+<p><strong>2.</strong> <code>data</code> tiene que haber incorporando los nombres de las listas. Agreguelos con <code><a href='get_names.html'>get_names</a></code> 
 (<em><code>data</code> must have party names. Add them with <code><a href='get_names.html'>get_names</a></code></em>)</p>
-<p><strong>3.</strong> <code>data</code> tiene que haber sido descargada con parametro <code>level = provincia</code> con la funcion <code><a href='get_election_data.html'>get_election_data</a></code>
-(<em><code>data</code> must have <code>level = provincia</code>  wen downloading it with <code><a href='get_election_data.html'>get_election_data</a></code></em>)</p>
+<p><strong>3.</strong> <code>data</code> tiene que haber sido descargada con parametro <code>level = provincia</code> con la funcion <code><a href='get_election_data.html'>get_election_data</a></code> 
+(<em><code>data</code> must have <code>level = provincia</code> wen downloading it with <code><a href='get_election_data.html'>get_election_data</a></code></em>)</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='plot_results.html'>plot_results</a></code></p></div>
+    <div class='dont-index'><p><code><a href='get_results.html'>get_results</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
