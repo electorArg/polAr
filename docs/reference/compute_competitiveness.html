@@ -41,7 +41,7 @@
 
 <meta property="og:title" content="Competitividad  (<em>Competitiveness</em>) — compute_competitiveness" />
 <meta property="og:description" content="Funcion que describe el grado de competencia de una eleccion
-(Function that describes the degree of competition of an election)" />
+ (Function that describes the degree of competition of an election)" />
 
 
 
@@ -116,7 +116,7 @@
 
     <div class="ref-description">
     <p>Funcion que describe el grado de competencia de una eleccion
-(<em>Function that describes the degree of competition of an election</em>)</p>
+ (<em>Function that describes the degree of competition of an election</em>)</p>
     </div>
 
     <pre class="usage"><span class='fu'>compute_competitiveness</span>(<span class='no'>data</span>, <span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"provincia"</span>)</pre>
@@ -141,21 +141,50 @@ and the observations are disaggregated by assigning the values <code>departament
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>devuelve un valor entre 0 y 1 que representa el grado de comeptencia de una eleccion en un distrito determinado 
-(<em>returns a value between 0 and 1 representing degree of competition of an election in a given district </em>).</p>
+ (<em>returns a value between 0 and 1 representing degree of competition of an election in a given district </em>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>\(Competitividad\) mide la diferencia porcentual de votos válidos obtenidos por los dos partidos más votados \(a\) y \(b\). 
-Puede tomar valores entre \([0,1]\) donde \(1\) es lo más comeptitivo (\(a = 50\%\) y \(b = 50\%\) de los votos).
- La fórmula utilizada es:  $$Competitividad = 1 - (a - b)$$</p>
+ Puede tomar valores entre \([0,1]\) donde \(1\) es lo más comeptitivo (\(a = 50\%\) y \(b = 50\%\) de los votos).
+  La fórmula utilizada es:  $$Competitividad = 1 - (a - b)$$</p>
 <p><strong>REQUISITO:</strong></p>
 <p>El formato de <code>data</code> debe ser <code>long</code> para calcular <code>compute_competitiveness</code>. 
-Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code> 
-(<em><code>long</code> format of <code>data</code> is required for <code>compute_competitiveness</code>. If <code>data</code> is in <em>wide</em> format
-you can transform it with <code><a href='get_long.html'>get_long</a></code></em>).</p>
+ Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code> 
+ (<em><code>long</code> format of <code>data</code> is required for <code>compute_competitiveness</code>. If <code>data</code> is in <em>wide</em> format
+ you can transform it with <code><a href='get_long.html'>get_long</a></code></em>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='compute_nep.html'>compute_nep</a></code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='get_election_data.html'>get_election_data</a></span>(<span class='kw'>district</span> <span class='kw'>=</span> <span class='st'>"tucuman"</span>,
+                  <span class='kw'>category</span> <span class='kw'>=</span> <span class='st'>"dip"</span>,
+                  <span class='kw'>round</span> <span class='kw'>=</span> <span class='st'>"gral"</span>,
+                  <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2017</span>,
+                  <span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"departamento"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'>compute_competitiveness</span>(<span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"departamento"</span>) <span class='kw'>%&gt;%</span>
+  <span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/arrange.html'>arrange</a></span>(<span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/desc.html'>desc</a></span>(<span class='no'>competitividad</span>))</div><div class='output co'>#&gt; # A tibble: 17 x 4
+#&gt;    codprov depto          coddepto competitividad
+#&gt;    &lt;chr&gt;   &lt;chr&gt;          &lt;chr&gt;             &lt;dbl&gt;
+#&gt;  1 23      Capital        001               0.913
+#&gt;  2 23      Chicligasta    005               0.899
+#&gt;  3 23      Yerba Buena    015               0.887
+#&gt;  4 23      Tafí Viejo     016               0.867
+#&gt;  5 23      Lules          002               0.760
+#&gt;  6 23      Trancas        014               0.714
+#&gt;  7 23      Alberdi        007               0.696
+#&gt;  8 23      Leales         011               0.684
+#&gt;  9 23      Cruz Alta      012               0.652
+#&gt; 10 23      Famaillá       003               0.620
+#&gt; 11 23      La Cocha       008               0.617
+#&gt; 12 23      Río Chico      006               0.582
+#&gt; 13 23      Monteros       004               0.576
+#&gt; 14 23      Tafí del Valle 017               0.561
+#&gt; 15 23      Simoca         010               0.538
+#&gt; 16 23      Burruyacu      013               0.517
+#&gt; 17 23      Graneros       009               0.503</div><div class='input'>
+ 
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

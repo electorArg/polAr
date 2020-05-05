@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_results.R
 \name{plot_results}
 \alias{plot_results}
-\title{Mostrar resultados (\emph{Show results})}
+\title{Graficar resultados (\emph{Plot results})}
 \usage{
 plot_results(data)
 }
@@ -17,13 +17,22 @@ Funcion para graficar resultados de la eleccion (\emph{Function to plot election
 \strong{REQUISITOS:}
 
 \strong{1}. El formato de \code{data} debe ser \code{long} para pdoer graficar. Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}} 
-(\emph{\code{long} format of \code{data} is required for plotting results. If \code{data} is in \emph{wide} format you can transform it with \code{\link{get_long}}})
+ (\emph{\code{long} format of \code{data} is required for plotting results. If \code{data} is in \emph{wide} format you can transform it with \code{\link{get_long}}})
 
 \strong{2.} \code{data} tiene que haber incorporando los nombres de las listas. Agreguelos con \code{\link{get_names}} 
-(\emph{\code{data} must have party names. Add them with \code{\link{get_names}}})
+ (\emph{\code{data} must have party names. Add them with \code{\link{get_names}}})
 
 \strong{3.} \code{data} tiene que haber sido descargada con parametro \code{level = provincia} con la funcion \code{\link{get_election_data}} 
-(\emph{\code{data} must have \code{level = provincia} wen downloading it with \code{\link{get_election_data}}})
+ (\emph{\code{data} must have \code{level = provincia} wen downloading it with \code{\link{get_election_data}}})
+}
+\examples{
+get_election_data(district = "tucuman", 
+                  category = "dip", 
+                  round = "gral", 
+                  year = 2017) \%>\% 
+  get_names() \%>\% 
+  plot_results()
+ 
 }
 \seealso{
 \code{\link{get_results}}

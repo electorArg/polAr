@@ -30,11 +30,12 @@ Los datos no estan en un formato largo. Use 'get_long ()' para transformarlos")
         
         year <- x$year 
         
-
-        listas_gh <- readr::read_csv(glue::glue('https://raw.githubusercontent.com/TuQmano/test_data/master/listas_', #CAMBIAR POR RUTA CORRECTA
+        
+        listas_gh <- readr::read_csv(glue::glue('https://raw.githubusercontent.com/electorArg/PolAr_Data/master/listas/listas_', 
                                           {category}, '_',  
                                           {round}, 
-                                          {year}, '.csv')) %>% 
+                                          {year}, '.csv'), 
+                                     col_types = readr::cols()) %>% 
                       dplyr::rename(listas = vot_parCodigo, 
                                     codprov = vot_proCodigoProvincia, 
                                     nombre_lista = parDenominacion) 

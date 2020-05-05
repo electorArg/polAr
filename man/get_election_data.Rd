@@ -3,10 +3,10 @@
 \name{get_election_data}
 \alias{get_election_data}
 \title{Descarga bases de resultados electorales 
-(\emph{Download electoral data})}
+ (\emph{Download electoral data})}
 \usage{
 get_election_data(district = NULL, category = NULL, round = NULL,
-  year = NULL, level = "provincia", long = FALSE, raw = FALSE)
+  year = NULL, level = "provincia", long = TRUE, raw = FALSE)
 }
 \arguments{
 \item{district}{un character con codigo para Argentina y las 24 provincias
@@ -27,9 +27,17 @@ get_election_data(district = NULL, category = NULL, round = NULL,
 (\emph{a boolean for data structure. By default} \code{long = FALSE})}
 
 \item{raw}{un boleano \code{TRUE/FALSE} que define si descargar base de datos desagregada a nivel MESA o no 
-(\emph{a \code{TRUE/FALSE} boolean to define whether to download disaggregated data at BALLOT level or not})}
+ (\emph{a \code{TRUE/FALSE} boolean to define whether to download disaggregated data at BALLOT level or not})
+ 
+ @examples 
+ 
+get_election_data(district = "tucuman", 
+                  category = "dip", 
+                  round = "gral", 
+                  year = 2017, 
+                  level = "departamento")}
 }
 \description{
 Funcion que descarga resultados electorales nacionales desde 2007 
-(\emph{Function that downloads national electoral data since 2007})
+ (\emph{Function that downloads national electoral data since 2007})
 }

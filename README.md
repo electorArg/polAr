@@ -92,29 +92,6 @@ get_election_data(district = "caba", category = "dip", round = "paso", year = "2
 #  <chr>       <dbl>   <dbl> <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl> <chr>    <chr> <chr>
 #  1 01      91166   35478 27459 186276  68575   8234  68001 509590  95714  47956 145580 201173  81666 294312 135361 dip      paso  2011 
 
-get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", 
-                  level = "departamento" )
-
-# A tibble: 15 x 21
-# Groups:   codprov, depto, coddepto [15]
-# codprov depto coddepto electores blancos nulos `0023` `0036` `0179` `0302` `0501` `0504` `0508` `0509` `0510` `0517` `0518` `0536` category round
-# <chr>   <chr> <chr>        <dbl>   <dbl> <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl> <chr>    <chr>
-#   1 01      Comu~ 001         185778    2403  1832  13071   5425    563   3784  37804   6829   2876   8847  10629   5094  21335   9064 dip      paso 
-# 2 01      Comu~ 002         149091    1514  1516  10819   4228    318   3454  17102   5728   1947   5091  10459   3241  29611  13378 dip      paso 
-# 3 01      Comu~ 003         167025    2538  1985  11506   4623    548   4455  35901   6758   3469   9229  11750   5871  13997   7181 dip      paso 
-# 4 01      Comu~ 004         175190    2897  2040  11965   4891    601   4323  47381   7012   3178  10902  10436   5956  17230   5879 dip      paso 
-# 5 01      Comu~ 005         152903    1944  1743  10794   3997    533   4388  34081   6412   3220   8769  14543   5858  14325   7900 dip      paso 
-# 6 01      Comu~ 006         153077    1981  1651  11655   3729    527   4490  27769   6681   3361   7959  17016   5924  17983   9702 dip      paso 
-# 7 01      Comu~ 007         169698    2522  1928  13003   4722    617   5064  37849   6908   3396  10880  14229   5888  16926   8011 dip      paso 
-# 8 01      Comu~ 008         133174    2297  1468   9796   4124    493   2669  41678   4043   1833  10850   5714   3453  10917   3484 dip      paso 
-# 9 01      Comu~ 009         144877    2521  1553  11728   4246    610   3709  36870   5013   2865  12124  10096   4696  13601   5509 dip      paso 
-#10 01      Comu~ 010         145632    2722  1647  11564   3757    654   4652  31437   5741   3420  11306  12537   5431  14618   6955 dip      paso 
-#11 01      Comu~ 011         166687    2500  1913  13105   4488    611   5269  32842   6528   3683  11312  15711   5953  19022   8811 dip      paso 
-#12 01      Comu~ 012         172984    2461  1991  13233   4858    567   5386  34576   6477   3857  11321  15376   6333  21860   9568 dip      paso 
-#13 01      Comu~ 013         208929    2366  2156  17286   5828    535   5916  28647   7959   3790   9054  19433   5906  35143  15953 dip      paso 
-#14 01      Comu~ 014         204174    2474  2043  16197   5585    476   5332  30031   7710   3597   8098  17938   5643  33046  16279 dip      paso 
-#15 01      Comu~ 015         161947    2338  1993  10554   4074    581   5110  35622   5915   3464   9838  15306   6419  14698   7687 dip      paso 
-# ... with 1 more variable: year <chr>
 ```
 
 #### Transformar estructura de datos anchos (*wide*) a largos (*long*) con `get_long()`
@@ -123,10 +100,10 @@ También por defecto los datos se descargan en formato *wide*. Pero se incluye l
 
 Otra alternativa es usar la función auxiliar `get_long()` para conseguir la misma transformación,  si los datos ya habían sido guardados como un objeto en formato ancho (*wide*). 
 
-Este sería el caso si la llamada del ejemplo anterior hubiese sido guardada en un objeto con nombre `data`:  
+Este sería el caso haciendo una llamada similar a la del ejemplo anterior pero ahora a nivel `departamento`y guardandola en un objeto con nombre `data`:  
 
 
-`data <- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento" )`, donde, por defecto `long = FALSE`.
+`data <- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento")`, donde, por defecto `long = FALSE`.
 
 
 Usamos la función auxiliar para convertir el formato de `data`: 
@@ -162,23 +139,6 @@ data %>%
   get_long() %>% 
   get_names() 
 
-# A tibble: 210 x 10
-# Groups:   codprov, depto, coddepto [15]
-# codprov   depto     coddepto electores category round year  listas votos nombre_lista                                     
-# <chr>     <chr>     <chr>     <dbl>    <chr>    <chr> <chr> <chr>  <dbl> <chr>                                            
-# 1 01      Comuna 01  001      185778    dip      paso  2011  0023   13071 UNION POPULAR                                    
-# 2 01      Comuna 01  001      185778    dip      paso  2011  0036    5425 AUTONOMISTA                                      
-# 3 01      Comuna 01  001      185778    dip      paso  2011  0179     563 ACCION CIUDADANA                                 
-# 4 01      Comuna 01  001      185778    dip      paso  2011  0302    3784 DE LA CIUDAD EN ACCION                           
-# 5 01      Comuna 01  001      185778    dip      paso  2011  0501   37804 ALIANZA FRENTE PARA LA VICTORIA                  
-# 6 01      Comuna 01  001      185778    dip      paso  2011  0504    6829 ALIANZA UNION PARA EL DESARROLLO SOCIAL          
-# 7 01      Comuna 01  001      185778    dip      paso  2011  0508    2876 ALIANZA PROYECTO SUR                             
-# 8 01      Comuna 01  001      185778    dip      paso  2011  0509    8847 COMPROMISO FEDERAL                               
-# 9 01      Comuna 01  001      185778    dip      paso  2011  0510   10629 FRENTE AMPLIO PROGRESISTA                        
-#10 01      Comuna 01  001      185778    dip      paso  2011  0517    5094 ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES
-# ... with 200 more rows
-
-
 ```
 
 
@@ -193,33 +153,13 @@ El cálculo se realizará el nivel de agregación de los datos descargados con `
 data %>% 
   get_long() %>% 
   compute_nep() 
-  
-#   # A tibble: 15 x 5
-#    codprov depto     coddepto value index           
-#    <chr>   <chr>     <chr>    <dbl> <chr>           
-#   1 01    Comuna 01  001       6.82 Laakso-Taagepera
-#   2 01    Comuna 02  002       6.99 Laakso-Taagepera
-#   3 01    Comuna 03  003       7.05 Laakso-Taagepera
-#   4 01    Comuna 04  004       5.86 Laakso-Taagepera
-#   5 01    Comuna 05  005       7.16 Laakso-Taagepera
-#   6 01    Comuna 06  006       8.02 Laakso-Taagepera
-#   7 01    Comuna 07  007       7.18 Laakso-Taagepera
-#   8 01    Comuna 08  008       4.85 Laakso-Taagepera
-#   9 01    Comuna 09  009       6.44 Laakso-Taagepera
-#  10 01    Comuna 10  010       7.58 Laakso-Taagepera
-#  11 01    Comuna 11  011       7.84 Laakso-Taagepera
-#  12 01    Comuna 12  012       7.71 Laakso-Taagepera
-#  13 01    Comuna 13  013       7.85 Laakso-Taagepera
-#  14 01    Comuna 14  014       7.74 Laakso-Taagepera
-#  15 01    Comuna 15  015       7.18 Laakso-Taagepera
- 
 
 ```
  
 
 ### CREDITOS
 
-- Las liberías [`eph`](https://github.com/holatam/eph), [`electoral`](https://cran.r-project.org/web/packages/electoral/index.html) y [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) fueron inspiración de este proyecto. 
+- Las liberías [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) y [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) fueron inspiración de este proyecto. 
 
 - El acceso a los datos en bruto viene de las bases en archivos `.mdb` del [_Atlas Electoral de Andy Tow_](https://www.andytow.com/access/index.php?logout=true). 
 

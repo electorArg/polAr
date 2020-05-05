@@ -2,8 +2,8 @@
 % Please edit documentation in R/compute_nep.R
 \name{compute_nep}
 \alias{compute_nep}
-\title{Calcula Número Efectivo de Partidos Politicos - NEP 
-(\emph{Computes Effective Number of Political Parties})}
+\title{Calcula Numero Efectivo de Partidos Politicos - NEP 
+ (\emph{Computes Effective Number of Political Parties})}
 \usage{
 compute_nep(data, index = NULL)
 }
@@ -16,18 +16,18 @@ compute_nep(data, index = NULL)
 }
 \description{
 Funcion que calcula el NEP: indicador que provee un numero "ajustado" de partidos politicos en un sistema de partidos
-(\emph{Function that computes NEP: indicator that provides a "tight" number of political parties in a party system})
+ (\emph{Function that computes NEP: indicator that provides a "tight" number of political parties in a party system})
 }
 \details{
 El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 
- (\emph{The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats}).
+  (\emph{The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats}).
 
 Impementación de las fórmulas \href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Laakso-Taagepera"}  y 
-\href{https://journals.sagepub.com/doi/10.1177/135406880933953}{"Golosov"} donde \eqn{p_{1}} es el porcentaje de votos de una lista \eqn{i}
-y \eqn{p_{max}} es el porcentaje de votos que sacó la lista más votada 
-(\emph{Implementation of the \href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Laakso-Taagepera"} and
-\href{https://journals.sagepub.com/doi/10.1177/135406880933953}{"Golosov"} formulas, where \eqn{p_{1}} is vote percentage for a list \eqn{i}
-and \eqn{p_{max}} the percentage for the most voted party}).
+ \href{https://journals.sagepub.com/doi/10.1177/1354068809339538}{"Golosov"} donde \eqn{p_{1}} es el porcentaje de votos de una lista \eqn{i}
+ y \eqn{p_{max}} es el porcentaje de votos que sacó la lista más votada 
+ (\emph{Implementation of the \href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Laakso-Taagepera"} and
+ \href{https://journals.sagepub.com/doi/10.1177/1354068809339538}{"Golosov"} formulas, where \eqn{p_{1}} is vote percentage for a list \eqn{i}
+ and \eqn{p_{max}} the percentage for the most voted party}).
 
 \eqn{\large Laakso-Tagepera}: \deqn{NEP_{Laakso-Tagepera}=\frac{1}{\sum_{i}^{n}p_{i}^2}}
 
@@ -36,16 +36,27 @@ and \eqn{p_{max}} the percentage for the most voted party}).
 \strong{REQUISITO:}
 
 El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_nep}}. 
-Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}}  
-(\emph{\code{long} format of \code{data} is required for \code{\link{compute_nep}}. 
-If \code{data} is in \emph{wide} format you can transform it with \code{\link{get_long}}})
+ Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}}  
+ (\emph{\code{long} format of \code{data} is required for \code{\link{compute_nep}}. 
+ If \code{data} is in \emph{wide} format you can transform it with \code{\link{get_long}}})
 
 \strong{NOTA:}
 
 el parámetro \code{level} de \code{\link{get_election_data}} determina el nivel de agregacion sobre el que 
-se computa el NEP: \code{provincia}, \code{departamento} o \code{circuito}  
-(\emph{\code{level} at \code{\link{get_election_data}} determines aggregation on which NEP calculation 
-will be made: \code{provincia}, \code{departamento} or \code{circuito}}).
+ se computa el NEP: \code{provincia}, \code{departamento} o \code{circuito}  
+ (\emph{\code{level} at \code{\link{get_election_data}} determines aggregation on which NEP calculation 
+ will be made: \code{provincia}, \code{departamento} or \code{circuito}}).
+}
+\examples{
+get_election_data(district = "tucuman", 
+                  category = "dip", 
+                  round = "gral", 
+                  year = 2017) -> diputados_tucuman2017G
+
+
+diputados_tucuman2017G \%>\% 
+  compute_nep(index = "All")
+  
 }
 \seealso{
 \code{\link{compute_competitiveness}}

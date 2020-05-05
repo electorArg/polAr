@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mostrar resultados (<em>Show results</em>) — plot_results • polAr</title>
+<title>Graficar resultados (<em>Plot results</em>) — plot_results • polAr</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Mostrar resultados (<em>Show results</em>) — plot_results" />
+<meta property="og:title" content="Graficar resultados (<em>Plot results</em>) — plot_results" />
 <meta property="og:description" content="Funcion para graficar resultados de la eleccion (Function to plot election results)" />
 
 
@@ -108,7 +108,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Mostrar resultados (<em>Show results</em>)</h1>
+    <h1>Graficar resultados (<em>Plot results</em>)</h1>
     <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/plot_results.R'><code>R/plot_results.R</code></a></small>
     <div class="hidden name"><code>plot_results.Rd</code></div>
     </div>
@@ -133,15 +133,23 @@
 
     <p><strong>REQUISITOS:</strong></p>
 <p><strong>1</strong>. El formato de <code>data</code> debe ser <code>long</code> para pdoer graficar. Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code> 
-(<em><code>long</code> format of <code>data</code> is required for plotting results. If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='get_long.html'>get_long</a></code></em>)</p>
+ (<em><code>long</code> format of <code>data</code> is required for plotting results. If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='get_long.html'>get_long</a></code></em>)</p>
 <p><strong>2.</strong> <code>data</code> tiene que haber incorporando los nombres de las listas. Agreguelos con <code><a href='get_names.html'>get_names</a></code> 
-(<em><code>data</code> must have party names. Add them with <code><a href='get_names.html'>get_names</a></code></em>)</p>
+ (<em><code>data</code> must have party names. Add them with <code><a href='get_names.html'>get_names</a></code></em>)</p>
 <p><strong>3.</strong> <code>data</code> tiene que haber sido descargada con parametro <code>level = provincia</code> con la funcion <code><a href='get_election_data.html'>get_election_data</a></code> 
-(<em><code>data</code> must have <code>level = provincia</code> wen downloading it with <code><a href='get_election_data.html'>get_election_data</a></code></em>)</p>
+ (<em><code>data</code> must have <code>level = provincia</code> wen downloading it with <code><a href='get_election_data.html'>get_election_data</a></code></em>)</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='get_results.html'>get_results</a></code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='get_election_data.html'>get_election_data</a></span>(<span class='kw'>district</span> <span class='kw'>=</span> <span class='st'>"tucuman"</span>,
+                  <span class='kw'>category</span> <span class='kw'>=</span> <span class='st'>"dip"</span>,
+                  <span class='kw'>round</span> <span class='kw'>=</span> <span class='st'>"gral"</span>,
+                  <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2017</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'><a href='get_names.html'>get_names</a></span>() <span class='kw'>%&gt;%</span>
+  <span class='fu'>plot_results</span>()</div><div class='img'><img src='plot_results-1.png' alt='' width='700' height='433' /></div><div class='input'> 
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

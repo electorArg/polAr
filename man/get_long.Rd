@@ -12,11 +12,11 @@ get_long(data)
 }
 \description{
 Funcion auxiliar que transforma el tibble WIDE obtenido con \code{\link{get_election_data}} a LONG 
-(\emph{Auxiliary function that transforms a WIDE tibble obtained with \code{\link{get_election_data}} to LONG format})
+ (\emph{Auxiliary function that transforms a WIDE tibble obtained with \code{\link{get_election_data}} to LONG format})
 }
 \details{
 El formato de \code{data} debe ser \code{long} tanto para calcular \code{\link{compute_nep}} y \code{\link{compute_competitiveness}}, 
-como para obtener nombre de listas con \code{\link{get_names}}
-(\emph{\code{long} format of \code{data} is required for \code{\link{compute_nep}} , \code{\link{compute_competitiveness}} 
-and \code{\link{get_names}}}).
+ como para obtener nombre de listas con \code{\link{get_names}}
+ (\emph{\code{long} format of \code{data} is required for \code{\link{compute_nep}} , \code{\link{compute_competitiveness}} 
+ and \code{\link{get_names}}}).
 }

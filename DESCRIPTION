@@ -1,6 +1,6 @@
 Package: polAr
-Title: {polAr} Política Argentina usando R
-Version: 0.0.0.9000
+Title: Toolbox for Argentina's Political Analysis
+Version: 0.1.0
 Authors@R: 
     person(given = "Juan Pablo",
            family = "Ruiz Nicolini",
@@ -16,19 +16,16 @@ BugReports: https://github.com/electorArg/polAr/issues
 LazyData: true
 Imports: 
     geofacet,
-    sf,
     dplyr,
     tidyr (>= 1.0.0), 
     magrittr, 
     formattable, 
     readr, 
     stringr, 
-    janitor, 
     rvest, 
     xml2, 
     glue, 
     tibble, 
-    pkgcond, 
     DT,
     attempt, 
     curl (>= 4.2), 
@@ -36,8 +33,12 @@ Imports:
     gt, 
     forcats, 
     ggplot2, 
-    hrbrthemes, 
+    ggthemes, 
     purrr, 
     scales, 
-    rlang(>= 0.4.3) 
+    rlang (>= 0.4.3), 
+    RColorBrewer, 
+    grDevices 
+Suggests:
+    pkgcond
 RoxygenNote: 6.1.1

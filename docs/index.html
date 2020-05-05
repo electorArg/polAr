@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{polAr} Política Argentina usando R • polAr</title>
+<title>Toolbox for Argentina's Political Analysis • polAr</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="{polAr} Política Argentina usando R">
+<script src="pkgdown.js"></script><meta property="og:title" content="Toolbox for Argentina's Political Analysis">
 <meta property="og:description" content="Caja de herramienta para el análisis de datos políticos y electorales de Argentina.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -141,31 +141,7 @@ show_available_elections()
 <span class="co"># Groups:   codprov [1]</span>
 <span class="co">#  codprov electores blancos nulos `0023` `0036` `0179` `0302` `0501` `0504` `0508` `0509` `0510` `0517` `0518` `0536` category round year </span>
 <span class="co">#  &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;</span>
-<span class="co">#  1 01      91166   35478 27459 186276  68575   8234  68001 509590  95714  47956 145580 201173  81666 294312 135361 dip      paso  2011 </span>
-
-<span class="fu"><a href="reference/get_election_data.html">get_election_data</a></span>(<span class="kw">district</span> <span class="kw">=</span> <span class="st">"caba"</span>, <span class="kw">category</span> <span class="kw">=</span> <span class="st">"dip"</span>, <span class="kw">round</span> <span class="kw">=</span> <span class="st">"paso"</span>, <span class="kw">year</span> <span class="kw">=</span> <span class="st">"2011"</span>,
-                  <span class="kw">level</span> <span class="kw">=</span> <span class="st">"departamento"</span> )
-
-<span class="co"># A tibble: 15 x 21</span>
-<span class="co"># Groups:   codprov, depto, coddepto [15]</span>
-<span class="co"># codprov depto coddepto electores blancos nulos `0023` `0036` `0179` `0302` `0501` `0504` `0508` `0509` `0510` `0517` `0518` `0536` category round</span>
-<span class="co"># &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;</span>
-<span class="co">#   1 01      Comu~ 001         185778    2403  1832  13071   5425    563   3784  37804   6829   2876   8847  10629   5094  21335   9064 dip      paso </span>
-<span class="co"># 2 01      Comu~ 002         149091    1514  1516  10819   4228    318   3454  17102   5728   1947   5091  10459   3241  29611  13378 dip      paso </span>
-<span class="co"># 3 01      Comu~ 003         167025    2538  1985  11506   4623    548   4455  35901   6758   3469   9229  11750   5871  13997   7181 dip      paso </span>
-<span class="co"># 4 01      Comu~ 004         175190    2897  2040  11965   4891    601   4323  47381   7012   3178  10902  10436   5956  17230   5879 dip      paso </span>
-<span class="co"># 5 01      Comu~ 005         152903    1944  1743  10794   3997    533   4388  34081   6412   3220   8769  14543   5858  14325   7900 dip      paso </span>
-<span class="co"># 6 01      Comu~ 006         153077    1981  1651  11655   3729    527   4490  27769   6681   3361   7959  17016   5924  17983   9702 dip      paso </span>
-<span class="co"># 7 01      Comu~ 007         169698    2522  1928  13003   4722    617   5064  37849   6908   3396  10880  14229   5888  16926   8011 dip      paso </span>
-<span class="co"># 8 01      Comu~ 008         133174    2297  1468   9796   4124    493   2669  41678   4043   1833  10850   5714   3453  10917   3484 dip      paso </span>
-<span class="co"># 9 01      Comu~ 009         144877    2521  1553  11728   4246    610   3709  36870   5013   2865  12124  10096   4696  13601   5509 dip      paso </span>
-<span class="co">#10 01      Comu~ 010         145632    2722  1647  11564   3757    654   4652  31437   5741   3420  11306  12537   5431  14618   6955 dip      paso </span>
-<span class="co">#11 01      Comu~ 011         166687    2500  1913  13105   4488    611   5269  32842   6528   3683  11312  15711   5953  19022   8811 dip      paso </span>
-<span class="co">#12 01      Comu~ 012         172984    2461  1991  13233   4858    567   5386  34576   6477   3857  11321  15376   6333  21860   9568 dip      paso </span>
-<span class="co">#13 01      Comu~ 013         208929    2366  2156  17286   5828    535   5916  28647   7959   3790   9054  19433   5906  35143  15953 dip      paso </span>
-<span class="co">#14 01      Comu~ 014         204174    2474  2043  16197   5585    476   5332  30031   7710   3597   8098  17938   5643  33046  16279 dip      paso </span>
-<span class="co">#15 01      Comu~ 015         161947    2338  1993  10554   4074    581   5110  35622   5915   3464   9838  15306   6419  14698   7687 dip      paso </span>
-<span class="co"># ... with 1 more variable: year &lt;chr&gt;</span></pre></div>
+<span class="co">#  1 01      91166   35478 27459 186276  68575   8234  68001 509590  95714  47956 145580 201173  81666 294312 135361 dip      paso  2011 </span></pre></div>
 </div>
 <div id="transformar-estructura-de-datos-anchos-wide-a-largos-long-con-get_long" class="section level4">
 <h4 class="hasAnchor">
@@ -173,8 +149,8 @@ show_available_elections()
 </h4>
 <p>También por defecto los datos se descargan en formato <em>wide</em>. Pero se incluye la opción de cambiar a un formato <em>long</em> usando <code>long = TRUE</code> como parametro de <code><a href="reference/get_election_data.html">get_election_data(... , long = T)</a></code> a la hora de descargar los datos.</p>
 <p>Otra alternativa es usar la función auxiliar <code><a href="reference/get_long.html">get_long()</a></code> para conseguir la misma transformación, si los datos ya habían sido guardados como un objeto en formato ancho (<em>wide</em>).</p>
-<p>Este sería el caso si la llamada del ejemplo anterior hubiese sido guardada en un objeto con nombre <code>data</code>:</p>
-<p><code>data &lt;- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento" )</code>, donde, por defecto <code>long = FALSE</code>.</p>
+<p>Este sería el caso haciendo una llamada similar a la del ejemplo anterior pero ahora a nivel <code>departamento</code>y guardandola en un objeto con nombre <code>data</code>:</p>
+<p><code>data &lt;- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento")</code>, donde, por defecto <code>long = FALSE</code>.</p>
 <p>Usamos la función auxiliar para convertir el formato de <code>data</code>:</p>
 <div class="sourceCode" id="cb4"><pre class="r"><span class="no">data</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/get_long.html">get_long</a></span>()
@@ -203,23 +179,7 @@ show_available_elections()
 <div class="sourceCode" id="cb5"><pre class="r">
 <span class="no">data</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/get_long.html">get_long</a></span>() <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="reference/get_names.html">get_names</a></span>()
-
-<span class="co"># A tibble: 210 x 10</span>
-<span class="co"># Groups:   codprov, depto, coddepto [15]</span>
-<span class="co"># codprov   depto     coddepto electores category round year  listas votos nombre_lista                                     </span>
-<span class="co"># &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;     &lt;dbl&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;                                            </span>
-<span class="co"># 1 01      Comuna 01  001      185778    dip      paso  2011  0023   13071 UNION POPULAR                                    </span>
-<span class="co"># 2 01      Comuna 01  001      185778    dip      paso  2011  0036    5425 AUTONOMISTA                                      </span>
-<span class="co"># 3 01      Comuna 01  001      185778    dip      paso  2011  0179     563 ACCION CIUDADANA                                 </span>
-<span class="co"># 4 01      Comuna 01  001      185778    dip      paso  2011  0302    3784 DE LA CIUDAD EN ACCION                           </span>
-<span class="co"># 5 01      Comuna 01  001      185778    dip      paso  2011  0501   37804 ALIANZA FRENTE PARA LA VICTORIA                  </span>
-<span class="co"># 6 01      Comuna 01  001      185778    dip      paso  2011  0504    6829 ALIANZA UNION PARA EL DESARROLLO SOCIAL          </span>
-<span class="co"># 7 01      Comuna 01  001      185778    dip      paso  2011  0508    2876 ALIANZA PROYECTO SUR                             </span>
-<span class="co"># 8 01      Comuna 01  001      185778    dip      paso  2011  0509    8847 COMPROMISO FEDERAL                               </span>
-<span class="co"># 9 01      Comuna 01  001      185778    dip      paso  2011  0510   10629 FRENTE AMPLIO PROGRESISTA                        </span>
-<span class="co">#10 01      Comuna 01  001      185778    dip      paso  2011  0517    5094 ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES</span>
-<span class="co"># ... with 200 more rows</span></pre></div>
+  <span class="fu"><a href="reference/get_names.html">get_names</a></span>()</pre></div>
 </div>
 <div id="computar-número-efectivo-de-partidos-con-compute_nep" class="section level4">
 <h4 class="hasAnchor">
@@ -229,33 +189,14 @@ show_available_elections()
 <p>El cálculo se realizará el nivel de agregación de los datos descargados con <code><a href="reference/get_election_data.html">get_election_data()</a></code>. En este caso a nivel departamental. La función <code><a href="reference/compute_nep.html">compute_nep()</a></code> tiene un parámetro para elegir entre el índice de <a href="https://journals.sagepub.com/doi/10.1177/001041407901200101">Laakso-Taagepera</a> y/o el de <a href="https://journals.sagepub.com/doi/10.1177/1354068809339538">Golosov</a>.</p>
 <div class="sourceCode" id="cb6"><pre class="r"><span class="no">data</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="reference/get_long.html">get_long</a></span>() <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="reference/compute_nep.html">compute_nep</a></span>()
-
-<span class="co">#   # A tibble: 15 x 5</span>
-<span class="co">#    codprov depto     coddepto value index           </span>
-<span class="co">#    &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;           </span>
-<span class="co">#   1 01    Comuna 01  001       6.82 Laakso-Taagepera</span>
-<span class="co">#   2 01    Comuna 02  002       6.99 Laakso-Taagepera</span>
-<span class="co">#   3 01    Comuna 03  003       7.05 Laakso-Taagepera</span>
-<span class="co">#   4 01    Comuna 04  004       5.86 Laakso-Taagepera</span>
-<span class="co">#   5 01    Comuna 05  005       7.16 Laakso-Taagepera</span>
-<span class="co">#   6 01    Comuna 06  006       8.02 Laakso-Taagepera</span>
-<span class="co">#   7 01    Comuna 07  007       7.18 Laakso-Taagepera</span>
-<span class="co">#   8 01    Comuna 08  008       4.85 Laakso-Taagepera</span>
-<span class="co">#   9 01    Comuna 09  009       6.44 Laakso-Taagepera</span>
-<span class="co">#  10 01    Comuna 10  010       7.58 Laakso-Taagepera</span>
-<span class="co">#  11 01    Comuna 11  011       7.84 Laakso-Taagepera</span>
-<span class="co">#  12 01    Comuna 12  012       7.71 Laakso-Taagepera</span>
-<span class="co">#  13 01    Comuna 13  013       7.85 Laakso-Taagepera</span>
-<span class="co">#  14 01    Comuna 14  014       7.74 Laakso-Taagepera</span>
-<span class="co">#  15 01    Comuna 15  015       7.18 Laakso-Taagepera</span></pre></div>
+  <span class="fu"><a href="reference/compute_nep.html">compute_nep</a></span>()</pre></div>
 </div>
 </div>
 <div id="creditos" class="section level3">
 <h3 class="hasAnchor">
 <a href="#creditos" class="anchor"></a>CREDITOS</h3>
 <ul>
-<li><p>Las liberías <a href="https://github.com/holatam/eph"><code>eph</code></a>, <a href="https://cran.r-project.org/web/packages/electoral/index.html"><code>electoral</code></a> y <a href="https://nicolas-schmidt.github.io/esaps/index.html"><code>esaps</code></a> fueron inspiración de este proyecto.</p></li>
+<li><p>Las liberías <a href="https://github.com/holatam/eph"><code>eph</code></a>, <a href="https://CRAN.R-project.org/package=electoral"><code>electoral</code></a> y <a href="https://nicolas-schmidt.github.io/esaps/index.html"><code>esaps</code></a> fueron inspiración de este proyecto.</p></li>
 <li><p>El acceso a los datos en bruto viene de las bases en archivos <code>.mdb</code> del <a href="https://www.andytow.com/access/index.php?logout=true"><em>Atlas Electoral de Andy Tow</em></a>.</p></li>
 </ul>
 </div>

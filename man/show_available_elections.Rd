@@ -3,7 +3,7 @@
 \name{show_available_elections}
 \alias{show_available_elections}
 \title{Diccionario de Elecciones disponibles 
-(\emph{Elections Collection})}
+ (\emph{Elections Collection})}
 \usage{
 show_available_elections(viewer = FALSE)
 }
@@ -13,5 +13,5 @@ show_available_elections(viewer = FALSE)
 }
 \description{
 Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con \code{\link{get_election_data}} 
-(\emph{Function that returns a tibble with the necessary parameters to call elections with} \code{\link{get_election_data}})
+ (\emph{Function that returns a tibble with the necessary parameters to call elections with} \code{\link{get_election_data}})
 }

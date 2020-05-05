@@ -17,23 +17,34 @@ and the observations are disaggregated by assigning the values \code{departament
 }
 \value{
 devuelve un valor entre 0 y 1 que representa el grado de comeptencia de una eleccion en un distrito determinado 
-(\emph{returns a value between 0 and 1 representing degree of competition of an election in a given district }).
+ (\emph{returns a value between 0 and 1 representing degree of competition of an election in a given district }).
 }
 \description{
 Funcion que describe el grado de competencia de una eleccion
-(\emph{Function that describes the degree of competition of an election})
+ (\emph{Function that describes the degree of competition of an election})
 }
 \details{
 \eqn{Competitividad} mide la diferencia porcentual de votos válidos obtenidos por los dos partidos más votados \eqn{a} y \eqn{b}. 
-Puede tomar valores entre \eqn{[0,1]} donde \eqn{1} es lo más comeptitivo (\eqn{a = 50\%} y \eqn{b = 50\%} de los votos).
- La fórmula utilizada es:  \deqn{Competitividad = 1 - (a - b)}
+ Puede tomar valores entre \eqn{[0,1]} donde \eqn{1} es lo más comeptitivo (\eqn{a = 50\%} y \eqn{b = 50\%} de los votos).
+  La fórmula utilizada es:  \deqn{Competitividad = 1 - (a - b)}
 
 \strong{REQUISITO:}
 
 El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_competitiveness}}. 
-Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}} 
-(\emph{\code{long} format of \code{data} is required for \code{\link{compute_competitiveness}}. If \code{data} is in \emph{wide} format
-you can transform it with \code{\link{get_long}}}).
+ Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}} 
+ (\emph{\code{long} format of \code{data} is required for \code{\link{compute_competitiveness}}. If \code{data} is in \emph{wide} format
+ you can transform it with \code{\link{get_long}}}).
+}
+\examples{
+get_election_data(district = "tucuman", 
+                  category = "dip", 
+                  round = "gral", 
+                  year = 2017, 
+                  level = "departamento") \%>\% 
+  compute_competitiveness(level = "departamento") \%>\% 
+  dplyr::arrange(dplyr::desc(competitividad))
+
+ 
 }
 \seealso{
 \code{\link{compute_nep}}

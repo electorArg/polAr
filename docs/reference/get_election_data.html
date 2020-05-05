@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Descarga bases de resultados electorales 
-(<em>Download electoral data</em>) — get_election_data • polAr</title>
+ (<em>Download electoral data</em>) — get_election_data • polAr</title>
 
 
 <!-- jquery -->
@@ -41,9 +41,9 @@
 
 
 <meta property="og:title" content="Descarga bases de resultados electorales 
-(<em>Download electoral data</em>) — get_election_data" />
+ (<em>Download electoral data</em>) — get_election_data" />
 <meta property="og:description" content="Funcion que descarga resultados electorales nacionales desde 2007 
-(Function that downloads national electoral data since 2007)" />
+ (Function that downloads national electoral data since 2007)" />
 
 
 
@@ -112,18 +112,18 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Descarga bases de resultados electorales 
-(<em>Download electoral data</em>)</h1>
+ (<em>Download electoral data</em>)</h1>
     <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/get_election_data.R'><code>R/get_election_data.R</code></a></small>
     <div class="hidden name"><code>get_election_data.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>Funcion que descarga resultados electorales nacionales desde 2007 
-(<em>Function that downloads national electoral data since 2007</em>)</p>
+ (<em>Function that downloads national electoral data since 2007</em>)</p>
     </div>
 
     <pre class="usage"><span class='fu'>get_election_data</span>(<span class='kw'>district</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>category</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>round</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"provincia"</span>, <span class='kw'>long</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+  <span class='kw'>year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"provincia"</span>, <span class='kw'>long</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -160,7 +160,13 @@
     <tr>
       <th>raw</th>
       <td><p>un boleano <code>TRUE/FALSE</code> que define si descargar base de datos desagregada a nivel MESA o no 
-(<em>a <code>TRUE/FALSE</code> boolean to define whether to download disaggregated data at BALLOT level or not</em>)</p></td>
+ (<em>a <code>TRUE/FALSE</code> boolean to define whether to download disaggregated data at BALLOT level or not</em>)</p> 
+<p>@examples</p> 
+<p>get_election_data(district = "tucuman", 
+                  category = "dip", 
+                  round = "gral", 
+                  year = 2017, 
+                  level = "departamento")</p></td>
     </tr>
     </table>
 

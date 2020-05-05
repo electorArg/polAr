@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calcula Número Efectivo de Partidos Politicos - NEP 
-(<em>Computes Effective Number of Political Parties</em>) — compute_nep • polAr</title>
+<title>Calcula Numero Efectivo de Partidos Politicos - NEP 
+ (<em>Computes Effective Number of Political Parties</em>) — compute_nep • polAr</title>
 
 
 <!-- jquery -->
@@ -40,10 +40,10 @@
 
 
 
-<meta property="og:title" content="Calcula Número Efectivo de Partidos Politicos - NEP 
-(<em>Computes Effective Number of Political Parties</em>) — compute_nep" />
+<meta property="og:title" content="Calcula Numero Efectivo de Partidos Politicos - NEP 
+ (<em>Computes Effective Number of Political Parties</em>) — compute_nep" />
 <meta property="og:description" content="Funcion que calcula el NEP: indicador que provee un numero &quot;ajustado&quot; de partidos politicos en un sistema de partidos
-(Function that computes NEP: indicator that provides a &quot;tight&quot; number of political parties in a party system)" />
+ (Function that computes NEP: indicator that provides a &quot;tight&quot; number of political parties in a party system)" />
 
 
 
@@ -111,15 +111,15 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calcula Número Efectivo de Partidos Politicos - NEP 
-(<em>Computes Effective Number of Political Parties</em>)</h1>
+    <h1>Calcula Numero Efectivo de Partidos Politicos - NEP 
+ (<em>Computes Effective Number of Political Parties</em>)</h1>
     <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/compute_nep.R'><code>R/compute_nep.R</code></a></small>
     <div class="hidden name"><code>compute_nep.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>Funcion que calcula el NEP: indicador que provee un numero "ajustado" de partidos politicos en un sistema de partidos
-(<em>Function that computes NEP: indicator that provides a "tight" number of political parties in a party system</em>)</p>
+ (<em>Function that computes NEP: indicator that provides a "tight" number of political parties in a party system</em>)</p>
     </div>
 
     <pre class="usage"><span class='fu'>compute_nep</span>(<span class='no'>data</span>, <span class='kw'>index</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
@@ -142,29 +142,43 @@
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 
- (<em>The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats</em>).</p>
+  (<em>The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats</em>).</p>
 <p>Impementación de las fórmulas <a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Laakso-Taagepera"</a>  y 
-<a href='https://journals.sagepub.com/doi/10.1177/135406880933953'>"Golosov"</a> donde \(p_{1}\) es el porcentaje de votos de una lista \(i\)
-y \(p_{max}\) es el porcentaje de votos que sacó la lista más votada 
-(<em>Implementation of the <a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Laakso-Taagepera"</a> and
-<a href='https://journals.sagepub.com/doi/10.1177/135406880933953'>"Golosov"</a> formulas, where \(p_{1}\) is vote percentage for a list \(i\)
-and \(p_{max}\) the percentage for the most voted party</em>).</p>
+ <a href='https://journals.sagepub.com/doi/10.1177/1354068809339538'>"Golosov"</a> donde \(p_{1}\) es el porcentaje de votos de una lista \(i\)
+ y \(p_{max}\) es el porcentaje de votos que sacó la lista más votada 
+ (<em>Implementation of the <a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Laakso-Taagepera"</a> and
+ <a href='https://journals.sagepub.com/doi/10.1177/1354068809339538'>"Golosov"</a> formulas, where \(p_{1}\) is vote percentage for a list \(i\)
+ and \(p_{max}\) the percentage for the most voted party</em>).</p>
 <p>\(\large Laakso-Tagepera\): $$NEP_{Laakso-Tagepera}=\frac{1}{\sum_{i}^{n}p_{i}^2}$$</p>
 <p>\(\large Golosov\): $$NEP_{Golosov}=\frac{p_{i}}{\sum_{i}^{n} p_{i}+p_{max}^2-p_{i}^2}$$</p>
 <p><strong>REQUISITO:</strong></p>
 <p>El formato de <code>data</code> debe ser <code>long</code> para calcular <code>compute_nep</code>. 
-Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code>  
-(<em><code>long</code> format of <code>data</code> is required for <code>compute_nep</code>. 
-If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='get_long.html'>get_long</a></code></em>)</p>
+ Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code>  
+ (<em><code>long</code> format of <code>data</code> is required for <code>compute_nep</code>. 
+ If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='get_long.html'>get_long</a></code></em>)</p>
 <p><strong>NOTA:</strong></p>
 <p>el parámetro <code>level</code> de <code><a href='get_election_data.html'>get_election_data</a></code> determina el nivel de agregacion sobre el que 
-se computa el NEP: <code>provincia</code>, <code>departamento</code> o <code>circuito</code>  
-(<em><code>level</code> at <code><a href='get_election_data.html'>get_election_data</a></code> determines aggregation on which NEP calculation 
-will be made: <code>provincia</code>, <code>departamento</code> or <code>circuito</code></em>).</p>
+ se computa el NEP: <code>provincia</code>, <code>departamento</code> o <code>circuito</code>  
+ (<em><code>level</code> at <code><a href='get_election_data.html'>get_election_data</a></code> determines aggregation on which NEP calculation 
+ will be made: <code>provincia</code>, <code>departamento</code> or <code>circuito</code></em>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='compute_competitiveness.html'>compute_competitiveness</a></code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='get_election_data.html'>get_election_data</a></span>(<span class='kw'>district</span> <span class='kw'>=</span> <span class='st'>"tucuman"</span>,
+                  <span class='kw'>category</span> <span class='kw'>=</span> <span class='st'>"dip"</span>,
+                  <span class='kw'>round</span> <span class='kw'>=</span> <span class='st'>"gral"</span>,
+                  <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2017</span>) <span class='kw'>-&gt;</span> <span class='no'>diputados_tucuman2017G</span>
+
+
+<span class='no'>diputados_tucuman2017G</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'>compute_nep</span>(<span class='kw'>index</span> <span class='kw'>=</span> <span class='st'>"All"</span>)</div><div class='output co'>#&gt; # A tibble: 2 x 3
+#&gt;   codprov value index           
+#&gt;   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;           
+#&gt; 1 23       2.47 Golosov         
+#&gt; 2 23       2.94 Laakso-Taagepera</div><div class='input'>  
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
