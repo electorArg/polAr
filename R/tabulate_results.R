@@ -1,4 +1,4 @@
-#' Mostrar resultados (\emph{Show results})
+#' Tabular resultados (\emph{Tabulate results})
 #' @description
 #' Funcion para tabular resultados de la eleccion  
 #'  (\emph{Function to tabulate election results})
@@ -11,24 +11,27 @@
 #'  (\emph{Table with aggregated election results}).
 #' @details \strong{REQUISITOS:} 
 #' @details \strong{1}. El formato de \code{data} debe ser \code{long} para calcular resultados. 
-#'  Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}} 
+#'  Si \code{data} es \emph{wide} se puede transformar con \code{\link{make_long}} 
 #'  (\emph{\code{long} format of \code{data} is required for getting results. 
-#'  If \code{data} is in \emph{wide} format you can transform it with \code{\link{get_long}}})
+#'  If \code{data} is in \emph{wide} format you can transform it with \code{\link{make_long}}})
 #' @details \strong{2.} \code{data} tiene que haber incorporando los nombres de las listas. Agreguelos con \code{\link{get_names}}
 #'  (\emph{\code{data} must have party names. Add them with \code{\link{get_names}}})
 #' @details \strong{3.} \code{data} tiene que haber sido descargada con parametro \code{level = provincia} con la funcion \code{\link{get_election_data}}
 #'  (\emph{\code{data} must have \code{level = provincia}  wen downloading it with \code{\link{get_election_data}}})
-#' @seealso \code{\link{plot_results}} 
+#' 
+#' @seealso 
+#' \code{\link{plot_results}}
+#'  
 #' @export
  
 
- get_results <- function(data, 
+ tabulate_results <- function(data, 
                          LaTeX = F) {
    
     
     # check long foramt
     assertthat::assert_that("listas" %in% colnames(data), 
-                            msg = "data is not in a long format. Use 'get_long()' to transform it")
+                            msg = "data is not in a long format. Use 'make_long()' to transform it")
     
     assertthat::assert_that("nombre_lista" %in% colnames(data), 
                             msg = "data has no party_labels Use 'get_names()' to add them")

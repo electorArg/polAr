@@ -16,7 +16,7 @@ Funcion que agrega el nombre de las listas o partidos como columna a un tibble o
 }
 \details{
 El formato de \code{data} debe ser \code{long} para poder obtener 
-nombres de listas con \code{\link{get_names}}. Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}} 
+nombres de listas con \code{\link{get_names}}. Si \code{data} es \emph{wide} se puede transformar con \code{\link{make_long}} 
 (\emph{\code{long} format of \code{data} is required to get party labels with \code{\link{get_names}}.  If \code{data} is in
-\emph{wide} format you can transform it with \code{\link{get_long}}}).
+\emph{wide} format you can transform it with \code{\link{make_long}}}).
 }

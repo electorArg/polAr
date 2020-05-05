@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">polAr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -45,6 +45,24 @@
 </li>
 <li>
   <a href="reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="articles/compute.html">Indicadores</a>
+    </li>
+    <li>
+      <a href="articles/data.html">Acceso a datos</a>
+    </li>
+    <li>
+      <a href="articles/results.html">Visualizar resultados</a>
+    </li>
+  </ul>
 </li>
       </ul>
 <ul class="nav navbar-nav navbar-right">
@@ -88,109 +106,22 @@
 <span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"electorArg/polAr"</span>)</pre></div>
 <p>Sus principales funciones son:</p>
 <ul>
-<li>
-<strong><code><a href="reference/get_election_data.html">get_election_data()</a></code></strong>: Descarga bases de resultados electorales con parametros obligatorios y otros optativos.</li>
+<li><p><strong><code><a href="reference/show_available_elections.html">show_available_elections()</a></code></strong>: Diccionario de Elecciones disponibles. El parametro <code>viewer = TRUE</code> habilita una tabla en el <em>Viewer</em> de <code>RStudio</code>.</p></li>
+<li><p><strong><code><a href="reference/get_election_data.html">get_election_data()</a></code></strong>: Descarga bases de resultados electorales con parametros obligatorios y otros optativos.</p></li>
 </ul>
 <p>Entre los primeros se deben consignar <code>district</code> para el distrito; <code>category</code> para la catgoría; <code>round</code> para el turno e <code>year</code> para el año de la elección. Entre los segundos se puede agregar <code>level</code>para el nivel de agregación (<code>"provincia"</code>, <code>"departamento"</code>, <code>"circuito"</code>) y <code>long</code> para el formato de los datos alargados (las listas no van cada una en una columna sino como valores de una variable <code>listas</code>).</p>
 <ul>
-<li><p><strong><code><a href="reference/show_available_elections.html">show_available_elections()</a></code></strong>: Diccionario de Elecciones disponibles. El parametro <code>viewer = TRUE</code> habilita una tabla en el <em>Viewer</em> de <code>RStudio</code>.</p></li>
 <li><p><strong><code><a href="reference/get_names.html">get_names()</a></code></strong>: Obtiene nombres de listas (funciona correctamente cuando los datos fueron obtenidos <em>LARGOS</em>: <code>election_get(data, ...,  long = T)</code></p></li>
+<li><p><strong><code><a href="reference/compute_competitiveness.html">compute_competitiveness()</a></code></strong>: Calcula el nivel de competencia en una elección. Un parámetro <code>level</code> permite calcularlo para los distintos niveles de agregación presentes en la <code>data</code>.</p></li>
 <li><p><strong><code><a href="reference/compute_nep.html">compute_nep()</a></code></strong>: Calcula el <em>Numero Efectivo de Partidos Politicos</em>. Es sensible al nivel de agregación de la <code>data</code> obtenida.</p></li>
-<li><p><strong><code><a href="reference/compute_competitiveness.html">compute_competitiveness()</a></code></strong>: Calcula el nivel de competencia en una elección (0 , 1). Un parámetro <code>level</code> permite calcularlo para los distintos niveles de agregación presentes en la <code>data</code>.</p></li>
+<li><p><strong><code><a href="reference/tabulate_results.html">tabulate_results()</a></code></strong>: Genera una tabla con resultados agregados. Es posible obtener código \LaTeX de la tabla.</p></li>
+<li><p><strong><code><a href="reference/plot_results.html">plot_results()</a></code></strong>: GGrafica los resultados de una elección. Es sensible al nivel de agregación de la <code>data</code> obtenida.</p></li>
 </ul>
 </div>
-<div id="ejemplo-de-uso" class="section level3">
+<div id="vignettes" class="section level3">
 <h3 class="hasAnchor">
-<a href="#ejemplo-de-uso" class="anchor"></a>EJEMPLO DE USO</h3>
-<div id="explorar-datos-disponibles-con-show_available_elections" class="section level4">
-<h4 class="hasAnchor">
-<a href="#explorar-datos-disponibles-con-show_available_elections" class="anchor"></a>Explorar datos disponibles con <code>show_available_elections()</code>
-</h4>
-<p>La función <code><a href="reference/show_available_elections.html">show_available_elections()</a></code> muestra las elecciones disponibles para descarga. Por defecto el parámetro <code>viewer = FALSE</code> imprime el resultado en consola. Si en cambio escribimos <code>viewer = TRUE</code> los datos se presentan en el <em>Viewer</em> de <code>RStudio</code> y quedan a mano como tabla formateada y con la capacidad de ordenar y filtrar valores.</p>
-<div class="sourceCode" id="cb2"><pre class="r">
-library(polAr)
-
-show_available_elections()
-
-# A tibble: 21 x 4
-   district   category round year 
-   &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;
- 1 arg        presi    paso  2011 
- 2 caba       dip      paso  2011 
- 3 catamarca  dip      gral  2015 
- 4 chubut     dip      paso  2013 
- 5 cordoba    sen      paso  2015 
- 6 corrientes dip      gral  2017 
- 7 erios      dip      gral  2013 
- 8 formosa    dip      gral  2011 
- 9 jujuy      sen      gral  2017 
-10 neuquen    dip      gral  2013 
-# ... with 11 more rows</pre></div>
-</div>
-<div id="obtener-datos-con-get_election_data" class="section level4">
-<h4 class="hasAnchor">
-<a href="#obtener-datos-con-get_election_data" class="anchor"></a>Obtener datos con <code>get_election_data()</code>
-</h4>
-<p><code><a href="reference/get_election_data.html">get_election_data()</a></code> es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (<code>district</code>), la categoría (<code>category</code>), el turno (<code>round</code>) y el año electoral (<code>year</code>).</p>
-<p>Por defecto los datos colapsan a nivel provincial, pero podemos definir otros niveles como departamento o circuito electoral con el parámetro <code>levels</code>.</p>
-<p>Abajo el resultado de la consulta solo con los parámetros obligatorios, en el primer caso, y con un nivel de desagregación menor en el segundo:</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="reference/get_election_data.html">get_election_data</a></span>(<span class="kw">district</span> <span class="kw">=</span> <span class="st">"caba"</span>, <span class="kw">category</span> <span class="kw">=</span> <span class="st">"dip"</span>, <span class="kw">round</span> <span class="kw">=</span> <span class="st">"paso"</span>, <span class="kw">year</span> <span class="kw">=</span> <span class="st">"2011"</span>)
-
-
-<span class="co"># A tibble: 1 x 19</span>
-<span class="co"># Groups:   codprov [1]</span>
-<span class="co">#  codprov electores blancos nulos `0023` `0036` `0179` `0302` `0501` `0504` `0508` `0509` `0510` `0517` `0518` `0536` category round year </span>
-<span class="co">#  &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;</span>
-<span class="co">#  1 01      91166   35478 27459 186276  68575   8234  68001 509590  95714  47956 145580 201173  81666 294312 135361 dip      paso  2011 </span></pre></div>
-</div>
-<div id="transformar-estructura-de-datos-anchos-wide-a-largos-long-con-get_long" class="section level4">
-<h4 class="hasAnchor">
-<a href="#transformar-estructura-de-datos-anchos-wide-a-largos-long-con-get_long" class="anchor"></a>Transformar estructura de datos anchos (<em>wide</em>) a largos (<em>long</em>) con <code>get_long()</code>
-</h4>
-<p>También por defecto los datos se descargan en formato <em>wide</em>. Pero se incluye la opción de cambiar a un formato <em>long</em> usando <code>long = TRUE</code> como parametro de <code><a href="reference/get_election_data.html">get_election_data(... , long = T)</a></code> a la hora de descargar los datos.</p>
-<p>Otra alternativa es usar la función auxiliar <code><a href="reference/get_long.html">get_long()</a></code> para conseguir la misma transformación, si los datos ya habían sido guardados como un objeto en formato ancho (<em>wide</em>).</p>
-<p>Este sería el caso haciendo una llamada similar a la del ejemplo anterior pero ahora a nivel <code>departamento</code>y guardandola en un objeto con nombre <code>data</code>:</p>
-<p><code>data &lt;- get_election_data(district = "caba", category = "dip", round = "paso", year = "2011", level = "departamento")</code>, donde, por defecto <code>long = FALSE</code>.</p>
-<p>Usamos la función auxiliar para convertir el formato de <code>data</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="no">data</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="reference/get_long.html">get_long</a></span>()
-
-<span class="co"># A tibble: 210 x 9</span>
-<span class="co"># Groups:   codprov, depto, coddepto [15]</span>
-<span class="co">#  codprov    depto     coddepto electores category round year  listas votos</span>
-<span class="co">#  &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt;</span>
-<span class="co">#  1 01      Comuna 01 001         185778 dip      paso  2011  0023   13071</span>
-<span class="co">#  2 01      Comuna 01 001         185778 dip      paso  2011  0036    5425</span>
-<span class="co">#  3 01      Comuna 01 001         185778 dip      paso  2011  0179     563</span>
-<span class="co">#  4 01      Comuna 01 001         185778 dip      paso  2011  0302    3784</span>
-<span class="co">#  5 01      Comuna 01 001         185778 dip      paso  2011  0501   37804</span>
-<span class="co">#  6 01      Comuna 01 001         185778 dip      paso  2011  0504    6829</span>
-<span class="co">#  7 01      Comuna 01 001         185778 dip      paso  2011  0508    2876</span>
-<span class="co">#  8 01      Comuna 01 001         185778 dip      paso  2011  0509    8847</span>
-<span class="co">#  9 01      Comuna 01 001         185778 dip      paso  2011  0510   10629</span>
-<span class="co"># 10 01      Comuna 01 001         185778 dip      paso  2011  0517    5094</span>
-<span class="co"># ... with 200 more rows</span></pre></div>
-</div>
-<div id="obtener-nombres-de-listas-o-partidos-políticos-con-get_names" class="section level4">
-<h4 class="hasAnchor">
-<a href="#obtener-nombres-de-listas-o-partidos-pol%C3%ADticos-con-get_names" class="anchor"></a>Obtener nombres de listas o partidos políticos con <code>get_names()</code>
-</h4>
-<p>Siguiendo el ejemplo anterior, una vez que <code>data</code> cambió a formato <em>long</em> se puede incorporar facilmente el nombre de los partios correspondientes al <em>id</em> de la columna <code>listas</code> con <code><a href="reference/get_names.html">get_names()</a></code>:</p>
-<div class="sourceCode" id="cb5"><pre class="r">
-<span class="no">data</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="reference/get_long.html">get_long</a></span>() <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="reference/get_names.html">get_names</a></span>()</pre></div>
-</div>
-<div id="computar-número-efectivo-de-partidos-con-compute_nep" class="section level4">
-<h4 class="hasAnchor">
-<a href="#computar-n%C3%BAmero-efectivo-de-partidos-con-compute_nep" class="anchor"></a>Computar Número Efectivo de Partidos con <code>compute_nep()</code>
-</h4>
-<p>La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el <em>Número Efectivo de Partidos Políticos</em>.</p>
-<p>El cálculo se realizará el nivel de agregación de los datos descargados con <code><a href="reference/get_election_data.html">get_election_data()</a></code>. En este caso a nivel departamental. La función <code><a href="reference/compute_nep.html">compute_nep()</a></code> tiene un parámetro para elegir entre el índice de <a href="https://journals.sagepub.com/doi/10.1177/001041407901200101">Laakso-Taagepera</a> y/o el de <a href="https://journals.sagepub.com/doi/10.1177/1354068809339538">Golosov</a>.</p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="no">data</span> <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="reference/get_long.html">get_long</a></span>() <span class="kw">%&gt;%</span>
-  <span class="fu"><a href="reference/compute_nep.html">compute_nep</a></span>()</pre></div>
-</div>
+<a href="#vignettes" class="anchor"></a>Vignettes</h3>
+<p>Se pueden consultar pequeños ejemplos de uso en las sección <a href="">ARTICULOS</a></p>
 </div>
 <div id="creditos" class="section level3">
 <h3 class="hasAnchor">
@@ -212,7 +143,7 @@ show_available_elections()
 <div id="referencia" class="section level3">
 <h3 class="hasAnchor">
 <a href="#referencia" class="anchor"></a>REFERENCIA</h3>
-<div class="sourceCode" id="cb7"><pre class="r">@Manual{,
+<div class="sourceCode" id="cb2"><pre class="r">@Manual{,
     title = {polAr: Política Argentina usando R},
     author = {Juan Pablo {Ruiz Nicolini}},
     year = {2020},

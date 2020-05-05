@@ -1,0 +1,77 @@
+---
+title: "Indicadores"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{compute}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(polAr)
+```
+
+
+#### Computar Número Efectivo de Partidos
+
+La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el *Número Efectivo de Partidos Políticos*. 
+
+El cálculo se realizará el nivel de agregación de los datos descargados con `get_election_data()`. En este caso a nivel departamental. La función `compute_nep()` tiene un parámetro para elegir entre el índice de [Laakso-Taagepera](https://journals.sagepub.com/doi/10.1177/001041407901200101) y/o el de  [Golosov](https://journals.sagepub.com/doi/10.1177/1354068809339538).
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+  
+ polAr::get_election_data(district = "tucuman", 
+                   category = "dip", 
+                   round = "gral", 
+                   year = 2007) -> diputados_tucuman2007G
+ 
+ 
+ 
+   polAr::compute_nep(data = diputados_tucuman2007G , index = "All")
+   
+
+```
+
+#### Competitividad
+
+Otro indicador de interes puede ser computado con `compute_competitiveness()`. Este representa el grado de comeptencia de una eleccion en un distrito determinado a partir de la diferencia porcentual de votos obtenidos por los dos partidos más votados.  Puede tomar valores entre $[0,1]$ donde $1$ es lo más comeptitivo ($a=50\% $y $b=50\%$ de los votos) y $0$ lo opuesto.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+  
+ polAr::get_election_data(district = "tucuman", 
+                   category = "dip", 
+                   round = "gral", 
+                   year = 2007, 
+                   level = "departamento") -> diputados_tucuman_2007_general_depto
+ 
+ 
+ 
+   polAr::compute_competitiveness(data = diputados_tucuman_2007_general_depto)
+   
+
+```
+
+Dado que `data` había sido descragada con `level = "departamento"`, podemos seleccionar ese nivel como parámetro adicional y estimar el indicador a nivel local. 
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+
+ data <- polAr::get_election_data(district = "tucuman", 
+                   category = "dip", 
+                   round = "gral", 
+                   year = 2007, 
+                   level = "departamento", long = TRUE)
+                   
+   compute_competitiveness(data = data, level = "departamento") 
+   
+
+
+```
+

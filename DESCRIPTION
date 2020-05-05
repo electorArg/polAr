@@ -38,7 +38,10 @@ Imports:
     scales, 
     rlang (>= 0.4.3), 
     RColorBrewer, 
-    grDevices 
+    grDevices
 Suggests:
-    pkgcond
+    pkgcond,
+    knitr,
+    rmarkdown
 RoxygenNote: 6.1.1
+VignetteBuilder: knitr

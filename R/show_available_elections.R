@@ -35,6 +35,41 @@ show_available_elections <- function(viewer = FALSE){
   
   
   
+  #### province character code and names ######
+  
+  filelist <- filelist %>% 
+    dplyr::mutate(NOMBRE = dplyr::case_when(
+      district =="arg" ~    "argentina",    
+      district =="caba" ~     "caba",  
+      district =="catamarca" ~ "catamarca",  
+      district =="chaco" ~    "chaco",  
+      district =="chubut" ~   "chubut",  
+      district =="cordoba" ~  "cordoba",  
+      district =="corrientes" ~ "corrientes", 
+      district =="erios" ~    "entre rios",  
+      district =="formosa" ~  "formosa",  
+      district =="jujuy" ~    "jujuy",    
+      district =="mendoza" ~  "mendoza",  
+      district =="misiones" ~ "misiones",  
+      district =="neuquen" ~  "neuquen",  
+      district =="pampa" ~  "la pampa",    
+      district =="pba" ~    "buenos aires",    
+      district =="rioja" ~  "la rioja",    
+      district =="rnegro" ~   "rio negro",  
+      district =="salta" ~  "salta",    
+      district =="santiago" ~ "santiago del estero",  
+      district =="scruz" ~  "santa cruz",    
+      district =="sfe" ~    "santa fe",    
+      district =="sjuan" ~  "san juan",      
+      district =="sluis" ~  "san luis",    
+      district =="tdf" ~  "tierra del fuego",      
+      district =="tucuman" ~ "tucuman")) %>% 
+    dplyr::mutate(NOMBRE = stringr::str_to_upper(NOMBRE))
+  
+   
+
+  
+  
   if(viewer == TRUE){
 
      x <-  filelist %>%

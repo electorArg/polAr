@@ -10,7 +10,7 @@
 #'  and \code{\link{get_names}}}).   
 #' @export
 
-        get_long <-   function(data){
+        make_long <-   function(data){
           
          data %>%
             tidyr::pivot_longer(names_to = "listas",

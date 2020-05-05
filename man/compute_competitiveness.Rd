@@ -31,20 +31,9 @@ Funcion que describe el grado de competencia de una eleccion
 \strong{REQUISITO:}
 
 El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_competitiveness}}. 
- Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}} 
+ Si \code{data} es \emph{wide} se puede transformar con \code{\link{make_long}} 
  (\emph{\code{long} format of \code{data} is required for \code{\link{compute_competitiveness}}. If \code{data} is in \emph{wide} format
- you can transform it with \code{\link{get_long}}}).
-}
-\examples{
-get_election_data(district = "tucuman", 
-                  category = "dip", 
-                  round = "gral", 
-                  year = 2017, 
-                  level = "departamento") \%>\% 
-  compute_competitiveness(level = "departamento") \%>\% 
-  dplyr::arrange(dplyr::desc(competitividad))
-
- 
+ you can transform it with \code{\link{make_long}}}).
 }
 \seealso{
 \code{\link{compute_nep}}

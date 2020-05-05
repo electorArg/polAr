@@ -19,9 +19,9 @@
 #' @details  \eqn{\large Golosov}: \deqn{NEP_{Golosov}=\frac{p_{i}}{\sum_{i}^{n} p_{i}+p_{max}^2-p_{i}^2}}
 #' @details \strong{REQUISITO:} 
 #' @details El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_nep}}. 
-#'  Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}}  
+#'  Si \code{data} es \emph{wide} se puede transformar con \code{\link{make_long}}  
 #'  (\emph{\code{long} format of \code{data} is required for \code{\link{compute_nep}}. 
-#'  If \code{data} is in \emph{wide} format you can transform it with \code{\link{get_long}}})
+#'  If \code{data} is in \emph{wide} format you can transform it with \code{\link{make_long}}})
 #' @details \strong{NOTA:} 
 #' @details el parámetro \code{level} de \code{\link{get_election_data}} determina el nivel de agregacion sobre el que 
 #'  se computa el NEP: \code{provincia}, \code{departamento} o \code{circuito}  
@@ -29,22 +29,12 @@
 #'  will be made: \code{provincia}, \code{departamento} or \code{circuito}}).    
 #' @seealso  \code{\link{compute_competitiveness}} 
 #' 
-#' @examples 
-#' get_election_data(district = "tucuman", 
-#'                   category = "dip", 
-#'                   round = "gral", 
-#'                   year = 2017) -> diputados_tucuman2017G
-#' 
-#' 
-#' diputados_tucuman2017G %>% 
-#'   compute_nep(index = "All")
-#'   
 #' @export
 
 
 
 compute_nep <- function(data,
-               index = NULL){
+               index = 'All'){
   
   # category check
   assertthat::assert_that(is.character(index),

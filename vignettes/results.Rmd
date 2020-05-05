@@ -1,0 +1,68 @@
+---
+title: "Visualizar resultados"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{reults}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(polAr)
+```
+
+### Visualización de resultados
+
+Para poder obtener resumenes visuales de los resutlados de la elección hay que tener presente el nivel de agregación de los mismos a la hora de descargar los datos con `get_election_data()`. En el caso de la tabla es condición que el mismo sea con parámetro `level = "provincia"`. Para los gráficos, en cambio, se puede hacer tanto a nivel `provinica` como `departamento`.  
+
+Otros requisitos son: 
+
+1. El formato de data debe ser `long`. 
+
+2. `data` tiene que haber incorporando los nombres de las listas. Estos se pueden agregar con la función auxiliar `get_names`. 
+
+
+#### Tabulado 
+
+El siguiente es un ejemplo que describe esos pasos para generar una tabla. Nótese que `get_election_data()` no especifica el `level`, puesto que el valor por defecto es `provincia`. Adicionalmente, el requisito *1.* se cumple con el parámetro `long = TRUE` y el *2.* con el siguiente comando en el que se agregan los nombres (`get_names`).
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+  
+ caba_2011_diputados_general <-  get_election_data(district = "caba", 
+                                                   category = "dip", 
+                                                   round = "paso", 
+                                                   year = 2011, long = TRUE) 
+ 
+ data <- get_names(data = caba_2011_diputados_general) 
+ 
+ tabulate_results(data)
+```
+
+
+Una posibilidad adicional que brinda la función es poder exportar código de \LaTeX pre formateado para armar tablas. 
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ tabulate_results(data, LaTeX = TRUE)
+```
+
+
+#### Gráficos
+
+Al igual que con los tabulados, los gráficos tienen que cumplir con dos condiciones: **1.** ser *largos* (`LONG`)  y **2.** haber incorporado los nombres de las listas con `get_names()`. 
+
+Usando el mismo objeto `data` con el que se armó la tabla `plot_results` genera un gráfico con los resultados. Automáticamente lo hará al nivel de agregación que se encuentren los datos. En este caso `provincia`. 
+
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+ plot_results(data)
+```
+

@@ -247,7 +247,7 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
               df %>%
                  dplyr::ungroup() %>% 
                  dplyr::mutate(codprov = as.character(codprov)) %>% 
-                 polAr::get_long() %>% 
+                 polAr::make_long() %>% 
                  dplyr::select(category, round, year, codprov, name_prov, dplyr::everything()) %>% 
                  dplyr::group_by_at(levels)
             

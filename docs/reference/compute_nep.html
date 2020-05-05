@@ -75,7 +75,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">polAr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -89,6 +89,24 @@
 </li>
 <li>
   <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/compute.html">Indicadores</a>
+    </li>
+    <li>
+      <a href="../articles/data.html">Acceso a datos</a>
+    </li>
+    <li>
+      <a href="../articles/results.html">Visualizar resultados</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -122,7 +140,7 @@
  (<em>Function that computes NEP: indicator that provides a "tight" number of political parties in a party system</em>)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>compute_nep</span>(<span class='no'>data</span>, <span class='kw'>index</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>compute_nep</span>(<span class='no'>data</span>, <span class='kw'>index</span> <span class='kw'>=</span> <span class='st'>"All"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,9 +171,9 @@
 <p>\(\large Golosov\): $$NEP_{Golosov}=\frac{p_{i}}{\sum_{i}^{n} p_{i}+p_{max}^2-p_{i}^2}$$</p>
 <p><strong>REQUISITO:</strong></p>
 <p>El formato de <code>data</code> debe ser <code>long</code> para calcular <code>compute_nep</code>. 
- Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='get_long.html'>get_long</a></code>  
+ Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='make_long.html'>make_long</a></code>  
  (<em><code>long</code> format of <code>data</code> is required for <code>compute_nep</code>. 
- If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='get_long.html'>get_long</a></code></em>)</p>
+ If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='make_long.html'>make_long</a></code></em>)</p>
 <p><strong>NOTA:</strong></p>
 <p>el parámetro <code>level</code> de <code><a href='get_election_data.html'>get_election_data</a></code> determina el nivel de agregacion sobre el que 
  se computa el NEP: <code>provincia</code>, <code>departamento</code> o <code>circuito</code>  
@@ -165,20 +183,6 @@
 
     <div class='dont-index'><p><code><a href='compute_competitiveness.html'>compute_competitiveness</a></code></p></div>
 
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='get_election_data.html'>get_election_data</a></span>(<span class='kw'>district</span> <span class='kw'>=</span> <span class='st'>"tucuman"</span>,
-                  <span class='kw'>category</span> <span class='kw'>=</span> <span class='st'>"dip"</span>,
-                  <span class='kw'>round</span> <span class='kw'>=</span> <span class='st'>"gral"</span>,
-                  <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2017</span>) <span class='kw'>-&gt;</span> <span class='no'>diputados_tucuman2017G</span>
-
-
-<span class='no'>diputados_tucuman2017G</span> <span class='kw'>%&gt;%</span>
-  <span class='fu'>compute_nep</span>(<span class='kw'>index</span> <span class='kw'>=</span> <span class='st'>"All"</span>)</div><div class='output co'>#&gt; # A tibble: 2 x 3
-#&gt;   codprov value index           
-#&gt;   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;           
-#&gt; 1 23       2.47 Golosov         
-#&gt; 2 23       2.94 Laakso-Taagepera</div><div class='input'>  
-</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

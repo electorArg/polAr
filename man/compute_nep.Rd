@@ -5,7 +5,7 @@
 \title{Calcula Numero Efectivo de Partidos Politicos - NEP 
  (\emph{Computes Effective Number of Political Parties})}
 \usage{
-compute_nep(data, index = NULL)
+compute_nep(data, index = "All")
 }
 \arguments{
 \item{data}{la base de datos para hacer el calculo obtenida con \code{\link{get_election_data}} 
@@ -36,9 +36,9 @@ Impementación de las fórmulas \href{https://journals.sagepub.com/doi/10.1177/0
 \strong{REQUISITO:}
 
 El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_nep}}. 
- Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}}  
+ Si \code{data} es \emph{wide} se puede transformar con \code{\link{make_long}}  
  (\emph{\code{long} format of \code{data} is required for \code{\link{compute_nep}}. 
- If \code{data} is in \emph{wide} format you can transform it with \code{\link{get_long}}})
+ If \code{data} is in \emph{wide} format you can transform it with \code{\link{make_long}}})
 
 \strong{NOTA:}
 
@@ -46,17 +46,6 @@ el parámetro \code{level} de \code{\link{get_election_data}} determina el nivel
  se computa el NEP: \code{provincia}, \code{departamento} o \code{circuito}  
  (\emph{\code{level} at \code{\link{get_election_data}} determines aggregation on which NEP calculation 
  will be made: \code{provincia}, \code{departamento} or \code{circuito}}).
-}
-\examples{
-get_election_data(district = "tucuman", 
-                  category = "dip", 
-                  round = "gral", 
-                  year = 2017) -> diputados_tucuman2017G
-
-
-diputados_tucuman2017G \%>\% 
-  compute_nep(index = "All")
-  
 }
 \seealso{
 \code{\link{compute_competitiveness}}

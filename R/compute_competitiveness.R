@@ -13,22 +13,13 @@
 #'   La fórmula utilizada es:  \deqn{Competitividad = 1 - (a - b)}
 #' @details \strong{REQUISITO:} 
 #' @details El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_competitiveness}}. 
-#'  Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}} 
+#'  Si \code{data} es \emph{wide} se puede transformar con \code{\link{make_long}} 
 #'  (\emph{\code{long} format of \code{data} is required for \code{\link{compute_competitiveness}}. If \code{data} is in \emph{wide} format
-#'  you can transform it with \code{\link{get_long}}}). 
+#'  you can transform it with \code{\link{make_long}}}). 
 #' @seealso  \code{\link{compute_nep}} 
 #' @return devuelve un valor entre 0 y 1 que representa el grado de comeptencia de una eleccion en un distrito determinado 
 #'  (\emph{returns a value between 0 and 1 representing degree of competition of an election in a given district }).
 #'  
-#' @examples 
-#' get_election_data(district = "tucuman", 
-#'                   category = "dip", 
-#'                   round = "gral", 
-#'                   year = 2017, 
-#'                   level = "departamento") %>% 
-#'   compute_competitiveness(level = "departamento") %>% 
-#'   dplyr::arrange(dplyr::desc(competitividad))
-#' 
 #'  
 #' @export
 
@@ -44,7 +35,7 @@ compute_competitiveness <- function(data,
                           msg = glue::glue({level}," is not a valid level c('provincia', 'departamento', 'circuito')"))
                           
   assertthat::assert_that("listas" %in% colnames(data), 
-                          msg = "data is not in a long format. Use 'get_long()' to transform it" )
+                          msg = "data is not in a long format. Use 'make_long()' to transform it" )
   
   
   if(level == "departamento"){

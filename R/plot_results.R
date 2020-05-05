@@ -4,22 +4,16 @@
 #' @param data un tibble guardado como objeto en el Enviroment luego de consultar \code{\link{get_election_data}} con parametro \code{level} en \code{provincia} 
 #'  (\emph{A tibble saved as an object in the Enviroment after querying \code{\link{get_election_data}}} with \code{provincia} as \code{level} parameter). 
 #' @details \strong{REQUISITOS:} 
-#' @details \strong{1}. El formato de \code{data} debe ser \code{long} para pdoer graficar. Si \code{data} es \emph{wide} se puede transformar con \code{\link{get_long}} 
-#'  (\emph{\code{long} format of \code{data} is required for plotting results. If \code{data} is in \emph{wide} format you can transform it with \code{\link{get_long}}})
+#' @details \strong{1}. El formato de \code{data} debe ser \code{long} para pdoer graficar. Si \code{data} es \emph{wide} se puede transformar con \code{\link{make_long}} 
+#'  (\emph{\code{long} format of \code{data} is required for plotting results. If \code{data} is in \emph{wide} format you can transform it with \code{\link{make_long}}})
 #' @details \strong{2.} \code{data} tiene que haber incorporando los nombres de las listas. Agreguelos con \code{\link{get_names}} 
 #'  (\emph{\code{data} must have party names. Add them with \code{\link{get_names}}})
 #' @details \strong{3.} \code{data} tiene que haber sido descargada con parametro \code{level = provincia} con la funcion \code{\link{get_election_data}} 
 #'  (\emph{\code{data} must have \code{level = provincia} wen downloading it with \code{\link{get_election_data}}})
-#'  
-#' @examples 
-#' get_election_data(district = "tucuman", 
-#'                   category = "dip", 
-#'                   round = "gral", 
-#'                   year = 2017) %>% 
-#'   get_names() %>% 
-#'   plot_results()
-#'  
-#' @seealso  \code{\link{get_results}} 
+#' 
+#' @seealso 
+#' \code{\link{tabulate_results}} 
+#' 
 #' @export
 
 plot_results <- function(data){
@@ -37,7 +31,7 @@ plot_results <- function(data){
                           msg = glue::glue({level}," is not a valid level. Options are 'provincia' & 'departamento'"))
   
   assertthat::assert_that("listas" %in% colnames(data), 
-                          msg = "data is not in a long format. Use 'get_long()' to transform it")
+                          msg = "data is not in a long format. Use 'make_long()' to transform it")
   
   
   assertthat::assert_that("nombre_lista" %in% colnames(data), 

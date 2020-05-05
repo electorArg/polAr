@@ -1,0 +1,102 @@
+---
+title: "Acceso a datos"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(polAr)
+```
+
+
+#### Explorar datos disponibles con `show_available_elections()`
+
+La función `show_available_elections()` muestra las elecciones disponibles para descarga. Por defecto el parámetro `viewer = FALSE` imprime el resultado en consola. Si en cambio escribimos `viewer = TRUE` los datos se presentan en el _Viewer_ de `RStudio` y quedan a mano como tabla formateada y con la capacidad de ordenar y filtrar valores. 
+
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+  
+library(polAr)
+
+show_available_elections()
+   
+
+```
+
+
+#### Obtener datos con `get_election_data()`
+
+`get_election_data()` es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (`district`), la categoría (`category`), el turno (`round`) y el año electoral (`year`). 
+
+Por defecto los datos colapsan a nivel provincial, pero podemos definir otros niveles como departamento o circuito electoral con el parámetro `levels`. 
+
+Abajo el resultado de la consulta solo con los parámetros obligatorios, en el primer caso, y con un nivel de desagregación menor en el segundo:
+
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+  
+get_election_data(district = "caba", 
+                  category = "dip",
+                  round = "paso", 
+                  year = 2011,
+                  long = FALSE)
+
+```
+
+
+#### Transformar estructura de datos anchos (*wide*) a largos (*long*) con `make_long()`
+
+Por defecto los datos se descargan en formato *long*. Pero si hubieramos descargado resultados en formato *wide* como en el ejemplo anterior, existe la posibilidad de transformarlos y cambiar a *long* usando la función auxiliar `make_long()`. 
+
+Este sería el caso haciendo una llamada similar a la del ejemplo anterior pero ahora a nivel `departamento`y guardandola en un objeto con nombre `data`:  
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+  
+data <- get_election_data(district = "caba", 
+                          category = "dip",
+                          round = "paso", 
+                          year = 2011, 
+                          level = "departamento", long = FALSE) %>% 
+  print()
+   
+
+```
+
+
+Usamos la función auxiliar para convertir el formato de `data`: 
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+  
+data %>% 
+  make_long() 
+
+```
+
+
+#### Obtener nombres de listas o partidos políticos con `get_names()`
+
+Siguiendo el ejemplo anterior, una vez que `data` cambió a formato *long* se puede incorporar facilmente el nombre de los partios correspondientes al *id* de la columna `listas` con `get_names()`: 
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
+  
+
+data %>% 
+  make_long %>% 
+  get_names() 
+
+```
