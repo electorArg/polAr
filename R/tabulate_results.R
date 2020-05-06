@@ -39,6 +39,10 @@
     assertthat::assert_that(dim(data)[2] == 9, 
                             msg = "data is not in the correct 'provincia' level format")
     
+    # FIX CORRUPT INPUT DATA   
+    data <- data %>%
+        dplyr::mutate(votos = ifelse(is.na(votos), 0, votos)) %>%   # code 0 for NA votes (not reported!)
+        dplyr::filter(!stringr::str_detect(nombre_lista, "\\d$"))  
     
     
     ### summarize for presidential election
@@ -55,8 +59,8 @@
         
     } else {
         
-        data %>% 
-         dplyr::select(-electores) # Add here  for fixing bug with presidential elections. 
+    data <-     data %>% 
+         dplyr::select(- electores) # Add here  for fixing bug with presidential elections. 
                                    # Previous version drop variable afterwards
 
     }

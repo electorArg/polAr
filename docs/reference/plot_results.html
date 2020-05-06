@@ -72,7 +72,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">polAr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -105,6 +105,9 @@
     </li>
   </ul>
 </li>
+<li>
+  <a href="../news/index.html">Changelog</a>
+</li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -135,7 +138,7 @@
     <p>Funcion para graficar resultados de la eleccion (<em>Function to plot election results</em>)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot_results</span>(<span class='no'>data</span>)</pre>
+    <pre class="usage"><span class='fu'>plot_results</span>(<span class='no'>data</span>, <span class='kw'>national</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -144,6 +147,11 @@
       <th>data</th>
       <td><p>un tibble guardado como objeto en el Enviroment luego de consultar <code><a href='get_election_data.html'>get_election_data</a></code> con parametro <code>level</code> en <code>provincia</code> 
 (<em>A tibble saved as an object in the Enviroment after querying <code><a href='get_election_data.html'>get_election_data</a></code></em> with <code>provincia</code> as <code>level</code> parameter).</p></td>
+    </tr>
+    <tr>
+      <th>national</th>
+      <td><p>un boleano opcional para graficar elecciones presidenciales sin desagregar 
+(<em>an optional boolean to plot presidential elections without disaggregating</em>).</p></td>
     </tr>
     </table>
 

@@ -50,7 +50,7 @@ Entre los primeros se deben consignar `district` para el distrito; `category` pa
 
 ### Vignettes
 
-Se pueden consultar pequeños ejemplos de uso en las sección [ARTICULOS]()
+Se pueden consultar pequeños ejemplos de uso en las sección [ARTICULOS](https://electorarg.github.io/polAr/articles/)
 
 
 ### CREDITOS

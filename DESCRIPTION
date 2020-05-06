@@ -1,6 +1,6 @@
 Package: polAr
 Title: Toolbox for Argentina's Political Analysis
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person(given = "Juan Pablo",
            family = "Ruiz Nicolini",

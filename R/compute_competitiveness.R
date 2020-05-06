@@ -83,8 +83,7 @@ if(level != "provincia"){
     dplyr::select(-c(listas, votos))    
   
    
-}
-  else{
+} else{
     
     temp <-  data %>%
       dplyr::group_by_at(levels_unique) %>% 

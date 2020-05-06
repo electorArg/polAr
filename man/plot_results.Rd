@@ -4,11 +4,14 @@
 \alias{plot_results}
 \title{Graficar resultados (\emph{Plot results})}
 \usage{
-plot_results(data)
+plot_results(data, national = FALSE)
 }
 \arguments{
 \item{data}{un tibble guardado como objeto en el Enviroment luego de consultar \code{\link{get_election_data}} con parametro \code{level} en \code{provincia} 
 (\emph{A tibble saved as an object in the Enviroment after querying \code{\link{get_election_data}}} with \code{provincia} as \code{level} parameter).}
+
+\item{national}{un boleano opcional para graficar elecciones presidenciales sin desagregar 
+(\emph{an optional boolean to plot presidential elections without disaggregating}).}
 }
 \description{
 Funcion para graficar resultados de la eleccion (\emph{Function to plot election results})

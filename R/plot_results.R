@@ -3,6 +3,8 @@
 #' Funcion para graficar resultados de la eleccion (\emph{Function to plot election results})
 #' @param data un tibble guardado como objeto en el Enviroment luego de consultar \code{\link{get_election_data}} con parametro \code{level} en \code{provincia} 
 #'  (\emph{A tibble saved as an object in the Enviroment after querying \code{\link{get_election_data}}} with \code{provincia} as \code{level} parameter). 
+#' @param national un boleano opcional para graficar elecciones presidenciales sin desagregar 
+#'  (\emph{an optional boolean to plot presidential elections without disaggregating}). 
 #' @details \strong{REQUISITOS:} 
 #' @details \strong{1}. El formato de \code{data} debe ser \code{long} para pdoer graficar. Si \code{data} es \emph{wide} se puede transformar con \code{\link{make_long}} 
 #'  (\emph{\code{long} format of \code{data} is required for plotting results. If \code{data} is in \emph{wide} format you can transform it with \code{\link{make_long}}})
@@ -16,12 +18,19 @@
 #' 
 #' @export
 
-plot_results <- function(data){
+plot_results <- function(data, 
+                         national = FALSE){
   
   
-  level <- if(dim(data)[2] == 11){
+  level <- if(dim(data)[2] == 11) {
+     
+   c("departamento")
+ 
+   } else if  (dim(data)[1]> 40){ #arbitrary number but large enough to think its provincial level for president election
+     
     c("departamento")
-  }else{
+     
+  } else {
     c("provincia")
   }
   
@@ -38,21 +47,58 @@ plot_results <- function(data){
                           msg = "you have to add party labes to 'data' using 'get_names()'")
   
   
+  
+  
+  
   if(level == "departamento"){
-    assertthat::assert_that("coddepto" %in% colnames(data), 
-                            msg = "data input is not at the correct level 'departamento'. Download it again with parameters:
-  get_election_data(..., level = 'departamento)")
+    assertthat::assert_that("coddepto" %in% colnames(data) | unique(data$category == "presi"), 
+                            msg = "data input is not at the correct level. Download it again with parameters:
+  get_election_data(..., level = 'parameter')")
     
-  } else {
-    assertthat::assert_that(dim(data)[2] == 9, 
-                            msg = "data is not in the correct 'provincia' level format. Download it again with parameters:
-  get_election_data(..., level = 'provincia)")
+  } 
+  
+  if(national == TRUE){
+    assertthat::assert_that(unique(data$category == "presi"), 
+                            msg = "The bolean 'national = TRUE' is only for presidential elections.")
   }
   
   
   
+  
+
+  # FIX CORRUPT INPUT DATA   
+  data <- data %>%
+    dplyr::mutate(votos = ifelse(is.na(votos), 0, votos)) %>%   # code 0 for NA votes (not reported!)
+    dplyr::filter(!stringr::str_detect(nombre_lista, "\\d$"))  
+  
+  ### summarize for presidential election
+  
+  data <-  if(national == TRUE & unique(data$category == "presi")){
+    
+     data %>% 
+      dplyr::group_by(category, round, year, listas , nombre_lista) %>% 
+      dplyr::summarise_at(.vars = "votos", .funs = sum) %>% 
+      dplyr::mutate(codprov = "00",
+                    name_prov = "Argentina") %>% 
+      dplyr::ungroup()
+    
+    
+  } else {
+    
+     data %>% 
+      dplyr::select(-electores) # Add here  for fixing bug with presidential elections. 
+    # Previous version drop variable afterwards
+    
+  }
+  
+  
   # DATA INPUT
-  election_district<- unique(data$name_prov) 
+  
+  election_district <- if(unique(data$category == "presi")){
+    "ARGENTINA"
+  } else {
+      unique(data$name_prov)
+    }
   
   election_date <- unique(data$year) 
   
@@ -77,12 +123,12 @@ plot_results <- function(data){
       round == "balota" ~ "Balotaje"
     )) %>% 
     dplyr::pull()
-    
+  
   
  
   ### Plots conditional to level selections
   
-  if(level == "provincia"){
+  if(level == "provincia" | national == TRUE){
     
     datos_prov<- data %>% 
       dplyr::mutate(pct = votos/sum(votos)) %>% 
@@ -128,7 +174,7 @@ plot_results <- function(data){
     
     # Load geo-grids for 'departamento'
     
-    geofacet <-  readRDS(gzcon(url("https://github.com/TuQmano/test_data/blob/master/grillas_geofacet.rds?raw=true")))
+    geofacet <-  readRDS(gzcon(url("https://github.com/electorArg/PolAr_Data/blob/master/geo/grillas_geofacet.rds?raw=true")))
     
     
     facet_select <-  geofacet %>%
@@ -176,11 +222,17 @@ plot_results <- function(data){
                      panel.spacing.y =ggplot2::unit(0, "cm")) +
       ggplot2::guides(fill = ggplot2::guide_legend(nrow = 7))
     
-    
-    suppressMessages(base_plot_depto + geofacet::facet_geo(~ coddepto, grid = facet_select, label = "name")) 
-    
-  }
+   
+    if("coddepto" %in% colnames(datos_depto)){
+      
+      suppressMessages(base_plot_depto + geofacet::facet_geo(~ coddepto, grid = facet_select, label = "name")) 
+      
+      
+    } else {
+      
+      suppressMessages(base_plot_depto + geofacet::facet_geo(~ codprov, grid = facet_select, label = "name")) 
+      
+    }  # Close departament geofacet
+  } # close conditional ploting
+  } #close function
   
-  
-  
-}
