@@ -17,16 +17,7 @@
 #' @param raw un boleano \code{TRUE/FALSE} que define si descargar base de datos desagregada a nivel MESA o no 
 #'  (\emph{a \code{TRUE/FALSE} boolean to define whether to download disaggregated data at BALLOT level or not})
 #'  
-#'  @examples 
 #'  
-#' get_election_data(district = "tucuman", 
-#'                   category = "dip", 
-#'                   round = "gral", 
-#'                   year = 2017, 
-#'                   level = "departamento") 
-
-
-
 #'@export
 
 get_election_data <- function(district = NULL ,

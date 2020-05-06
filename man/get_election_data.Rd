@@ -27,15 +27,7 @@ get_election_data(district = NULL, category = NULL, round = NULL,
 (\emph{a boolean for data structure. By default} \code{long = FALSE})}
 
 \item{raw}{un boleano \code{TRUE/FALSE} que define si descargar base de datos desagregada a nivel MESA o no 
- (\emph{a \code{TRUE/FALSE} boolean to define whether to download disaggregated data at BALLOT level or not})
- 
- @examples 
- 
-get_election_data(district = "tucuman", 
-                  category = "dip", 
-                  round = "gral", 
-                  year = 2017, 
-                  level = "departamento")}
+(\emph{a \code{TRUE/FALSE} boolean to define whether to download disaggregated data at BALLOT level or not})}
 }
 \description{
 Funcion que descarga resultados electorales nacionales desde 2007 

@@ -41,6 +41,27 @@
     
     
     
+    ### summarize for presidential election
+    
+    if(unique(data$category) == "presi"){
+        
+        
+       data <-  data %>% 
+            dplyr::group_by(category, round, year, listas , nombre_lista) %>% 
+            dplyr::summarise_at(.vars = "votos", .funs = sum) %>% 
+            dplyr::mutate(codprov = "00",
+                          name_prov = "Argentina") %>% 
+            dplyr::ungroup()
+        
+    } else {
+        
+        data %>% 
+         dplyr::select(-electores) # Add here  for fixing bug with presidential elections. 
+                                   # Previous version drop variable afterwards
+
+    }
+
+    
     # Compute pct votes and arrange
     
     temp <-  data %>%
@@ -86,7 +107,7 @@
           nombre_lista %in% c("blancos", "nulos") ~ nombre_lista, 
           T ~ paste0(listas, "-", nombre_lista))) %>% 
        dplyr::rename("Lista" = lista, "Votos" = votos) %>% 
-       dplyr::select(-c(electores, category, round, year, codprov, name_prov, listas, nombre_lista)) %>% 
+       dplyr::select(-c(category, round, year, codprov, name_prov, listas, nombre_lista)) %>% 
        gt::gt() %>% 
        gt::cols_move_to_start(c("Lista", "Votos")) %>% 
        gt::fmt_percent("Votos",decimals = 1) %>%
@@ -104,7 +125,7 @@
              nombre_lista %in% c("blancos", "nulos") ~ nombre_lista, 
              T ~ paste0(listas, "-", nombre_lista))) %>% 
           dplyr::rename("Lista" = lista, "Votos" = votos) %>% 
-          dplyr::select(-c(electores, category, round, year, codprov, name_prov, listas, nombre_lista)) %>% 
+          dplyr::select(-c(category, round, year, codprov, name_prov, listas, nombre_lista)) %>% 
           gt::gt() %>% 
           gt::cols_move_to_start(c("Lista", "Votos")) %>% 
           gt::fmt_percent("Votos",decimals = 1) %>%

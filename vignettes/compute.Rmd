@@ -42,7 +42,7 @@ El cálculo se realizará el nivel de agregación de los datos descargados con `
 
 #### Competitividad
 
-Otro indicador de interes puede ser computado con `compute_competitiveness()`. Este representa el grado de comeptencia de una eleccion en un distrito determinado a partir de la diferencia porcentual de votos obtenidos por los dos partidos más votados.  Puede tomar valores entre $[0,1]$ donde $1$ es lo más comeptitivo ($a=50\% $y $b=50\%$ de los votos) y $0$ lo opuesto.
+Otro indicador de interes puede ser computado con `compute_competitiveness()`. Este representa el grado de comeptencia de una eleccion en un distrito determinado a partir de la diferencia porcentual de votos obtenidos por los dos partidos más votados.  Puede tomar valores entre $[0,1]$ donde $1$ es lo más comeptitivo ($a=50\%$ y $b=50\%$ de los votos) y $0$ lo opuesto.
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
   
