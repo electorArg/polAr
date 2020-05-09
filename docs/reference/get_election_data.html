@@ -42,7 +42,7 @@
 
 <meta property="og:title" content="Descarga bases de resultados electorales 
  (<em>Download electoral data</em>) — get_election_data" />
-<meta property="og:description" content="Funcion que descarga resultados electorales nacionales desde 2007 
+<meta property="og:description" content="Función que descarga resultados electorales nacionales desde 2007 
  (Function that downloads national electoral data since 2007)" />
 
 
@@ -75,7 +75,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">polAr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -139,7 +139,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Funcion que descarga resultados electorales nacionales desde 2007 
+    <p>Función que descarga resultados electorales nacionales desde 2007 
  (<em>Function that downloads national electoral data since 2007</em>)</p>
     </div>
 
@@ -151,32 +151,33 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>district</th>
-      <td><p>un character con codigo para Argentina y las 24 provincias
-(<em>a named character with code for Argentina and the 24 provinces</em>)</p></td>
+      <td><p>un character con código para Argentina y las 24 provincias
+(<em>a named character with code for Argentina and the 24 provinces</em>).</p></td>
     </tr>
     <tr>
       <th>category</th>
-      <td><p>un character para la categoria electoral: diputado <code>dip</code>, senador  <code>sen</code> o  presidente <code>presi</code>
+      <td><p>un character para la categoría electoral: diputado <code>dip</code>, senador  <code>sen</code> o  presidente <code>presi</code>
 (<em>a character with a name for the electoral category: deputy <code>dip</code>, senator <code>sen</code> or president <code>presi</code></em>).</p></td>
     </tr>
     <tr>
       <th>round</th>
-      <td><p>un character para tipo de eleccion: primaria  <code>paso</code> o general  <code>gral</code> 
+      <td><p>un character para tipo de elección: primaria <code>paso</code> o general  <code>gral</code> 
 (<em>a character with a name for the election round: primary <code>paso</code> or general <code>gral</code></em>).</p></td>
     </tr>
     <tr>
       <th>year</th>
-      <td><p>un integer para el year de eleccion (<em>an integer for the year of choice</em>).</p></td>
+      <td><p>un integer para el año de eleccion (<em>an integer for the year of choice</em>).</p></td>
     </tr>
     <tr>
       <th>level</th>
-      <td><p>un character para seleccionar level de agregacion de los resultados: <code>provincia</code>, <code>departamento</code> o <code>circuito</code>
-(<em>a character to select the level of aggregation of the results: province <code>provincia</code>, department -<code>departamento</code> or electoral precints <code>circuito</code></em>).</p></td>
+      <td><p>un character para seleccionar level de agregación de los resultados: <code>provincia</code>, <code>departamento</code> o <code>circuito</code>
+(<em>a character to select the level of aggregation of the results: province <code>provincia</code>, department -<code>departamento</code> or 
+electoral precints <code>circuito</code></em>).</p></td>
     </tr>
     <tr>
       <th>long</th>
       <td><p>un boleano para estructura de los datos. Por default <code>long = FALSE</code> 
-(<em>a boolean for data structure. By default</em> <code>long = FALSE</code>)</p></td>
+(<em>a boolean for data structure. By default</em> <code>long = FALSE</code>).</p></td>
     </tr>
     <tr>
       <th>raw</th>
@@ -185,7 +186,37 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>devuelve un tibble con <code>class "grouped_df", "tbl_df","tbl", "data.frame"</code> con los resultados de una eleccion determinada 
+ (<em>returns a tibble with electoral results of interest with <code>class "grouped_df", "tbl_df","tbl", "data.frame"</code></em>).</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'> <span class='fu'>get_election_data</span>(<span class='kw'>district</span> <span class='kw'>=</span> <span class='st'>"caba"</span>,
+                   <span class='kw'>category</span> <span class='kw'>=</span> <span class='st'>"dip"</span>,
+                   <span class='kw'>round</span> <span class='kw'>=</span> <span class='st'>"paso"</span>,
+                   <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2011</span>,
+                   <span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"provincia"</span>,
+                   <span class='kw'>long</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; # A tibble: 14 x 8
+#&gt; # Groups:   codprov [1]
+#&gt;    category round  year codprov name_prov electores listas   votos
+#&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+#&gt;  1 dip      paso   2011 01      CABA        2491166 0023    186276
+#&gt;  2 dip      paso   2011 01      CABA        2491166 0036     68575
+#&gt;  3 dip      paso   2011 01      CABA        2491166 0179      8234
+#&gt;  4 dip      paso   2011 01      CABA        2491166 0302     68001
+#&gt;  5 dip      paso   2011 01      CABA        2491166 0501    509590
+#&gt;  6 dip      paso   2011 01      CABA        2491166 0504     95714
+#&gt;  7 dip      paso   2011 01      CABA        2491166 0508     47956
+#&gt;  8 dip      paso   2011 01      CABA        2491166 0509    145580
+#&gt;  9 dip      paso   2011 01      CABA        2491166 0510    201173
+#&gt; 10 dip      paso   2011 01      CABA        2491166 0517     81666
+#&gt; 11 dip      paso   2011 01      CABA        2491166 0518    294312
+#&gt; 12 dip      paso   2011 01      CABA        2491166 0536    135361
+#&gt; 13 dip      paso   2011 01      CABA        2491166 blancos  35478
+#&gt; 14 dip      paso   2011 01      CABA        2491166 nulos    27459</div><div class='input'> 
+ 
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

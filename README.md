@@ -5,15 +5,14 @@
 <img src="https://github.com/electorArg/polAr/blob/master/hex/hex-polAr.png?raw=true" width="200">
 
 
-Este paquete brinda herramientas que facilitan el flujo de trabajo para el análisis político - electoral y el acceso a datos de Argentina desde `R`. 
+{polAr} brinda herramientas que facilitan el flujo de trabajo para el análisis político - electoral y el acceso a datos de Argentina desde `R`. 
 
 **(Esta es una versión _beta_ del proyecto que dejamos abierto a comentarios y/o sugerencias)**. 
 
-Se espera pronto tene una primera versión completa con los datos disponible para todas las elecciones nacionales (diputados, senadores y presidente) desde el año 2003 a 2019, al mayor nivel de desagregación posible (mesas). Asimismo incorporar nuevas funciones para calcular indicadores y herramientas de visualización de datos. 
+Se espera pronto tene una primera versión completa con los datos disponible para todas las elecciones nacionales (diputados, senadores y presidente) desde el año 2003 a 2019, al mayor nivel de desagregación (mesas). Asimismo incorporar nuevas funciones para calcular indicadores y herramientas de visualización de datos. 
 
 
 ---
-
 
 
 ### INSTALACIÓN
@@ -31,14 +30,12 @@ devtools::install_github("electorArg/polAr")
 Sus principales funciones son:
 
 
-- **`show_available_elections()`**: Diccionario de Elecciones disponibles. El parametro `viewer = TRUE` habilita una tabla en el _Viewer_ de `RStudio`.
+- **`show_available_elections()`**: Diccionario de elecciones disponibles. El parámetro `viewer = TRUE` habilita una tabla en el _Viewer_ de `RStudio`.
 
-- **`get_election_data()`**: Descarga bases de resultados electorales con parametros obligatorios y otros optativos. 
+- **`get_election_data()`**: Descarga bases de resultados electorales con parámetros obligatorios y otros optativos. 
 
 Entre los primeros se deben consignar `district` para el distrito; `category` para la catgoría; `round` para el turno e `year` para el año de la elección. Entre los segundos se puede agregar `level`para el nivel de agregación (`"provincia"`, `"departamento"`, `"circuito"`) y `long` para el formato de los datos alargados (las listas no van cada una en una columna sino como valores de una variable `listas`). 
 
-
-- **`get_names()`**: Obtiene nombres de listas (funciona correctamente cuando los datos fueron obtenidos _LARGOS_: `election_get(data, ...,  long = T)`
 
 - **`compute_competitiveness()`**: Calcula el nivel de competencia en una elección. Un parámetro `level` permite calcularlo para los distintos niveles de agregación presentes en la `data`.  
 
@@ -46,9 +43,9 @@ Entre los primeros se deben consignar `district` para el distrito; `category` pa
 
 - **`tabulate_results()`**: Genera una tabla con resultados agregados. Es posible obtener código \LaTeX de la tabla.
 
-- **`plot_results()`**: GGrafica los resultados de una elección. Es sensible al nivel de agregación de la `data` obtenida.
+- **`plot_results()`**: Grafica los resultados de una elección. Es sensible al nivel de agregación de la `data` obtenida.
 
-### Vignettes
+### VIGNETTES
 
 Se pueden consultar pequeños ejemplos de uso en las sección [ARTICULOS](https://electorarg.github.io/polAr/articles/)
 

@@ -2,31 +2,49 @@
 % Please edit documentation in R/plot_results.R
 \name{plot_results}
 \alias{plot_results}
-\title{Graficar resultados (\emph{Plot results})}
+\title{Grafica resultados (\emph{Plot results})}
 \usage{
 plot_results(data, national = FALSE)
 }
 \arguments{
-\item{data}{un tibble guardado como objeto en el Enviroment luego de consultar \code{\link{get_election_data}} con parametro \code{level} en \code{provincia} 
-(\emph{A tibble saved as an object in the Enviroment after querying \code{\link{get_election_data}}} with \code{provincia} as \code{level} parameter).}
+\item{data}{un tibble guardado como objeto en el Enviroment luego de consultar \code{\link{get_election_data}} con parámetro
+\code{level} en \code{provincia} 
+(\emph{tibble saved as an object in the Enviroment after querying \code{\link{get_election_data}}} with \code{provincia} as 
+\code{level} parameter).}
 
 \item{national}{un boleano opcional para graficar elecciones presidenciales sin desagregar 
 (\emph{an optional boolean to plot presidential elections without disaggregating}).}
 }
+\value{
+Devuelve un objeto de \code{class"gg" "ggplot"} que grafica el resultado de una eleccion condicional al nivel de agregacion de data 
+ (\emph{Returns an object of \code{class "gg" "ggplot"} that plots the election results conditional on the level of \code{data} aggregation.}).
+}
 \description{
-Funcion para graficar resultados de la eleccion (\emph{Function to plot election results})
+Función para graficar resultados de la elección 
+ (\emph{Function to plot election results})
 }
 \details{
 \strong{REQUISITOS:}
 
-\strong{1}. El formato de \code{data} debe ser \code{long} para pdoer graficar. Si \code{data} es \emph{wide} se puede transformar con \code{\link{make_long}} 
- (\emph{\code{long} format of \code{data} is required for plotting results. If \code{data} is in \emph{wide} format you can transform it with \code{\link{make_long}}})
+\strong{1}. El formato de \code{data} debe ser \code{long} para poder graficar. Si \code{data} es \emph{wide} se puede 
+ transformar con \code{\link{make_long}} 
+ (\emph{\code{long} format of \code{data} is required for plotting results. If \code{data} is in \emph{wide} format you can transform 
+ it with \code{\link{make_long}}})
 
 \strong{2.} \code{data} tiene que haber incorporando los nombres de las listas. Agreguelos con \code{\link{get_names}} 
  (\emph{\code{data} must have party names. Add them with \code{\link{get_names}}})
 
 \strong{3.} \code{data} tiene que haber sido descargada con parametro \code{level = provincia} con la funcion \code{\link{get_election_data}} 
  (\emph{\code{data} must have \code{level = provincia} wen downloading it with \code{\link{get_election_data}}})
+}
+\examples{
+  
+ tucuman_dip_gral_2017
+ 
+ tucuman_dip_gral_2017 \%>\%
+       get_names() \%>\%    
+       plot_results()
+
 }
 \seealso{
 \code{\link{tabulate_results}}

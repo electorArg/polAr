@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tabular resultados (<em>Tabulate results</em>) — tabulate_results • polAr</title>
+<title>Tabula resultados (<em>Tabulate results</em>) — tabulate_results • polAr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Tabular resultados (<em>Tabulate results</em>) — tabulate_results" />
-<meta property="og:description" content="Funcion para tabular resultados de la eleccion  
+<meta property="og:title" content="Tabula resultados (<em>Tabulate results</em>) — tabulate_results" />
+<meta property="og:description" content="Función para tabular resultados de la elección  
  (Function to tabulate election results)" />
 
 
@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">polAr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -130,13 +130,13 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Tabular resultados (<em>Tabulate results</em>)</h1>
+    <h1>Tabula resultados (<em>Tabulate results</em>)</h1>
     <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/tabulate_results.R'><code>R/tabulate_results.R</code></a></small>
     <div class="hidden name"><code>tabulate_results.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Funcion para tabular resultados de la eleccion  
+    <p>Función para tabular resultados de la elección  
  (<em>Function to tabulate election results</em>)</p>
     </div>
 
@@ -147,12 +147,14 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>un tibble guardado como objeto en el Enviroment luego de consultar <code><a href='get_election_data.html'>get_election_data</a></code> con parametro <code>level</code> en <code>provincia</code> 
-(<em>A tibble saved as an object in the Enviroment after querying <code><a href='get_election_data.html'>get_election_data</a></code> with <code>provincia</code> as <code>level</code> parameter</em>).</p></td>
+      <td><p>un tibble guardado como objeto en el enviroment luego de consultar <code><a href='get_election_data.html'>get_election_data</a></code> con parámetro 
+<code>level</code> en <code>provincia</code> 
+ (<em>A tibble saved as an object in the enviroment after querying <code><a href='get_election_data.html'>get_election_data</a></code> with <code>provincia</code> as
+  <code>level</code> parameter</em>).</p></td>
     </tr>
     <tr>
       <th>LaTeX</th>
-      <td><p>parametro para obtener codigo <code>LaTeX</code> de la tabla de salida. 
+      <td><p>parámetro para obtener código <code>LaTeX</code> de la tabla de salida. 
 Ejemplo de uso en <a href='https://www.overleaf.com/read/vyfgpyrrjmkg'>Overleaf</a> 
 (<em>parameter to get <code>LaTeX</code> code in the ouptut table. <a href='https://www.overleaf.com/read/vyfgpyrrjmkg'>Overleaf</a> example usage</em>).</p></td>
     </tr>
@@ -160,8 +162,10 @@ Ejemplo de uso en <a href='https://www.overleaf.com/read/vyfgpyrrjmkg'>Overleaf<
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Tabulado con resultados agregados de la eleccion 
- (<em>Table with aggregated election results</em>).</p>
+    <p>Tabulado con resultados agregados de la eleccion. Por defecto devuelve un tabulado de <code>class "gt_tbl" "list"</code>. Si en 
+ cambio el parametro es <code>LaTex = TRUE</code> devuelve codigo de LaTex con <code>class"character"</code> 
+ (<em>Table with aggregated election results. By default it returns a tab of <code>class 
+ "gt_tbl" "list"</code>. If instead the parameter is set to <code>LaTex = TRUE</code> it returns LaTex code with <code>class "character"</code></em>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><strong>REQUISITOS:</strong></p>
@@ -170,13 +174,51 @@ Ejemplo de uso en <a href='https://www.overleaf.com/read/vyfgpyrrjmkg'>Overleaf<
  (<em><code>long</code> format of <code>data</code> is required for getting results. 
  If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='make_long.html'>make_long</a></code></em>)</p>
 <p><strong>2.</strong> <code>data</code> tiene que haber incorporando los nombres de las listas. Agreguelos con <code><a href='get_names.html'>get_names</a></code>
- (<em><code>data</code> must have party names. Add them with <code><a href='get_names.html'>get_names</a></code></em>)</p>
-<p><strong>3.</strong> <code>data</code> tiene que haber sido descargada con parametro <code>level = provincia</code> con la funcion <code><a href='get_election_data.html'>get_election_data</a></code>
- (<em><code>data</code> must have <code>level = provincia</code>  wen downloading it with <code><a href='get_election_data.html'>get_election_data</a></code></em>)</p>
+ (<em><code>data</code> must have party names. Add them with <code><a href='get_names.html'>get_names</a></code></em>).</p>
+<p><strong>3.</strong> <code>data</code> tiene que haber sido descargada con parámetro <code>level = provincia</code> con la función 
+ <code><a href='get_election_data.html'>get_election_data</a></code>
+ (<em><code>data</code> must be <code>level = provincia</code> when downloading it with <code><a href='get_election_data.html'>get_election_data</a></code></em>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='plot_results.html'>plot_results</a></code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+ <span class='no'>tucuman_dip_gral_2017</span></div><div class='output co'>#&gt; # A tibble: 6 x 8
+#&gt; # Groups:   codprov [1]
+#&gt;   category round  year codprov name_prov electores listas   votos
+#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+#&gt; 1 dip      gral   2017 23      TUCUMAN     1217274 0180    154930
+#&gt; 2 dip      gral   2017 23      TUCUMAN     1217274 0503     46609
+#&gt; 3 dip      gral   2017 23      TUCUMAN     1217274 0521    319221
+#&gt; 4 dip      gral   2017 23      TUCUMAN     1217274 0548    459257
+#&gt; 5 dip      gral   2017 23      TUCUMAN     1217274 blancos   5920
+#&gt; 6 dip      gral   2017 23      TUCUMAN     1217274 nulos    12947</div><div class='input'>
+  <span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='no'>tucuman_dip_gral_2017</span> <span class='kw'>%&gt;%</span>
+      <span class='fu'><a href='get_names.html'>get_names</a></span>() <span class='kw'>%&gt;%</span>
+      <span class='fu'>tabulate_results</span>(<span class='kw'>LaTeX</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+
+  <span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span>(<span class='no'>x</span>)</div><div class='output co'>#&gt; \captionsetup[table]{labelformat=empty,skip=1pt}
+#&gt; \begin{longtable}{lr}
+#&gt; \caption*{
+#&gt; \large TUCUMAN - 2017\\ 
+#&gt; \small Elección General - Diputado Nacional\\ 
+#&gt; } \\ 
+#&gt; \toprule
+#&gt; Lista &amp; Votos \\ 
+#&gt; \midrule
+#&gt; 0548-FRENTE JUSTICIALISTA POR TUCUMAN &amp; $46.0\%$ \\ 
+#&gt; 0521-CAMBIEMOS PARA EL BICENTENARIO &amp; $32.0\%$ \\ 
+#&gt; 0180-FUERZA REPUBLICANA &amp; $15.5\%$ \\ 
+#&gt; 0503-FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES &amp; $4.7\%$ \\ 
+#&gt; nulos &amp; $1.3\%$ \\ 
+#&gt; blancos &amp; $0.6\%$ \\ 
+#&gt; \bottomrule
+#&gt; \end{longtable}
+#&gt; \begin{minipage}{\linewidth}
+#&gt; \textbf{Fuente:} polAr - Política Argentina usando R - \emph{https://electorarg.github.io/polAr}\\ 
+#&gt; \end{minipage}</div><div class='input'>  
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

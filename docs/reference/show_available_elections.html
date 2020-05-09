@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Diccionario de Elecciones disponibles 
- (<em>Elections Collection</em>) — show_available_elections • polAr</title>
+<title>Diccionario de elecciones disponibles 
+ (<em>Elections collection</em>) — show_available_elections • polAr</title>
 
 
 <!-- jquery -->
@@ -40,10 +40,10 @@
 
 
 
-<meta property="og:title" content="Diccionario de Elecciones disponibles 
- (<em>Elections Collection</em>) — show_available_elections" />
-<meta property="og:description" content="Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con get_election_data 
- (Function that returns a tibble with the necessary parameters to call elections with get_election_data)" />
+<meta property="og:title" content="Diccionario de elecciones disponibles 
+ (<em>Elections collection</em>) — show_available_elections" />
+<meta property="og:description" content="Función que devuelve un tibble con los parámetros necesarios para llamar elecciones con get_election_data 
+ (Function that returns a tibble with the necessary parameters to call elections with get_election_data)." />
 
 
 
@@ -75,7 +75,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">polAr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -132,15 +132,15 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Diccionario de Elecciones disponibles 
- (<em>Elections Collection</em>)</h1>
+    <h1>Diccionario de elecciones disponibles 
+ (<em>Elections collection</em>)</h1>
     <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/show_available_elections.R'><code>R/show_available_elections.R</code></a></small>
     <div class="hidden name"><code>show_available_elections.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con <code><a href='get_election_data.html'>get_election_data</a></code> 
- (<em>Function that returns a tibble with the necessary parameters to call elections with</em> <code><a href='get_election_data.html'>get_election_data</a></code>)</p>
+    <p>Función que devuelve un tibble con los parámetros necesarios para llamar elecciones con <code><a href='get_election_data.html'>get_election_data</a></code> 
+ (<em>Function that returns a tibble with the necessary parameters to call elections with</em> <code><a href='get_election_data.html'>get_election_data</a></code>).</p>
     </div>
 
     <pre class="usage"><span class='fu'>show_available_elections</span>(<span class='kw'>viewer</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
@@ -150,11 +150,19 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>viewer</th>
-      <td><p>Por default es <code>FALSE</code>. Cuando <code>TRUE</code> devuelve una tabla en el Viewer de RStudio 
-(<em>The default is <code>FALSE</code>. When <code>TRUE</code> it returns a table in RStudio Viewer</em>).</p></td>
+      <td><p>Por defecto es <code>FALSE</code>. Cuando <code>TRUE</code> devuelve una tabla en el <em>Viewer</em> de <em>RStudio</em> 
+(<em>The default is <code>FALSE</code>. When <code>TRUE</code> it returns a table in <em>RStudio Viewer</em></em>).</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>El objeto de salida es un data set con los id de elecciones necesarios como parámetros para usar 
+ con <code><a href='get_election_data.html'>get_election_data</a></code>. Cuando el parámetro es <code>viewer = FALSE</code>, devuelve un tibble con <code>class "tbl_df","tbl","data.frame"</code>, y 
+ cuando es <code>viewer = TRUE</code> devuelve un objeto con <code>class "datatables","htmlwidget"</code> 
+ (<em>The output is a data set with elections id needed as parameters in <code><a href='get_election_data.html'>get_election_data</a></code>. 
+ When parameter is set to <code>viewer = FALSE</code> it returns a tibble and when it is <code>viewer = TRUE</code> it returns an 
+ object of <code>class "datatables","htmlwidget"</code></em>).</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -1,3 +1,12 @@
+## Resubmission polAr
+This is a resubmission -version 0.1.2. As asked by reviewer, in this version I: 
+
+* add [cph] to the Authors@R field in DESCRIPTION.
+* add \value and examples to .Rd files by editing .R files headers with @return and @examples
+* removed de cat() command from tabulate_results.R My intention was to make it handy to get LaTeX code from the console when writing LaTeX = TRUE in the function parameter. But I fix as suggested by reviewer and show how to use it using cat() in the minimal example. 
+* improved the whole documentation
+
+
 ## Resubmission
 This is a resubmission. In this version I have:
 

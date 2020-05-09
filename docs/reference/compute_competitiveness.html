@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">polAr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -152,7 +152,7 @@
     </tr>
     <tr>
       <th>level</th>
-      <td><p>un character que establece el nivel de desagregacion sobre el que se quiere calcular la competitividad: 
+      <td><p>un character que establece el nivel de agregacion sobre el que se quiere calcular la competitividad: 
 por defualt es <code>provincia</code> y se desagregan las observaciones asignando los valores <code>departamento</code> o <code>circuito</code> al parametro
 (<em>Establishes the level of aggregation on which you want to compute competitiveness: by definition it is <code>provincia</code> 
 and the observations are disaggregated by assigning the values <code>departamento</code> or <code>circuito</code> to the parameter</em>).</p></td>
@@ -161,8 +161,11 @@ and the observations are disaggregated by assigning the values <code>departament
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>devuelve un valor entre 0 y 1 que representa el grado de comeptencia de una eleccion en un distrito determinado 
- (<em>returns a value between 0 and 1 representing degree of competition of an election in a given district </em>).</p>
+    <p>devuelve un tibble con <code>class "tbl_df","tbl", "data.frame"</code> con el computo de competitividad de una elccion. El resultado puede 
+ ser un valor entre 0 y 1, 
+ los cuales representan falta de competencia y competitivdad maxima, respectivamente 
+ (<em>returns a tibble with <code>class "tbl_df", "tbl", "data.frame"</code> with the computation of the level of competitiveness of an elction. 
+ The result can be a value between 0 and 1, which represent a lack of competition and maximum competitiveness, respectively</em>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>\(Competitividad\) mide la diferencia porcentual de votos válidos obtenidos por los dos partidos más votados \(a\) y \(b\). 
@@ -177,6 +180,23 @@ and the observations are disaggregated by assigning the values <code>departament
 
     <div class='dont-index'><p><code><a href='compute_nep.html'>compute_nep</a></code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+   <span class='no'>tucuman_dip_gral_2017</span></div><div class='output co'>#&gt; # A tibble: 6 x 8
+#&gt;   category round  year codprov name_prov electores listas   votos
+#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+#&gt; 1 dip      gral   2017 23      TUCUMAN     1217274 0180    154930
+#&gt; 2 dip      gral   2017 23      TUCUMAN     1217274 0503     46609
+#&gt; 3 dip      gral   2017 23      TUCUMAN     1217274 0521    319221
+#&gt; 4 dip      gral   2017 23      TUCUMAN     1217274 0548    459257
+#&gt; 5 dip      gral   2017 23      TUCUMAN     1217274 blancos   5920
+#&gt; 6 dip      gral   2017 23      TUCUMAN     1217274 nulos    12947</div><div class='input'>
+   <span class='no'>tucuman_dip_gral_2017</span> <span class='kw'>%&gt;%</span>
+     <span class='fu'>compute_competitiveness</span>()</div><div class='output co'>#&gt; # A tibble: 1 x 2
+#&gt;   codprov competitividad
+#&gt;   &lt;chr&gt;            &lt;dbl&gt;
+#&gt; 1 23               0.860</div><div class='input'>     
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

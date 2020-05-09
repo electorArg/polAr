@@ -2,24 +2,28 @@
 % Please edit documentation in R/tabulate_results.R
 \name{tabulate_results}
 \alias{tabulate_results}
-\title{Tabular resultados (\emph{Tabulate results})}
+\title{Tabula resultados (\emph{Tabulate results})}
 \usage{
 tabulate_results(data, LaTeX = F)
 }
 \arguments{
-\item{data}{un tibble guardado como objeto en el Enviroment luego de consultar \code{\link{get_election_data}} con parametro \code{level} en \code{provincia} 
-(\emph{A tibble saved as an object in the Enviroment after querying \code{\link{get_election_data}} with \code{provincia} as \code{level} parameter}).}
+\item{data}{un tibble guardado como objeto en el enviroment luego de consultar \code{\link{get_election_data}} con parámetro 
+\code{level} en \code{provincia} 
+ (\emph{A tibble saved as an object in the enviroment after querying \code{\link{get_election_data}} with \code{provincia} as
+  \code{level} parameter}).}
 
-\item{LaTeX}{parametro para obtener codigo \code{LaTeX} de la tabla de salida. 
+\item{LaTeX}{parámetro para obtener código \code{LaTeX} de la tabla de salida. 
 Ejemplo de uso en \href{https://www.overleaf.com/read/vyfgpyrrjmkg}{Overleaf} 
 (\emph{parameter to get \code{LaTeX} code in the ouptut table. \href{https://www.overleaf.com/read/vyfgpyrrjmkg}{Overleaf} example usage}).}
 }
 \value{
-Tabulado con resultados agregados de la eleccion 
- (\emph{Table with aggregated election results}).
+Tabulado con resultados agregados de la eleccion. Por defecto devuelve un tabulado de \code{class "gt_tbl" "list"}. Si en 
+ cambio el parametro es \code{LaTex = TRUE} devuelve codigo de LaTex con \code{class"character"} 
+ (\emph{Table with aggregated election results. By default it returns a tab of \code{class 
+ "gt_tbl" "list"}. If instead the parameter is set to \code{LaTex = TRUE} it returns LaTex code with \code{class "character"}}).
 }
 \description{
-Funcion para tabular resultados de la eleccion  
+Función para tabular resultados de la elección  
  (\emph{Function to tabulate election results})
 }
 \details{
@@ -31,10 +35,22 @@ Funcion para tabular resultados de la eleccion
  If \code{data} is in \emph{wide} format you can transform it with \code{\link{make_long}}})
 
 \strong{2.} \code{data} tiene que haber incorporando los nombres de las listas. Agreguelos con \code{\link{get_names}}
- (\emph{\code{data} must have party names. Add them with \code{\link{get_names}}})
+ (\emph{\code{data} must have party names. Add them with \code{\link{get_names}}}).
 
-\strong{3.} \code{data} tiene que haber sido descargada con parametro \code{level = provincia} con la funcion \code{\link{get_election_data}}
- (\emph{\code{data} must have \code{level = provincia}  wen downloading it with \code{\link{get_election_data}}})
+\strong{3.} \code{data} tiene que haber sido descargada con parámetro \code{level = provincia} con la función 
+ \code{\link{get_election_data}}
+ (\emph{\code{data} must be \code{level = provincia} when downloading it with \code{\link{get_election_data}}}).
+}
+\examples{
+ 
+ tucuman_dip_gral_2017
+  
+  x <- tucuman_dip_gral_2017 \%>\%
+      get_names() \%>\% 
+      tabulate_results(LaTeX = TRUE)
+  
+  cat(x)
+  
 }
 \seealso{
 \code{\link{plot_results}}

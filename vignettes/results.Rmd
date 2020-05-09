@@ -47,7 +47,7 @@ El siguiente es un ejemplo que describe esos pasos para generar una tabla. Nóte
 ```
 
 
-Una posibilidad adicional que brinda la función es poder exportar código de \LaTeX pre formateado para armar tablas. 
+Una posibilidad adicional que brinda la función es poder exportar código de $\LaTeX$ pre formateado para armar tablas. 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
  tabulate_results(data, LaTeX = TRUE)

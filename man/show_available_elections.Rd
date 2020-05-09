@@ -2,16 +2,24 @@
 % Please edit documentation in R/show_available_elections.R
 \name{show_available_elections}
 \alias{show_available_elections}
-\title{Diccionario de Elecciones disponibles 
- (\emph{Elections Collection})}
+\title{Diccionario de elecciones disponibles 
+ (\emph{Elections collection})}
 \usage{
 show_available_elections(viewer = FALSE)
 }
 \arguments{
-\item{viewer}{Por default es \code{FALSE}. Cuando \code{TRUE} devuelve una tabla en el Viewer de RStudio 
-(\emph{The default is \code{FALSE}. When \code{TRUE} it returns a table in RStudio Viewer}).}
+\item{viewer}{Por defecto es \code{FALSE}. Cuando \code{TRUE} devuelve una tabla en el \emph{Viewer} de \emph{RStudio} 
+(\emph{The default is \code{FALSE}. When \code{TRUE} it returns a table in \emph{RStudio Viewer}}).}
+}
+\value{
+El objeto de salida es un data set con los id de elecciones necesarios como parámetros para usar 
+ con \code{\link{get_election_data}}. Cuando el parámetro es \code{viewer = FALSE}, devuelve un tibble con \code{class "tbl_df","tbl","data.frame"}, y 
+ cuando es \code{viewer = TRUE} devuelve un objeto con \code{class "datatables","htmlwidget"} 
+ (\emph{The output is a data set with elections id needed as parameters in \code{\link{get_election_data}}. 
+ When parameter is set to \code{viewer = FALSE} it returns a tibble and when it is \code{viewer = TRUE} it returns an 
+ object of \code{class "datatables","htmlwidget"}}).
 }
 \description{
-Funcion que devuelve un tibble con los parametros necesarios para llamar elecciones con \code{\link{get_election_data}} 
- (\emph{Function that returns a tibble with the necessary parameters to call elections with} \code{\link{get_election_data}})
+Función que devuelve un tibble con los parámetros necesarios para llamar elecciones con \code{\link{get_election_data}} 
+ (\emph{Function that returns a tibble with the necessary parameters to call elections with} \code{\link{get_election_data}}).
 }

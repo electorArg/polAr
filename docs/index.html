@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">polAr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -95,9 +95,9 @@
 <a href="#pol%C3%ADtica-argentina-usando-r" class="anchor"></a>POLítica ARgentina usando <code>R</code>
 </h2>
 <p><img src="https://github.com/electorArg/polAr/blob/master/hex/hex-polAr.png?raw=true" width="200"></p>
-<p>Este paquete brinda herramientas que facilitan el flujo de trabajo para el análisis político - electoral y el acceso a datos de Argentina desde <code>R</code>.</p>
+<p>{polAr} brinda herramientas que facilitan el flujo de trabajo para el análisis político - electoral y el acceso a datos de Argentina desde <code>R</code>.</p>
 <p><strong>(Esta es una versión <em>beta</em> del proyecto que dejamos abierto a comentarios y/o sugerencias)</strong>.</p>
-<p>Se espera pronto tene una primera versión completa con los datos disponible para todas las elecciones nacionales (diputados, senadores y presidente) desde el año 2003 a 2019, al mayor nivel de desagregación posible (mesas). Asimismo incorporar nuevas funciones para calcular indicadores y herramientas de visualización de datos.</p>
+<p>Se espera pronto tene una primera versión completa con los datos disponible para todas las elecciones nacionales (diputados, senadores y presidente) desde el año 2003 a 2019, al mayor nivel de desagregación (mesas). Asimismo incorporar nuevas funciones para calcular indicadores y herramientas de visualización de datos.</p>
 <hr>
 <div id="instalación" class="section level3">
 <h3 class="hasAnchor">
@@ -109,21 +109,20 @@
 <span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"electorArg/polAr"</span>)</pre></div>
 <p>Sus principales funciones son:</p>
 <ul>
-<li><p><strong><code><a href="reference/show_available_elections.html">show_available_elections()</a></code></strong>: Diccionario de Elecciones disponibles. El parametro <code>viewer = TRUE</code> habilita una tabla en el <em>Viewer</em> de <code>RStudio</code>.</p></li>
-<li><p><strong><code><a href="reference/get_election_data.html">get_election_data()</a></code></strong>: Descarga bases de resultados electorales con parametros obligatorios y otros optativos.</p></li>
+<li><p><strong><code><a href="reference/show_available_elections.html">show_available_elections()</a></code></strong>: Diccionario de elecciones disponibles. El parámetro <code>viewer = TRUE</code> habilita una tabla en el <em>Viewer</em> de <code>RStudio</code>.</p></li>
+<li><p><strong><code><a href="reference/get_election_data.html">get_election_data()</a></code></strong>: Descarga bases de resultados electorales con parámetros obligatorios y otros optativos.</p></li>
 </ul>
 <p>Entre los primeros se deben consignar <code>district</code> para el distrito; <code>category</code> para la catgoría; <code>round</code> para el turno e <code>year</code> para el año de la elección. Entre los segundos se puede agregar <code>level</code>para el nivel de agregación (<code>"provincia"</code>, <code>"departamento"</code>, <code>"circuito"</code>) y <code>long</code> para el formato de los datos alargados (las listas no van cada una en una columna sino como valores de una variable <code>listas</code>).</p>
 <ul>
-<li><p><strong><code><a href="reference/get_names.html">get_names()</a></code></strong>: Obtiene nombres de listas (funciona correctamente cuando los datos fueron obtenidos <em>LARGOS</em>: <code>election_get(data, ...,  long = T)</code></p></li>
 <li><p><strong><code><a href="reference/compute_competitiveness.html">compute_competitiveness()</a></code></strong>: Calcula el nivel de competencia en una elección. Un parámetro <code>level</code> permite calcularlo para los distintos niveles de agregación presentes en la <code>data</code>.</p></li>
 <li><p><strong><code><a href="reference/compute_nep.html">compute_nep()</a></code></strong>: Calcula el <em>Numero Efectivo de Partidos Politicos</em>. Es sensible al nivel de agregación de la <code>data</code> obtenida.</p></li>
 <li><p><strong><code><a href="reference/tabulate_results.html">tabulate_results()</a></code></strong>: Genera una tabla con resultados agregados. Es posible obtener código \LaTeX de la tabla.</p></li>
-<li><p><strong><code><a href="reference/plot_results.html">plot_results()</a></code></strong>: GGrafica los resultados de una elección. Es sensible al nivel de agregación de la <code>data</code> obtenida.</p></li>
+<li><p><strong><code><a href="reference/plot_results.html">plot_results()</a></code></strong>: Grafica los resultados de una elección. Es sensible al nivel de agregación de la <code>data</code> obtenida.</p></li>
 </ul>
 </div>
 <div id="vignettes" class="section level3">
 <h3 class="hasAnchor">
-<a href="#vignettes" class="anchor"></a>Vignettes</h3>
+<a href="#vignettes" class="anchor"></a>VIGNETTES</h3>
 <p>Se pueden consultar pequeños ejemplos de uso en las sección <a href="https://electorarg.github.io/polAr/articles/">ARTICULOS</a></p>
 </div>
 <div id="creditos" class="section level3">
@@ -179,7 +178,7 @@
 <div class="developers">
 <h2>Developers</h2>
 <ul class="list-unstyled">
-<li>Juan Pablo Ruiz Nicolini <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-3138-6343" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Juan Pablo Ruiz Nicolini <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0002-3138-6343" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
 

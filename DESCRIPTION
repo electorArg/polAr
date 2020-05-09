@@ -1,19 +1,20 @@
 Package: polAr
-Title: Toolbox for Argentina's Political Analysis
-Version: 0.1.1
+Title: Toolbox for ARG Political Analysis
+Version: 0.1.2
 Authors@R: 
     person(given = "Juan Pablo",
            family = "Ruiz Nicolini",
-           role = c("aut", "cre"),
+           role = c("aut", "cre", "cph"),
            email = "juanpabloruiznicolini@gmail.com",
            comment = c(ORCID = "0000-0002-3138-6343"))
-Description: Caja de herramienta para el análisis de datos políticos y electorales de Argentina.
+Description: Caja de herramienta para el analisis de datos politicos y electorales de Argentina.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: es
 URL: https://github.com/electorArg/polAr
 BugReports: https://github.com/electorArg/polAr/issues
 LazyData: true
+Depends: R (>= 2.10)
 Imports: 
     geofacet,
     dplyr,
@@ -42,6 +43,8 @@ Imports:
 Suggests:
     pkgcond,
     knitr,
-    rmarkdown
+    rmarkdown, 
+    utf8, 
+    qpdf
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr

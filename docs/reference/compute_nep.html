@@ -42,7 +42,7 @@
 
 <meta property="og:title" content="Calcula Numero Efectivo de Partidos Politicos - NEP 
  (<em>Computes Effective Number of Political Parties</em>) — compute_nep" />
-<meta property="og:description" content="Funcion que calcula el NEP: indicador que provee un numero &quot;ajustado&quot; de partidos politicos en un sistema de partidos
+<meta property="og:description" content="Función que calcula el NEP: indicador que provee un número &quot;ajustado&quot; de partidos políticos en un sistema de partídos
  (Function that computes NEP: indicator that provides a &quot;tight&quot; number of political parties in a party system)" />
 
 
@@ -75,7 +75,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">polAr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -139,7 +139,7 @@
     </div>
 
     <div class="ref-description">
-    <p>Funcion que calcula el NEP: indicador que provee un numero "ajustado" de partidos politicos en un sistema de partidos
+    <p>Función que calcula el NEP: indicador que provee un número "ajustado" de partidos políticos en un sistema de partídos
  (<em>Function that computes NEP: indicator that provides a "tight" number of political parties in a party system</em>)</p>
     </div>
 
@@ -150,19 +150,32 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>la base de datos para hacer el calculo obtenida con <code><a href='get_election_data.html'>get_election_data</a></code> 
-(<em>tiblle  downloaded with <code><a href='get_election_data.html'>get_election_data</a></code> needed to compute nep</em>).</p></td>
+      <td><p>la base de datos para hacer el cálculo obtenida con <code><a href='get_election_data.html'>get_election_data</a></code> 
+(<em>tiblle downloaded with <code><a href='get_election_data.html'>get_election_data</a></code> needed to compute nep</em>).</p></td>
     </tr>
     <tr>
       <th>index</th>
-      <td><p>un character con la fórmula elegida: "Laakso-Taagepera" -default-,  "Golosov" o ambas 
-(<em>a character with the chosen formula: 'Laakso-Taagepera' -dafault-, 'Golosov' or both</em>).</p></td>
+      <td><p>un character con la fórmula elegida: "Laakso-Taagepera",  "Golosov" o ambas -opción por defecto- 
+(<em>a character with the chosen formula: 'Laakso-Taagepera', 'Golosov' or both -dafault value</em>).</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Devuelve un tibble con <code>class "tbl_df","tbl", "data.frame"</code> de dimensiones variables seguún el nivel de agrupamiento de 
+ <code>data</code> con el cómputo del número ajustado de fuerzas en un sistema de partidos
+ (<em>Returns a tibble with <code>class "tbl_df", "tbl", "data.frame"</code>, of variable dimensions according to the grouping level of
+  <code>data</code> with a "tight" numero of political parties in a party system as outcome</em>).</p> 
+<p>Como minimo tres variables (<em>At least three variables:</em>):</p> 
+<p>*<code>codprov</code> que es el agrupamiento de más alto nivel (provincial). Se pueden sumar otros niveles: 
+   <code>coddepto</code> para nivel departamental y <code>circuito</code> para el nivel que le sigue 
+   (<em><code>codprov</code> which is the highest level grouping -provincial. Other levels can be added:
+   <code>coddepto</code> for departmental level and <code>circuito</code> for the level that follows</em>).</p> 
+<p>* <code>value</code>: el valor calculado del NEP (<em>NEP computation</em>)</p> 
+<p>* <code>index</code>: el método utilizado para calcular el NEP (<em>NEP methodology used for computation</em>)</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas. 
+    <p>El computo solo se hace a partir de la cantidad de votos de cada lista y no de las bancas 
   (<em>The computation is only made from the number of votes for each ballot and not from the corresponding legislativa seats</em>).</p>
 <p>Impementación de las fórmulas <a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Laakso-Taagepera"</a>  y 
  <a href='https://journals.sagepub.com/doi/10.1177/1354068809339538'>"Golosov"</a> donde \(p_{1}\) es el porcentaje de votos de una lista \(i\)
@@ -186,6 +199,25 @@
 
     <div class='dont-index'><p><code><a href='compute_competitiveness.html'>compute_competitiveness</a></code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='no'>tucuman_dip_gral_2017</span></div><div class='output co'>#&gt; # A tibble: 6 x 8
+#&gt; # Groups:   codprov [1]
+#&gt;   category round  year codprov name_prov electores listas   votos
+#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+#&gt; 1 dip      gral   2017 23      TUCUMAN     1217274 0180    154930
+#&gt; 2 dip      gral   2017 23      TUCUMAN     1217274 0503     46609
+#&gt; 3 dip      gral   2017 23      TUCUMAN     1217274 0521    319221
+#&gt; 4 dip      gral   2017 23      TUCUMAN     1217274 0548    459257
+#&gt; 5 dip      gral   2017 23      TUCUMAN     1217274 blancos   5920
+#&gt; 6 dip      gral   2017 23      TUCUMAN     1217274 nulos    12947</div><div class='input'>
+<span class='no'>tucuman_dip_gral_2017</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'>compute_nep</span>()</div><div class='output co'>#&gt; # A tibble: 2 x 3
+#&gt;   codprov value index           
+#&gt;   &lt;chr&gt;   &lt;dbl&gt; &lt;chr&gt;           
+#&gt; 1 23       2.47 Golosov         
+#&gt; 2 23       2.94 Laakso-Taagepera</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

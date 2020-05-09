@@ -10,9 +10,15 @@ make_long(data)
 \item{data}{es el tibble que devuelve \code{\link{get_election_data}} con \code{long = FALSE} como parámetro
 (\emph{tibble output from \code{\link{get_election_data}} with \code{long = FALSE} as a parameter}).}
 }
+\value{
+transforma \code{data} a formato alargado utilizando \code{\link[tidyr]{pivot_longer}} sin cambiar \code{class 
+ "tbl_df","tbl","data.frame"} de origen  pero aumentando el número de filas y reduciendo el de columnas   
+ (\emph{It makes data longer with \code{\link[tidyr]{pivot_longer}}. It returns  \code{data} of \code{class 
+ "tbl_df","tbl","data.frame"} as the original but increasing the number of rows and decreasing the number of columns}).
+}
 \description{
-Funcion auxiliar que transforma el tibble WIDE obtenido con \code{\link{get_election_data}} a LONG 
- (\emph{Auxiliary function that transforms a WIDE tibble obtained with \code{\link{get_election_data}} to LONG format})
+Función auxiliar que transforma el tibble \emph{wide} obtenido con \code{\link{get_election_data}} a \emph{long}  
+ (\emph{Auxiliary function that transforms a \emph{wide} tibble obtained with \code{\link{get_election_data}} to \emph{long} format}).
 }
 \details{
 El formato de \code{data} debe ser \code{long} tanto para calcular \code{\link{compute_nep}} y \code{\link{compute_competitiveness}}, 

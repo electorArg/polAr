@@ -10,14 +10,17 @@ compute_competitiveness(data, level = "provincia")
 \item{data}{un tibble guardado como objeto en el Enviroment luego de consultar \code{\link{get_election_data}} 
 (\emph{A tibble saved as an object in the Enviroment after querying \code{\link{get_election_data}}}).}
 
-\item{level}{un character que establece el nivel de desagregacion sobre el que se quiere calcular la competitividad: 
+\item{level}{un character que establece el nivel de agregacion sobre el que se quiere calcular la competitividad: 
 por defualt es \code{provincia} y se desagregan las observaciones asignando los valores \code{departamento} o \code{circuito} al parametro
 (\emph{Establishes the level of aggregation on which you want to compute competitiveness: by definition it is \code{provincia} 
 and the observations are disaggregated by assigning the values \code{departamento} or \code{circuito} to the parameter}).}
 }
 \value{
-devuelve un valor entre 0 y 1 que representa el grado de comeptencia de una eleccion en un distrito determinado 
- (\emph{returns a value between 0 and 1 representing degree of competition of an election in a given district }).
+devuelve un tibble con \code{class "tbl_df","tbl", "data.frame"} con el computo de competitividad de una elccion. El resultado puede 
+ ser un valor entre 0 y 1, 
+ los cuales representan falta de competencia y competitivdad maxima, respectivamente 
+ (\emph{returns a tibble with \code{class "tbl_df", "tbl", "data.frame"} with the computation of the level of competitiveness of an elction. 
+ The result can be a value between 0 and 1, which represent a lack of competition and maximum competitiveness, respectively}).
 }
 \description{
 Funcion que describe el grado de competencia de una eleccion
@@ -34,6 +37,14 @@ El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute
  Si \code{data} es \emph{wide} se puede transformar con \code{\link{make_long}} 
  (\emph{\code{long} format of \code{data} is required for \code{\link{compute_competitiveness}}. If \code{data} is in \emph{wide} format
  you can transform it with \code{\link{make_long}}}).
+}
+\examples{
+
+   tucuman_dip_gral_2017
+
+   tucuman_dip_gral_2017 \%>\% 
+     compute_competitiveness()
+     
 }
 \seealso{
 \code{\link{compute_nep}}

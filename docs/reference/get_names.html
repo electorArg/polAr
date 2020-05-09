@@ -40,8 +40,8 @@
 
 
 <meta property="og:title" content="Obtiene nombres de listas (<em>Get party names</em>) — get_names" />
-<meta property="og:description" content="Funcion que agrega el nombre de las listas o partidos como columna a un tibble obtenido con get_election_data(long = TRUE) 
-(Function that adds party labels as a column to a tibble obtained with get_election_data(long = TRUE))" />
+<meta property="og:description" content="Función que agrega el nombre de las listas o partidos como columna a un tibble obtenido con get_election_data(long = TRUE) 
+(Function that adds party labels as a column to a tibble obtained with get_election_data(long = TRUE))." />
 
 
 
@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">polAr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -136,8 +136,8 @@
     </div>
 
     <div class="ref-description">
-    <p>Funcion que agrega el nombre de las listas o partidos como columna a un tibble obtenido con <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code> 
-(<em>Function that adds party labels as a column to a tibble obtained with <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code></em>)</p>
+    <p>Función que agrega el nombre de las listas o partidos como columna a un tibble obtenido con <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code> 
+(<em>Function that adds party labels as a column to a tibble obtained with <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code></em>).</p>
     </div>
 
     <pre class="usage"><span class='fu'>get_names</span>(<span class='no'>data</span>)</pre>
@@ -148,10 +148,16 @@
     <tr>
       <th>data</th>
       <td><p>un tibble descargado con <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code> guardado como objeto en el Enviroment
-(<em>A <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code> tibble saved as an object in the Enviroment</em>)</p></td>
+(<em>A <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code> tibble saved as an object in the Enviroment</em>).</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Devuelve el data set original con una columna extra con la identifiacion de las listas o partidos politicos. 
+Como el objeto de entrada, este es <code>class "tbl_df","tbl","data.frame"</code> 
+(<em>it retruns the original data set with a binded column with political parties names. 
+ As the original input the object is of <code>class "tbl_df","tbl","data.frame"</code></em>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>El formato de <code>data</code> debe ser <code>long</code> para poder obtener 
@@ -159,6 +165,30 @@ nombres de listas con <code>get_names</code>. Si <code>data</code> es <em>wide</
 (<em><code>long</code> format of <code>data</code> is required to get party labels with <code>get_names</code>.  If <code>data</code> is in
 <em>wide</em> format you can transform it with <code><a href='make_long.html'>make_long</a></code></em>).</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+ <span class='no'>tucuman_dip_gral_2017</span></div><div class='output co'>#&gt; # A tibble: 6 x 8
+#&gt; # Groups:   codprov [1]
+#&gt;   category round  year codprov name_prov electores listas   votos
+#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+#&gt; 1 dip      gral   2017 23      TUCUMAN     1217274 0180    154930
+#&gt; 2 dip      gral   2017 23      TUCUMAN     1217274 0503     46609
+#&gt; 3 dip      gral   2017 23      TUCUMAN     1217274 0521    319221
+#&gt; 4 dip      gral   2017 23      TUCUMAN     1217274 0548    459257
+#&gt; 5 dip      gral   2017 23      TUCUMAN     1217274 blancos   5920
+#&gt; 6 dip      gral   2017 23      TUCUMAN     1217274 nulos    12947</div><div class='input'>
+ <span class='no'>tucuman_dip_gral_2017</span> <span class='kw'>%&gt;%</span>
+     <span class='fu'>get_names</span>()</div><div class='output co'>#&gt; # A tibble: 6 x 9
+#&gt; # Groups:   codprov [1]
+#&gt;   category round  year codprov name_prov electores listas   votos nombre_lista  
+#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;         
+#&gt; 1 dip      gral   2017 23      TUCUMAN     1217274 0180    154930 FUERZA REPUBL~
+#&gt; 2 dip      gral   2017 23      TUCUMAN     1217274 0503     46609 FRENTE DE IZQ~
+#&gt; 3 dip      gral   2017 23      TUCUMAN     1217274 0521    319221 CAMBIEMOS PAR~
+#&gt; 4 dip      gral   2017 23      TUCUMAN     1217274 0548    459257 FRENTE JUSTIC~
+#&gt; 5 dip      gral   2017 23      TUCUMAN     1217274 blancos   5920 blancos       
+#&gt; 6 dip      gral   2017 23      TUCUMAN     1217274 nulos    12947 nulos         </div><div class='input'>   
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

@@ -40,8 +40,8 @@
 
 
 <meta property="og:title" content="Transforma tibble a formato largo (<em>Transforms a tibble into long format</em>) — make_long" />
-<meta property="og:description" content="Funcion auxiliar que transforma el tibble WIDE obtenido con get_election_data a LONG 
- (Auxiliary function that transforms a WIDE tibble obtained with get_election_data to LONG format)" />
+<meta property="og:description" content="Función auxiliar que transforma el tibble wide obtenido con get_election_data a long  
+ (Auxiliary function that transforms a wide tibble obtained with get_election_data to long format)." />
 
 
 
@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">polAr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.2</span>
       </span>
     </div>
 
@@ -136,8 +136,8 @@
     </div>
 
     <div class="ref-description">
-    <p>Funcion auxiliar que transforma el tibble WIDE obtenido con <code><a href='get_election_data.html'>get_election_data</a></code> a LONG 
- (<em>Auxiliary function that transforms a WIDE tibble obtained with <code><a href='get_election_data.html'>get_election_data</a></code> to LONG format</em>)</p>
+    <p>Función auxiliar que transforma el tibble <em>wide</em> obtenido con <code><a href='get_election_data.html'>get_election_data</a></code> a <em>long</em>  
+ (<em>Auxiliary function that transforms a <em>wide</em> tibble obtained with <code><a href='get_election_data.html'>get_election_data</a></code> to <em>long</em> format</em>).</p>
     </div>
 
     <pre class="usage"><span class='fu'>make_long</span>(<span class='no'>data</span>)</pre>
@@ -152,6 +152,12 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>transforma <code>data</code> a formato alargado utilizando <code><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></code> sin cambiar <code>class 
+ "tbl_df","tbl","data.frame"</code> de origen  pero aumentando el número de filas y reduciendo el de columnas   
+ (<em>It makes data longer with <code><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></code>. It returns  <code>data</code> of <code>class 
+ "tbl_df","tbl","data.frame"</code> as the original but increasing the number of rows and decreasing the number of columns</em>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>El formato de <code>data</code> debe ser <code>long</code> tanto para calcular <code><a href='compute_nep.html'>compute_nep</a></code> y <code><a href='compute_competitiveness.html'>compute_competitiveness</a></code>, 
