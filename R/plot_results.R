@@ -69,10 +69,7 @@ plot_results <- function(data,
   assertthat::assert_that("nombre_lista" %in% colnames(data), 
                           msg = "you have to add party labes to 'data' using 'get_names()'")
   
-  
-  
-  
-  
+
   if(level == "departamento"){
     assertthat::assert_that("coddepto" %in% colnames(data) | unique(data$category == "presi"), 
                             msg = "data input is not at the correct level. Download it again with parameters:
@@ -85,7 +82,7 @@ plot_results <- function(data,
                             msg = "The bolean 'national = TRUE' is only for presidential elections.")
   }
   
-  
+
   
   
 
@@ -98,6 +95,7 @@ plot_results <- function(data,
   
   data <-  if(national == TRUE & unique(data$category == "presi")){
     
+    
      data %>% 
       dplyr::group_by(category, round, year, listas , nombre_lista) %>% 
       dplyr::summarise_at(.vars = "votos", .funs = sum) %>% 
@@ -105,8 +103,7 @@ plot_results <- function(data,
                     name_prov = "Argentina") %>% 
       dplyr::ungroup()
     
-    
-  } else {
+  }else{
     
      data %>% 
       dplyr::select(-electores) # Add here  for fixing bug with presidential elections. 
@@ -165,9 +162,9 @@ plot_results <- function(data,
     colourCount = length(unique(datos_prov$listas_fct))
     getPalette = grDevices::colorRampPalette(RColorBrewer::brewer.pal(9, "Set1"))
     
+    
+    
     # plot
-    
-    
     ggplot2::ggplot(data = datos_prov , 
                     ggplot2::aes(x = listas_fct, y = pct, 
                                  label = listas_fct)) +
@@ -199,19 +196,38 @@ plot_results <- function(data,
     
     geofacet <-  readRDS(gzcon(url("https://github.com/electorArg/PolAr_Data/blob/master/geo/grillas_geofacet.rds?raw=true")))
     
-    
     facet_select <-  geofacet %>%
       purrr::pluck(paste0(election_district))
     
+  datos_depto <-  if(election_district == "BUENOS AIRES"){
+      
     
+    facet_select <-  geofacet %>%
+      purrr::pluck(paste0("PBA"))    
     
-    datos_depto <- data %>% 
+      seccion <- readr::read_csv("https://raw.githubusercontent.com/electorArg/PolAr_Data/master/geo/secciones_pba.csv")
+     
+    data %>%  
+        dplyr::left_join(seccion) %>% 
+        dplyr::group_by(seccion, codprov, category, listas, nombre_lista) %>% 
+        dplyr::summarise_if(is.numeric, sum) %>%
+        dplyr::group_by(codprov, category, seccion) %>% 
+        dplyr::mutate(pct = votos/sum(votos)) %>% 
+        dplyr::ungroup()  %>% 
+        dplyr::mutate(listas_fct = as.factor(nombre_lista),
+                      listas_fct = forcats::fct_reorder(listas_fct, dplyr::desc(pct)))
+        
+      
+      
+    }else{
+    
+  data %>% 
       dplyr::mutate(pct = votos/sum(votos)) %>% 
       dplyr::ungroup()  %>% 
       dplyr::mutate(listas_fct = as.factor(nombre_lista),
                     listas_fct = forcats::fct_reorder(listas_fct, dplyr::desc(pct)))
     
-    
+    }
     # hack for fill brewer palete 
     colourCount = length(unique(datos_depto$listas_fct))
     getPalette = grDevices::colorRampPalette(RColorBrewer::brewer.pal(9, "Set1"))
@@ -249,10 +265,13 @@ plot_results <- function(data,
     if("coddepto" %in% colnames(datos_depto)){
       
       suppressMessages(base_plot_depto + geofacet::facet_geo(~ coddepto, grid = facet_select, label = "name")) 
+    
+      }else if("seccion" %in% colnames(datos_depto)){
       
+      suppressMessages(base_plot_depto + geofacet::facet_geo(~ seccion, grid = facet_select, label = "name"))
       
     } else {
-      
+    
       suppressMessages(base_plot_depto + geofacet::facet_geo(~ codprov, grid = facet_select, label = "name")) 
       
     }  # Close departament geofacet
