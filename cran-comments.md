@@ -1,4 +1,9 @@
 ## Resubmission polAr
+This is a resubmission -version 0.1.3. As asked by reviewer, in this version I: 
+* Update description in DESCRIPTION file to an English version. 
+* Add translated infromation in README file. 
+
+## Resubmission polAr
 This is a resubmission -version 0.1.2. As asked by reviewer, in this version I: 
 
 * add [cph] to the Authors@R field in DESCRIPTION.

@@ -1,13 +1,13 @@
 Package: polAr
-Title: Toolbox for ARG Political Analysis
-Version: 0.1.2
+Title:  Argentina Political Analysis
+Version: 0.1.3
 Authors@R: 
     person(given = "Juan Pablo",
            family = "Ruiz Nicolini",
            role = c("aut", "cre", "cph"),
            email = "juanpabloruiznicolini@gmail.com",
            comment = c(ORCID = "0000-0002-3138-6343"))
-Description: Caja de herramienta para el analisis de datos politicos y electorales de Argentina.
+Description: Toolbox for the Analysis of Political and Electoral Data from Argentina.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: es
