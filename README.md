@@ -15,6 +15,16 @@ Se espera pronto tener una primera versión completa con los datos disponibles p
 
 ### INSTALACIÓN (*INSTALLATION*)
 
+*CRAN*
+
+```r
+install.packages("polAr")
+
+```
+
+install.packages("polAr")
+
+
 _Versión en desarrollo (Development version)_. 
 
 ```r
