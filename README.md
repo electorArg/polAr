@@ -22,9 +22,6 @@ install.packages("polAr")
 
 ```
 
-install.packages("polAr")
-
-
 _Versión en desarrollo (Development version)_. 
 
 ```r

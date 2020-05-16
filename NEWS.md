@@ -1,12 +1,12 @@
 # polAr 0.1.3 
 
-**May 9, 2020:  CRAN release**
+**CRAN release**
 
 # polAr 0.1.2
 
-**May 9, 2020:  resubmitting whith reviwer changes requests**
+**May 9, 2020:  resubmitting whith reviewer changes requests**
 
-* Add "cph" to Author@S in DESCRIPTION
+* Add "cph" to Authors\@R in DESCRIPTION
 
 * Fix `tabulate_results()` output removing it´s printing to console step and keeping it as an object
 
