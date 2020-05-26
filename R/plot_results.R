@@ -44,6 +44,12 @@
 plot_results <- function(data, 
                          national = FALSE){
   
+  ## Check for internet coection
+  attempt::stop_if_not(.x = curl::has_internet(),
+                       msg = "Internet access was not detected. Please check your connection // 
+No se detecto acceso a internet. Por favor chequear la conexion.")
+  
+  
   
   level <- if(dim(data)[2] == 11) {
      
@@ -66,9 +72,6 @@ plot_results <- function(data,
                           msg = "data is not in a long format. Use 'make_long()' to transform it")
   
   
-  assertthat::assert_that("nombre_lista" %in% colnames(data), 
-                          msg = "you have to add party labes to 'data' using 'get_names()'")
-  
 
   if(level == "departamento"){
     assertthat::assert_that("coddepto" %in% colnames(data) | unique(data$category == "presi"), 
@@ -82,10 +85,26 @@ plot_results <- function(data,
                             msg = "The bolean 'national = TRUE' is only for presidential elections.")
   }
   
+  # ADD NAMES
+  
+  data <- if("nombre_lista" %in% names(data)){
+    
+    data 
+    
+  }else{
+    
+    data <- data %>%  get_names()
+    
+  } 
+  
 
   
+  assertthat::assert_that("nombre_lista" %in% colnames(data), 
+                          msg = "you have to add party labes to 'data' using 'get_names()'")
   
-
+  
+  
+  
   # FIX CORRUPT INPUT DATA   
   data <- data %>%
     dplyr::mutate(votos = ifelse(is.na(votos), 0, votos)) %>%   # code 0 for NA votes (not reported!)
@@ -178,7 +197,6 @@ plot_results <- function(data,
                     subtitle = glue::glue("Elecci\u00F3n {election_round} - {election_category}"), 
                     caption = "Fuente: polAr - Pol\u00EDtica Argentina usando R - https://electorarg.github.io/polAr") +
       ggthemes::theme_fivethirtyeight() + 
-    #  hrbrthemes::theme_ipsum()+
       ggplot2::theme(axis.text.y =  ggplot2::element_blank(), 
                      axis.title.y = ggplot2::element_blank(), 
                      panel.spacing.x =ggplot2::unit(0, "cm"), 
@@ -190,7 +208,6 @@ plot_results <- function(data,
     
     
     ##### DEPARTAMENTO
-    
     
     # Load geo-grids for 'departamento'
     
@@ -205,13 +222,18 @@ plot_results <- function(data,
     facet_select <-  geofacet %>%
       purrr::pluck(paste0("PBA"))    
     
-      seccion <- readr::read_csv("https://raw.githubusercontent.com/electorArg/PolAr_Data/master/geo/secciones_pba.csv")
+      seccion <- readr::read_csv("https://raw.githubusercontent.com/electorArg/PolAr_Data/master/geo/secciones_pba.csv",  
+                                 col_types = readr::cols())
      
-    data %>%  
-        dplyr::left_join(seccion) %>% 
-        dplyr::group_by(seccion, codprov, category, listas, nombre_lista) %>% 
-        dplyr::summarise_if(is.numeric, sum) %>%
-        dplyr::group_by(codprov, category, seccion) %>% 
+    data %>%   
+        dplyr::left_join(seccion, by = "coddepto") %>% 
+        dplyr::ungroup() %>% 
+        dplyr::mutate(nombre_lista = forcats::fct_lump(f =nombre_lista,  n = 3, 
+                                                     w = votos,
+                                                     other_level = "Otros")) %>% 
+        dplyr::group_by(seccion, codprov, nombre_lista) %>% 
+        dplyr::summarise_if(is.numeric, sum)  %>% 
+        dplyr::group_by(codprov, seccion) %>% 
         dplyr::mutate(pct = votos/sum(votos)) %>% 
         dplyr::ungroup()  %>% 
         dplyr::mutate(listas_fct = as.factor(nombre_lista),
@@ -219,14 +241,38 @@ plot_results <- function(data,
         
       
       
-    }else{
+    }else if(unique(data$category) == "presi"){
     
-  data %>% 
+  data %>%
+      dplyr::ungroup() %>% 
+      dplyr::mutate(nombre_lista = forcats::fct_lump(f =nombre_lista,  n = 3, 
+                                                     w = votos,
+                                                     other_level = "Otros")) %>% 
+      dplyr::group_by(codprov, nombre_lista) %>%   
+      dplyr::summarise(votos = sum(votos)) %>% 
       dplyr::mutate(pct = votos/sum(votos)) %>% 
       dplyr::ungroup()  %>% 
       dplyr::mutate(listas_fct = as.factor(nombre_lista),
                     listas_fct = forcats::fct_reorder(listas_fct, dplyr::desc(pct)))
     
+    } else{
+      
+      
+   data %>% 
+        dplyr::ungroup() %>% 
+        dplyr::mutate(nombre_lista = forcats::fct_lump(f =nombre_lista,  n = 3, 
+                                                       w = votos,
+                                                       other_level = "Otros")) %>% 
+        dplyr::group_by(codprov, coddepto, nombre_lista) %>%   
+        dplyr::summarise(votos = sum(votos)) %>% 
+        dplyr::mutate(pct = votos/sum(votos)) %>% 
+        dplyr::ungroup()  %>% 
+        dplyr::mutate(listas_fct = as.factor(nombre_lista),
+                      listas_fct = forcats::fct_reorder(listas_fct, dplyr::desc(pct)))
+      
+      
+      
+      
     }
     # hack for fill brewer palete 
     colourCount = length(unique(datos_depto$listas_fct))
@@ -247,19 +293,18 @@ plot_results <- function(data,
                     title = glue::glue("{election_district} - {election_date}"),
                     subtitle = glue::glue("Elecci\u00F3n {election_round} - {election_category}"), 
                     caption = "Fuente: polAr - Pol\u00EDtica Argentina usando R - https://electorarg.github.io/polAr") +
-      ggthemes::theme_fivethirtyeight() + 
-      #hrbrthemes::theme_ipsum(base_size = 11,plot_title_size = 16, subtitle_size = 14,
-       #                       strip_text_size = 8, axis_title_size = 14) + 
+      ggplot2::theme_minimal() +
       ggplot2::theme(axis.text.x = ggplot2::element_blank(), 
                      axis.title.x = ggplot2::element_blank(),
                      axis.ticks.x = ggplot2::element_blank(), 
                      legend.position = "bottom", 
-                     aspect.ratio = .7, 
-                     legend.key.size = ggplot2::unit(.2, "cm"),
+                     aspect.ratio = .8, 
+                     legend.key.size = ggplot2::unit(0.2, "cm"),
                      legend.key.width = ggplot2::unit(0.2,"cm"), 
-                     panel.spacing.x =ggplot2::unit(1.5, "cm"), 
-                     panel.spacing.y =ggplot2::unit(0, "cm")) +
-      ggplot2::guides(fill = ggplot2::guide_legend(nrow = 7))
+                     panel.spacing.x =ggplot2::unit(0, "cm"), 
+                     panel.spacing.y =ggplot2::unit(0, "cm"), 
+                     strip.text = ggplot2::element_text(size = 7)) +
+      ggplot2::guides(fill = ggplot2::guide_legend(nrow = 5))
     
    
     if("coddepto" %in% colnames(datos_depto)){

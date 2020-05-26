@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pipe operator — %&gt;% • polAr</title>
+<title>Mapea resultados (<em>Map results</em>) — map_results • polAr</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,9 @@
 
 
 
-<meta property="og:title" content="Pipe operator — %&gt;%" />
-<meta property="og:description" content="See magrittr::%&amp;gt;% for details." />
+<meta property="og:title" content="Mapea resultados (<em>Map results</em>) — map_results" />
+<meta property="og:description" content="Función para mapear resultados de la elección 
+ (Function to map election results)" />
 
 
 
@@ -129,18 +130,47 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Pipe operator</h1>
-    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/utils-pipe.R'><code>R/utils-pipe.R</code></a></small>
-    <div class="hidden name"><code>pipe.Rd</code></div>
+    <h1>Mapea resultados (<em>Map results</em>)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/map_results.R'><code>R/map_results.R</code></a></small>
+    <div class="hidden name"><code>map_results.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>See <code>magrittr::%&gt;%</code> for details.</p>
+    <p>Función para mapear resultados de la elección 
+ (<em>Function to map election results</em>)</p>
     </div>
 
-    <pre class="usage"><span class='no'>lhs</span> <span class='kw'>%&gt;%</span> <span class='no'>rhs</span></pre>
+    <pre class="usage"><span class='fu'>map_results</span>(<span class='no'>data</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>data</th>
+      <td><p>un tibble guardado como objeto en el Enviroment luego de consultar <code><a href='get_election_data.html'>get_election_data</a></code> con parámetro
+<code>level</code> en <code>provincia</code> para elecciones presidenciales y <code>level</code> en <code>departamento</code> para legislativas 
+(<em>tibble saved as an object in the Enviroment after querying <code><a href='get_election_data.html'>get_election_data</a></code></em> with <code>provincia</code> as 
+<code>level</code> parameter for presidential elections and <code>departmanto</code> for legislative elections). 
+#'</p></td>
+    </tr>
+    </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Devuelve un objeto de <code>class"gg" "ggplot"</code> que mapea el resultado de una eleccion condicional al nivel de agregacion de data 
+ (<em>Returns an object of <code>class "gg" "ggplot"</code> that plots the election results in a map conditional on the level of <code>data</code> aggregation.</em>).</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p><strong>REQUISITOS:</strong></p>
+<p><strong>1</strong>. El formato de <code>data</code> debe ser <code>long</code> para poder graficar. Si <code>data</code> es <em>wide</em> se puede 
+ transformar con <code><a href='make_long.html'>make_long</a></code> 
+ (<em><code>long</code> format of <code>data</code> is required for plotting results. If <code>data</code> is in <em>wide</em> format you can transform 
+ it with <code><a href='make_long.html'>make_long</a></code></em>)</p>
+<p><strong>2.</strong> <code>data</code> tiene que haber incorporando los nombres de las listas. Agreguelos con <code><a href='get_names.html'>get_names</a></code> 
+ (<em><code>data</code> must have party names. Add them with <code><a href='get_names.html'>get_names</a></code></em>)</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='tabulate_results.html'>tabulate_results</a>, <a href='plot_results.html'>plot_results</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

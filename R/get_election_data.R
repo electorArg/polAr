@@ -53,7 +53,7 @@ get_election_data <- function(district = NULL ,
   ## Check for internet coection
   attempt::stop_if_not(.x = curl::has_internet(),
                        msg = "Internet access was not detected. Please check your connection // 
-No se detecto acceso a internet. Por favor chequear la conexipn.")
+No se detecto acceso a internet. Por favor chequear la conexion.")
   
   ## Check params 
 

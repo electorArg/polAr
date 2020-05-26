@@ -27,6 +27,11 @@
 #'@export
 
 get_names <- function(data){
+
+  ## Check for internet coection
+  attempt::stop_if_not(.x = curl::has_internet(),
+                       msg = "Internet access was not detected. Please check your connection // 
+No se detecto acceso a internet. Por favor chequear la conexion.")
   
   # chek data format - LONG needed
   

@@ -56,12 +56,25 @@
     assertthat::assert_that("listas" %in% colnames(data), 
                             msg = "data is not in a long format. Use 'make_long()' to transform it")
     
-    assertthat::assert_that("nombre_lista" %in% colnames(data), 
-                            msg = "data has no party_labels Use 'get_names()' to add them")
-    
-    assertthat::assert_that(dim(data)[2] == 9, 
+   
+    assertthat::assert_that(dim(data)[2] <= 9, 
                             msg = "data is not in the correct 'provincia' level format")
+   
     
+    # ADD NAMES
+    
+    data <- if("nombre_lista" %in% names(data)){
+      
+      data 
+      
+    }else{
+      
+      data <- data %>%  get_names()
+      
+    } 
+    
+    
+     
     # FIX CORRUPT INPUT DATA   
     data <- data %>%
         dplyr::mutate(votos = ifelse(is.na(votos), 0, votos)) %>%   # code 0 for NA votes (not reported!)

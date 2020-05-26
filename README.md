@@ -22,15 +22,6 @@ install.packages("polAr")
 
 ```
 
-_Versión en desarrollo (Development version)_. 
-
-```r
-
-# install.packages('devtools') si no tiene instalado devtools
-
-devtools::install_github("electorArg/polAr")
-
-```
 
 Sus principales funciones son (*Its main functions are*):
 
@@ -40,8 +31,6 @@ Sus principales funciones son (*Its main functions are*):
 - **`get_election_data()`**: Descarga bases de resultados electorales con parámetros obligatorios y otros optativos (*Download electoral data with mandatory and other optional parameters*). 
 
 Entre los primeros se deben consignar `district` para el distrito; `category` para la catgoría; `round` para el turno e `year` para el año de la elección. Entre los segundos se puede agregar `level`para el nivel de agregación -`"provincia"`, `"departamento"`, `"circuito"`- y `long` para el formato de los datos alargados donde las listas no van cada una en una columna sino como valores de una variable `listas` (*Among the first, `district`; `category`;`round` and` year`  must be consigned. Between the seconds you can add `level` for the level of aggregation -`"province" `,`"department"`,`"circuit"`- and` long` for long formatted data where party lists do not go in columns but as values of a `lists` variable*).
-
-
 
 
 - **`compute_competitiveness()`**: Calcula el nivel de competencia en una elección. Un parámetro `level` permite calcularlo para los distintos niveles de agregación presentes en la `data` (*Computes the level of competition in an election. A parameter `level` allows to calculate it for the different levels of aggregation present in the` data`*).
@@ -57,21 +46,22 @@ Entre los primeros se deben consignar `district` para el distrito; `category` pa
 Se pueden consultar pequeños ejemplos de uso en las sección [ARTICULOS](https://electorarg.github.io/polAr/articles/) (*Small examples of use can be found in the ARTICLES section*).
 
 
-### CREDITOS (*CREDITS*)
+### Versión en desarrollo (*Development version*) 
 
-- Las liberías [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) y [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) fueron inspiración de este proyecto (*Libraries [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) and [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) were inspiration for this project.)*) 
+```r
 
-- El acceso a los datos en bruto viene de las bases en archivos `.mdb` del [_Atlas Electoral de Andy Tow_](https://www.andytow.com/access/index.php?logout=true) (*Access to raw data comes from databases in `.mdb` files of [Andy Tow Electoral Atlas](https://www.andytow.com/access/index.php?logout=true)*).
+# install.packages('devtools') si no tiene instalado devtools
 
+devtools::install_github("electorArg/polAr")
 
+```
 
-### DATOS (*DATA*)
+Los cambios en el desarrollo del paquete pueden consultarse en detalle en el [*changelog*](https://electorarg.github.io/polAr/news/index.html) (*Changes in package development can be found in detail in the [changelog](https://electorarg.github.io/polAr/news/index.html)*).
 
-(**Trabajo en proceso - Work in progress**)
+* Se agregó `map_results()` para visualizar resultados electorales en la geografía mediante mapas (*Among the functions for visualization, a function was added to map electoral results: `map_results()`*)
 
-- La primera etapa de este proyecto consistió en un procesamiento de esos archivos para convertirlos a otros con formato `sqlite` para manipularlos más facilmente desde `R`(*The first stage of this project consisted in processing those files and convert them to others in `sqlite` format for easier manipulation with `R`*).
+* Se eliminó el requerimento de llamar `get_names()` previo a las funciones de visualización de resultados electorales y ahora se incorporan los nombres de listas por defecto (*`get_names ()` step prior to vizualization functions was removed for viz functions and now party labels are added by default*) 
 
-- Con esa información generamos cuadernos de `RMarkdown` para hacer las consultas de resultados para distintos años, cateogrías, turnos electorales y distrito. Pronto una descripción más detallada y documentación de este proceso (*With this information, we generate `RMarkdown` notebooks to query the results for different years, categories, electoral turns and district. Soon a more detailed description and documentation of this process*). 
 
 ### REFERENCIA (*RERENCE*)
 
@@ -87,3 +77,25 @@ Se pueden consultar pequeños ejemplos de uso en las sección [ARTICULOS](https:
 
 ```
  
+### TWITTER BOT
+
+(**Trabajo en proceso - Work in progress**)
+
+Junto a [Camila Higa](https://twitter.com/chig4_) trabajamos en un robot de twitter - [pol_ar_bot](https://twitter.com/pol_Ar_bot) - que se monta sobre `polAr` y responde consultas de usuaries sobre resultados de elecciones combinando las funciones `get_election_data()` y `plot_results()`. 
+
+
+### CREDITOS (*CREDITS*)
+
+- Las liberías [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) y [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) fueron inspiración de este proyecto (*Libraries [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) and [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) were inspiration for this project.)*) 
+
+- La gran mayoría de los datos proviene de las bases en archivos `.mdb` del [_Atlas Electoral de Andy Tow_](https://www.andytow.com/access/index.php?logout=true) (*Access to raw data comes from databases in `.mdb` files of [Andy Tow Electoral Atlas](https://www.andytow.com/access/index.php?logout=true)*).
+
+
+
+### DATOS (*DATA*)
+
+(**Trabajo en proceso - Work in progress**)
+
+- La primera etapa de este proyecto consistió en un procesamiento de esos archivos para convertirlos a otros con formato `sqlite` para manipularlos más facilmente desde `R`(*The first stage of this project consisted in processing those files and convert them to others in `sqlite` format for easier manipulation with `R`*).
+
+- Con esa información generamos cuadernos de `RMarkdown` para hacer las consultas de resultados para distintos años, cateogrías, turnos electorales y distrito. Pronto una descripción más detallada y documentación de este proceso (*With this information, we generate `RMarkdown` notebooks to query the results for different years, categories, electoral turns and district. Soon a more detailed description and documentation of this process*). 
