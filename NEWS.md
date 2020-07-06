@@ -1,3 +1,21 @@
+# polAr 0.1.3.2
+
+**Jul 5, 2020: dev version**
+
+* Added two new functions in previous workflow:
+
+1. `get_multiple_elections()`  helps downloading multiple elections data with only one call. 
+
+2. `compute_seats()` assigns the expected number of seats that a party should get bases on it´s votes. 
+
+* Added a new workflow around presidential speeches with three functions:
+
+1. exploring data with `show_available_speech()`
+
+2. downloading data with `get_speech()`
+
+3. visualize data with `plot_speech()`
+
 # polAr 0.1.3.1
 
 **May 26, 2020: dev version**

@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Data set de muestra — tucuman_dip_gral_2017 • polAr</title>
+<title>Visualización rápida del discurso
+ (<em>Quick speech viz</em>) — plot_speech • polAr</title>
 
 
 <!-- jquery -->
@@ -39,8 +40,10 @@
 
 
 
-<meta property="og:title" content="Data set de muestra — tucuman_dip_gral_2017" />
-<meta property="og:description" content="Un tibble con los resultados agregados de la eleccion general para Diputado Nacional por la provincia de Tucuman en 2017" />
+<meta property="og:title" content="Visualización rápida del discurso
+ (<em>Quick speech viz</em>) — plot_speech" />
+<meta property="og:description" content="Función que permite una rápida visualización de los discursos presidenciales a través de nube de palabras representando su frecuencia relativa con el tamaño. 
+ (Function that plots a word cloud of presidential specches, with word sizes as a function of its frequency in the data set)" />
 
 
 
@@ -129,32 +132,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Data set de muestra</h1>
-    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/tucuman_dip_gral_2017.R'><code>R/tucuman_dip_gral_2017.R</code></a></small>
-    <div class="hidden name"><code>tucuman_dip_gral_2017.Rd</code></div>
+    <h1>Visualización rápida del discurso
+ (<em>Quick speech viz</em>)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/plot_speech.R'><code>R/plot_speech.R</code></a></small>
+    <div class="hidden name"><code>plot_speech.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Un tibble con los resultados agregados de la eleccion general para Diputado Nacional por la provincia de Tucuman en 2017</p>
+    <p>Función que permite una rápida visualización de los discursos presidenciales a través de nube de palabras representando su frecuencia relativa con el tamaño. 
+ (<em>Function that plots a word cloud of presidential specches, with word sizes as a function of its frequency in the data set</em>)</p>
     </div>
 
-    <pre class="usage"><span class='no'>tucuman_dip_gral_2017</span></pre>
+    <pre class="usage"><span class='fu'>plot_speech</span>(<span class='no'>data</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>data</th>
+      <td><p>requiere un discurso dentro data.frame con formato <em>tidy</em> descargado con <code>get_speech</code> 
+<em>(a tidy data.frame with the speech downloaded with <code>get_speech</code> is required</em>).</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Un data frame con 6 filas y 8 variables:</p><dl'>
-  <dt>category</dt><dd><p>Categoria Electoral</p></dd>
-  <dt>round</dt><dd><p>Ronda o Truno Electoral</p></dd>
-  <dt>year</dt><dd><p>Fecha de eleccion</p></dd>
-  <dt>codprov</dt><dd><p>Codigo de Provincia</p></dd>
-  <dt>name_prov</dt><dd><p>Nombre de Provincia</p></dd>
-  <dt>electores</dt><dd><p>Cantidad de Electores</p></dd>
-  <dt>listas</dt><dd><p>Codigo de lista o partido</p></dd>
-  <dt>votos</dt><dd><p>Cantidad de votos absolutos</p></dd>
-  ...
-
-</dl>
+    <p>Devuelve un objeto con clases <code>"wordcloud2" "htmlwidget"</code> que representa gráficamente el contenido de un discurso presidencial  
+ (<em>it retruns an object of <code>classes "wordcloud2" "htmlwidget"</code></em> with a graphical representation of presidential speeches).</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

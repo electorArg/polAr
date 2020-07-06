@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mapea resultados (<em>Map results</em>) — map_results • polAr</title>
+<title>Descarga resultados de múltiples elecciones 
+ (<em>Download multiple election electoral data</em>) — get_multiple_elections • polAr</title>
 
 
 <!-- jquery -->
@@ -39,9 +40,10 @@
 
 
 
-<meta property="og:title" content="Mapea resultados (<em>Map results</em>) — map_results" />
-<meta property="og:description" content="Función para mapear resultados de la elección 
- (Function to map election results)" />
+<meta property="og:title" content="Descarga resultados de múltiples elecciones 
+ (<em>Download multiple election electoral data</em>) — get_multiple_elections" />
+<meta property="og:description" content="Esta función permite descargar restultados de una multiplicidad de elecciones al mismo tiempo. 
+ (Function that downloads multiple national electoral data with one call)" />
 
 
 
@@ -130,48 +132,71 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Mapea resultados (<em>Map results</em>)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/map_results.R'><code>R/map_results.R</code></a></small>
-    <div class="hidden name"><code>map_results.Rd</code></div>
+    <h1>Descarga resultados de múltiples elecciones 
+ (<em>Download multiple election electoral data</em>)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/get_multiple_elections.R'><code>R/get_multiple_elections.R</code></a></small>
+    <div class="hidden name"><code>get_multiple_elections.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Función para mapear resultados de la elección 
- (<em>Function to map election results</em>)</p>
+    <p>Esta función permite descargar restultados de una multiplicidad de elecciones al mismo tiempo. 
+ (<em>Function that downloads multiple national electoral data with one call</em>)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>map_results</span>(<span class='no'>data</span>)</pre>
+    <pre class="usage"><span class='fu'>get_multiple_elections</span>(<span class='no'>data</span>, <span class='kw'>unnest</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>un tibble guardado como objeto en el Enviroment luego de consultar <code><a href='get_election_data.html'>get_election_data</a></code> con parámetro
-<code>level</code> en <code>provincia</code> para elecciones presidenciales y <code>level</code> en <code>departamento</code> para legislativas 
-(<em>tibble saved as an object in the Enviroment after querying <code><a href='get_election_data.html'>get_election_data</a></code></em> with <code>provincia</code> as 
-<code>level</code> parameter for presidential elections and <code>departmanto</code> for legislative elections). 
-#'</p></td>
+      <td><p>data.frame con tantas filas como elecciones se quiere descargar y cuatro columnas con las siguientes variables: <em>district</em>, <em>category</em>, <em>round</em>, <em>year</em> 
+(<em>data.frame with as many rows as elections you want to download and four columns with the following variables:<em>district</em>, <em>category</em>, <em>round</em>, <em>year</em></em>).</p></td>
+    </tr>
+    <tr>
+      <th>unnest</th>
+      <td><p>un boleano que devuelve los datos anidados cuando <code>TRUE</code> agrupando cada elección o un data.frame cuando es <code>FALSE</code> que incluye una variable de id de la elección
+(<em>a boolean that returns nested data when <code>TRUE</code>, grouping each election or a data.frame when <code>FALSE</code> that includes an election id variable</em>).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Devuelve un objeto de <code>class"gg" "ggplot"</code> que mapea el resultado de una eleccion condicional al nivel de agregacion de data 
- (<em>Returns an object of <code>class "gg" "ggplot"</code> that plots the election results in a map conditional on the level of <code>data</code> aggregation.</em>).</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p><strong>REQUISITOS:</strong></p>
-<p><strong>1</strong>. El formato de <code>data</code> debe ser <code>long</code> para poder graficar. Si <code>data</code> es <em>wide</em> se puede 
- transformar con <code><a href='make_long.html'>make_long</a></code> 
- (<em><code>long</code> format of <code>data</code> is required for plotting results. If <code>data</code> is in <em>wide</em> format you can transform 
- it with <code><a href='make_long.html'>make_long</a></code></em>)</p>
-<p><strong>2.</strong> <code>data</code> tiene que haber incorporando los nombres de las listas. Agreguelos con <code><a href='get_names.html'>get_names</a></code> 
- (<em><code>data</code> must have party names. Add them with <code><a href='get_names.html'>get_names</a></code></em>)</p>
+    <p>devuelve un tibble con <code>class "grouped_df", "tbl_df","tbl", "data.frame"</code> con los resultados de las eleccion seleccionadas, con tantas
+filas como elecciones se consultaron y dos columnas: <em>id</em> de la eleccion construido como concatenación de los parametros 
+<code>year_category_round_year</code>; <em>election</em> contiene un listado de tibbles con los resultados agregados a nivel provincial para cada elección
+ (<em>returns a tibble of <code>class "grouped_df", "tbl_df", "tbl", "data.frame"</code> with as many rows as elections requested and two columns: 
+ <em>id</em> of the election build as a concatenation of the parameters <code>year_category_round_year</code>; <em>election</em> contains a list of tibbles with 
+ electoral results aggregated at the provincial level for each each row</em>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='tabulate_results.html'>tabulate_results</a>, <a href='plot_results.html'>plot_results</a></code></p></div>
+    <div class='dont-index'><p><code><a href='get_election_data.html'>get_election_data</a></code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+ <span class='kw pkg'>polAr</span><span class='kw ns'>::</span><span class='fu'><a href='show_available_elections.html'>show_available_elections</a></span>() <span class='kw'>%&gt;%</span>
+ <span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span>(<span class='no'>district</span> <span class='kw'>==</span> <span class='st'>"caba"</span>,
+              <span class='no'>category</span> <span class='kw'>==</span> <span class='st'>"dip"</span>,
+              <span class='no'>round</span> <span class='kw'>==</span> <span class='st'>"paso"</span>) <span class='kw'>-&gt;</span> <span class='no'>caba_paso_diputados</span>
+
+<span class='no'>caba_paso_diputados</span></div><div class='output co'>#&gt; # A tibble: 5 x 5
+#&gt;   district category round year  NOMBRE
+#&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; 
+#&gt; 1 caba     dip      paso  2011  CABA  
+#&gt; 2 caba     dip      paso  2013  CABA  
+#&gt; 3 caba     dip      paso  2015  CABA  
+#&gt; 4 caba     dip      paso  2017  CABA  
+#&gt; 5 caba     dip      paso  2019  CABA  </div><div class='input'>
+ <span class='fu'>get_multiple_elections</span>(<span class='no'>caba_paso_diputados</span>)</div><div class='output co'>#&gt; # A tibble: 5 x 2
+#&gt; # Groups:   id [5]
+#&gt;   id                 election         
+#&gt;   &lt;glue&gt;             &lt;list&gt;           
+#&gt; 1 caba_dip_paso_2011 &lt;tibble [14 x 8]&gt;
+#&gt; 2 caba_dip_paso_2013 &lt;tibble [15 x 8]&gt;
+#&gt; 3 caba_dip_paso_2015 &lt;tibble [15 x 8]&gt;
+#&gt; 4 caba_dip_paso_2017 &lt;tibble [18 x 8]&gt;
+#&gt; 5 caba_dip_paso_2019 &lt;tibble [14 x 8]&gt;</div><div class='input'> 
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

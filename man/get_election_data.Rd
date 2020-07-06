@@ -46,5 +46,7 @@ Función que descarga resultados electorales nacionales desde 2007
                    level = "provincia", 
                    long = TRUE, raw = FALSE)                    
  
- 
+}
+\seealso{
+\code{\link{get_multiple_elections}}
 }

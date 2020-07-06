@@ -107,8 +107,7 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
   
   # FIX CORRUPT INPUT DATA   
   data <- data %>%
-    dplyr::mutate(votos = ifelse(is.na(votos), 0, votos)) %>%   # code 0 for NA votes (not reported!)
-    dplyr::filter(!stringr::str_detect(nombre_lista, "\\d$"))  
+    dplyr::mutate(votos = ifelse(is.na(votos), 0, votos)) # code 0 for NA votes (not reported!)
   
   ### summarize for presidential election
   

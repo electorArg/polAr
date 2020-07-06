@@ -73,5 +73,5 @@ tucuman_dip_gral_2017 \%>\%
 
 }
 \seealso{
-\code{\link{compute_competitiveness}}
+\code{\link{compute_competitiveness}, \link{compute_seats}}
 }

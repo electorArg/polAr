@@ -37,8 +37,10 @@
 #'                    level = "provincia", 
 #'                    long = TRUE, raw = FALSE)                    
 #'  
+#' @seealso  \code{\link{get_multiple_elections}}   
 #'  
-#'@export
+#'  
+#' @export
 
 get_election_data <- function(district = NULL ,
                               category = NULL,
@@ -220,6 +222,7 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
                                              year, ".csv?raw=true"), 
                                    col_types = readr::cols()) %>% 
                dplyr::group_by_at(levels) %>% 
+               dplyr::mutate(mesa = as.character(mesa)) %>% ### fix bug (Salta elections detecting mesa as integer)
                dplyr::summarise_if(is.numeric, .funs = sum) %>% 
                dplyr::ungroup() %>%
                dplyr::mutate(codprov = as.character(codprov)) %>% 

@@ -86,9 +86,9 @@ Junto a [Camila Higa](https://twitter.com/chig4_) trabajamos en un robot de twit
 
 ### CREDITOS (*CREDITS*)
 
-- Las liberías [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) y [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) fueron inspiración de este proyecto (*Libraries [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) and [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) were inspiration for this project.)*) 
+- Las liberías [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) y [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) fueron inspiración y fuente de este proyecto (*Libraries [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) and [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) were inspiration for this project.)*) 
 
-- La gran mayoría de los datos proviene de las bases en archivos `.mdb` del [_Atlas Electoral de Andy Tow_](https://www.andytow.com/access/index.php?logout=true) (*Access to raw data comes from databases in `.mdb` files of [Andy Tow Electoral Atlas](https://www.andytow.com/access/index.php?logout=true)*).
+- La gran mayoría de los datos electorales proviene de las bases en archivos `.mdb` del [_Atlas Electoral de Andy Tow_](https://www.andytow.com/access/index.php?logout=true) (*Access to raw data comes from databases in `.mdb` files of [Andy Tow Electoral Atlas](https://www.andytow.com/access/index.php?logout=true)*).
 
 
 
@@ -96,6 +96,14 @@ Junto a [Camila Higa](https://twitter.com/chig4_) trabajamos en un robot de twit
 
 (**Trabajo en proceso - Work in progress**)
 
+#### Electorales
+ 
 - La primera etapa de este proyecto consistió en un procesamiento de esos archivos para convertirlos a otros con formato `sqlite` para manipularlos más facilmente desde `R`(*The first stage of this project consisted in processing those files and convert them to others in `sqlite` format for easier manipulation with `R`*).
 
 - Con esa información generamos cuadernos de `RMarkdown` para hacer las consultas de resultados para distintos años, cateogrías, turnos electorales y distrito. Pronto una descripción más detallada y documentación de este proceso (*With this information, we generate `RMarkdown` notebooks to query the results for different years, categories, electoral turns and district. Soon a more detailed description and documentation of this process*). 
+
+#### Discursos
+
+Con el aporte de [Lucas Enrich](https://twitter.com/lucasenrich) y [Camila Higa](https://twitter.com/chig4_) trabajamos sobre una base de datos de discursos de apertura de sesiones legislativas de los presidentes argentinos: desde el primer discurso de Justo José de Urquiza en 1854 hasta el de Alberto Fernández en 2020.  Se disponibilizan versiones de texto con mínimo procesamiento y otras en formato [tidy](https://www.tidytextmining.com/tidytext.html), siguiendo la definición de Julia Silge y David Robinson.   
+
+

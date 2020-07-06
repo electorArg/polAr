@@ -39,7 +39,7 @@
 #'  (\emph{\code{level} at \code{\link{get_election_data}} determines aggregation on which NEP calculation 
 #'  will be made: \code{provincia}, \code{departamento} or \code{circuito}}).    
 #'  
-#' @seealso  \code{\link{compute_competitiveness}} 
+#' @seealso  \code{\link{compute_competitiveness}, \link{compute_seats}} 
 #' 
 #' @return  Devuelve un tibble con \code{class "tbl_df","tbl", "data.frame"} de dimensiones variables seguún el nivel de agrupamiento de 
 #'  \code{data} con el cómputo del número ajustado de fuerzas en un sistema de partidos

@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Data set de muestra — tucuman_dip_gral_2017 • polAr</title>
+<title>Diccionario de discursos disponibles
+ (<em>Speeches collection</em>) — show_available_speech • polAr</title>
 
 
 <!-- jquery -->
@@ -39,8 +40,9 @@
 
 
 
-<meta property="og:title" content="Data set de muestra — tucuman_dip_gral_2017" />
-<meta property="og:description" content="Un tibble con los resultados agregados de la eleccion general para Diputado Nacional por la provincia de Tucuman en 2017" />
+<meta property="og:title" content="Diccionario de discursos disponibles
+ (<em>Speeches collection</em>) — show_available_speech" />
+<meta property="og:description" content="Función que devuelve un listado de discursos de apertura de sesiones emitidos por los presidentes de Argentina ante la Asamblea Legislativa." />
 
 
 
@@ -129,33 +131,55 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Data set de muestra</h1>
-    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/tucuman_dip_gral_2017.R'><code>R/tucuman_dip_gral_2017.R</code></a></small>
-    <div class="hidden name"><code>tucuman_dip_gral_2017.Rd</code></div>
+    <h1>Diccionario de discursos disponibles
+ (<em>Speeches collection</em>)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/show_available_speech.R'><code>R/show_available_speech.R</code></a></small>
+    <div class="hidden name"><code>show_available_speech.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Un tibble con los resultados agregados de la eleccion general para Diputado Nacional por la provincia de Tucuman en 2017</p>
+    <p>Función que devuelve un listado de discursos de apertura de sesiones emitidos por los presidentes de Argentina ante la Asamblea Legislativa.</p>
     </div>
 
-    <pre class="usage"><span class='no'>tucuman_dip_gral_2017</span></pre>
+    <pre class="usage"><span class='fu'>show_available_speech</span>(<span class='kw'>viewer</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>viewer</th>
+      <td><p>Por defecto es <code>FALSE</code>. Cuando <code>TRUE</code> devuelve una tabla en el <em>Viewer</em> de <em>RStudio</em> 
+(<em>The default is <code>FALSE</code>. When <code>TRUE</code> it returns a table in <em>RStudio Viewer</em></em>).</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Un data frame con 6 filas y 8 variables:</p><dl'>
-  <dt>category</dt><dd><p>Categoria Electoral</p></dd>
-  <dt>round</dt><dd><p>Ronda o Truno Electoral</p></dd>
-  <dt>year</dt><dd><p>Fecha de eleccion</p></dd>
-  <dt>codprov</dt><dd><p>Codigo de Provincia</p></dd>
-  <dt>name_prov</dt><dd><p>Nombre de Provincia</p></dd>
-  <dt>electores</dt><dd><p>Cantidad de Electores</p></dd>
-  <dt>listas</dt><dd><p>Codigo de lista o partido</p></dd>
-  <dt>votos</dt><dd><p>Cantidad de votos absolutos</p></dd>
-  ...
+    <p>El objeto de salida es un data set con los id dediscursos disponibles para usar como parámetro con
+ con <code><a href='get_speech.html'>get_speech</a></code>. Cuando el parámetro es <code>viewer = FALSE</code>, devuelve un tibble con <code>class "tbl_df","tbl","data.frame"</code>, y 
+ cuando es <code>viewer = TRUE</code> devuelve un objeto con <code>class "datatables","htmlwidget"</code> 
+ (<em>The output is a data set with speeches id needed as parameters in <code><a href='get_speech.html'>get_speech</a></code>. 
+ When parameter is set to <code>viewer = FALSE</code> it returns a tibble and when it is <code>viewer = TRUE</code> it returns an 
+ object of <code>class "datatables","htmlwidget"</code></em>).</p>
 
-</dl>
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+ <span class='fu'>show_available_speech</span>()</div><div class='output co'>#&gt; # A tibble: 116 x 2
+#&gt;    year  president            
+#&gt;    &lt;chr&gt; &lt;chr&gt;                
+#&gt;  1 1854  justo_jose_de_urquiza
+#&gt;  2 1855  justo_jose_de_urquiza
+#&gt;  3 1856  justo_jose_de_urquiza
+#&gt;  4 1857  justo_jose_de_urquiza
+#&gt;  5 1858  justo_jose_de_urquiza
+#&gt;  6 1859  justo_jose_de_urquiza
+#&gt;  7 1860  santiago_derqui      
+#&gt;  8 1861  santiago_derqui      
+#&gt;  9 1862  bartolome_mitre      
+#&gt; 10 1863  bartolome_mitre      
+#&gt; # ... with 106 more rows</div><div class='input'> 
 
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

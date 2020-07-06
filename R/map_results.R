@@ -147,8 +147,7 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
     dplyr::filter(nombre_lista %in% front_runners$nombre_lista) %>%
     dplyr::left_join(front_runners, by = "nombre_lista") %>% 
     dplyr::arrange(dplyr::desc(totales)) %>% 
-    dplyr::mutate(dif = pct - dplyr::lead(pct), 
-           winer = ifelse(dif > 0, nombre_lista, dplyr::lead(nombre_lista))) %>% 
+    dplyr::mutate(dif = pct - dplyr::lead(pct)) %>% 
     dplyr::slice(1) %>% 
     dplyr::mutate(group = dplyr::case_when(
       dif > 0 & dif < 5 ~ 5, 

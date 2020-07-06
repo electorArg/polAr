@@ -15,7 +15,12 @@
 #'  When parameter is set to \code{viewer = FALSE} it returns a tibble and when it is \code{viewer = TRUE} it returns an 
 #'  object of \code{class "datatables","htmlwidget"}}).
 #'  
+#' @examples 
+#' 
+#'  show_available_elections(viewer = FALSE)
 #'  
+#' @seealso \code{\link{show_available_speech}}
+#'   
 #'
 #' @export
 

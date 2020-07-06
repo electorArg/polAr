@@ -37,7 +37,7 @@
 #'    tucuman_dip_gral_2017 %>% 
 #'      compute_competitiveness()
 #'      
-#' @seealso  \code{\link{compute_nep}} 
+#' @seealso  \code{\link{compute_nep}, \link{compute_seats}} 
 #'      
 #' @export
 

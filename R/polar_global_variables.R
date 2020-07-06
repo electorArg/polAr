@@ -41,5 +41,39 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c(".",
                                                         "totales", 
                                                         "dif", 
                                                         "group",
-                                                        "coddept"))
+                                                        "coddept", 
+                                                        "PARTY", 
+                                                        "VOTES", 
+                                                        "DIVISOR", 
+                                                        "QUOTIENTS", 
+                                                        "ORDER", 
+                                                        "mesa", # Must fix data input SALTA Dip 
+                                                        "anio", 
+                                                        "president", 
+                                                        "Presidente",
+                                                        "id", 
+                                                        "n", 
+                                                        "word", 
+                                                        "election"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

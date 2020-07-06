@@ -47,5 +47,5 @@ El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute
      
 }
 \seealso{
-\code{\link{compute_nep}}
+\code{\link{compute_nep}, \link{compute_seats}}
 }

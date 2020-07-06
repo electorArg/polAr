@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mapea resultados (<em>Map results</em>) — map_results • polAr</title>
+<title>Calcula número de bancas de diputados a repartir en una elección  
+ (<em>Computes allocation of legislative seats</em>) — compute_seats • polAr</title>
 
 
 <!-- jquery -->
@@ -39,9 +40,11 @@
 
 
 
-<meta property="og:title" content="Mapea resultados (<em>Map results</em>) — map_results" />
-<meta property="og:description" content="Función para mapear resultados de la elección 
- (Function to map election results)" />
+<meta property="og:title" content="Calcula número de bancas de diputados a repartir en una elección  
+ (<em>Computes allocation of legislative seats</em>) — compute_seats" />
+<meta property="og:description" content="Función que calcula la distribución proporcional de escaños para la categoría Diputado Nacional y 
+de mayoría/minoría para Senaor Nacional en función de votos obtenidos
+ (Function that computes propotional allocation of Diputados and Senadores seats)" />
 
 
 
@@ -130,48 +133,78 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Mapea resultados (<em>Map results</em>)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/map_results.R'><code>R/map_results.R</code></a></small>
-    <div class="hidden name"><code>map_results.Rd</code></div>
+    <h1>Calcula número de bancas de diputados a repartir en una elección  
+ (<em>Computes allocation of legislative seats</em>)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/compute_seats.R'><code>R/compute_seats.R</code></a></small>
+    <div class="hidden name"><code>compute_seats.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Función para mapear resultados de la elección 
- (<em>Function to map election results</em>)</p>
+    <p>Función que calcula la distribución proporcional de escaños para la categoría Diputado Nacional y 
+de mayoría/minoría para Senaor Nacional en función de votos obtenidos
+ (<em>Function that computes propotional allocation of Diputados and Senadores seats</em>)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>map_results</span>(<span class='no'>data</span>)</pre>
+    <pre class="usage"><span class='fu'>compute_seats</span>(<span class='no'>data</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>un tibble guardado como objeto en el Enviroment luego de consultar <code><a href='get_election_data.html'>get_election_data</a></code> con parámetro
-<code>level</code> en <code>provincia</code> para elecciones presidenciales y <code>level</code> en <code>departamento</code> para legislativas 
-(<em>tibble saved as an object in the Enviroment after querying <code><a href='get_election_data.html'>get_election_data</a></code></em> with <code>provincia</code> as 
-<code>level</code> parameter for presidential elections and <code>departmanto</code> for legislative elections). 
-#'</p></td>
+      <td><p>un data.frame con los resultados de una elección para agregados a nivel provincial 
+(<em>a data.frame with aggregate electoral results at provincial level</em>).</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Devuelve un objeto de <code>class"gg" "ggplot"</code> que mapea el resultado de una eleccion condicional al nivel de agregacion de data 
- (<em>Returns an object of <code>class "gg" "ggplot"</code> that plots the election results in a map conditional on the level of <code>data</code> aggregation.</em>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><strong>REQUISITOS:</strong></p>
-<p><strong>1</strong>. El formato de <code>data</code> debe ser <code>long</code> para poder graficar. Si <code>data</code> es <em>wide</em> se puede 
- transformar con <code><a href='make_long.html'>make_long</a></code> 
- (<em><code>long</code> format of <code>data</code> is required for plotting results. If <code>data</code> is in <em>wide</em> format you can transform 
- it with <code><a href='make_long.html'>make_long</a></code></em>)</p>
-<p><strong>2.</strong> <code>data</code> tiene que haber incorporando los nombres de las listas. Agreguelos con <code><a href='get_names.html'>get_names</a></code> 
- (<em><code>data</code> must have party names. Add them with <code><a href='get_names.html'>get_names</a></code></em>)</p>
+    <p>1. La distribución de escaños esta regida por la formula del sistema <em>D'Hondt</em> para Diputados y mayoría/minoría para Senadores.
+2. La cantidad de escaños de cada provincia dependen de su población con un mínimo de \(5\) por provincia. 
+En caso de Senadores se asignan \(2\) al de mayor votos y \(1\) al segundo. 
+3. En el caso de Diputados, La renovación de bancas de cada provincia se realiza por mitades cada dos años. Cuando la cantidad de 
+escaños que corresponden a una provincia es impar las mismas eligen un diputado más en uno de los turnos: o concurrentes
+con elecciones presidenciales, o en elecciones de mitad de termino presidencial.
+En el caso de Senadores su mandato es de 6 años y se renuevan parcialmente por grupos de 8 provincias.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='tabulate_results.html'>tabulate_results</a>, <a href='plot_results.html'>plot_results</a></code></p></div>
+    <div class='dont-index'><p><code><a href='compute_nep.html'>compute_nep</a>, <a href='compute_competitiveness.html'>compute_competitiveness</a></code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+ <span class='kw pkg'>polAr</span><span class='kw ns'>::</span><span class='fu'><a href='get_election_data.html'>get_election_data</a></span>(<span class='kw'>district</span> <span class='kw'>=</span> <span class='st'>"caba"</span>,
+                          <span class='kw'>category</span> <span class='kw'>=</span> <span class='st'>"dip"</span>,
+                          <span class='kw'>round</span> <span class='kw'>=</span> <span class='st'>"gral"</span>,
+                          <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2007</span>) <span class='kw'>-&gt;</span> <span class='no'>caba_dip_2007</span>
+
+ <span class='no'>caba_dip_2007</span></div><div class='output co'>#&gt; # A tibble: 32 x 8
+#&gt; # Groups:   codprov [1]
+#&gt;    category round  year codprov name_prov electores listas  votos
+#&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
+#&gt;  1 dip      gral   2007 01      CABA        2564950 0003   104599
+#&gt;  2 dip      gral   2007 01      CABA        2564950 0005     4634
+#&gt;  3 dip      gral   2007 01      CABA        2564950 0009    79154
+#&gt;  4 dip      gral   2007 01      CABA        2564950 0014    12107
+#&gt;  5 dip      gral   2007 01      CABA        2564950 0020    41071
+#&gt;  6 dip      gral   2007 01      CABA        2564950 0023     4409
+#&gt;  7 dip      gral   2007 01      CABA        2564950 0036    26889
+#&gt;  8 dip      gral   2007 01      CABA        2564950 0037     3177
+#&gt;  9 dip      gral   2007 01      CABA        2564950 0038    33654
+#&gt; 10 dip      gral   2007 01      CABA        2564950 0050   247836
+#&gt; # ... with 22 more rows</div><div class='input'>
+
+ <span class='fu'>compute_seats</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>caba_dip_2007</span>)</div><div class='output co'>#&gt; # A tibble: 7 x 7
+#&gt; # Groups:   year, category, round, codprov, name_prov [1]
+#&gt;   codprov name_prov  year category round nombre_lista                     seats
+#&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;                            &lt;int&gt;
+#&gt; 1 01      CABA       2007 dip      gral  Al. Coalición Cívica                 3
+#&gt; 2 01      CABA       2007 dip      gral  Alianza Frente para la Victoria      2
+#&gt; 3 01      CABA       2007 dip      gral  Alianza Propuesta Republicana        2
+#&gt; 4 01      CABA       2007 dip      gral  Partido Socialista                   2
+#&gt; 5 01      CABA       2007 dip      gral  Alianza Diálogo por Buenos Aires     1
+#&gt; 6 01      CABA       2007 dip      gral  Alianza Proyecto Sur                 1
+#&gt; 7 01      CABA       2007 dip      gral  Unión Cívica Radical                 1</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

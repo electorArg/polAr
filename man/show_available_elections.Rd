@@ -23,3 +23,11 @@ El objeto de salida es un data set con los id de elecciones necesarios como par�
 Función que devuelve un tibble con los parámetros necesarios para llamar elecciones con \code{\link{get_election_data}} 
  (\emph{Function that returns a tibble with the necessary parameters to call elections with} \code{\link{get_election_data}}).
 }
+\examples{
+
+ show_available_elections(viewer = FALSE)
+ 
+}
+\seealso{
+\code{\link{show_available_speech}}
+}
