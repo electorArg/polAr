@@ -1,5 +1,5 @@
 ---
-title: "Acceso a datos"
+title: "Acceso a datos Electorales (Electoral Data)"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{data}
@@ -18,10 +18,13 @@ knitr::opts_chunk$set(
 library(polAr)
 ```
 
+### ELECTORAL 
 
-#### Explorar datos disponibles con `show_available_elections()`
+#### Explorar datos disponibles con `show_available_elections()` (*Explore Data*)
 
 La función `show_available_elections()` muestra las elecciones disponibles para descarga. Por defecto el parámetro `viewer = FALSE` imprime el resultado en consola. Si en cambio escribimos `viewer = TRUE` los datos se presentan en el _Viewer_ de `RStudio` y quedan a mano como tabla formateada y con la capacidad de ordenar y filtrar valores. 
+
+(*`show_available_elections ()` function displays available electoral data for download. By default the parameter `viewer = FALSE` prints the result in console. If instead we write `viewer = TRUE` data is presented in the `RStudio` _Viewer_ as a handy formatted table and with the ability to sort and filter values*). 
 
 
 
@@ -35,13 +38,17 @@ show_available_elections()
 ```
 
 
-#### Obtener datos con `get_election_data()`
+#### Obtener datos con `get_election_data()` (*Get data*)
 
-`get_election_data()` es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (`district`), la categoría (`category`), el turno (`round`) y el año electoral (`year`). 
+`get_election_data()` es la función principal para hacernos de los datos disponibles. Los parámetros obligatorios son los que definen el distrito (`district`), la categoría (`category`), el turno (`round`) y el año electoral (`year`)  
 
-Por defecto los datos colapsan a nivel provincial, pero podemos definir otros niveles como departamento o circuito electoral con el parámetro `levels`. 
+(*`get_election_data()` is the main function to get the available data. The mandatory parameters are those that define the district (`district`), the category (` category`), the turn (`round`) and the electoral year (` year`)*).
 
-Abajo el resultado de la consulta solo con los parámetros obligatorios, en el primer caso, y con un nivel de desagregación menor en el segundo:
+Por defecto los datos colapsan a nivel provincial, pero podemos definir otros niveles como departamento o circuito electoral con el parámetro `levels` 
+
+(*By default the data collapses at the provincial level, but we can define other levels such as department or electoral circuit with the parameter `levels`*).
+
+Abajo el resultado de la consulta solo con los parámetros obligatorios, en el primer caso, y con un nivel de desagregación menor en el segundo (*Below is the result of the query only with the mandatory parameters, in the first case, and with a lower level of disaggregation in the second*):
 
 
 
@@ -56,11 +63,13 @@ get_election_data(district = "caba",
 ```
 
 
-#### Transformar estructura de datos anchos (*wide*) a largos (*long*) con `make_long()`
+#### Transformar estructura de datos anchos (*wide*) a largos (*long*) con `make_long()` (*Transform data from wide to long*). 
 
-Por defecto los datos se descargan en formato *long*. Pero si hubieramos descargado resultados en formato *wide* como en el ejemplo anterior, existe la posibilidad de transformarlos y cambiar a *long* usando la función auxiliar `make_long()`. 
+Por defecto los datos se descargan en formato *long*. Pero si hubieramos descargado resultados en formato *wide* como en el ejemplo anterior, existe la posibilidad de transformarlos y cambiar a *long* usando la función auxiliar `make_long()` 
 
-Este sería el caso haciendo una llamada similar a la del ejemplo anterior pero ahora a nivel `departamento`y guardandola en un objeto con nombre `data`:  
+(*By default the data is downloaded in _long_ format. But if we had downloaded results in _wide_ format as in the previous example, there is the possibility to transform them and change to _long_ using the auxiliary function `make_long()`*).
+
+Este sería el caso haciendo una llamada similar a la del ejemplo anterior pero ahora a nivel `departamento`y guardandola en un objeto con nombre `data` (*This would be the case by making a call similar to the previous example but now at the `department` level and saving it in an object with the name `data`.*):  
 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
@@ -76,7 +85,7 @@ data <- get_election_data(district = "caba",
 ```
 
 
-Usamos la función auxiliar para convertir el formato de `data`: 
+Usamos la función auxiliar para convertir el formato de `data` (*We use the helper function to convert the format of `data`*): 
 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
@@ -87,9 +96,12 @@ data %>%
 ```
 
 
-#### Obtener nombres de listas o partidos políticos con `get_names()`
+#### Obtener nombres de listas o partidos políticos con `get_names()` (*Get parties names*)
 
-Siguiendo el ejemplo anterior, una vez que `data` cambió a formato *long* se puede incorporar facilmente el nombre de los partios correspondientes al *id* de la columna `listas` con `get_names()`: 
+Siguiendo el ejemplo anterior, una vez que `data` cambió a formato *long* se puede incorporar facilmente el nombre de los partios correspondientes al *id* de la columna `listas` con `get_names()`
+
+(*Following the example above, once `data` has changed to  long  format, you can easily enter the names of the partitions corresponding to the _id_  of the `lists` column with `get_names()`*):
+
 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
@@ -100,3 +112,4 @@ data %>%
   get_names() 
 
 ```
+

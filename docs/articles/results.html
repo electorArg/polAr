@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Visualizar resultados • polAr</title>
+<title>Visualizar resultados Electorales (Electoral Viz) • polAr</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Visualizar resultados">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Visualizar resultados Electorales (Electoral Viz)">
 <meta property="og:description" content="polAr">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -57,10 +57,10 @@
       <a href="../articles/compute.html">Indicadores</a>
     </li>
     <li>
-      <a href="../articles/data.html">Acceso a datos</a>
+      <a href="../articles/data.html">Acceso a datos Electorales (Electoral Data)</a>
     </li>
     <li>
-      <a href="../articles/results.html">Visualizar resultados</a>
+      <a href="../articles/results.html">Visualizar resultados Electorales (Electoral Viz)</a>
     </li>
   </ul>
 </li>
@@ -88,7 +88,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Visualizar resultados</h1>
+      <h1 data-toc-skip>Visualizar resultados Electorales (Electoral Viz)</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/electorArg/polAr/blob/master/vignettes/results.Rmd"><code>vignettes/results.Rmd</code></a></small>
@@ -99,33 +99,33 @@
     
     
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">polAr</span>)</pre></body></html></div>
-<div id="visualización-de-resultados" class="section level3">
+<div id="visualización-de-resultados-data-viz" class="section level3">
 <h3 class="hasAnchor">
-<a href="#visualizaci%C3%B3n-de-resultados" class="anchor"></a>Visualización de resultados</h3>
-<p>Para poder obtener resumenes visuales de los resutlados de la elección hay que tener presente el nivel de agregación de los mismos a la hora de descargar los datos con <code><a href="../reference/get_election_data.html">get_election_data()</a></code>. En el caso de la tabla es condición que el mismo sea con parámetro <code>level = "provincia"</code>. Para los gráficos, en cambio, se puede hacer tanto a nivel <code>provinica</code> como <code>departamento</code>.</p>
-<p>Otros requisitos son:</p>
+<a href="#visualizaci%C3%B3n-de-resultados-data-viz" class="anchor"></a>Visualización de resultados (<em>Data Viz</em>)</h3>
+<p>Para poder obtener resumenes visuales de los resultados de la elección hay que tener presente el nivel de agregación de los mismos a la hora de descargar los datos con <code><a href="../reference/get_election_data.html">get_election_data()</a></code>. En el caso de la tabla es condición que el mismo sea con parámetro <code>level = "provincia"</code>. Para los gráficos, en cambio, se puede hacer tanto a nivel <code>provinica</code> como <code>departamento</code> y para los mapas en el nivel secundario</p>
+<p>(<em>In order to obtain visual summaries of the election results, it is necessary to take into account their level of aggregation when downloading data with <code><a href="../reference/get_election_data.html">get_election_data()</a></code>. In the case of tabulates, it is a condition to set parameter <code>level = "province"</code>. For plots, however, it can be done at both the <code>provincial</code> and<code>department</code> levels, and for maps only with the secondary level</em>).</p>
+<p>Otros requisitos son (<em>Other requirements are</em>):</p>
 <ol style="list-style-type: decimal">
-<li><p>El formato de data debe ser <code>long</code>.</p></li>
-<li><p><code>data</code> tiene que haber incorporando los nombres de las listas. Estos se pueden agregar con la función auxiliar <code>get_names</code>.</p></li>
+<li><p>El formato de data debe ser <code>long</code> (<em>data format must be long</em>).</p></li>
+<li><p><code>data</code> tiene que haber incorporando los nombres de las listas. Estos se pueden agregar con la función auxiliar <code>get_names</code>, aunque las funciones de visualización buscaran completar esa información automáticamente (<em><code>data</code> must have the names of the lists. If missinig, these can be added with the <code>get_names</code> helper function.</em>).</p></li>
 </ol>
-<div id="tabulado" class="section level4">
+<div id="tabulado-table" class="section level4">
 <h4 class="hasAnchor">
-<a href="#tabulado" class="anchor"></a>Tabulado</h4>
-<p>El siguiente es un ejemplo que describe esos pasos para generar una tabla. Nótese que <code><a href="../reference/get_election_data.html">get_election_data()</a></code> no especifica el <code>level</code>, puesto que el valor por defecto es <code>provincia</code>. Adicionalmente, el requisito <em>1.</em> se cumple con el parámetro <code>long = TRUE</code> y el <em>2.</em> con el siguiente comando en el que se agregan los nombres (<code>get_names</code>).</p>
+<a href="#tabulado-table" class="anchor"></a>Tabulado (<em>Table</em>)</h4>
+<p>El siguiente es un ejemplo que describe esos pasos para generar una tabla. Nótese que <code><a href="../reference/get_election_data.html">get_election_data()</a></code> no especifica el <code>level</code>, puesto que el valor por defecto es <code>provincia</code> (<em>The following is an example that describes steps to generate a table. Note that <code><a href="../reference/get_election_data.html">get_election_data()</a></code> does not specify the <code>level</code>, since the default is <code>province</code></em>).</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r">
  <span class="no">caba_2011_diputados_general</span> <span class="kw">&lt;-</span>  <span class="fu"><a href="../reference/get_election_data.html">get_election_data</a></span>(<span class="kw">district</span> <span class="kw">=</span> <span class="st">"caba"</span>,
                                                    <span class="kw">category</span> <span class="kw">=</span> <span class="st">"dip"</span>,
                                                    <span class="kw">round</span> <span class="kw">=</span> <span class="st">"paso"</span>,
                                                    <span class="kw">year</span> <span class="kw">=</span> <span class="fl">2011</span>, <span class="kw">long</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
 
- <span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_names.html">get_names</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="no">caba_2011_diputados_general</span>)
 
- <span class="fu"><a href="../reference/tabulate_results.html">tabulate_results</a></span>(<span class="no">data</span>)</pre></body></html></div>
+ <span class="fu"><a href="../reference/tabulate_results.html">tabulate_results</a></span>(<span class="no">caba_2011_diputados_general</span>)</pre></body></html></div>
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#jyjfuthlmd .gt_table {
+#ovtgzifhal .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -148,7 +148,7 @@
   border-left-color: #D3D3D3;
 }
 
-#jyjfuthlmd .gt_heading {
+#ovtgzifhal .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -160,7 +160,7 @@
   border-right-color: #D3D3D3;
 }
 
-#jyjfuthlmd .gt_title {
+#ovtgzifhal .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -170,7 +170,7 @@
   border-bottom-width: 0;
 }
 
-#jyjfuthlmd .gt_subtitle {
+#ovtgzifhal .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -180,13 +180,13 @@
   border-top-width: 0;
 }
 
-#jyjfuthlmd .gt_bottom_border {
+#ovtgzifhal .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jyjfuthlmd .gt_col_headings {
+#ovtgzifhal .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -201,7 +201,7 @@
   border-right-color: #D3D3D3;
 }
 
-#jyjfuthlmd .gt_col_heading {
+#ovtgzifhal .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -221,7 +221,7 @@
   overflow-x: hidden;
 }
 
-#jyjfuthlmd .gt_column_spanner_outer {
+#ovtgzifhal .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -233,15 +233,15 @@
   padding-right: 4px;
 }
 
-#jyjfuthlmd .gt_column_spanner_outer:first-child {
+#ovtgzifhal .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jyjfuthlmd .gt_column_spanner_outer:last-child {
+#ovtgzifhal .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jyjfuthlmd .gt_column_spanner {
+#ovtgzifhal .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -253,7 +253,7 @@
   width: 100%;
 }
 
-#jyjfuthlmd .gt_group_heading {
+#ovtgzifhal .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -275,7 +275,7 @@
   vertical-align: middle;
 }
 
-#jyjfuthlmd .gt_empty_group_heading {
+#ovtgzifhal .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -290,19 +290,19 @@
   vertical-align: middle;
 }
 
-#jyjfuthlmd .gt_striped {
+#ovtgzifhal .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jyjfuthlmd .gt_from_md > :first-child {
+#ovtgzifhal .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jyjfuthlmd .gt_from_md > :last-child {
+#ovtgzifhal .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jyjfuthlmd .gt_row {
+#ovtgzifhal .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -321,7 +321,7 @@
   overflow-x: hidden;
 }
 
-#jyjfuthlmd .gt_stub {
+#ovtgzifhal .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -333,7 +333,7 @@
   padding-left: 12px;
 }
 
-#jyjfuthlmd .gt_summary_row {
+#ovtgzifhal .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -343,7 +343,7 @@
   padding-right: 5px;
 }
 
-#jyjfuthlmd .gt_first_summary_row {
+#ovtgzifhal .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -353,7 +353,7 @@
   border-top-color: #D3D3D3;
 }
 
-#jyjfuthlmd .gt_grand_summary_row {
+#ovtgzifhal .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -363,7 +363,7 @@
   padding-right: 5px;
 }
 
-#jyjfuthlmd .gt_first_grand_summary_row {
+#ovtgzifhal .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -373,7 +373,7 @@
   border-top-color: #D3D3D3;
 }
 
-#jyjfuthlmd .gt_table_body {
+#ovtgzifhal .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -382,7 +382,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#jyjfuthlmd .gt_footnotes {
+#ovtgzifhal .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -396,13 +396,13 @@
   border-right-color: #D3D3D3;
 }
 
-#jyjfuthlmd .gt_footnote {
+#ovtgzifhal .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#jyjfuthlmd .gt_sourcenotes {
+#ovtgzifhal .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -416,46 +416,46 @@
   border-right-color: #D3D3D3;
 }
 
-#jyjfuthlmd .gt_sourcenote {
+#ovtgzifhal .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#jyjfuthlmd .gt_left {
+#ovtgzifhal .gt_left {
   text-align: left;
 }
 
-#jyjfuthlmd .gt_center {
+#ovtgzifhal .gt_center {
   text-align: center;
 }
 
-#jyjfuthlmd .gt_right {
+#ovtgzifhal .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jyjfuthlmd .gt_font_normal {
+#ovtgzifhal .gt_font_normal {
   font-weight: normal;
 }
 
-#jyjfuthlmd .gt_font_bold {
+#ovtgzifhal .gt_font_bold {
   font-weight: bold;
 }
 
-#jyjfuthlmd .gt_font_italic {
+#ovtgzifhal .gt_font_italic {
   font-style: italic;
 }
 
-#jyjfuthlmd .gt_super {
+#ovtgzifhal .gt_super {
   font-size: 65%;
 }
 
-#jyjfuthlmd .gt_footnote_marks {
+#ovtgzifhal .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="jyjfuthlmd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
+<div id="ovtgzifhal" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
 <thead class="gt_header">
 <tr>
 <th colspan="2" class="gt_heading gt_title gt_font_normal" style>CABA - 2011</th>
@@ -532,17 +532,47 @@
 </td>
     </tr></tfoot>
 </table></div>
-<p>Una posibilidad adicional que brinda la función es poder exportar código de <span class="math inline">\(\LaTeX\)</span> pre formateado para armar tablas.</p>
-<div class="sourceCode" id="cb3"><html><body><pre class="r"> <span class="fu"><a href="../reference/tabulate_results.html">tabulate_results</a></span>(<span class="no">data</span>, <span class="kw">LaTeX</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
+<p>Una posibilidad adicional que brinda la función es poder exportar código de <span class="math inline">\(\LaTeX\)</span> pre formateado para armar tablas (<em>An additional feature is the possibility to export preformatted <span class="math inline">\(\LaTeX\)</span> code for tables</em>).</p>
+<div class="sourceCode" id="cb3"><html><body><pre class="r"> <span class="fu"><a href="../reference/tabulate_results.html">tabulate_results</a></span>(<span class="no">caba_2011_diputados_general</span>, <span class="kw">LaTeX</span> <span class="kw">=</span> <span class="fl">TRUE</span>)
 <span class="co">#&gt; [1] "\\captionsetup[table]{labelformat=empty,skip=1pt}\n\\begin{longtable}{lr}\n\\caption*{\n\\large CABA - 2011\\\\ \n\\small Elección PASO - Diputado Nacional\\\\ \n} \\\\ \n\\toprule\nLista &amp; Votos \\\\ \n\\midrule\n0501-ALIANZA FRENTE PARA LA VICTORIA &amp; $26.7\\%$ \\\\ \n0518-ALIANZA PRO PROPUESTA REPUBLICANA &amp; $15.4\\%$ \\\\ \n0510-FRENTE AMPLIO PROGRESISTA &amp; $10.6\\%$ \\\\ \n0023-UNION POPULAR &amp; $9.8\\%$ \\\\ \n0509-COMPROMISO FEDERAL &amp; $7.6\\%$ \\\\ \n0536-COALICION CIVICA &amp; $7.1\\%$ \\\\ \n0504-ALIANZA UNION PARA EL DESARROLLO SOCIAL &amp; $5.0\\%$ \\\\ \n0517-ALIANZA FRENTE DE IZQUIERDA Y DE LOS TRABAJADORES &amp; $4.3\\%$ \\\\ \n0036-AUTONOMISTA &amp; $3.6\\%$ \\\\ \n0302-DE LA CIUDAD EN ACCION &amp; $3.6\\%$ \\\\ \n0508-ALIANZA PROYECTO SUR &amp; $2.5\\%$ \\\\ \nblancos &amp; $1.9\\%$ \\\\ \nnulos &amp; $1.4\\%$ \\\\ \n0179-ACCION CIUDADANA &amp; $0.4\\%$ \\\\ \n\\bottomrule\n\\end{longtable}\n\\begin{minipage}{\\linewidth}\n\\textbf{Fuente:} polAr - Política Argentina usando R - \\emph{https://electorarg.github.io/polAr}\\\\ \n\\end{minipage}\n"</span></pre></body></html></div>
 </div>
-<div id="gráficos" class="section level4">
+<div id="gráficos-plots" class="section level4">
 <h4 class="hasAnchor">
-<a href="#gr%C3%A1ficos" class="anchor"></a>Gráficos</h4>
-<p>Al igual que con los tabulados, los gráficos tienen que cumplir con dos condiciones: <strong>1.</strong> ser <em>largos</em> (<code>LONG</code>) y <strong>2.</strong> haber incorporado los nombres de las listas con <code><a href="../reference/get_names.html">get_names()</a></code>.</p>
-<p>Usando el mismo objeto <code>data</code> con el que se armó la tabla <code>plot_results</code> genera un gráfico con los resultados. Automáticamente lo hará al nivel de agregación que se encuentren los datos. En este caso <code>provincia</code>.</p>
-<div class="sourceCode" id="cb4"><html><body><pre class="r"> <span class="fu"><a href="../reference/plot_results.html">plot_results</a></span>(<span class="no">data</span>)</pre></body></html></div>
+<a href="#gr%C3%A1ficos-plots" class="anchor"></a>Gráficos (<em>Plots</em>)</h4>
+<p>Usando el mismo objeto <code>caba_2011_diputados_general</code> con el que se armó la tabla, <code>plot_results</code> genera un gráfico con los resultados. Automáticamente lo hará al nivel de agregación que se encuentren los datos. En este caso <code>provincia</code></p>
+<p>(<em>Using the same <code>caba_2011_diputados_general</code> object with which the table was built,<code>plot_results</code> generates a plot. It will automatically do so at the level of aggregation that the data is at. In this case <code>province</code></em>).</p>
+<div class="sourceCode" id="cb4"><html><body><pre class="r"> <span class="fu"><a href="../reference/plot_results.html">plot_results</a></span>(<span class="no">caba_2011_diputados_general</span>)</pre></body></html></div>
 <p><img src="results_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
+</div>
+<div id="mapas-maps" class="section level4">
+<h4 class="hasAnchor">
+<a href="#mapas-maps" class="anchor"></a>Mapas (<em>Maps</em>)</h4>
+<p>Para poder visualizar la información en un mapa es necesario contar con información a un segundo nivel de agregación. Así, si lo que estamos analizando son diputados nacioanles de una provincia, el nivel de agregación deberían ser los departamentos. Si en cambio estamos analizando elecciones a presidente, el nivel de agregación deberían ser las provincias. Un ejemplo del primer caso</p>
+<p>(<em>In order to display the information on a map, it is necessary to have information at a second level of aggregation. Thus, if what we are analyzing national deputies election in a province, the level of aggregation should be the departments. If instead we are analyzing presidential elections, the level of aggregation should be the provinces. An example of the first case</em>)</p>
+<div class="sourceCode" id="cb5"><html><body><pre class="r">
+<span class="no">caba_2019_departamento</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_election_data.html">get_election_data</a></span>(<span class="kw">district</span> <span class="kw">=</span> <span class="st">"caba"</span>, <span class="kw">category</span> <span class="kw">=</span> <span class="st">"dip"</span>, <span class="kw">round</span> <span class="kw">=</span> <span class="st">"gral"</span>, <span class="kw">year</span> <span class="kw">=</span> <span class="fl">2019</span>,
+                  <span class="kw">level</span> <span class="kw">=</span> <span class="st">"departamento"</span>)
+
+<span class="no">caba_2019_departamento</span>
+<span class="co">#&gt; # A tibble: 120 x 10</span>
+<span class="co">#&gt; # Groups:   codprov, depto, coddepto [15]</span>
+<span class="co">#&gt;    category round  year codprov name_prov depto coddepto electores listas</span>
+<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt; </span>
+<span class="co">#&gt;  1 dip      gral   2019 01      CABA      Comu~ 001              0 00016 </span>
+<span class="co">#&gt;  2 dip      gral   2019 01      CABA      Comu~ 001              0 00024 </span>
+<span class="co">#&gt;  3 dip      gral   2019 01      CABA      Comu~ 001              0 00036 </span>
+<span class="co">#&gt;  4 dip      gral   2019 01      CABA      Comu~ 001              0 00037 </span>
+<span class="co">#&gt;  5 dip      gral   2019 01      CABA      Comu~ 001              0 00050 </span>
+<span class="co">#&gt;  6 dip      gral   2019 01      CABA      Comu~ 001              0 00108 </span>
+<span class="co">#&gt;  7 dip      gral   2019 01      CABA      Comu~ 001              0 blanc~</span>
+<span class="co">#&gt;  8 dip      gral   2019 01      CABA      Comu~ 001              0 nulos </span>
+<span class="co">#&gt;  9 dip      gral   2019 01      CABA      Comu~ 002              0 00016 </span>
+<span class="co">#&gt; 10 dip      gral   2019 01      CABA      Comu~ 002              0 00024 </span>
+<span class="co">#&gt; # ... with 110 more rows, and 1 more variable: votos &lt;dbl&gt;</span>
+
+
+<span class="fu"><a href="../reference/map_results.html">map_results</a></span>(<span class="no">caba_2019_departamento</span>)</pre></body></html></div>
+<p><img src="results_files/figure-html/map_results-1.png" width="700"></p>
 </div>
 </div>
   </div>

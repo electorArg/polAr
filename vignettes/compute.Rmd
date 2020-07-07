@@ -19,11 +19,12 @@ library(polAr)
 ```
 
 
-#### Computar Número Efectivo de Partidos
+#### Computar Número Efectivo de Partidos (*Computes Effective Number of Parites*)
 
-La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el *Número Efectivo de Partidos Políticos*. 
+El cálculo se realizará el nivel de agregación de los datos descargados con `get_election_data()`. En este caso a nivel departamental. La función `compute_nep()` tiene un parámetro para elegir entre el índice de [Laakso-Taagepera](https://journals.sagepub.com/doi/10.1177/001041407901200101) y/o el de  [Golosov](https://journals.sagepub.com/doi/10.1177/1354068809339538)
 
-El cálculo se realizará el nivel de agregación de los datos descargados con `get_election_data()`. En este caso a nivel departamental. La función `compute_nep()` tiene un parámetro para elegir entre el índice de [Laakso-Taagepera](https://journals.sagepub.com/doi/10.1177/001041407901200101) y/o el de  [Golosov](https://journals.sagepub.com/doi/10.1177/1354068809339538).
+
+(*The calculation will be done at the aggregation level of the downloaded data with `get_election_data ()`. In this case at the departmental level. The `compute_nep()` function has a parameter to choose between Laakso-Taagepera and Golosov indexes*) 
 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
@@ -40,9 +41,11 @@ El cálculo se realizará el nivel de agregación de los datos descargados con `
 
 ```
 
-#### Competitividad
+#### Competitividad (*Competitiveness*)
 
-Otro indicador de interes puede ser computado con `compute_competitiveness()`. Este representa el grado de comeptencia de una eleccion en un distrito determinado a partir de la diferencia porcentual de votos obtenidos por los dos partidos más votados.  Puede tomar valores entre $[0,1]$ donde $1$ es lo más comeptitivo ($a=50\%$ y $b=50\%$ de los votos) y $0$ lo opuesto.
+Otro indicador de interes puede ser computado con `compute_competitiveness()`. Este representa el grado de comeptencia de una eleccion en un distrito determinado a partir de la diferencia porcentual de votos obtenidos por los dos partidos más votados.  Puede tomar valores entre $[0,1]$ donde $1$ es lo más comeptitivo ($a=50\%$ y $b=50\%$ de los votos) y $0$ lo opuesto
+
+(*Another usefull index is done with `compute_competitiveness()`. Its represents the degree of competence of an election in a given district based on the percentage difference in votes obtained by the two most voted parties. You can take values between $[0,1]$ where $1$ is the most competitive - $a = 50\%$ and $b = 50\%$ of the votes- and $0$ the opposite*)
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
   
@@ -59,7 +62,7 @@ Otro indicador de interes puede ser computado con `compute_competitiveness()`. E
 
 ```
 
-Dado que `data` había sido descragada con `level = "departamento"`, podemos seleccionar ese nivel como parámetro adicional y estimar el indicador a nivel local. 
+Dado que `data` había sido descargada con `level = "departamento"`, podemos seleccionar ese nivel como parámetro adicional y estimar el indicador a nivel local (*since `data` had been downloaded with `level = "department" ` parameter, we can select that level as an additional parameter and estimate the indicator locally*):
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
 
@@ -74,4 +77,23 @@ Dado que `data` había sido descragada con `level = "departamento"`, podemos sel
 
 
 ```
+
+
+
+#### Calcular Escaños (*Compute Seats*)
+
+Es posible calcular el número estimado de escaños que correspondería asignar a cada partido político en elecciones legislativas en función de los votos obentidos. Vale remarcar que esta distribución de Diputados y Senadores está reglada por disintas fórmulas y parámetros, pero estas fueron incorporadas a la función 
+
+(*It is possible to compute the estimated number of seats that should be assigned to each political party in legislative elections based on the votes they got. It is worth noting that this distribution of Deputies and Senators is governed by different formulas and parameters, but these were incorporated into the function*);
+
+```{r seats}
+caba_dip_2013 <- get_election_data(district = "caba", category = "dip", round = "gral", 2013)
+
+caba_dip_2013 %>% get_names()
+
+compute_seats(caba_dip_2013)
+
+
+```
+
 

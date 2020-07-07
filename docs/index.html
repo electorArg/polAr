@@ -57,10 +57,10 @@
       <a href="articles/compute.html">Indicadores</a>
     </li>
     <li>
-      <a href="articles/data.html">Acceso a datos</a>
+      <a href="articles/data.html">Acceso a datos Electorales (Electoral Data)</a>
     </li>
     <li>
-      <a href="articles/results.html">Visualizar resultados</a>
+      <a href="articles/results.html">Visualizar resultados Electorales (Electoral Viz)</a>
     </li>
   </ul>
 </li>
@@ -96,30 +96,64 @@
 </h2>
 <p><img src="https://github.com/electorArg/polAr/blob/master/hex/hex-polAr.png?raw=true" width="200"></p>
 <p>{polAr} brinda herramientas que facilitan el flujo de trabajo para el análisis político - electoral y el acceso a datos de Argentina desde <code>R</code> (<em>{polAr} provides tools that facilitate the workflow for political-electoral analysis and access to data from Argentina from <code>R</code></em>).</p>
-<p>Se espera pronto tener una primera versión completa con los datos disponibles para todas las elecciones nacionales -diputados, senadores y presidente- desde el año 2003 a 2019, al mayor nivel de desagregación -mesas. Asimismo se espera incorporar nuevas funciones para calcular indicadores y herramientas de visualización de datos (<em>It is expected soon to have a first complete version with the data available for all national elections -deputies, senators and president- from 2003 to 2019, at the highest level of disaggregation -ballot. Also incorporate new functions to compute indicators and data visualization tools</em>).</p>
 <hr>
 <div id="instalación-installation" class="section level3">
 <h3 class="hasAnchor">
 <a href="#instalaci%C3%B3n-installation" class="anchor"></a>INSTALACIÓN (<em>INSTALLATION</em>)</h3>
 <p><em>CRAN</em></p>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"polAr"</span>)</pre></div>
+<hr>
 <p>Sus principales funciones son (<em>Its main functions are</em>):</p>
+<div id="explorar-datos-data-explorer" class="section level4">
+<h4 class="hasAnchor">
+<a href="#explorar-datos-data-explorer" class="anchor"></a>EXPLORAR DATOS (<em>Data explorer</em>)</h4>
 <ul>
 <li><p><strong><code><a href="reference/show_available_elections.html">show_available_elections()</a></code></strong>: Diccionario de elecciones disponibles. El parámetro <code>viewer = TRUE</code> habilita una tabla en el <em>Viewer</em> de <code>RStudio</code> (<em>Dictionary of available elections. The <code>viewer = TRUE</code> parameter enables a table in the <em>Viewer</em> of<code>RStudio</code></em>).</p></li>
-<li><p><strong><code><a href="reference/get_election_data.html">get_election_data()</a></code></strong>: Descarga bases de resultados electorales con parámetros obligatorios y otros optativos (<em>Download electoral data with mandatory and other optional parameters</em>).</p></li>
+<li><p><strong><code><a href="reference/show_available_speech.html">show_available_speech()</a></code></strong>: Diccionario de discursos presidenciales disponibles. El parámetro <code>viewer = TRUE</code> habilita una tabla en el <em>Viewer</em> de <code>RStudio</code> (<em>Dictionary of available elections. The <code>viewer = TRUE</code> parameter enables a table in the <em>Viewer</em> of<code>RStudio</code></em>).</p></li>
+</ul>
+</div>
+<div id="obtener-datos-get-data" class="section level4">
+<h4 class="hasAnchor">
+<a href="#obtener-datos-get-data" class="anchor"></a>OBTENER DATOS (<em>Get data</em>)</h4>
+<ul>
+<li>
+<strong><code><a href="reference/get_election_data.html">get_election_data()</a></code></strong>: Descarga bases de resultados electorales con parámetros obligatorios y otros optativos (<em>Download electoral data with mandatory and other optional parameters</em>).</li>
 </ul>
 <p>Entre los primeros se deben consignar <code>district</code> para el distrito; <code>category</code> para la catgoría; <code>round</code> para el turno e <code>year</code> para el año de la elección. Entre los segundos se puede agregar <code>level</code>para el nivel de agregación -<code>"provincia"</code>, <code>"departamento"</code>, <code>"circuito"</code>- y <code>long</code> para el formato de los datos alargados donde las listas no van cada una en una columna sino como valores de una variable <code>listas</code> (<em>Among the first, <code>district</code>; <code>category</code>;<code>round</code> and<code>year</code> must be consigned. Between the seconds you can add <code>level</code> for the level of aggregation -<code>"province"</code>,<code>"department"</code>,<code>"circuit"</code>- and<code>long</code> for long formatted data where party lists do not go in columns but as values of a <code>lists</code> variable</em>).</p>
 <ul>
+<li><p><strong><code><a href="reference/get_multiple_elections.html">get_multiple_elections()</a></code></strong>: Descarga múltiples bases de resultados electorales simultáneamente (<em>Download multiple electoral data in one call</em>).</p></li>
+<li><p><strong><code><a href="reference/get_speech.html">get_speech()</a></code></strong>: Descarga contenido de discurso presidencial. El parámetro <code>raw = TRUE</code> devuelve un data.frame con una columna discurso con el texto crudo. Caso contrario una versión del discurso <em>tidy</em> -con limpieza de datos y un <em>token</em> por fila (<em>Download content of presidential speech. The <code>raw = TRUE</code> parameter returns a data.frame with a ‘discurso’ column with the raw text. Otherwise it returns a <em>tidy</em> speech version with clean dataand one <em>token</em> per row</em>).</p></li>
+</ul>
+</div>
+<div id="cálculos-computation" class="section level4">
+<h4 class="hasAnchor">
+<a href="#c%C3%A1lculos-computation" class="anchor"></a>CÁLCULOS (COMPUTATION)</h4>
+<ul>
 <li><p><strong><code><a href="reference/compute_competitiveness.html">compute_competitiveness()</a></code></strong>: Calcula el nivel de competencia en una elección. Un parámetro <code>level</code> permite calcularlo para los distintos niveles de agregación presentes en la <code>data</code> (<em>Computes the level of competition in an election. A parameter <code>level</code> allows to calculate it for the different levels of aggregation present in the<code>data</code></em>).</p></li>
 <li><p><strong><code><a href="reference/compute_nep.html">compute_nep()</a></code></strong>: Calcula el <em>Numero Efectivo de Partidos Politicos</em>. Es sensible al nivel de agregación de la <code>data</code> obtenida (<em>Computes the ‘Effective Number of Political Parties’. It is sensitive to the level of aggregation of the obtained <code>data</code></em>).</p></li>
+<li><p><strong><code><a href="reference/compute_seats.html">compute_seats()</a></code></strong>: Calcula el número esperado de escaños que debería recibir cada partido en función de los votos obtenidos (<em>Computes expected parties legislatives seats</em>).</p></li>
+</ul>
+</div>
+<div id="visualización-viz" class="section level4">
+<h4 class="hasAnchor">
+<a href="#visualizaci%C3%B3n-viz" class="anchor"></a>VISUALIZACIÓN (VIZ)</h4>
+<ul>
 <li><p><strong><code><a href="reference/tabulate_results.html">tabulate_results()</a></code></strong>: Genera una tabla con resultados agregados. Es posible obtener código \LaTeX de la tabla (<em>Generate a table with aggregated results. It is possible to get \LaTeX code from the table</em>).</p></li>
 <li><p><strong><code><a href="reference/plot_results.html">plot_results()</a></code></strong>: Grafica los resultados de una elección. Es sensible al nivel de agregación de la <code>data</code> obtenida (<em>Plots the results of an election. It is sensitive to the level of aggregation of the obtained <code>data</code></em>).</p></li>
+<li><p><strong><code><a href="reference/map_results.html">map_results()</a></code></strong>: Georeferencia los resultados de una elección (<em>Maps the results of an election</em>).</p></li>
+<li><p><strong><code><a href="reference/plot_speech.html">plot_speech()</a></code></strong>: Grafica la frecuencia relativa de palabras en los discursos presidenciales (<em>Plots presidential speeches words frequency</em>).</p></li>
 </ul>
+</div>
 </div>
 <div id="vignettes" class="section level3">
 <h3 class="hasAnchor">
 <a href="#vignettes" class="anchor"></a>VIGNETTES</h3>
 <p>Se pueden consultar pequeños ejemplos de uso en las sección <a href="https://electorarg.github.io/polAr/articles/">ARTICULOS</a> (<em>Small examples of use can be found in the ARTICLES section</em>).</p>
+<ul>
+<li><p><a href="https://electorarg.github.io/polAr/articles/data.html">Data Access</a></p></li>
+<li><p><a href="https://electorarg.github.io/polAr/articles/compute.html">Computing</a></p></li>
+<li><p><a href="https://electorarg.github.io/polAr/articles/results.html">Displaying Results</a></p></li>
+</ul>
 </div>
 <div id="versión-en-desarrollo-development-version" class="section level3">
 <h3 class="hasAnchor">
@@ -128,16 +162,14 @@
 <span class="co"># install.packages('devtools') si no tiene instalado devtools</span>
 
 <span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"electorArg/polAr"</span>)</pre></div>
-<p>Los cambios en el desarrollo del paquete pueden consultarse en detalle en el <a href="https://electorarg.github.io/polAr/news/index.html"><em>changelog</em></a> (<em>Changes in package development can be found in detail in the <a href="https://electorarg.github.io/polAr/news/index.html">changelog</a></em>).</p>
-<ul>
-<li><p>Se agregó <code><a href="reference/map_results.html">map_results()</a></code> para visualizar resultados electorales en la geografía mediante mapas (<em>Among the functions for visualization, a function was added to map electoral results: <code><a href="reference/map_results.html">map_results()</a></code></em>)</p></li>
-<li><p>Se eliminó el requerimento de llamar <code><a href="reference/get_names.html">get_names()</a></code> previo a las funciones de visualización de resultados electorales y ahora se incorporan los nombres de listas por defecto (<em><code><a href="reference/get_names.html">get_names ()</a></code> step prior to vizualization functions was removed for viz functions and now party labels are added by default</em>)</p></li>
-</ul>
+<p>Los cambios y nuevas funciones en el desarrollo del paquete pueden consultarse en detalle en <a href="https://electorarg.github.io/polAr/news/index.html"><em>changelog</em></a> (<em>Changes in package development can be found in detail in the <a href="https://electorarg.github.io/polAr/news/index.html">changelog</a></em>).</p>
 </div>
 <div id="referencia-rerence" class="section level3">
 <h3 class="hasAnchor">
 <a href="#referencia-rerence" class="anchor"></a>REFERENCIA (<em>RERENCE</em>)</h3>
-<div class="sourceCode" id="cb3"><pre class="r">@Manual{,
+<div class="sourceCode" id="cb3"><pre class="r">Juan Pablo Ruiz Nicolini (2020). polAr: Argentina Political Analysis. R package version
+  0.1.3.2. https://github.com/electorArg/polAr</pre></div>
+<div class="sourceCode" id="cb4"><pre class="r">@Manual{,
     title = {polAr: Política Argentina usando R},
     author = {Juan Pablo {Ruiz Nicolini}},
     year = {2020},
@@ -145,12 +177,6 @@
     url = {https://github.com/electorArg/polAr},
   }
 </pre></div>
-</div>
-<div id="twitter-bot" class="section level3">
-<h3 class="hasAnchor">
-<a href="#twitter-bot" class="anchor"></a>TWITTER BOT</h3>
-<p>(<strong>Trabajo en proceso - Work in progress</strong>)</p>
-<p>Junto a <a href="https://twitter.com/chig4_">Camila Higa</a> trabajamos en un robot de twitter - <a href="https://twitter.com/pol_Ar_bot">pol_ar_bot</a> - que se monta sobre <code>polAr</code> y responde consultas de usuaries sobre resultados de elecciones combinando las funciones <code><a href="reference/get_election_data.html">get_election_data()</a></code> y <code><a href="reference/plot_results.html">plot_results()</a></code>.</p>
 </div>
 <div id="creditos-credits" class="section level3">
 <h3 class="hasAnchor">
@@ -177,6 +203,11 @@
 <a href="#discursos" class="anchor"></a>Discursos</h4>
 <p>Con el aporte de <a href="https://twitter.com/lucasenrich">Lucas Enrich</a> y <a href="https://twitter.com/chig4_">Camila Higa</a> trabajamos sobre una base de datos de discursos de apertura de sesiones legislativas de los presidentes argentinos: desde el primer discurso de Justo José de Urquiza en 1854 hasta el de Alberto Fernández en 2020. Se disponibilizan versiones de texto con mínimo procesamiento y otras en formato <a href="https://www.tidytextmining.com/tidytext.html">tidy</a>, siguiendo la definición de Julia Silge y David Robinson.</p>
 </div>
+</div>
+<div id="twitter-bot" class="section level3">
+<h3 class="hasAnchor">
+<a href="#twitter-bot" class="anchor"></a>TWITTER BOT</h3>
+<p>Junto a <a href="https://twitter.com/chig4_">Camila Higa</a> trabajamos en un robot de twitter - <a href="https://twitter.com/pol_Ar_bot">pol_ar_bot</a> - que se monta sobre <code>polAr</code> y responde consultas de usuaries sobre resultados de elecciones combinando las funciones <code><a href="reference/get_election_data.html">get_election_data()</a></code> y <code><a href="reference/plot_results.html">plot_results()</a></code>.</p>
 </div>
 </div>
 </div>

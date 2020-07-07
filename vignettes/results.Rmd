@@ -1,5 +1,5 @@
 ---
-title: "Visualizar resultados"
+title: "Visualizar resultados Electorales (Electoral Viz)"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{reults}
@@ -18,20 +18,23 @@ knitr::opts_chunk$set(
 library(polAr)
 ```
 
-### Visualización de resultados
+### Visualización de resultados (*Data Viz*)
 
-Para poder obtener resumenes visuales de los resutlados de la elección hay que tener presente el nivel de agregación de los mismos a la hora de descargar los datos con `get_election_data()`. En el caso de la tabla es condición que el mismo sea con parámetro `level = "provincia"`. Para los gráficos, en cambio, se puede hacer tanto a nivel `provinica` como `departamento`.  
+Para poder obtener resumenes visuales de los resultados de la elección hay que tener presente el nivel de agregación de los mismos a la hora de descargar los datos con `get_election_data()`. En el caso de la tabla es condición que el mismo sea con parámetro `level = "provincia"`. Para los gráficos, en cambio, se puede hacer tanto a nivel `provinica` como `departamento` y para los mapas en el nivel secundario
 
-Otros requisitos son: 
+(*In order to obtain visual summaries of the election results, it is necessary to take into account their level of aggregation when downloading  data with `get_election_data()`. In the case of tabulates, it is a condition to set parameter `level = "province"`. For plots, however, it can be done at both the `provincial` and`department` levels, and for maps only with the secondary level*).
 
-1. El formato de data debe ser `long`. 
+Otros requisitos son (*Other requirements are*): 
 
-2. `data` tiene que haber incorporando los nombres de las listas. Estos se pueden agregar con la función auxiliar `get_names`. 
+1. El formato de data debe ser `long` (*data format must be long*). 
+
+2. `data` tiene que haber incorporando los nombres de las listas. Estos se pueden agregar con la función auxiliar `get_names`, aunque las funciones de visualización buscaran completar esa información automáticamente (*`data` must have the names of the lists. If missinig, these can be added with the `get_names` helper function.*). 
 
 
-#### Tabulado 
+#### Tabulado (*Table*)
 
-El siguiente es un ejemplo que describe esos pasos para generar una tabla. Nótese que `get_election_data()` no especifica el `level`, puesto que el valor por defecto es `provincia`. Adicionalmente, el requisito *1.* se cumple con el parámetro `long = TRUE` y el *2.* con el siguiente comando en el que se agregan los nombres (`get_names`).
+El siguiente es un ejemplo que describe esos pasos para generar una tabla. Nótese que `get_election_data()` no especifica el `level`, puesto que el valor por defecto es `provincia` 
+(*The following is an example that describes steps to generate a table. Note that `get_election_data()` does not specify the `level`, since the default is `province`*). 
 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
@@ -40,29 +43,48 @@ El siguiente es un ejemplo que describe esos pasos para generar una tabla. Nóte
                                                    category = "dip", 
                                                    round = "paso", 
                                                    year = 2011, long = TRUE) 
+
  
- data <- get_names(data = caba_2011_diputados_general) 
- 
- tabulate_results(data)
+ tabulate_results(caba_2011_diputados_general)
 ```
 
 
-Una posibilidad adicional que brinda la función es poder exportar código de $\LaTeX$ pre formateado para armar tablas. 
+Una posibilidad adicional que brinda la función es poder exportar código de $\LaTeX$ pre formateado para armar tablas (*An additional feature is the possibility to export preformatted $\LaTeX$ code for tables*).
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
- tabulate_results(data, LaTeX = TRUE)
+ tabulate_results(caba_2011_diputados_general, LaTeX = TRUE)
 ```
 
 
-#### Gráficos
+#### Gráficos (*Plots*)
 
-Al igual que con los tabulados, los gráficos tienen que cumplir con dos condiciones: **1.** ser *largos* (`LONG`)  y **2.** haber incorporado los nombres de las listas con `get_names()`. 
+Usando el mismo objeto `caba_2011_diputados_general` con el que se armó la tabla, `plot_results` genera un gráfico con los resultados. Automáticamente lo hará al nivel de agregación que se encuentren los datos. En este caso `provincia`
 
-Usando el mismo objeto `data` con el que se armó la tabla `plot_results` genera un gráfico con los resultados. Automáticamente lo hará al nivel de agregación que se encuentren los datos. En este caso `provincia`. 
+(*Using the same `caba_2011_diputados_general` object with which the table was built,`plot_results` generates a plot. It will automatically do so at the level of aggregation that the data is at. In this case `province`*).
 
 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=FALSE}
- plot_results(data)
+ plot_results(caba_2011_diputados_general)
 ```
 
+#### Mapas (*Maps*)
+
+
+Para poder visualizar la información en un mapa es necesario contar con información a un segundo nivel de agregación. Así, si lo que estamos analizando son diputados nacioanles de una provincia, el nivel de agregación deberían ser los departamentos. Si en cambio estamos analizando elecciones a presidente, el nivel de agregación deberían ser las provincias. Un ejemplo del primer caso
+
+(*In order to display the information on a map, it is necessary to have information at a second level of aggregation. Thus, if what we are analyzing  national deputies election in a province, the level of aggregation should be the departments. If instead we are analyzing presidential elections, the level of aggregation should be the provinces. An example of the first case*)
+
+
+
+```{r map_results}
+
+caba_2019_departamento <- get_election_data(district = "caba", category = "dip", round = "gral", year = 2019,
+                  level = "departamento")
+
+caba_2019_departamento
+
+
+map_results(caba_2019_departamento)
+
+```

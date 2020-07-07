@@ -57,10 +57,10 @@
       <a href="../articles/compute.html">Indicadores</a>
     </li>
     <li>
-      <a href="../articles/data.html">Acceso a datos</a>
+      <a href="../articles/data.html">Acceso a datos Electorales (Electoral Data)</a>
     </li>
     <li>
-      <a href="../articles/results.html">Visualizar resultados</a>
+      <a href="../articles/results.html">Visualizar resultados Electorales (Electoral Viz)</a>
     </li>
   </ul>
 </li>
@@ -99,11 +99,11 @@
     
     
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">polAr</span>)</pre></body></html></div>
-<div id="computar-número-efectivo-de-partidos" class="section level4">
+<div id="computar-número-efectivo-de-partidos-computes-effective-number-of-parites" class="section level4">
 <h4 class="hasAnchor">
-<a href="#computar-n%C3%BAmero-efectivo-de-partidos" class="anchor"></a>Computar Número Efectivo de Partidos</h4>
-<p>La libería incluye funciones para computar indicadores relevantes. Así, por ejemplo, puede calcularse el <em>Número Efectivo de Partidos Políticos</em>.</p>
-<p>El cálculo se realizará el nivel de agregación de los datos descargados con <code><a href="../reference/get_election_data.html">get_election_data()</a></code>. En este caso a nivel departamental. La función <code><a href="../reference/compute_nep.html">compute_nep()</a></code> tiene un parámetro para elegir entre el índice de <a href="https://journals.sagepub.com/doi/10.1177/001041407901200101">Laakso-Taagepera</a> y/o el de <a href="https://journals.sagepub.com/doi/10.1177/1354068809339538">Golosov</a>.</p>
+<a href="#computar-n%C3%BAmero-efectivo-de-partidos-computes-effective-number-of-parites" class="anchor"></a>Computar Número Efectivo de Partidos (<em>Computes Effective Number of Parites</em>)</h4>
+<p>El cálculo se realizará el nivel de agregación de los datos descargados con <code><a href="../reference/get_election_data.html">get_election_data()</a></code>. En este caso a nivel departamental. La función <code><a href="../reference/compute_nep.html">compute_nep()</a></code> tiene un parámetro para elegir entre el índice de <a href="https://journals.sagepub.com/doi/10.1177/001041407901200101">Laakso-Taagepera</a> y/o el de <a href="https://journals.sagepub.com/doi/10.1177/1354068809339538">Golosov</a></p>
+<p>(<em>The calculation will be done at the aggregation level of the downloaded data with <code><a href="../reference/get_election_data.html">get_election_data ()</a></code>. In this case at the departmental level. The <code><a href="../reference/compute_nep.html">compute_nep()</a></code> function has a parameter to choose between Laakso-Taagepera and Golosov indexes</em>)</p>
 <div class="sourceCode" id="cb2"><html><body><pre class="r">
  <span class="kw pkg">polAr</span><span class="kw ns">::</span><span class="fu"><a href="../reference/get_election_data.html">get_election_data</a></span>(<span class="kw">district</span> <span class="kw">=</span> <span class="st">"tucuman"</span>,
                    <span class="kw">category</span> <span class="kw">=</span> <span class="st">"dip"</span>,
@@ -119,10 +119,11 @@
 <span class="co">#&gt; 1 23       1.94 Golosov         </span>
 <span class="co">#&gt; 2 23       2.55 Laakso-Taagepera</span></pre></body></html></div>
 </div>
-<div id="competitividad" class="section level4">
+<div id="competitividad-competitiveness" class="section level4">
 <h4 class="hasAnchor">
-<a href="#competitividad" class="anchor"></a>Competitividad</h4>
-<p>Otro indicador de interes puede ser computado con <code><a href="../reference/compute_competitiveness.html">compute_competitiveness()</a></code>. Este representa el grado de comeptencia de una eleccion en un distrito determinado a partir de la diferencia porcentual de votos obtenidos por los dos partidos más votados. Puede tomar valores entre <span class="math inline">\([0,1]\)</span> donde <span class="math inline">\(1\)</span> es lo más comeptitivo (<span class="math inline">\(a=50\%\)</span> y <span class="math inline">\(b=50\%\)</span> de los votos) y <span class="math inline">\(0\)</span> lo opuesto.</p>
+<a href="#competitividad-competitiveness" class="anchor"></a>Competitividad (<em>Competitiveness</em>)</h4>
+<p>Otro indicador de interes puede ser computado con <code><a href="../reference/compute_competitiveness.html">compute_competitiveness()</a></code>. Este representa el grado de comeptencia de una eleccion en un distrito determinado a partir de la diferencia porcentual de votos obtenidos por los dos partidos más votados. Puede tomar valores entre <span class="math inline">\([0,1]\)</span> donde <span class="math inline">\(1\)</span> es lo más comeptitivo (<span class="math inline">\(a=50\%\)</span> y <span class="math inline">\(b=50\%\)</span> de los votos) y <span class="math inline">\(0\)</span> lo opuesto</p>
+<p>(<em>Another usefull index is done with <code><a href="../reference/compute_competitiveness.html">compute_competitiveness()</a></code>. Its represents the degree of competence of an election in a given district based on the percentage difference in votes obtained by the two most voted parties. You can take values between <span class="math inline">\([0,1]\)</span> where <span class="math inline">\(1\)</span> is the most competitive - <span class="math inline">\(a = 50\%\)</span> and <span class="math inline">\(b = 50\%\)</span> of the votes- and <span class="math inline">\(0\)</span> the opposite</em>)</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r">
  <span class="kw pkg">polAr</span><span class="kw ns">::</span><span class="fu"><a href="../reference/get_election_data.html">get_election_data</a></span>(<span class="kw">district</span> <span class="kw">=</span> <span class="st">"tucuman"</span>,
                    <span class="kw">category</span> <span class="kw">=</span> <span class="st">"dip"</span>,
@@ -137,7 +138,7 @@
 <span class="co">#&gt;   codprov competitividad</span>
 <span class="co">#&gt;   &lt;chr&gt;            &lt;dbl&gt;</span>
 <span class="co">#&gt; 1 23               0.550</span></pre></body></html></div>
-<p>Dado que <code>data</code> había sido descragada con <code>level = "departamento"</code>, podemos seleccionar ese nivel como parámetro adicional y estimar el indicador a nivel local.</p>
+<p>Dado que <code>data</code> había sido descargada con <code>level = "departamento"</code>, podemos seleccionar ese nivel como parámetro adicional y estimar el indicador a nivel local (<em>since <code>data</code> had been downloaded with <code>level = "department"</code> parameter, we can select that level as an additional parameter and estimate the indicator locally</em>):</p>
 <div class="sourceCode" id="cb4"><html><body><pre class="r">
  <span class="no">data</span> <span class="kw">&lt;-</span> <span class="kw pkg">polAr</span><span class="kw ns">::</span><span class="fu"><a href="../reference/get_election_data.html">get_election_data</a></span>(<span class="kw">district</span> <span class="kw">=</span> <span class="st">"tucuman"</span>,
                    <span class="kw">category</span> <span class="kw">=</span> <span class="st">"dip"</span>,
@@ -166,6 +167,37 @@
 <span class="co">#&gt; 15 23      Tafí Viejo     016               0.491</span>
 <span class="co">#&gt; 16 23      Trancas        014               0.216</span>
 <span class="co">#&gt; 17 23      Yerba Buena    015               0.746</span></pre></body></html></div>
+</div>
+<div id="calcular-escaños-compute-seats" class="section level4">
+<h4 class="hasAnchor">
+<a href="#calcular-esca%C3%B1os-compute-seats" class="anchor"></a>Calcular Escaños (<em>Compute Seats</em>)</h4>
+<p>Es posible calcular el número estimado de escaños que correspondería asignar a cada partido político en elecciones legislativas en función de los votos obentidos. Vale remarcar que esta distribución de Diputados y Senadores está reglada por disintas fórmulas y parámetros, pero estas fueron incorporadas a la función</p>
+<p>(<em>It is possible to compute the estimated number of seats that should be assigned to each political party in legislative elections based on the votes they got. It is worth noting that this distribution of Deputies and Senators is governed by different formulas and parameters, but these were incorporated into the function</em>);</p>
+<div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">caba_dip_2013</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/get_election_data.html">get_election_data</a></span>(<span class="kw">district</span> <span class="kw">=</span> <span class="st">"caba"</span>, <span class="kw">category</span> <span class="kw">=</span> <span class="st">"dip"</span>, <span class="kw">round</span> <span class="kw">=</span> <span class="st">"gral"</span>, <span class="fl">2013</span>)
+
+<span class="no">caba_dip_2013</span> <span class="kw">%&gt;%</span> <span class="fu"><a href="../reference/get_names.html">get_names</a></span>()
+<span class="co">#&gt; # A tibble: 8 x 9</span>
+<span class="co">#&gt; # Groups:   codprov [1]</span>
+<span class="co">#&gt;   category round  year codprov name_prov electores listas  votos</span>
+<span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 dip      gral   2013 01      CABA        2542452 0187    68510</span>
+<span class="co">#&gt; 2 dip      gral   2013 01      CABA        2542452 0501   390631</span>
+<span class="co">#&gt; 3 dip      gral   2013 01      CABA        2542452 0502   583222</span>
+<span class="co">#&gt; 4 dip      gral   2013 01      CABA        2542452 0503   623464</span>
+<span class="co">#&gt; 5 dip      gral   2013 01      CABA        2542452 0505   102236</span>
+<span class="co">#&gt; 6 dip      gral   2013 01      CABA        2542452 0506    41352</span>
+<span class="co">#&gt; 7 dip      gral   2013 01      CABA        2542452 blanc~ 112405</span>
+<span class="co">#&gt; 8 dip      gral   2013 01      CABA        2542452 nulos   18341</span>
+<span class="co">#&gt; # ... with 1 more variable: nombre_lista &lt;chr&gt;</span>
+
+<span class="fu"><a href="../reference/compute_seats.html">compute_seats</a></span>(<span class="no">caba_dip_2013</span>)
+<span class="co">#&gt; # A tibble: 3 x 7</span>
+<span class="co">#&gt; # Groups:   year, category, round, codprov, name_prov [1]</span>
+<span class="co">#&gt;   codprov name_prov  year category round nombre_lista            seats</span>
+<span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;                   &lt;int&gt;</span>
+<span class="co">#&gt; 1 01      CABA       2013 dip      gral  UNEN                        5</span>
+<span class="co">#&gt; 2 01      CABA       2013 dip      gral  UNION PRO                   5</span>
+<span class="co">#&gt; 3 01      CABA       2013 dip      gral  FRENTE PARA LA VICTORIA     3</span></pre></body></html></div>
 </div>
   </div>
 
