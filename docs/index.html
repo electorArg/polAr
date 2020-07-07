@@ -54,7 +54,7 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/compute.html">Indicadores</a>
+      <a href="articles/compute.html">Cálculos (Computing)</a>
     </li>
     <li>
       <a href="articles/data.html">Acceso a datos Electorales (Electoral Data)</a>
@@ -97,9 +97,9 @@
 <p><img src="https://github.com/electorArg/polAr/blob/master/hex/hex-polAr.png?raw=true" width="200"></p>
 <p>{polAr} brinda herramientas que facilitan el flujo de trabajo para el análisis político - electoral y el acceso a datos de Argentina desde <code>R</code> (<em>{polAr} provides tools that facilitate the workflow for political-electoral analysis and access to data from Argentina from <code>R</code></em>).</p>
 <hr>
-<div id="instalación-installation" class="section level3">
+<div id="instalación-install" class="section level3">
 <h3 class="hasAnchor">
-<a href="#instalaci%C3%B3n-installation" class="anchor"></a>INSTALACIÓN (<em>INSTALLATION</em>)</h3>
+<a href="#instalaci%C3%B3n-install" class="anchor"></a>INSTALACIÓN (<em>Install</em>)</h3>
 <p><em>CRAN</em></p>
 <div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"polAr"</span>)</pre></div>
 <hr>
@@ -127,7 +127,7 @@
 </div>
 <div id="cálculos-computation" class="section level4">
 <h4 class="hasAnchor">
-<a href="#c%C3%A1lculos-computation" class="anchor"></a>CÁLCULOS (COMPUTATION)</h4>
+<a href="#c%C3%A1lculos-computation" class="anchor"></a>CÁLCULOS (<em>Computation</em>)</h4>
 <ul>
 <li><p><strong><code><a href="reference/compute_competitiveness.html">compute_competitiveness()</a></code></strong>: Calcula el nivel de competencia en una elección. Un parámetro <code>level</code> permite calcularlo para los distintos niveles de agregación presentes en la <code>data</code> (<em>Computes the level of competition in an election. A parameter <code>level</code> allows to calculate it for the different levels of aggregation present in the<code>data</code></em>).</p></li>
 <li><p><strong><code><a href="reference/compute_nep.html">compute_nep()</a></code></strong>: Calcula el <em>Numero Efectivo de Partidos Politicos</em>. Es sensible al nivel de agregación de la <code>data</code> obtenida (<em>Computes the ‘Effective Number of Political Parties’. It is sensitive to the level of aggregation of the obtained <code>data</code></em>).</p></li>
@@ -136,7 +136,7 @@
 </div>
 <div id="visualización-viz" class="section level4">
 <h4 class="hasAnchor">
-<a href="#visualizaci%C3%B3n-viz" class="anchor"></a>VISUALIZACIÓN (VIZ)</h4>
+<a href="#visualizaci%C3%B3n-viz" class="anchor"></a>VISUALIZACIÓN (<em>Viz</em>)</h4>
 <ul>
 <li><p><strong><code><a href="reference/tabulate_results.html">tabulate_results()</a></code></strong>: Genera una tabla con resultados agregados. Es posible obtener código \LaTeX de la tabla (<em>Generate a table with aggregated results. It is possible to get \LaTeX code from the table</em>).</p></li>
 <li><p><strong><code><a href="reference/plot_results.html">plot_results()</a></code></strong>: Grafica los resultados de una elección. Es sensible al nivel de agregación de la <code>data</code> obtenida (<em>Plots the results of an election. It is sensitive to the level of aggregation of the obtained <code>data</code></em>).</p></li>
@@ -164,9 +164,9 @@
 <span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/devtools/man/remote-reexports.html">install_github</a></span>(<span class="st">"electorArg/polAr"</span>)</pre></div>
 <p>Los cambios y nuevas funciones en el desarrollo del paquete pueden consultarse en detalle en <a href="https://electorarg.github.io/polAr/news/index.html"><em>changelog</em></a> (<em>Changes in package development can be found in detail in the <a href="https://electorarg.github.io/polAr/news/index.html">changelog</a></em>).</p>
 </div>
-<div id="referencia-rerence" class="section level3">
+<div id="referencia-reference" class="section level3">
 <h3 class="hasAnchor">
-<a href="#referencia-rerence" class="anchor"></a>REFERENCIA (<em>RERENCE</em>)</h3>
+<a href="#referencia-reference" class="anchor"></a>REFERENCIA (<em>Reference</em>)</h3>
 <div class="sourceCode" id="cb3"><pre class="r">Juan Pablo Ruiz Nicolini (2020). polAr: Argentina Political Analysis. R package version
   0.1.3.2. https://github.com/electorArg/polAr</pre></div>
 <div class="sourceCode" id="cb4"><pre class="r">@Manual{,
@@ -180,7 +180,7 @@
 </div>
 <div id="creditos-credits" class="section level3">
 <h3 class="hasAnchor">
-<a href="#creditos-credits" class="anchor"></a>CREDITOS (<em>CREDITS</em>)</h3>
+<a href="#creditos-credits" class="anchor"></a>CREDITOS (<em>Credits</em>)</h3>
 <ul>
 <li><p>Las liberías <a href="https://github.com/holatam/eph"><code>eph</code></a>, <a href="https://CRAN.R-project.org/package=electoral"><code>electoral</code></a> y <a href="https://nicolas-schmidt.github.io/esaps/index.html"><code>esaps</code></a> fueron inspiración y fuente de este proyecto (<em>Libraries <a href="https://github.com/holatam/eph"><code>eph</code></a>, <a href="https://CRAN.R-project.org/package=electoral"><code>electoral</code></a> and <a href="https://nicolas-schmidt.github.io/esaps/index.html"><code>esaps</code></a> were inspiration for this project.)</em>)</p></li>
 <li><p>La gran mayoría de los datos electorales proviene de las bases en archivos <code>.mdb</code> del <a href="https://www.andytow.com/access/index.php?logout=true"><em>Atlas Electoral de Andy Tow</em></a> (<em>Access to raw data comes from databases in <code>.mdb</code> files of <a href="https://www.andytow.com/access/index.php?logout=true">Andy Tow Electoral Atlas</a></em>).</p></li>
@@ -188,7 +188,7 @@
 </div>
 <div id="datos-data" class="section level3">
 <h3 class="hasAnchor">
-<a href="#datos-data" class="anchor"></a>DATOS (<em>DATA</em>)</h3>
+<a href="#datos-data" class="anchor"></a>DATOS (<em>Data</em>)</h3>
 <p>(<strong>Trabajo en proceso - Work in progress</strong>)</p>
 <div id="electorales" class="section level4">
 <h4 class="hasAnchor">

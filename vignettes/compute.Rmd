@@ -1,5 +1,5 @@
 ---
-title: "Indicadores"
+title: "Cálculos (Computing)"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{compute}
