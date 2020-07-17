@@ -7,6 +7,10 @@
 
 {polAr} brinda herramientas que facilitan el flujo de trabajo para el análisis político - electoral y el acceso a datos de Argentina desde `R` (*{polAr} provides tools that facilitate the workflow for political-electoral analysis and access to data from Argentina from `R`*). 
 
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.org/electorArg/polAr.svg?branch=master)](https://travis-ci.org/electorArg/polAr)
+<!-- badges: end -->
+
 
 ---
 
