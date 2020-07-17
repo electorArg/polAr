@@ -142,12 +142,12 @@
                   <span class="kw">long</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
 <span class="co">#&gt; # A tibble: 1 x 20</span>
 <span class="co">#&gt; # Groups:   codprov [1]</span>
-<span class="co">#&gt;   category round  year codprov name_prov electores blancos nulos `0023`</span>
-<span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 dip      paso   2011 01      CABA        2491166   35478 27459 186276</span>
-<span class="co">#&gt; # ... with 11 more variables: `0036` &lt;dbl&gt;, `0179` &lt;dbl&gt;, `0302` &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   `0501` &lt;dbl&gt;, `0504` &lt;dbl&gt;, `0508` &lt;dbl&gt;, `0509` &lt;dbl&gt;, `0510` &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   `0517` &lt;dbl&gt;, `0518` &lt;dbl&gt;, `0536` &lt;dbl&gt;</span></pre></body></html></div>
+<span class="co">#&gt;   category round  year codprov name_prov electores blancos nulos `0023` `0036`</span>
+<span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 dip      paso   2011 01      CABA        2491166   35478 27459 186276  68575</span>
+<span class="co">#&gt; # ... with 10 more variables: `0179` &lt;dbl&gt;, `0302` &lt;dbl&gt;, `0501` &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   `0504` &lt;dbl&gt;, `0508` &lt;dbl&gt;, `0509` &lt;dbl&gt;, `0510` &lt;dbl&gt;, `0517` &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   `0518` &lt;dbl&gt;, `0536` &lt;dbl&gt;</span></pre></body></html></div>
 </div>
 <div id="transformar-estructura-de-datos-anchos-wide-a-largos-long-con-make_long-transform-data-from-wide-to-long-" class="section level4">
 <h4 class="hasAnchor">
@@ -164,45 +164,45 @@
   <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>()
 <span class="co">#&gt; # A tibble: 15 x 22</span>
 <span class="co">#&gt; # Groups:   codprov, depto, coddepto [15]</span>
-<span class="co">#&gt;    category round  year codprov name_prov depto coddepto electores blancos</span>
-<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 dip      paso   2011 01      CABA      Comu~ 001         185778    2403</span>
-<span class="co">#&gt;  2 dip      paso   2011 01      CABA      Comu~ 002         149091    1514</span>
-<span class="co">#&gt;  3 dip      paso   2011 01      CABA      Comu~ 003         167025    2538</span>
-<span class="co">#&gt;  4 dip      paso   2011 01      CABA      Comu~ 004         175190    2897</span>
-<span class="co">#&gt;  5 dip      paso   2011 01      CABA      Comu~ 005         152903    1944</span>
-<span class="co">#&gt;  6 dip      paso   2011 01      CABA      Comu~ 006         153077    1981</span>
-<span class="co">#&gt;  7 dip      paso   2011 01      CABA      Comu~ 007         169698    2522</span>
-<span class="co">#&gt;  8 dip      paso   2011 01      CABA      Comu~ 008         133174    2297</span>
-<span class="co">#&gt;  9 dip      paso   2011 01      CABA      Comu~ 009         144877    2521</span>
-<span class="co">#&gt; 10 dip      paso   2011 01      CABA      Comu~ 010         145632    2722</span>
-<span class="co">#&gt; 11 dip      paso   2011 01      CABA      Comu~ 011         166687    2500</span>
-<span class="co">#&gt; 12 dip      paso   2011 01      CABA      Comu~ 012         172984    2461</span>
-<span class="co">#&gt; 13 dip      paso   2011 01      CABA      Comu~ 013         208929    2366</span>
-<span class="co">#&gt; 14 dip      paso   2011 01      CABA      Comu~ 014         204174    2474</span>
-<span class="co">#&gt; 15 dip      paso   2011 01      CABA      Comu~ 015         161947    2338</span>
-<span class="co">#&gt; # ... with 13 more variables: nulos &lt;dbl&gt;, `0023` &lt;dbl&gt;, `0036` &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   `0179` &lt;dbl&gt;, `0302` &lt;dbl&gt;, `0501` &lt;dbl&gt;, `0504` &lt;dbl&gt;, `0508` &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   `0509` &lt;dbl&gt;, `0510` &lt;dbl&gt;, `0517` &lt;dbl&gt;, `0518` &lt;dbl&gt;, `0536` &lt;dbl&gt;</span></pre></body></html></div>
+<span class="co">#&gt;    category round  year codprov name_prov depto coddepto electores blancos nulos</span>
+<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 dip      paso   2011 01      CABA      Comu~ 001         185778    2403  1832</span>
+<span class="co">#&gt;  2 dip      paso   2011 01      CABA      Comu~ 002         149091    1514  1516</span>
+<span class="co">#&gt;  3 dip      paso   2011 01      CABA      Comu~ 003         167025    2538  1985</span>
+<span class="co">#&gt;  4 dip      paso   2011 01      CABA      Comu~ 004         175190    2897  2040</span>
+<span class="co">#&gt;  5 dip      paso   2011 01      CABA      Comu~ 005         152903    1944  1743</span>
+<span class="co">#&gt;  6 dip      paso   2011 01      CABA      Comu~ 006         153077    1981  1651</span>
+<span class="co">#&gt;  7 dip      paso   2011 01      CABA      Comu~ 007         169698    2522  1928</span>
+<span class="co">#&gt;  8 dip      paso   2011 01      CABA      Comu~ 008         133174    2297  1468</span>
+<span class="co">#&gt;  9 dip      paso   2011 01      CABA      Comu~ 009         144877    2521  1553</span>
+<span class="co">#&gt; 10 dip      paso   2011 01      CABA      Comu~ 010         145632    2722  1647</span>
+<span class="co">#&gt; 11 dip      paso   2011 01      CABA      Comu~ 011         166687    2500  1913</span>
+<span class="co">#&gt; 12 dip      paso   2011 01      CABA      Comu~ 012         172984    2461  1991</span>
+<span class="co">#&gt; 13 dip      paso   2011 01      CABA      Comu~ 013         208929    2366  2156</span>
+<span class="co">#&gt; 14 dip      paso   2011 01      CABA      Comu~ 014         204174    2474  2043</span>
+<span class="co">#&gt; 15 dip      paso   2011 01      CABA      Comu~ 015         161947    2338  1993</span>
+<span class="co">#&gt; # ... with 12 more variables: `0023` &lt;dbl&gt;, `0036` &lt;dbl&gt;, `0179` &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   `0302` &lt;dbl&gt;, `0501` &lt;dbl&gt;, `0504` &lt;dbl&gt;, `0508` &lt;dbl&gt;, `0509` &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   `0510` &lt;dbl&gt;, `0517` &lt;dbl&gt;, `0518` &lt;dbl&gt;, `0536` &lt;dbl&gt;</span></pre></body></html></div>
 <p>Usamos la función auxiliar para convertir el formato de <code>data</code> (<em>We use the helper function to convert the format of <code>data</code></em>):</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r">
 <span class="no">data</span> <span class="kw">%&gt;%</span>
   <span class="fu"><a href="../reference/make_long.html">make_long</a></span>()
 <span class="co">#&gt; # A tibble: 210 x 10</span>
 <span class="co">#&gt; # Groups:   codprov, depto, coddepto [15]</span>
-<span class="co">#&gt;    category round  year codprov name_prov depto coddepto electores listas</span>
-<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt; </span>
-<span class="co">#&gt;  1 dip      paso   2011 01      CABA      Comu~ 001         185778 0023  </span>
-<span class="co">#&gt;  2 dip      paso   2011 01      CABA      Comu~ 001         185778 0036  </span>
-<span class="co">#&gt;  3 dip      paso   2011 01      CABA      Comu~ 001         185778 0179  </span>
-<span class="co">#&gt;  4 dip      paso   2011 01      CABA      Comu~ 001         185778 0302  </span>
-<span class="co">#&gt;  5 dip      paso   2011 01      CABA      Comu~ 001         185778 0501  </span>
-<span class="co">#&gt;  6 dip      paso   2011 01      CABA      Comu~ 001         185778 0504  </span>
-<span class="co">#&gt;  7 dip      paso   2011 01      CABA      Comu~ 001         185778 0508  </span>
-<span class="co">#&gt;  8 dip      paso   2011 01      CABA      Comu~ 001         185778 0509  </span>
-<span class="co">#&gt;  9 dip      paso   2011 01      CABA      Comu~ 001         185778 0510  </span>
-<span class="co">#&gt; 10 dip      paso   2011 01      CABA      Comu~ 001         185778 0517  </span>
-<span class="co">#&gt; # ... with 200 more rows, and 1 more variable: votos &lt;dbl&gt;</span></pre></body></html></div>
+<span class="co">#&gt;    category round  year codprov name_prov depto  coddepto electores listas votos</span>
+<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;  &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 dip      paso   2011 01      CABA      Comun~ 001         185778 0023   13071</span>
+<span class="co">#&gt;  2 dip      paso   2011 01      CABA      Comun~ 001         185778 0036    5425</span>
+<span class="co">#&gt;  3 dip      paso   2011 01      CABA      Comun~ 001         185778 0179     563</span>
+<span class="co">#&gt;  4 dip      paso   2011 01      CABA      Comun~ 001         185778 0302    3784</span>
+<span class="co">#&gt;  5 dip      paso   2011 01      CABA      Comun~ 001         185778 0501   37804</span>
+<span class="co">#&gt;  6 dip      paso   2011 01      CABA      Comun~ 001         185778 0504    6829</span>
+<span class="co">#&gt;  7 dip      paso   2011 01      CABA      Comun~ 001         185778 0508    2876</span>
+<span class="co">#&gt;  8 dip      paso   2011 01      CABA      Comun~ 001         185778 0509    8847</span>
+<span class="co">#&gt;  9 dip      paso   2011 01      CABA      Comun~ 001         185778 0510   10629</span>
+<span class="co">#&gt; 10 dip      paso   2011 01      CABA      Comun~ 001         185778 0517    5094</span>
+<span class="co">#&gt; # ... with 200 more rows</span></pre></body></html></div>
 </div>
 <div id="obtener-nombres-de-listas-o-partidos-políticos-con-get_names-get-parties-names" class="section level4">
 <h4 class="hasAnchor">
@@ -216,20 +216,19 @@
   <span class="fu"><a href="../reference/get_names.html">get_names</a></span>()
 <span class="co">#&gt; # A tibble: 210 x 11</span>
 <span class="co">#&gt; # Groups:   codprov, depto, coddepto [15]</span>
-<span class="co">#&gt;    category round  year codprov name_prov depto coddepto electores listas</span>
-<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt; </span>
-<span class="co">#&gt;  1 dip      paso   2011 01      CABA      Comu~ 001         185778 0023  </span>
-<span class="co">#&gt;  2 dip      paso   2011 01      CABA      Comu~ 001         185778 0036  </span>
-<span class="co">#&gt;  3 dip      paso   2011 01      CABA      Comu~ 001         185778 0179  </span>
-<span class="co">#&gt;  4 dip      paso   2011 01      CABA      Comu~ 001         185778 0302  </span>
-<span class="co">#&gt;  5 dip      paso   2011 01      CABA      Comu~ 001         185778 0501  </span>
-<span class="co">#&gt;  6 dip      paso   2011 01      CABA      Comu~ 001         185778 0504  </span>
-<span class="co">#&gt;  7 dip      paso   2011 01      CABA      Comu~ 001         185778 0508  </span>
-<span class="co">#&gt;  8 dip      paso   2011 01      CABA      Comu~ 001         185778 0509  </span>
-<span class="co">#&gt;  9 dip      paso   2011 01      CABA      Comu~ 001         185778 0510  </span>
-<span class="co">#&gt; 10 dip      paso   2011 01      CABA      Comu~ 001         185778 0517  </span>
-<span class="co">#&gt; # ... with 200 more rows, and 2 more variables: votos &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   nombre_lista &lt;chr&gt;</span></pre></body></html></div>
+<span class="co">#&gt;    category round  year codprov name_prov depto coddepto electores listas votos</span>
+<span class="co">#&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;        &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt;</span>
+<span class="co">#&gt;  1 dip      paso   2011 01      CABA      Comu~ 001         185778 0023   13071</span>
+<span class="co">#&gt;  2 dip      paso   2011 01      CABA      Comu~ 001         185778 0036    5425</span>
+<span class="co">#&gt;  3 dip      paso   2011 01      CABA      Comu~ 001         185778 0179     563</span>
+<span class="co">#&gt;  4 dip      paso   2011 01      CABA      Comu~ 001         185778 0302    3784</span>
+<span class="co">#&gt;  5 dip      paso   2011 01      CABA      Comu~ 001         185778 0501   37804</span>
+<span class="co">#&gt;  6 dip      paso   2011 01      CABA      Comu~ 001         185778 0504    6829</span>
+<span class="co">#&gt;  7 dip      paso   2011 01      CABA      Comu~ 001         185778 0508    2876</span>
+<span class="co">#&gt;  8 dip      paso   2011 01      CABA      Comu~ 001         185778 0509    8847</span>
+<span class="co">#&gt;  9 dip      paso   2011 01      CABA      Comu~ 001         185778 0510   10629</span>
+<span class="co">#&gt; 10 dip      paso   2011 01      CABA      Comu~ 001         185778 0517    5094</span>
+<span class="co">#&gt; # ... with 200 more rows, and 1 more variable: nombre_lista &lt;chr&gt;</span></pre></body></html></div>
 </div>
 </div>
   </div>
