@@ -3,7 +3,7 @@
 \name{compute_disproportion}
 \alias{compute_disproportion}
 \title{Calcula Desproporción del Sistema de Partidos 
- (\emph{Computes Parties System Disproportion})}
+ (\emph{Computes Party System Disproportion})}
 \usage{
 compute_disproportion(data, formula = "gallagher")
 }
@@ -23,6 +23,11 @@ y de bancas obtendios por los partidos políticos (Gallagher por defecto)
  (\emph{Function that computes the party system disproportion index})
 }
 \details{
+Una discusión sobre distintas formulas para el cálculo puede encontrarse en 
+\emph{\href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Taagepera and Grofman (2009)"}} 
+(A discussion of different ways to compute it can be found at
+\emph{\href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Taagepera and Grofman (2009)"}})
+
 \strong{REQUISITO:}
 
 El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_disproportion}}. 
@@ -44,5 +49,5 @@ tucuman_dip_gral_2017 \%>\%
 
 }
 \seealso{
-\code{\link{compute_competitiveness}, \link{compute_seats},\link{compute_nep}}
+\code{\link{compute_competitiveness}, \link{compute_seats}, \link{compute_nep}}
 }

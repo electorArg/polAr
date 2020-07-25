@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Calcula Desproporción del Sistema de Partidos 
- (<em>Computes Parties System Disproportion</em>) — compute_disproportion • polAr</title>
+ (<em>Computes Party System Disproportion</em>) — compute_disproportion • polAr</title>
 
 
 <!-- jquery -->
@@ -41,7 +41,7 @@
 
 
 <meta property="og:title" content="Calcula Desproporción del Sistema de Partidos 
- (<em>Computes Parties System Disproportion</em>) — compute_disproportion" />
+ (<em>Computes Party System Disproportion</em>) — compute_disproportion" />
 <meta property="og:description" content="Función que calcula el índice de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
 y de bancas obtendios por los partidos políticos (Gallagher por defecto)
  (Function that computes the party system disproportion index)" />
@@ -134,7 +134,7 @@ y de bancas obtendios por los partidos políticos (Gallagher por defecto)
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Calcula Desproporción del Sistema de Partidos 
- (<em>Computes Parties System Disproportion</em>)</h1>
+ (<em>Computes Party System Disproportion</em>)</h1>
     <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/compute_disproportion.R'><code>R/compute_disproportion.R</code></a></small>
     <div class="hidden name"><code>compute_disproportion.Rd</code></div>
     </div>
@@ -167,7 +167,11 @@ y de bancas obtendios por los partidos políticos (Gallagher por defecto)
  (<em>Returns a tibble with <code>class "tbl_df", "tbl", "data.frame"</code> with the computation</em>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><strong>REQUISITO:</strong></p>
+    <p>Una discusión sobre distintas formulas para el cálculo puede encontrarse en 
+<em><a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Taagepera and Grofman (2009)"</a></em> 
+(A discussion of different ways to compute it can be found at
+<em><a href='https://journals.sagepub.com/doi/10.1177/001041407901200101'>"Taagepera and Grofman (2009)"</a></em>)</p>
+<p><strong>REQUISITO:</strong></p>
 <p>El formato de <code>data</code> debe ser <code>long</code> para calcular <code>compute_disproportion</code>. 
  Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='make_long.html'>make_long</a></code>  
  (<em><code>long</code> format of <code>data</code> is required for <code>compute_disproportion</code>. 
@@ -177,7 +181,7 @@ y de bancas obtendios por los partidos políticos (Gallagher por defecto)
  (<em>To compute the degree of disproportion, the parameter <code>level</code> of <code><a href='get_election_data.html'>get_election_data</a></code> must be "provincia" (<em>default</em>)</em>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='compute_competitiveness.html'>compute_competitiveness</a>, <a href='compute_seats.html'>compute_seats</a>,<a href='compute_nep.html'>compute_nep</a></code></p></div>
+    <div class='dont-index'><p><code><a href='compute_competitiveness.html'>compute_competitiveness</a>, <a href='compute_seats.html'>compute_seats</a>, <a href='compute_nep.html'>compute_nep</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
