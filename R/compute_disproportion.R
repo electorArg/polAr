@@ -13,6 +13,11 @@
 #' 
 #' @details \strong{REQUISITO:} 
 #' 
+#' @details Una discusión sobre distintas formulas para el cálculo puede encontrarse en 
+#' \emph{\href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Taagepera and Grofman (2009)"}} 
+#' (A discussion of different ways to compute it can be found at
+#' \emph{\href{https://journals.sagepub.com/doi/10.1177/001041407901200101}{"Taagepera and Grofman (2009)"}})
+#' 
 #' @details El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_disproportion}}. 
 #'  Si \code{data} es \emph{wide} se puede transformar con \code{\link{make_long}}  
 #'  (\emph{\code{long} format of \code{data} is required for \code{\link{compute_disproportion}}. 
