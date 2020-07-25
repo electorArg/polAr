@@ -42,7 +42,7 @@
 
 <meta property="og:title" content="Calcula Desproporción del Sistema de Partidos 
  (<em>Computes Parties System Disproportion</em>) — compute_disproportion" />
-<meta property="og:description" content="Función que calcula el índide de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
+<meta property="og:description" content="Función que calcula el índice de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
 y de bancas obtendios por los partidos políticos (Gallagher por defecto)
  (Function that computes the party system disproportion index)" />
 
@@ -140,7 +140,7 @@ y de bancas obtendios por los partidos políticos (Gallagher por defecto)
     </div>
 
     <div class="ref-description">
-    <p>Función que calcula el índide de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
+    <p>Función que calcula el índice de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
 y de bancas obtendios por los partidos políticos (Gallagher por defecto)
  (<em>Function that computes the party system disproportion index</em>)</p>
     </div>
@@ -167,18 +167,14 @@ y de bancas obtendios por los partidos políticos (Gallagher por defecto)
  (<em>Returns a tibble with <code>class "tbl_df", "tbl", "data.frame"</code> with the computation</em>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>$$Rae = \frac{\sum |V_{i} - S_{i} |}{n}$$</p>
-<p>$$Lijphart = max( |V_{i} - S_{i}| )$$</p>
-<p>$$Gallagher =\sqrt{1/2 \sum_{i}^{n}(V_{i} - S_{i})^2}$$</p>
-<p>$$Cox - Shugart :\tfrac{V_{i} \alpha}{S_{i}} = \beta$$</p>
-<p><strong>REQUISITO:</strong></p>
+    <p><strong>REQUISITO:</strong></p>
 <p>El formato de <code>data</code> debe ser <code>long</code> para calcular <code>compute_disproportion</code>. 
  Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='make_long.html'>make_long</a></code>  
  (<em><code>long</code> format of <code>data</code> is required for <code>compute_disproportion</code>. 
  If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='make_long.html'>make_long</a></code></em>)</p>
 <p><strong>NOTA:</strong></p>
-<p>para calcular el grado de desprorpoción el parámetro <code>level</code> de <code><a href='get_election_data.html'>get_election_data</a></code> debe ser "provincia" (<em>default</em>)  
- (<em>To compute the degree of disproportion, the parameter <code>level</code> of <code><a href='get_election_data.html'>get_election_data</a></code> must be "provincia" (<em>default</em></em>).</p>
+<p>para calcular el grado de desprorpoción el parámetro <code>level</code> de <code><a href='get_election_data.html'>get_election_data</a></code> debe ser el que descarga por defecto: "provincia"  
+ (<em>To compute the degree of disproportion, the parameter <code>level</code> of <code><a href='get_election_data.html'>get_election_data</a></code> must be "provincia" (<em>default</em>)</em>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='compute_competitiveness.html'>compute_competitiveness</a>, <a href='compute_seats.html'>compute_seats</a>,<a href='compute_nep.html'>compute_nep</a></code></p></div>

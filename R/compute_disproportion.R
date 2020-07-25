@@ -2,7 +2,7 @@
 #'  (\emph{Computes Parties System Disproportion})
 #'  
 #' @description
-#' Función que calcula el índide de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
+#' Función que calcula el índice de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
 #' y de bancas obtendios por los partidos políticos (Gallagher por defecto)
 #'  (\emph{Function that computes the party system disproportion index})
 #'  
@@ -20,8 +20,8 @@
 #'  
 #' @details \strong{NOTA:} 
 #' 
-#' @details para calcular el grado de desprorpoción el parámetro \code{level} de \code{\link{get_election_data}} debe ser "provincia" (\emph{default})  
-#'  (\emph{To compute the degree of disproportion, the parameter \code{level} of \code{\link{get_election_data}} must be "provincia" (\emph{default}}).    
+#' @details para calcular el grado de desprorpoción el parámetro \code{level} de \code{\link{get_election_data}} debe ser el que descarga por defecto: "provincia"  
+#'  (\emph{To compute the degree of disproportion, the parameter \code{level} of \code{\link{get_election_data}} must be "provincia" (\emph{default})}).    
 #'  
 #' @seealso  \code{\link{compute_competitiveness}, \link{compute_seats},\link{compute_nep}} 
 #' 

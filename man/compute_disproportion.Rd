@@ -18,19 +18,11 @@ Devuelve un tibble con \code{class "tbl_df","tbl", "data.frame"} con el cómputo
  (\emph{Returns a tibble with \code{class "tbl_df", "tbl", "data.frame"} with the computation}).
 }
 \description{
-Función que calcula el índide de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
+Función que calcula el índice de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
 y de bancas obtendios por los partidos políticos (Gallagher por defecto)
  (\emph{Function that computes the party system disproportion index})
 }
 \details{
-\deqn{Rae = \frac{\sum |V_{i} - S_{i} |}{n}}
-
-\deqn{Lijphart = max( |V_{i} - S_{i}| )}
-
-\deqn{Gallagher =\sqrt{1/2 \sum_{i}^{n}(V_{i} - S_{i})^2}}
-
-\deqn{Cox - Shugart :\tfrac{V_{i} \alpha}{S_{i}} = \beta}
-
 \strong{REQUISITO:}
 
 El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute_disproportion}}. 
@@ -40,8 +32,8 @@ El formato de \code{data} debe ser \code{long} para calcular \code{\link{compute
 
 \strong{NOTA:}
 
-para calcular el grado de desprorpoción el parámetro \code{level} de \code{\link{get_election_data}} debe ser "provincia" (\emph{default})  
- (\emph{To compute the degree of disproportion, the parameter \code{level} of \code{\link{get_election_data}} must be "provincia" (\emph{default}}).
+para calcular el grado de desprorpoción el parámetro \code{level} de \code{\link{get_election_data}} debe ser el que descarga por defecto: "provincia"  
+ (\emph{To compute the degree of disproportion, the parameter \code{level} of \code{\link{get_election_data}} must be "provincia" (\emph{default})}).
 }
 \examples{
 
