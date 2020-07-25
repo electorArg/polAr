@@ -42,9 +42,9 @@
 
 <meta property="og:title" content="Calcula Desproporción del Sistema de Partidos 
  (<em>Computes Parties System Disproportion</em>) — compute_disproportion" />
-<meta property="og:description" content="Función que calcula el índide de Gallagher de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
-y de bancas obtendios por los partidos políticos
- (Function that calculates the Gallagher index of disproportion of the party system by measuring the relative distance between the proportion of votes and seats obtained by political parties)" />
+<meta property="og:description" content="Función que calcula el índide de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
+y de bancas obtendios por los partidos políticos (Gallagher por defecto)
+ (Function that computes the party system disproportion index)" />
 
 
 
@@ -140,9 +140,9 @@ y de bancas obtendios por los partidos políticos
     </div>
 
     <div class="ref-description">
-    <p>Función que calcula el índide de Gallagher de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
-y de bancas obtendios por los partidos políticos
- (<em>Function that calculates the Gallagher index of disproportion of the party system by measuring the relative distance between the proportion of votes and seats obtained by political parties</em>)</p>
+    <p>Función que calcula el índide de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
+y de bancas obtendios por los partidos políticos (Gallagher por defecto)
+ (<em>Function that computes the party system disproportion index</em>)</p>
     </div>
 
     <pre class="usage"><span class='fu'>compute_disproportion</span>(<span class='no'>data</span>, <span class='kw'>formula</span> <span class='kw'>=</span> <span class='st'>"gallagher"</span>)</pre>
@@ -157,7 +157,7 @@ y de bancas obtendios por los partidos políticos
     </tr>
     <tr>
       <th>formula</th>
-      <td><p>variante de cálculo elegido ('gallagher', 'cox_shugart' o 'rae'). Por defecto es la formula de Gallagher</p></td>
+      <td><p>variante de cálculo elegido ('gallagher', 'cox_shugart', 'lijphart' o 'rae'). Por defecto es la formula de Gallagher</p></td>
     </tr>
     </table>
 
@@ -167,10 +167,10 @@ y de bancas obtendios por los partidos políticos
  (<em>Returns a tibble with <code>class "tbl_df", "tbl", "data.frame"</code> with the computation</em>).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>\(\large Rae\): $$Disproportion_{Rae}=\sum \frac{|V_{i} - S{i} |}{n}$$
-\(\large Lijphart\): $$Disproportion_{Lijphart}= max( |V_{i} - S_{i}| )$$
-\(\large Gallagher\): $$Disproportion_{Gallagher}=\sqrt{1/2 \sum_{i}^{n}(V_{i} - S_{i})^2}$$
-\(\large Cox - Shugart\): $$Disproportion_{Cox-Shugart}:   \tfrac{V_{i} \alpha}{S_{i}} = \beta$$</p>
+    <p>$$Rae = \frac{\sum |V_{i} - S_{i} |}{n}$$</p>
+<p>$$Lijphart = max( |V_{i} - S_{i}| )$$</p>
+<p>$$Gallagher =\sqrt{1/2 \sum_{i}^{n}(V_{i} - S_{i})^2}$$</p>
+<p>$$Cox - Shugart :\tfrac{V_{i} \alpha}{S_{i}} = \beta$$</p>
 <p><strong>REQUISITO:</strong></p>
 <p>El formato de <code>data</code> debe ser <code>long</code> para calcular <code>compute_disproportion</code>. 
  Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='make_long.html'>make_long</a></code>  
