@@ -8,17 +8,8 @@
 #'  
 #' @param data la base de datos para hacer el cálculo obtenida con \code{\link{get_election_data}} 
 #'  (\emph{tiblle downloaded with \code{\link{get_election_data}} needed to compute disproportion}).
-
 #' @param formula variante de cálculo elegido ('gallagher', 'cox_shugart', 'lijphart' o 'rae'). Por defecto es la formula de Gallagher  
 #'  
-#' @details  
-#' \deqn{Rae = \frac{\sum |V_{i} - S_{i} |}{n}}
-#' 
-#' \deqn{Lijphart = max( |V_{i} - S_{i}| )}
-#' 
-#' \deqn{Gallagher =\sqrt{1/2 \sum_{i}^{n}(V_{i} - S_{i})^2}}
-#' 
-#' \deqn{Cox - Shugart :\tfrac{V_{i} \alpha}{S_{i}} = \beta}
 #' 
 #' @details \strong{REQUISITO:} 
 #' 
