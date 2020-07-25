@@ -12,13 +12,13 @@
 #' @param formula variante de cálculo elegido ('gallagher', 'cox_shugart', 'lijphart' o 'rae'). Por defecto es la formula de Gallagher  
 #'  
 #' @details  
-#' \eqn{\large Rae}: \deqn{=\sum \frac{|V_{i} - S{i} |}{n}}
+#' \deqn{Rae = \frac{\sum |V_{i} - S_{i} |}{n}}
 #' 
-#' \eqn{\large Lijphart}: \deqn{= max( |V_{i} - S_{i}| )}
+#' \deqn{Lijphart = max( |V_{i} - S_{i}| )}
 #' 
-#' \eqn{\large Gallagher}: \deqn{=\sqrt{1/2 \sum_{i}^{n}(V_{i} - S_{i})^2}}
+#' \deqn{Gallagher =\sqrt{1/2 \sum_{i}^{n}(V_{i} - S_{i})^2}}
 #' 
-#' \eqn{\large Cox - Shugart}: \deqn{:\tfrac{V_{i} \alpha}{S_{i}} = \beta}
+#' \deqn{Cox - Shugart :\tfrac{V_{i} \alpha}{S_{i}} = \beta}
 #' 
 #' @details \strong{REQUISITO:} 
 #' 

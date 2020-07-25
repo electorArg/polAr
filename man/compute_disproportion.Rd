@@ -11,22 +11,25 @@ compute_disproportion(data, formula = "gallagher")
 \item{data}{la base de datos para hacer el cálculo obtenida con \code{\link{get_election_data}} 
 (\emph{tiblle downloaded with \code{\link{get_election_data}} needed to compute disproportion}).}
 
-\item{formula}{variante de cálculo elegido ('gallagher', 'cox_shugart' o 'rae'). Por defecto es la formula de Gallagher}
+\item{formula}{variante de cálculo elegido ('gallagher', 'cox_shugart', 'lijphart' o 'rae'). Por defecto es la formula de Gallagher}
 }
 \value{
 Devuelve un tibble con \code{class "tbl_df","tbl", "data.frame"} con el cómputo
  (\emph{Returns a tibble with \code{class "tbl_df", "tbl", "data.frame"} with the computation}).
 }
 \description{
-Función que calcula el índide de Gallagher de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
-y de bancas obtendios por los partidos políticos
- (\emph{Function that calculates the Gallagher index of disproportion of the party system by measuring the relative distance between the proportion of votes and seats obtained by political parties})
+Función que calcula el índide de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
+y de bancas obtendios por los partidos políticos (Gallagher por defecto)
+ (\emph{Function that computes the party system disproportion index})
 }
 \details{
-\eqn{\large Rae}: \deqn{Disproportion_{Rae}=\sum \frac{|V_{i} - S{i} |}{n}}
-\eqn{\large Lijphart}: \deqn{Disproportion_{Lijphart}= max( |V_{i} - S_{i}| )}
-\eqn{\large Gallagher}: \deqn{Disproportion_{Gallagher}=\sqrt{1/2 \sum_{i}^{n}(V_{i} - S_{i})^2}}
-\eqn{\large Cox - Shugart}: \deqn{Disproportion_{Cox-Shugart}:   \tfrac{V_{i} \alpha}{S_{i}} = \beta}
+\deqn{Rae = \frac{\sum |V_{i} - S_{i} |}{n}}
+
+\deqn{Lijphart = max( |V_{i} - S_{i}| )}
+
+\deqn{Gallagher =\sqrt{1/2 \sum_{i}^{n}(V_{i} - S_{i})^2}}
+
+\deqn{Cox - Shugart :\tfrac{V_{i} \alpha}{S_{i}} = \beta}
 
 \strong{REQUISITO:}
 

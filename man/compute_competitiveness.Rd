@@ -2,7 +2,7 @@
 % Please edit documentation in R/compute_competitiveness.R
 \name{compute_competitiveness}
 \alias{compute_competitiveness}
-\title{Competitividad  (\emph{Competitiveness})}
+\title{Calcula Competitividad  (\emph{Computes Competitiveness})}
 \usage{
 compute_competitiveness(data, level = "provincia")
 }

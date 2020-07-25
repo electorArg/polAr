@@ -1,4 +1,4 @@
-# polAr 0.1.3.2
+# polAr 0.1.3.3
 
 **Jul 26, 2020: dev version**
 
@@ -10,7 +10,7 @@
 
 2. Add party id variable in `compute_seats()` output. This allows `compute_disproportion()` computation workflow. 
 
-
+# polAr 0.1.3.2
 **Jul 5, 2020: dev version**
 
 * Added two new functions in previous workflow:
