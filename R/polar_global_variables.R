@@ -54,7 +54,10 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c(".",
                                                         "id", 
                                                         "n", 
                                                         "word", 
-                                                        "election"))
+                                                        "election", 
+                                                        "seats_pct", 
+                                                        "votes_pct", 
+                                                        "index"))
 
 
 

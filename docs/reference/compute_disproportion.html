@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Visualización rápida del discurso
- (<em>Quick speech viz</em>) — plot_speech • polAr</title>
+<title>Calcula Desproporción del Sistema de Partidos 
+ (<em>Computes Parties System Disproportion</em>) — compute_disproportion • polAr</title>
 
 
 <!-- jquery -->
@@ -40,10 +40,11 @@
 
 
 
-<meta property="og:title" content="Visualización rápida del discurso
- (<em>Quick speech viz</em>) — plot_speech" />
-<meta property="og:description" content="Función que permite una rápida visualización de los discursos presidenciales a través de nube de palabras representando su frecuencia relativa con el tamaño. 
- (Function that plots a word cloud of presidential specches, with word sizes as a function of its frequency in the data set)" />
+<meta property="og:title" content="Calcula Desproporción del Sistema de Partidos 
+ (<em>Computes Parties System Disproportion</em>) — compute_disproportion" />
+<meta property="og:description" content="Función que calcula el índide de Gallagher de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
+y de bancas obtendios por los partidos políticos
+ (Function that calculates the Gallagher index of disproportion of the party system by measuring the relative distance between the proportion of votes and seats obtained by political parties)" />
 
 
 
@@ -132,34 +133,75 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Visualización rápida del discurso
- (<em>Quick speech viz</em>)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/plot_speech.R'><code>R/plot_speech.R</code></a></small>
-    <div class="hidden name"><code>plot_speech.Rd</code></div>
+    <h1>Calcula Desproporción del Sistema de Partidos 
+ (<em>Computes Parties System Disproportion</em>)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/compute_disproportion.R'><code>R/compute_disproportion.R</code></a></small>
+    <div class="hidden name"><code>compute_disproportion.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Función que permite una rápida visualización de los discursos presidenciales a través de nube de palabras representando su frecuencia relativa con el tamaño. 
- (<em>Function that plots a word cloud of presidential specches, with word sizes as a function of its frequency in the data set</em>)</p>
+    <p>Función que calcula el índide de Gallagher de desprorpoción del sistema de partidos midiendo la distancia relativa entre proporción de votos
+y de bancas obtendios por los partidos políticos
+ (<em>Function that calculates the Gallagher index of disproportion of the party system by measuring the relative distance between the proportion of votes and seats obtained by political parties</em>)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plot_speech</span>(<span class='no'>data</span>)</pre>
+    <pre class="usage"><span class='fu'>compute_disproportion</span>(<span class='no'>data</span>, <span class='kw'>formula</span> <span class='kw'>=</span> <span class='st'>"gallagher"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>requiere un discurso dentro data.frame con formato <em>tidy</em> descargado con <code>get_speech</code> 
-<em>(a tidy data.frame with the speech downloaded with <code>get_speech</code> is required</em>).</p></td>
+      <td><p>la base de datos para hacer el cálculo obtenida con <code><a href='get_election_data.html'>get_election_data</a></code> 
+(<em>tiblle downloaded with <code><a href='get_election_data.html'>get_election_data</a></code> needed to compute disproportion</em>).</p></td>
+    </tr>
+    <tr>
+      <th>formula</th>
+      <td><p>variante de cálculo elegido ('gallagher', 'cox_shugart' o 'rae'). Por defecto es la formula de Gallagher</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Devuelve un objeto con clases <code>"wordcloud2" "htmlwidget"</code> que representa gráficamente el contenido de un discurso presidencial  
- (<em>it retruns an object of <code>classes "wordcloud2" "htmlwidget"</code></em> with a graphical representation of presidential speeches).</p>
+    <p>Devuelve un tibble con <code>class "tbl_df","tbl", "data.frame"</code> con el cómputo
+ (<em>Returns a tibble with <code>class "tbl_df", "tbl", "data.frame"</code> with the computation</em>).</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
+    <p>\(\large Rae\): $$Disproportion_{Rae}=\sum \frac{|V_{i} - S{i} |}{n}$$
+\(\large Lijphart\): $$Disproportion_{Lijphart}= max( |V_{i} - S_{i}| )$$
+\(\large Gallagher\): $$Disproportion_{Gallagher}=\sqrt{1/2 \sum_{i}^{n}(V_{i} - S_{i})^2}$$
+\(\large Cox - Shugart\): $$Disproportion_{Cox-Shugart}:   \tfrac{V_{i} \alpha}{S_{i}} = \beta$$</p>
+<p><strong>REQUISITO:</strong></p>
+<p>El formato de <code>data</code> debe ser <code>long</code> para calcular <code>compute_disproportion</code>. 
+ Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='make_long.html'>make_long</a></code>  
+ (<em><code>long</code> format of <code>data</code> is required for <code>compute_disproportion</code>. 
+ If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='make_long.html'>make_long</a></code></em>)</p>
+<p><strong>NOTA:</strong></p>
+<p>para calcular el grado de desprorpoción el parámetro <code>level</code> de <code><a href='get_election_data.html'>get_election_data</a></code> debe ser "provincia" (<em>default</em>)  
+ (<em>To compute the degree of disproportion, the parameter <code>level</code> of <code><a href='get_election_data.html'>get_election_data</a></code> must be "provincia" (<em>default</em></em>).</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='compute_competitiveness.html'>compute_competitiveness</a>, <a href='compute_seats.html'>compute_seats</a>,<a href='compute_nep.html'>compute_nep</a></code></p></div>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='no'>tucuman_dip_gral_2017</span></div><div class='output co'>#&gt; # A tibble: 6 x 8
+#&gt; # Groups:   codprov [1]
+#&gt;   category round  year codprov name_prov electores listas   votos
+#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+#&gt; 1 dip      gral   2017 23      TUCUMAN     1217274 0180    154930
+#&gt; 2 dip      gral   2017 23      TUCUMAN     1217274 0503     46609
+#&gt; 3 dip      gral   2017 23      TUCUMAN     1217274 0521    319221
+#&gt; 4 dip      gral   2017 23      TUCUMAN     1217274 0548    459257
+#&gt; 5 dip      gral   2017 23      TUCUMAN     1217274 blancos   5920
+#&gt; 6 dip      gral   2017 23      TUCUMAN     1217274 nulos    12947</div><div class='input'>
+<span class='no'>tucuman_dip_gral_2017</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'>compute_disproportion</span>()</div><div class='output co'>#&gt; # A tibble: 1 x 7
+#&gt; # Groups:   category, round, year, codprov [1]
+#&gt;   category round  year codprov name_prov value formula  
+#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;    
+#&gt; 1 dip      gral   2017 23      TUCUMAN    13.1 gallagher</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

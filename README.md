@@ -1,18 +1,20 @@
 # PolA(R)
 
-## POLítica ARgentina usando `R`
+## `POL`ítica `A`gentina usando `R`
 
 <img src="https://github.com/electorArg/polAr/blob/master/hex/hex-polAr.png?raw=true" width="200">
 
 
-{polAr} brinda herramientas que facilitan el flujo de trabajo para el análisis político - electoral y el acceso a datos de Argentina desde `R` (*{polAr} provides tools that facilitate the workflow for political-electoral analysis and access to data from Argentina from `R`*). 
+`{polAr}` brinda herramientas que facilitan el flujo de trabajo para el análisis político - electoral y el acceso a datos de Argentina desde `R` (*`polAr` provides tools that facilitate the workflow for political-electoral analysis and access to data from Argentina from `R`*). 
 
 <!-- badges: start -->
 
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/polAr)](https://cran.r-project.org/package=polAr)
 [![CRAN_time_from_release](https://www.r-pkg.org/badges/ago/polAr)](https://cran.r-project.org/package=polAr)
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/polAr)](https://cran.r-project.org/package=polAr)
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/polAr)](https://cran.r-project.org/package=polAr)
 [![Travis build status](https://travis-ci.org/electorArg/polAr.svg?branch=master)](https://travis-ci.org/electorArg/polAr)
+[![github](https://img.shields.io/badge/devel%20version-0.1.3.2-red.svg)](https://github.com/electorArg/polAr)
 
 <!-- badges: end -->
 
@@ -27,6 +29,17 @@
 install.packages("polAr")
 
 ```
+
+### Versión en desarrollo (*Development version*) 
+
+```r
+
+# install.packages('devtools') si no tiene instalado devtools
+
+devtools::install_github("electorArg/polAr")
+
+```
+
 ---
 
 Sus principales funciones son (*Its main functions are*):
@@ -52,12 +65,14 @@ Entre los primeros se deben consignar `district` para el distrito; `category` pa
 
 
 #### CÁLCULOS (*Computation*)
+
 - **`compute_competitiveness()`**: Calcula el nivel de competencia en una elección. Un parámetro `level` permite calcularlo para los distintos niveles de agregación presentes en la `data` (*Computes the level of competition in an election. A parameter `level` allows to calculate it for the different levels of aggregation present in the` data`*).
 
 - **`compute_nep()`**: Calcula el  *Numero Efectivo de Partidos Politicos*. Es sensible al nivel de agregación de la `data` obtenida (*Computes the  'Effective Number of Political Parties'. It is sensitive to the level of aggregation of the obtained `data`*). 
 
 - **`compute_seats()`**: Calcula el número esperado de escaños que debería recibir cada partido en función de los votos obtenidos (*Computes expected parties legislatives seats*). 
 
+- **`compute_disproportion()`**: Calcula el grado de desprorpoción entre porcentaje de bancas y votos de elecciones legislativas (*Computes legislative election disproportion*). 
 
 #### VISUALIZACIÓN (*Viz*)
 
@@ -81,15 +96,7 @@ Se pueden consultar pequeños ejemplos de uso en las sección [ARTICULOS](https:
 * [Displaying Results](https://electorarg.github.io/polAr/articles/results.html)
 
 
-### Versión en desarrollo (*Development version*) 
-
-```r
-
-# install.packages('devtools') si no tiene instalado devtools
-
-devtools::install_github("electorArg/polAr")
-
-```
+---
 
 Los cambios y nuevas funciones en el desarrollo del paquete pueden consultarse en detalle en [*changelog*](https://electorarg.github.io/polAr/news/index.html) (*Changes in package development can be found in detail in the [changelog](https://electorarg.github.io/polAr/news/index.html)*).
 
@@ -115,7 +122,7 @@ Juan Pablo Ruiz Nicolini (2020). polAr: Argentina Political Analysis. R package 
 
 ### CREDITOS (*Credits*)
 
-- Las liberías [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) y [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) fueron inspiración y fuente de este proyecto (*Libraries [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) and [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) were inspiration for this project.)*) 
+- Las liberías [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) y [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) fueron inspiración y fuente de este proyecto (*Libraries [`eph`](https://github.com/holatam/eph), [`electoral`](https://CRAN.R-project.org/package=electoral) and [`esaps`](https://nicolas-schmidt.github.io/esaps/index.html) were inspiration for this project*). 
 
 - La gran mayoría de los datos electorales proviene de las bases en archivos `.mdb` del [_Atlas Electoral de Andy Tow_](https://www.andytow.com/access/index.php?logout=true) (*Access to raw data comes from databases in `.mdb` files of [Andy Tow Electoral Atlas](https://www.andytow.com/access/index.php?logout=true)*).
 

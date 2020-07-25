@@ -2,7 +2,7 @@
 % Please edit documentation in R/compute_seats.R
 \name{compute_seats}
 \alias{compute_seats}
-\title{Calcula número de bancas de diputados a repartir en una elección  
+\title{Calcula número de bancas legislativas a repartir en una elección  
  (\emph{Computes allocation of legislative seats})}
 \usage{
 compute_seats(data)
@@ -18,8 +18,10 @@ de mayoría/minoría para Senaor Nacional en función de votos obtenidos
 }
 \details{
 1. La distribución de escaños esta regida por la formula del sistema \emph{D'Hondt} para Diputados y mayoría/minoría para Senadores.
+
 2. La cantidad de escaños de cada provincia dependen de su población con un mínimo de \eqn{5} por provincia. 
 En caso de Senadores se asignan \eqn{2} al de mayor votos y \eqn{1} al segundo. 
+
 3. En el caso de Diputados, La renovación de bancas de cada provincia se realiza por mitades cada dos años. Cuando la cantidad de 
 escaños que corresponden a una provincia es impar las mismas eligen un diputado más en uno de los turnos: o concurrentes
 con elecciones presidenciales, o en elecciones de mitad de termino presidencial.
@@ -39,5 +41,5 @@ En el caso de Senadores su mandato es de 6 años y se renuevan parcialmente por 
 
 }
 \seealso{
-\code{\link{compute_nep}, \link{compute_competitiveness}}
+\code{\link{compute_nep}, \link{compute_competitiveness}, \link{compute_disproportion}}
 }

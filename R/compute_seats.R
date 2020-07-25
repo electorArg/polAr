@@ -1,4 +1,4 @@
-#' Calcula número de bancas de diputados a repartir en una elección  
+#' Calcula número de bancas legislativas a repartir en una elección  
 #'  (\emph{Computes allocation of legislative seats})
 #'  
 #' @description
@@ -11,8 +11,10 @@
 #'
 #' @details 
 #' 1. La distribución de escaños esta regida por la formula del sistema \emph{D'Hondt} para Diputados y mayoría/minoría para Senadores.
+#' 
 #' 2. La cantidad de escaños de cada provincia dependen de su población con un mínimo de \eqn{5} por provincia. 
 #' En caso de Senadores se asignan \eqn{2} al de mayor votos y \eqn{1} al segundo. 
+#'
 #' 3. En el caso de Diputados, La renovación de bancas de cada provincia se realiza por mitades cada dos años. Cuando la cantidad de 
 #' escaños que corresponden a una provincia es impar las mismas eligen un diputado más en uno de los turnos: o concurrentes
 #' con elecciones presidenciales, o en elecciones de mitad de termino presidencial.
@@ -31,7 +33,7 @@
 #'                           
 #'  compute_seats(data = caba_dip_2007)                         
 #'
-#' @seealso  \code{\link{compute_nep}, \link{compute_competitiveness}} 
+#' @seealso  \code{\link{compute_nep}, \link{compute_competitiveness}, \link{compute_disproportion}} 
 #'
 #' @export  
 
@@ -48,7 +50,7 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
   
   # Check parameters and data format
   
-  assertthat::assert_that(dim(data)[2]== 8,  
+  assertthat::assert_that(dim(data)[2]< 10,  
                           msg = "data is not at valid level. Download it at 'provincia' level")
   
   assertthat::assert_that("listas" %in% colnames(data), 
@@ -102,7 +104,7 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
   votes <- data  %>% 
     dplyr::transmute(PARTY = nombre_lista,
                      VOTES = votos,
-                     year, category, round) 
+                     year, category, round, listas) 
   
   quot <- tibble::as_tibble(expand.grid(PARTY = data$nombre_lista,
                                 DIVISOR = seats)) %>%
@@ -114,9 +116,9 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
   seats <- quot %>%
     dplyr::arrange(ORDER) %>%
     dplyr::filter(ORDER <= length(seats)) %>%
-    dplyr::group_by(year, category, round, codprov, name_prov, nombre_lista = PARTY) %>%
+    dplyr::group_by(year, category, round, codprov, name_prov, listas, nombre_lista = PARTY) %>%
     dplyr::summarise(seats=dplyr::n())%>% 
-    dplyr::select(codprov, name_prov, year, category, round, nombre_lista, seats) %>% 
+    dplyr::select(codprov, name_prov, year, category, round, listas, nombre_lista, seats) %>% 
     dplyr::arrange(dplyr::desc(seats))
   
   
@@ -140,6 +142,7 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
                   year, 
                   category, 
                   round,
+                  listas,
                   nombre_lista, 
                   seats)
   

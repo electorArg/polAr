@@ -27,7 +27,7 @@
 #'   get_speech(year = 1949, raw = FALSE)
 #'         
 #'    
-#'@export
+#' @export
 
   get_speech <- function(year = NULL, 
                        raw = FALSE){

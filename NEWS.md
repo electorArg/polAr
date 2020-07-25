@@ -1,5 +1,16 @@
 # polAr 0.1.3.2
 
+**Jul 26, 2020: dev version**
+
+* Add new computation function `compute_disproportion()` with 4 alternative formulas. 
+
+* Fix minor bug:
+
+1. Modify dims check in `compute_seats()`  to allow computing whether the names of parties have been added explicitly with `get_names()` or not
+
+2. Add party id variable in `compute_seats()` output. This allows `compute_disproportion()` computation workflow. 
+
+
 **Jul 5, 2020: dev version**
 
 * Added two new functions in previous workflow:

@@ -1,4 +1,4 @@
-#' Competitividad  (\emph{Competitiveness})
+#' Calcula Competitividad  (\emph{Computes Competitiveness})
 #' 
 #' @description
 #' Funcion que describe el grado de competencia de una eleccion
@@ -37,7 +37,7 @@
 #'    tucuman_dip_gral_2017 %>% 
 #'      compute_competitiveness()
 #'      
-#' @seealso  \code{\link{compute_nep}, \link{compute_seats}} 
+#' @seealso  \code{\link{compute_nep}, \link{compute_seats}, \link{compute_disproportion}} 
 #'      
 #' @export
 
