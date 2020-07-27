@@ -36,16 +36,29 @@
 
 
 get_multiple_elections <- function(data, 
-                                   unnest = FALSE){
+                                   unnest = FALSE, 
+                                   level = "provincia"){
 
+  # level check
   
-# NEST ELECTIONS
-    nested <- data %>% 
-      dplyr::select(-NOMBRE) %>% 
-      dplyr::mutate(id = glue::glue("{district}_{category}_{round}_{year}"), 
-             year = as.integer(year)) %>%
-      dplyr::group_by(id) %>% 
-      tidyr::nest()
+  assertthat::assert_that(is.character(level),
+                          msg = "'level' must be a character string. Options = c('provicina', 'departamento', 'circuito') // 
+'level' tiene que ser un character string. Opciones = c('provincia', 'departamento', 'circuito')")
+  
+  assertthat::assert_that(level %in%  c('provincia', 'departamento', 'circuito'), 
+                          msg = "Please select a correct 'level'. Check them with 'show_available_elections'() //
+Por favor seleccione un 'level' correcto. Compruebelos con 'show_available_elections()'")
+  
+  
+  
+  # NEST ELECTIONS
+  nested <- data %>% 
+    dplyr::select(-NOMBRE) %>% 
+    dplyr::mutate(id = glue::glue("{district}_{category}_{round}_{year}"), 
+                  year = as.integer(year), 
+                  level = level) %>%
+    dplyr::group_by(id) %>% 
+    tidyr::nest()
     
 # ITERATE CALL FOR EVERY ELECTION ROW IN THE NESTED DATA FRAME  
       
@@ -56,7 +69,8 @@ get_multiple_elections <- function(data,
                                                           district = .x$district,
                                                           category = .x$category,
                                                           round = .x$round,
-                                                          year = .x$year)
+                                                          year = .x$year, 
+                                                          level = .x$level)
                                                         )) 
  
        
