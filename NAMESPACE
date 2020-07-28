@@ -2,6 +2,7 @@
 
 export("%>%")
 export(compute_competitiveness)
+export(compute_concentration)
 export(compute_disproportion)
 export(compute_nep)
 export(compute_seats)

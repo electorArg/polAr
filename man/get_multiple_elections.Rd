@@ -5,7 +5,7 @@
 \title{Descarga resultados de múltiples elecciones 
  (\emph{Download multiple election electoral data})}
 \usage{
-get_multiple_elections(data, unnest = FALSE)
+get_multiple_elections(data, unnest = FALSE, level = "provincia")
 }
 \arguments{
 \item{data}{data.frame con tantas filas como elecciones se quiere descargar y cuatro columnas con las siguientes variables: \emph{district}, \emph{category}, \emph{round}, \emph{year} 
@@ -13,6 +13,9 @@ get_multiple_elections(data, unnest = FALSE)
 
 \item{unnest}{un boleano que devuelve los datos anidados cuando \code{TRUE} agrupando cada elección o un data.frame cuando es \code{FALSE} que incluye una variable de id de la elección
 (\emph{a boolean that returns nested data when \code{TRUE}, grouping each election or a data.frame when \code{FALSE} that includes an election id variable}).}
+
+\item{level}{parametro para definir el nivel de agregación de los datos que se quieren descargar ('provincia', 'departamento', 'circuito'). Por defecto es provincia 
+(\emph{parameter to define the level of aggregation of the data to be downloaded ('province', 'department', 'circuit'). Default is province}).}
 }
 \value{
 devuelve un tibble con \code{class "grouped_df", "tbl_df","tbl", "data.frame"} con los resultados de las eleccion seleccionadas, con tantas

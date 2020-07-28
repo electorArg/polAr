@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Descarga resultados de múltiples elecciones 
- (<em>Download multiple election electoral data</em>) — get_multiple_elections • polAr</title>
+<title>Calcula Concentración Elecotral 
+ (<em>Computes Electoral Concentration</em>) — compute_concentration • polAr</title>
 
 
 <!-- jquery -->
@@ -40,10 +40,10 @@
 
 
 
-<meta property="og:title" content="Descarga resultados de múltiples elecciones 
- (<em>Download multiple election electoral data</em>) — get_multiple_elections" />
-<meta property="og:description" content="Esta función permite descargar restultados de una multiplicidad de elecciones al mismo tiempo. 
- (Function that downloads multiple national electoral data with one call)" />
+<meta property="og:title" content="Calcula Concentración Elecotral 
+ (<em>Computes Electoral Concentration</em>) — compute_concentration" />
+<meta property="og:description" content="Calcula el índice de concentración electoral de una elección en función del porecentaje acumulado de las dos listas más votadas
+ (Computes the electoral concentration index of an election based on the accumulated percentage of the two most voted lists)" />
 
 
 
@@ -132,75 +132,68 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Descarga resultados de múltiples elecciones 
- (<em>Download multiple election electoral data</em>)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/get_multiple_elections.R'><code>R/get_multiple_elections.R</code></a></small>
-    <div class="hidden name"><code>get_multiple_elections.Rd</code></div>
+    <h1>Calcula Concentración Elecotral 
+ (<em>Computes Electoral Concentration</em>)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/electorArg/polAr/blob/master/R/compute_concentration.R'><code>R/compute_concentration.R</code></a></small>
+    <div class="hidden name"><code>compute_concentration.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Esta función permite descargar restultados de una multiplicidad de elecciones al mismo tiempo. 
- (<em>Function that downloads multiple national electoral data with one call</em>)</p>
+    <p>Calcula el índice de concentración electoral de una elección en función del porecentaje acumulado de las dos listas más votadas
+ (<em>Computes the electoral concentration index of an election based on the accumulated percentage of the two most voted lists</em>)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_multiple_elections</span>(<span class='no'>data</span>, <span class='kw'>unnest</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"provincia"</span>)</pre>
+    <pre class="usage"><span class='fu'>compute_concentration</span>(<span class='no'>data</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>data.frame con tantas filas como elecciones se quiere descargar y cuatro columnas con las siguientes variables: <em>district</em>, <em>category</em>, <em>round</em>, <em>year</em> 
-(<em>data.frame with as many rows as elections you want to download and four columns with the following variables:<em>district</em>, <em>category</em>, <em>round</em>, <em>year</em></em>).</p></td>
-    </tr>
-    <tr>
-      <th>unnest</th>
-      <td><p>un boleano que devuelve los datos anidados cuando <code>TRUE</code> agrupando cada elección o un data.frame cuando es <code>FALSE</code> que incluye una variable de id de la elección
-(<em>a boolean that returns nested data when <code>TRUE</code>, grouping each election or a data.frame when <code>FALSE</code> that includes an election id variable</em>).</p></td>
-    </tr>
-    <tr>
-      <th>level</th>
-      <td><p>parametro para definir el nivel de agregación de los datos que se quieren descargar ('provincia', 'departamento', 'circuito'). Por defecto es provincia 
-(<em>parameter to define the level of aggregation of the data to be downloaded ('province', 'department', 'circuit'). Default is province</em>).</p></td>
+      <td><p>la base de datos para hacer el cálculo obtenida con <code><a href='get_election_data.html'>get_election_data</a></code> 
+(<em>tiblle downloaded with <code><a href='get_election_data.html'>get_election_data</a></code> needed to compute disproportion</em>).#'</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>devuelve un tibble con <code>class "grouped_df", "tbl_df","tbl", "data.frame"</code> con los resultados de las eleccion seleccionadas, con tantas
-filas como elecciones se consultaron y dos columnas: <em>id</em> de la eleccion construido como concatenación de los parametros 
-<code>year_category_round_year</code>; <em>election</em> contiene un listado de tibbles con los resultados agregados a nivel provincial para cada elección
- (<em>returns a tibble of <code>class "grouped_df", "tbl_df", "tbl", "data.frame"</code> with as many rows as elections requested and two columns: 
- <em>id</em> of the election build as a concatenation of the parameters <code>year_category_round_year</code>; <em>election</em> contains a list of tibbles with 
- electoral results aggregated at the provincial level for each each row</em>).</p>
+    <p>Devuelve un tibble con <code>class "tbl_df","tbl", "data.frame"</code> con el cómputo de concentración. Puede tomar valores entre <code>0</code> y <code>1</code>,
+siendo <code>concentracion = 1</code> el de mayor grado (un solo partido obtiene todos los votos). 
+ (<em>Returns a tibble with <code>class "tbl_df", "tbl", "data.frame"</code> with concentration computation. It can take values between <code>0</code>, <code>1</code>, 
+ with <code>concentration = 1</code> being the highest degree (a single party gets all the votes)</em>).</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p><strong>REQUISITO:</strong></p>
+<p>El formato de <code>data</code> debe ser <code>long</code> para calcular <code>compute_concentration</code>. 
+ Si <code>data</code> es <em>wide</em> se puede transformar con <code><a href='make_long.html'>make_long</a></code>  
+ (<em><code>long</code> format of <code>data</code> is required for <code>compute_concentration</code>. 
+ If <code>data</code> is in <em>wide</em> format you can transform it with <code><a href='make_long.html'>make_long</a></code></em>)</p>
+<p><strong>NOTA:</strong></p>
+<p>el grado de concentración será sensible al nivel de agregación de los datos determinados por el parámetro <code>level</code> de 
+<code><a href='get_election_data.html'>get_election_data</a></code>   
+ (<em>the degree of concentration will be sensitive to the level of aggregation of the data determined by the parameter <code>level</code> of
+  <code><a href='get_election_data.html'>get_election_data</a></code></em>).</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='get_election_data.html'>get_election_data</a></code></p></div>
+    <div class='dont-index'><p><code><a href='compute_competitiveness.html'>compute_competitiveness</a>, <a href='compute_seats.html'>compute_seats</a>, <a href='compute_nep.html'>compute_nep</a>, <a href='compute_disproportion.html'>compute_disproportion</a> </code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
- <span class='kw pkg'>polAr</span><span class='kw ns'>::</span><span class='fu'><a href='show_available_elections.html'>show_available_elections</a></span>() <span class='kw'>%&gt;%</span>
- <span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span>(<span class='no'>district</span> <span class='kw'>==</span> <span class='st'>"caba"</span>,
-              <span class='no'>category</span> <span class='kw'>==</span> <span class='st'>"dip"</span>,
-              <span class='no'>round</span> <span class='kw'>==</span> <span class='st'>"paso"</span>) <span class='kw'>-&gt;</span> <span class='no'>caba_paso_diputados</span>
-
-<span class='no'>caba_paso_diputados</span></div><div class='output co'>#&gt; # A tibble: 5 x 5
-#&gt;   district category round year  NOMBRE
-#&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; 
-#&gt; 1 caba     dip      paso  2011  CABA  
-#&gt; 2 caba     dip      paso  2013  CABA  
-#&gt; 3 caba     dip      paso  2015  CABA  
-#&gt; 4 caba     dip      paso  2017  CABA  
-#&gt; 5 caba     dip      paso  2019  CABA  </div><div class='input'>
- <span class='fu'>get_multiple_elections</span>(<span class='no'>caba_paso_diputados</span>)</div><div class='output co'>#&gt; # A tibble: 5 x 2
-#&gt; # Groups:   id [5]
-#&gt;   id                 election         
-#&gt;   &lt;glue&gt;             &lt;list&gt;           
-#&gt; 1 caba_dip_paso_2011 &lt;tibble [14 x 8]&gt;
-#&gt; 2 caba_dip_paso_2013 &lt;tibble [15 x 8]&gt;
-#&gt; 3 caba_dip_paso_2015 &lt;tibble [15 x 8]&gt;
-#&gt; 4 caba_dip_paso_2017 &lt;tibble [18 x 8]&gt;
-#&gt; 5 caba_dip_paso_2019 &lt;tibble [14 x 8]&gt;</div><div class='input'> 
+<span class='no'>tucuman_dip_gral_2017</span></div><div class='output co'>#&gt; # A tibble: 6 x 8
+#&gt; # Groups:   codprov [1]
+#&gt;   category round  year codprov name_prov electores listas   votos
+#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+#&gt; 1 dip      gral   2017 23      TUCUMAN     1217274 0180    154930
+#&gt; 2 dip      gral   2017 23      TUCUMAN     1217274 0503     46609
+#&gt; 3 dip      gral   2017 23      TUCUMAN     1217274 0521    319221
+#&gt; 4 dip      gral   2017 23      TUCUMAN     1217274 0548    459257
+#&gt; 5 dip      gral   2017 23      TUCUMAN     1217274 blancos   5920
+#&gt; 6 dip      gral   2017 23      TUCUMAN     1217274 nulos    12947</div><div class='input'>
+<span class='no'>tucuman_dip_gral_2017</span> <span class='kw'>%&gt;%</span>
+  <span class='fu'>compute_concentration</span>()</div><div class='output co'>#&gt; # A tibble: 1 x 5
+#&gt;   codprov concentration  year category round
+#&gt;   &lt;chr&gt;           &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;
+#&gt; 1 23               0.78  2017 dip      gral </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -8,6 +8,9 @@
 #' @param data  data.frame con tantas filas como elecciones se quiere descargar y cuatro columnas con las siguientes variables: \emph{district}, \emph{category}, \emph{round}, \emph{year} 
 #'  (\emph{data.frame with as many rows as elections you want to download and four columns with the following variables:\emph{district}, \emph{category}, \emph{round}, \emph{year}}).
 #'  
+#' @param level  parametro para definir el nivel de agregación de los datos que se quieren descargar ('provincia', 'departamento', 'circuito'). Por defecto es provincia 
+#'   (\emph{parameter to define the level of aggregation of the data to be downloaded ('province', 'department', 'circuit'). Default is province}).
+#'   
 #' @param unnest  un boleano que devuelve los datos anidados cuando \code{TRUE} agrupando cada elección o un data.frame cuando es \code{FALSE} que incluye una variable de id de la elección
 #'  (\emph{a boolean that returns nested data when \code{TRUE}, grouping each election or a data.frame when \code{FALSE} that includes an election id variable}).  
 #'  

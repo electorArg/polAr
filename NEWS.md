@@ -1,5 +1,10 @@
 # polAr 0.1.3.3
 
+**DRAFT, 2020: dev version**
+
+* (Already comitted and installed locally) Add 'level' parameter to 'get_multiple_election' function
+* Add new computation function for electoral data:  `compute_concentration()`
+
 **Jul 26, 2020: dev version**
 
 * Add new computation function `compute_disproportion()` with 4 alternative formulas. 
