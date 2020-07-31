@@ -6,19 +6,19 @@
 #'  
 #'@return Los valores por defecto en \code{\link{get_grid}} son \code{codprov} para provincia y \code{coddepto} para departamentos, respectivamente. 
 #' Estos corresponden a la codificación de los escrutinios provisorios de elecciones nacionales y se etiquetaron como \code{'indra'} . 
-#' Se puede optar por la nomenclautra de \code{'indec'}, con la familia \code{\*_censo}, para ambos niveles, o la de \code{'iso'} con \code{\*_censo} , 
+#' Se puede optar por la nomenclautra de \code{'indec'}, con la familia \code{\*_censo}, para ambos niveles, o la de \code{'iso'} con \code{\*_iso} , 
 #' para el nivel provincial. 
 #'
 #'@details Respecto el origen de los datos se puede consultar la documentación de 
 #' \href{https://www.iso.org/obp/ui/#iso:code:3166:AR}{\code{ISO 3166-2} - International Organization for Standardization} y
 #' del \href{https://www.iso.org/obp/ui/#iso:code:3166:AR}{\emph{INDEC}}. 
 #' 
-#'@details \code{codprov} y \code{coddepto} son las codificaciones de las bases de datos de ¬emph{INDRA}, empresa encargada por
+#'@details \code{codprov} y \code{coddepto} son las codificaciones de las bases de datos de \emph{INDRA}, empresa encargada por
 #' muchos años de la tarea del escrutinio provisorio y utilizados en \href{https://electorarg.github.io/polAr/}{polAr}. 
 #'
 #'@param type la variante del código que se quiere definir para la grilla. Las opciones son \code{'indra'}, \code{'indec'} o \code{'iso'}.
 #'
-#'@param data data.frame obtenido con \code{\link{get_grid}}. Las grillas grillas disponibles 
+#'@param data data.frame obtenido con \code{\link{get_grid}}. Las grillas disponibles 
 #' se pueden chequear con \code{\link{show_arg_codes}}.
 #'
 #' 
@@ -29,13 +29,13 @@
 #' 
 #' 
 #' get_grid("ARGENTINA") %>% 
-#'    recode_geofaceteAR_codes(type = "iso") 
+#'    recode_grid(type = "iso") 
 #' 
 #' 
 #'@export
 
 
-recode_geofaceteAR_codes<- function(data, 
+recode_grid<- function(data, 
                             type = NULL){
   
   # Check parameters

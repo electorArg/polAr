@@ -9,11 +9,11 @@
 #'
 #'@import geofacet
 #'
-#'@examples 
+#' @examples 
 #'
 #' show_arg_codes(viewer = FALSE)
 #'
-#'@export
+#' @export
 
 
 

@@ -11,7 +11,7 @@ get_grid(district = NULL)
 y para las 24 provincias. Se pueden chequear los parametros con \code{\link{show_arg_codes}}.}
 }
 \description{
-Función que descaga grillas (\emph{facet}) para acomodarlas como si fueran mapas de provincias y deparamentos
+Función que descarga grillas (\emph{facet}) para acomodarlas como si fueran mapas de provincias y deparamentos
 de Argentina.
 }
 \examples{

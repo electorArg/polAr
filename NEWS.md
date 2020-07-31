@@ -1,14 +1,24 @@
-# polAr 0.1.3.3
+# polAr 0.1.3.4
 
-**DRAFT, 2020: dev version**
+**Jul 31, 2020: dev version**
 
-* (Already comitted and installed locally) Add 'level' parameter to `get_multiple_election()` function
+* Add 'level' parameter to `get_multiple_elections()` function
 
-* Add new computation function for electoral data:  `compute_concentration()`
+* Add new computation function for electoral data woekflow:  `compute_concentration()`
 
 * Fixed `map_results()`: need to ungroup when using `sf::st_as_sf()` function. 
 
-* Add `{geofaceteAR}` functions as `{polAr}` native functions. 
+* Add `get_geo()` function to get gis
+
+* Add `{geofaceteAR}` functions as `{polAr}` native functions: 
+
+1. `get_grid()`
+
+2. `show_arg_codes()`
+
+3. `recode_grids()`
+
+# polAr 0.1.3.3
 
 **Jul 26, 2020: dev version**
 
