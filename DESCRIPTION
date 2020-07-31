@@ -30,7 +30,7 @@ Depends: R (>= 2.10)
 Imports: 
     geofacet,
     dplyr,
-    tidyr (>= 1.0.0), 
+    tidyr (>= 1.1.0), 
     magrittr, 
     formattable, 
     readr, 
