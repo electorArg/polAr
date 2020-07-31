@@ -175,7 +175,7 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
         # NATIONAL MAP
         pais <- data %>% 
           dplyr::left_join(map, by = "codprov") %>% 
-          sf::st_as_sf() %>% 
+          dplyr::ungroup() %>%            sf::st_as_sf()  %>% 
         ggplot2::ggplot() +
           ggplot2::geom_sf(ggplot2::aes(fill = group))  +
           ggplot2::geom_rect(xmin = -59, xmax = -58, ymin = -34, ymax = -35, 
@@ -207,7 +207,7 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
         # SUBSET MAP
         caba <- data %>%
           dplyr::left_join(map, by = "codprov")  %>% 
-          sf::st_as_sf() %>%
+          dplyr::ungroup() %>%            sf::st_as_sf()  %>%
          ggplot2::ggplot() +
           ggplot2::geom_sf(ggplot2::aes(fill =  group)) + 
           ggplot2::coord_sf(xlim = c(-58.55, -58.3), 
@@ -240,7 +240,7 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
        
        pba <- data %>% 
          dplyr::left_join(map, by = c("codprov", "coddepto")) %>% 
-         sf::st_as_sf() %>% 
+         dplyr::ungroup() %>%            sf::st_as_sf()  %>% 
          ggplot2::ggplot() +
          ggplot2::geom_sf(ggplot2::aes(fill = group))  +
          ggplot2::geom_rect(xmin = -59, xmax = -58, ymin = -34, ymax = -35, 
@@ -272,7 +272,7 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
        # SUBSET MAP
        amba <- data %>%
          dplyr::left_join(map, by = c("codprov", "coddepto"))  %>% 
-         sf::st_as_sf() %>%
+         dplyr::ungroup() %>%            sf::st_as_sf()  %>%
          ggplot2::ggplot() +
          ggplot2::geom_sf(ggplot2::aes(fill =  group)) + 
          ggplot2::scale_fill_gradient2(low = "#7fbf7b", mid = "white", high = "#af8dc3")  +
@@ -304,7 +304,7 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
     
     data %>% 
       dplyr::left_join(map, by = c("codprov", "coddepto")) %>% 
-      sf::st_as_sf() %>%
+      dplyr::ungroup() %>%            sf::st_as_sf()  %>%
       ggplot2::ggplot() +
       ggplot2::geom_sf(ggplot2::aes(fill =  group)) + 
         ggthemes::theme_map() +

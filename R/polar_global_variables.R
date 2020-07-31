@@ -57,7 +57,19 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c(".",
                                                         "election", 
                                                         "seats_pct", 
                                                         "votes_pct", 
-                                                        "index"))
+                                                        "index","full_geo_metadata", 
+                                                        "codprov", 
+                                                        "codprov_censo", 
+                                                        "codprov_iso", 
+                                                        "code", 
+                                                        "name_prov", 
+                                                        "name_iso", 
+                                                        "coddepto", 
+                                                        "coddepto_censo", 
+                                                        "nomdepto_censo", 
+                                                        "data",
+                                                        "grillas_geofacet", 
+                                                        "name_provincia"))
 
 
 
