@@ -2,8 +2,6 @@
 
 language: R
 dist: trusty
-cache: packages
-warnings_are_errors: FALSE
 addons:
   apt:
     packages:
