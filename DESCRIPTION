@@ -63,5 +63,3 @@ Suggests:
     qpdf
 RoxygenNote: 6.1.1
 VignetteBuilder: knitr
-LinkingTo: cpp11
-SystemRequirements: C++11
