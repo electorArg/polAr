@@ -1,1 +1,25 @@
-destination: docs
+reference:
+- title: "Data"
+  desc: Functions for exploring and downloading data
+  subtitle: Explore
+- contents: 
+  - starts_with("show")
+  subtitle: Download
+- contents: 
+  - starts_with("show")
+  - starts_with("get")
+- title: "Computing"
+  desc: "Functions for computation"
+- contents:
+  - starts_with("compute")
+- title: "Visualization"
+  desc: "Functions for tables, maps and plots"
+- contents:
+  - starts_with("tabulate")
+  - starts_with("map")
+  - starts_with("plot")
+- title: "Auxiliar"
+  desc: "Auxiliar functions"
+- contents:
+  - starts_with("make")
+  - starts_with("recode")

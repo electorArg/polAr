@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Acceso a datos Electorales (Electoral Data) • polAr</title>
+<title>Data • polAr</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Acceso a datos Electorales (Electoral Data)">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Data">
 <meta property="og:description" content="polAr">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -57,10 +57,10 @@
       <a href="../articles/compute.html">Cálculos (Computing)</a>
     </li>
     <li>
-      <a href="../articles/data.html">Acceso a datos Electorales (Electoral Data)</a>
+      <a href="../articles/data.html">Data</a>
     </li>
     <li>
-      <a href="../articles/results.html">Visualizar resultados Electorales (Electoral Viz)</a>
+      <a href="../articles/results.html">Data Viz</a>
     </li>
   </ul>
 </li>
@@ -88,7 +88,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Acceso a datos Electorales (Electoral Data)</h1>
+      <h1 data-toc-skip>Data</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/electorArg/polAr/blob/master/vignettes/data.Rmd"><code>vignettes/data.Rmd</code></a></small>
@@ -98,6 +98,52 @@
 
     
     
+<div id="explorar-datos-data-explorer" class="section level2">
+<h2 class="hasAnchor">
+<a href="#explorar-datos-data-explorer" class="anchor"></a>EXPLORAR DATOS (<em>Data explorer</em>)</h2>
+<ul>
+<li><p><strong><code><a href="../reference/show_available_elections.html">show_available_elections()</a></code></strong>: Diccionario de elecciones disponibles. El parámetro <code>viewer = TRUE</code> habilita una tabla en el <em>Viewer</em> de <code>RStudio</code> (<em>Dictionary of available elections. The <code>viewer = TRUE</code> parameter enables a table in the <em>Viewer</em> of<code>RStudio</code></em>).</p></li>
+<li><p><strong><code><a href="../reference/show_available_speech.html">show_available_speech()</a></code></strong>: Diccionario de discursos presidenciales disponibles. El parámetro <code>viewer = TRUE</code> habilita una tabla en el <em>Viewer</em> de <code>RStudio</code> (<em>Dictionary of available elections. The <code>viewer = TRUE</code> parameter enables a table in the <em>Viewer</em> of<code>RStudio</code></em>).</p></li>
+<li><p><strong><code><a href="../reference/show_arg_codes.html">show_arg_codes()</a></code></strong>: Diccionario de de distritos de Argentina. El parámetro <code>viewer = TRUE</code> habilita una tabla en el <em>Viewer</em> de <code>RStudio</code> y <code>nivel</code> permite elegir entre ‘provincias’ y ‘departamentos’ (<em>Dictionary of available elections. The <code>viewer = TRUE</code> parameter enables a table in the <em>Viewer</em> of<code>RStudio</code> and <code>nivel</code> allow selecting ‘provincia’ or ‘departamentos’ level</em>).</p></li>
+</ul>
+</div>
+<div id="obtener-datos-get-data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#obtener-datos-get-data" class="anchor"></a>OBTENER DATOS (<em>Get data</em>)</h2>
+<div id="elections" class="section level3">
+<h3 class="hasAnchor">
+<a href="#elections" class="anchor"></a>Elections</h3>
+<ul>
+<li>
+<strong><code><a href="../reference/get_election_data.html">get_election_data()</a></code></strong>: Descarga bases de resultados electorales con parámetros obligatorios y otros optativos (<em>Download electoral data with mandatory and other optional parameters</em>).</li>
+</ul>
+<p>Entre los primeros se deben consignar <code>district</code> para el distrito; <code>category</code> para la catgoría; <code>round</code> para el turno e <code>year</code> para el año de la elección. Entre los segundos se puede agregar <code>level</code>para el nivel de agregación -<code>"provincia"</code>, <code>"departamento"</code>, <code>"circuito"</code>- y <code>long</code> para el formato de los datos alargados donde las listas no van cada una en una columna sino como valores de una variable <code>listas</code> (<em>Among the first, <code>district</code>; <code>category</code>;<code>round</code> and<code>year</code> must be consigned. Between the seconds you can add <code>level</code> for the level of aggregation -<code>"provincia"</code>,<code>"departmento"</code>,<code>"circuito"</code>- and<code>long</code> for long formatted data where party lists do not go in columns but as values of a <code>lists</code> variable</em>).</p>
+<ul>
+<li>
+<strong><code><a href="../reference/get_multiple_elections.html">get_multiple_elections()</a></code></strong>: Descarga múltiples bases de resultados electorales simultáneamente (<em>Download multiple electoral data in one call</em>).</li>
+</ul>
+</div>
+<div id="text" class="section level3">
+<h3 class="hasAnchor">
+<a href="#text" class="anchor"></a>Text</h3>
+<ul>
+<li>
+<strong><code><a href="../reference/get_speech.html">get_speech()</a></code></strong>: Descarga contenido de discurso presidencial. El parámetro <code>raw = TRUE</code> devuelve un data.frame con una columna discurso con el texto crudo. Caso contrario una versión del discurso <em>tidy</em> -con limpieza de datos y un <em>token</em> por fila (<em>Download content of presidential speech. The <code>raw = TRUE</code> parameter returns a data.frame with a ‘discurso’ column with the raw text. Otherwise it returns a <em>tidy</em> speech version with clean dataand one <em>token</em> per row</em>).</li>
+</ul>
+</div>
+<div id="geo" class="section level3">
+<h3 class="hasAnchor">
+<a href="#geo" class="anchor"></a>Geo</h3>
+<ul>
+<li><p><strong><code><a href="../reference/get_grid.html">get_grid()</a></code></strong>: Descarga grilla de un distrito para graficar con <code>geofacet</code> (<em>Download district grids to use with <code>geofacet</code></em>).</p></li>
+<li><p><strong><code><a href="../reference/get_geo.html">get_geo()</a></code></strong>: Descarga geometrías para visualizaciones gegoráficas con paquetes como <code>sf</code> (<em>Download geometries for geo viz with packages like <code>sf</code></em>).</p></li>
+</ul>
+<hr>
+</div>
+</div>
+<div id="ejemplos-examples" class="section level2">
+<h2 class="hasAnchor">
+<a href="#ejemplos-examples" class="anchor"></a>EJEMPLOS (<em>Examples</em>)</h2>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">polAr</span>)</pre></body></html></div>
 <div id="electoral" class="section level3">
 <h3 class="hasAnchor">
@@ -229,13 +275,36 @@
 <span class="co">#&gt;  9 dip      paso   2011 01      CABA      Comu~ 001         185778 0510   10629</span>
 <span class="co">#&gt; 10 dip      paso   2011 01      CABA      Comu~ 001         185778 0517    5094</span>
 <span class="co">#&gt; # ... with 200 more rows, and 1 more variable: nombre_lista &lt;chr&gt;</span></pre></body></html></div>
+<hr>
+</div>
+</div>
+</div>
+<div id="fuentes-sources" class="section level2">
+<h2 class="hasAnchor">
+<a href="#fuentes-sources" class="anchor"></a>FUENTES (<em>Sources</em>)</h2>
+<p>(<strong>Trabajo en proceso - Work in progress</strong>)</p>
+<div id="electorales-electoral" class="section level4">
+<h4 class="hasAnchor">
+<a href="#electorales-electoral" class="anchor"></a>Electorales (<em>Electoral</em>)</h4>
+<ul>
+<li><p>La gran mayoría de los datos electorales proviene de las bases en archivos <code>.mdb</code> del <a href="https://www.andytow.com/access/index.php?logout=true"><em>Atlas Electoral de Andy Tow</em></a> (<em>Access to raw data comes from databases in <code>.mdb</code> files of <a href="https://www.andytow.com/access/index.php?logout=true">Andy Tow Electoral Atlas</a></em>).</p></li>
+<li><p>La primera etapa de este proyecto consistió en un procesamiento de esos archivos para convertirlos a otros con formato <code>sqlite</code> para manipularlos más facilmente desde <code>R</code>(<em>The first stage of this project consisted in processing those files and convert them to others in <code>sqlite</code> format for easier manipulation with <code>R</code></em>).</p></li>
+<li><p>Con esa información generamos cuadernos de <code>RMarkdown</code> para hacer las consultas de resultados para distintos años, cateogrías, turnos electorales y distrito. Pronto una descripción más detallada y documentación de este proceso (<em>With this information, we generate <code>RMarkdown</code> notebooks to query the results for different years, categories, electoral turns and district. Soon a more detailed description and documentation of this process</em>).</p></li>
+</ul>
+</div>
+<div id="discursos-speeches" class="section level4">
+<h4 class="hasAnchor">
+<a href="#discursos-speeches" class="anchor"></a>Discursos (<em>Speeches</em>)</h4>
+<p>Con el aporte de <a href="https://twitter.com/lucasenrich">Lucas Enrich</a> y <a href="https://twitter.com/chig4_">Camila Higa</a> trabajamos sobre una base de datos de discursos de apertura de sesiones legislativas de los presidentes argentinos: desde el primer discurso de Justo José de Urquiza en 1854 hasta el de Alberto Fernández en 2020. Se disponibilizan versiones de texto con mínimo procesamiento y otras en formato <a href="https://www.tidytextmining.com/tidytext.html">tidy</a>, siguiendo la definición de Julia Silge y David Robinson (<em>With the contribution of Lucas Enrich and Camila Higat we worked on a database of speeches for the opening of legislative sessions of Argentine presidents: from the first speech by Justo José de Urquiza in 1854 to that of Alberto Fernández in 2020. Text versions are available with minimal processing and others in format tidy, following the definition of Julia Silge and David Robinson</em>).</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 

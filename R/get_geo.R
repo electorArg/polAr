@@ -1,4 +1,5 @@
-#'Carga poligonos geográficos de distritos de  Argentina
+#'Carga poligonos geográficos de distritos de Argentina
+#'   (\emph{Load Argentina's districts geometries})
 #'@description
 #'Función que descaga (\emph{geometry}) para graficar con mapas
 #' 

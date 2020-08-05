@@ -1,4 +1,5 @@
-#'Recodifica valores de etiquetas asignados a provincias o departamentos de Argentina
+#'Recodifica id asignados a provincias o departamentos de Argentina
+#'   (\emph{Recode Argentina's districs id})
 #'@description
 #'
 #'Función que permite recodificar etiquetas para utilización de grillas de Argentina y de departamentos para los 24 distritos

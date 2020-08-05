@@ -2,7 +2,8 @@
 % Please edit documentation in R/get_grid.R
 \name{get_grid}
 \alias{get_grid}
-\title{Carga grillas de districts de Argentina}
+\title{Carga grillas de districts de Argentina 
+  (\emph{Load grids of districts of Argentina})}
 \usage{
 get_grid(district = NULL)
 }

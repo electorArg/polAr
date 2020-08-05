@@ -57,10 +57,10 @@
       <a href="../articles/compute.html">Cálculos (Computing)</a>
     </li>
     <li>
-      <a href="../articles/data.html">Acceso a datos Electorales (Electoral Data)</a>
+      <a href="../articles/data.html">Data</a>
     </li>
     <li>
-      <a href="../articles/results.html">Visualizar resultados Electorales (Electoral Viz)</a>
+      <a href="../articles/results.html">Data Viz</a>
     </li>
   </ul>
 </li>
@@ -99,6 +99,21 @@
     
     
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">polAr</span>)</pre></body></html></div>
+<div id="cálculos-computation" class="section level3">
+<h3 class="hasAnchor">
+<a href="#c%C3%A1lculos-computation" class="anchor"></a>CÁLCULOS (<em>Computation</em>)</h3>
+<ul>
+<li><p><strong><code><a href="../reference/compute_competitiveness.html">compute_competitiveness()</a></code></strong>: Calcula el nivel de competencia en una elección. Un parámetro <code>level</code> permite calcularlo para los distintos niveles de agregación presentes en la <code>data</code> (<em>Computes the level of competition in an election. A parameter <code>level</code> allows to calculate it for the different levels of aggregation present in the<code>data</code></em>).</p></li>
+<li><p><strong><code><a href="../reference/compute_nep.html">compute_nep()</a></code></strong>: Calcula el <em>Numero Efectivo de Partidos Politicos</em>. Es sensible al nivel de agregación de la <code>data</code> obtenida (<em>Computes the ‘Effective Number of Political Parties’. It is sensitive to the level of aggregation of the obtained <code>data</code></em>).</p></li>
+<li><p><strong><code><a href="../reference/compute_seats.html">compute_seats()</a></code></strong>: Calcula el número esperado de escaños que debería recibir cada partido en función de los votos obtenidos (<em>Computes expected parties legislatives seats</em>).</p></li>
+<li><p><strong><code><a href="../reference/compute_disproportion.html">compute_disproportion()</a></code></strong>: Calcula el grado de desprorpoción entre porcentaje de bancas y votos de elecciones legislativas (<em>Computes legislative election disproportion</em>).</p></li>
+<li><p><strong><code><a href="../reference/compute_concentration.html">compute_concentration()</a></code></strong>: Calcula el grado de concentración de votos en una elección (<em>Computes electoral concentration</em>).</p></li>
+</ul>
+<hr>
+</div>
+<div id="ejemplos-examples" class="section level3">
+<h3 class="hasAnchor">
+<a href="#ejemplos-examples" class="anchor"></a>Ejemplos (<em>Examples</em>)</h3>
 <div id="computar-número-efectivo-de-partidos-computes-effective-number-of-parites" class="section level4">
 <h4 class="hasAnchor">
 <a href="#computar-n%C3%BAmero-efectivo-de-partidos-computes-effective-number-of-parites" class="anchor"></a>Computar Número Efectivo de Partidos (<em>Computes Effective Number of Parites</em>)</h4>
@@ -197,6 +212,7 @@
 <span class="co">#&gt; 1 01      CABA       2013 dip      gral  0502   UNEN                        5</span>
 <span class="co">#&gt; 2 01      CABA       2013 dip      gral  0503   UNION PRO                   5</span>
 <span class="co">#&gt; 3 01      CABA       2013 dip      gral  0501   FRENTE PARA LA VICTORIA     3</span></pre></body></html></div>
+</div>
 </div>
   </div>
 

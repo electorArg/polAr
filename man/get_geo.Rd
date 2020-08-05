@@ -2,7 +2,8 @@
 % Please edit documentation in R/get_geo.R
 \name{get_geo}
 \alias{get_geo}
-\title{Carga poligonos geográficos de distritos de  Argentina}
+\title{Carga poligonos geográficos de distritos de Argentina
+  (\emph{Load Argentina's districts geometries})}
 \usage{
 get_geo(geo = NULL, level = "departamento")
 }

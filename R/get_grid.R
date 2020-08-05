@@ -1,4 +1,5 @@
-#'Carga grillas de districts de Argentina
+#'Carga grillas de districts de Argentina 
+#'   (\emph{Load grids of districts of Argentina})
 #'@description
 #'Función que descarga grillas (\emph{facet}) para acomodarlas como si fueran mapas de provincias y deparamentos
 #' de Argentina.

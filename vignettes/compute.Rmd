@@ -22,6 +22,24 @@ library(polAr)
 ```
 
 
+
+### CÁLCULOS (*Computation*)
+
+- **`compute_competitiveness()`**: Calcula el nivel de competencia en una elección. Un parámetro `level` permite calcularlo para los distintos niveles de agregación presentes en la `data` (*Computes the level of competition in an election. A parameter `level` allows to calculate it for the different levels of aggregation present in the` data`*).
+
+- **`compute_nep()`**: Calcula el  *Numero Efectivo de Partidos Politicos*. Es sensible al nivel de agregación de la `data` obtenida (*Computes the  'Effective Number of Political Parties'. It is sensitive to the level of aggregation of the obtained `data`*). 
+
+- **`compute_seats()`**: Calcula el número esperado de escaños que debería recibir cada partido en función de los votos obtenidos (*Computes expected parties legislatives seats*). 
+
+- **`compute_disproportion()`**: Calcula el grado de desprorpoción entre porcentaje de bancas y votos de elecciones legislativas (*Computes legislative election disproportion*). 
+
+- **`compute_concentration()`**: Calcula el grado de concentración de votos en una elección  (*Computes electoral concentration*). 
+
+
+---
+
+### Ejemplos (*Examples*)
+
 #### Computar Número Efectivo de Partidos (*Computes Effective Number of Parites*)
 
 El cálculo se realizará el nivel de agregación de los datos descargados con `get_election_data()`. En este caso a nivel departamental. La función `compute_nep()` tiene un parámetro para elegir entre el índice de [Laakso-Taagepera](https://journals.sagepub.com/doi/10.1177/001041407901200101) y/o el de  [Golosov](https://journals.sagepub.com/doi/10.1177/1354068809339538)

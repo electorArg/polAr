@@ -2,7 +2,8 @@
 % Please edit documentation in R/recode_grid.R
 \name{recode_grid}
 \alias{recode_grid}
-\title{Recodifica valores de etiquetas asignados a provincias o departamentos de Argentina}
+\title{Recodifica id asignados a provincias o departamentos de Argentina
+  (\emph{Recode Argentina's districs id})}
 \usage{
 recode_grid(data, type = NULL)
 }

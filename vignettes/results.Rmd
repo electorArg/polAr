@@ -1,5 +1,5 @@
 ---
-title: "Visualizar resultados Electorales (Electoral Viz)"
+title: "Data Viz"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{reults}
@@ -17,9 +17,26 @@ knitr::opts_chunk$set(
 
 ```
 
+## VISUALIZACIÓN (*Viz*)
+
+- **`tabulate_results()`**: Genera una tabla con resultados agregados. Es posible obtener código \LaTeX de la tabla (*Generate a table with aggregated results. It is possible to get \LaTeX code from the table*).
+
+- **`plot_results()`**: Grafica los resultados de una elección. Es sensible al nivel de agregación de la `data` obtenida (*Plots the results of an election. It is sensitive to the level of aggregation of the obtained `data`*).
+
+- **`map_results()`**: Georeferencia los resultados de una elección (*Maps the results of an election*).
+
+- **`plot_speech()`**: Grafica la frecuencia relativa de palabras en los discursos presidenciales (*Plots presidential speeches words frequency*).
+
+---
+
+## EJEMPLOS (*Examples*)
+
+
 ```{r setup}
 library(polAr)
 ```
+
+
 
 ### Visualización de resultados (*Data Viz*)
 

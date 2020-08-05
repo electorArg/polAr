@@ -2,6 +2,7 @@
 
 language: R
 dist: trusty
+cache: packages
 addons:
   apt:
     packages:
@@ -9,7 +10,4 @@ addons:
       - gdal-bin
       - libgdal1-dev
       - libproj-dev
-      
-      
-      
       

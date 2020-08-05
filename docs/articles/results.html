@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Visualizar resultados Electorales (Electoral Viz) • polAr</title>
+<title>Data Viz • polAr</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Visualizar resultados Electorales (Electoral Viz)">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Data Viz">
 <meta property="og:description" content="polAr">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -57,10 +57,10 @@
       <a href="../articles/compute.html">Cálculos (Computing)</a>
     </li>
     <li>
-      <a href="../articles/data.html">Acceso a datos Electorales (Electoral Data)</a>
+      <a href="../articles/data.html">Data</a>
     </li>
     <li>
-      <a href="../articles/results.html">Visualizar resultados Electorales (Electoral Viz)</a>
+      <a href="../articles/results.html">Data Viz</a>
     </li>
   </ul>
 </li>
@@ -88,7 +88,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>Visualizar resultados Electorales (Electoral Viz)</h1>
+      <h1 data-toc-skip>Data Viz</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/electorArg/polAr/blob/master/vignettes/results.Rmd"><code>vignettes/results.Rmd</code></a></small>
@@ -98,6 +98,20 @@
 
     
     
+<div id="visualización-viz" class="section level2">
+<h2 class="hasAnchor">
+<a href="#visualizaci%C3%B3n-viz" class="anchor"></a>VISUALIZACIÓN (<em>Viz</em>)</h2>
+<ul>
+<li><p><strong><code><a href="../reference/tabulate_results.html">tabulate_results()</a></code></strong>: Genera una tabla con resultados agregados. Es posible obtener código de la tabla (<em>Generate a table with aggregated results. It is possible to get code from the table</em>).</p></li>
+<li><p><strong><code><a href="../reference/plot_results.html">plot_results()</a></code></strong>: Grafica los resultados de una elección. Es sensible al nivel de agregación de la <code>data</code> obtenida (<em>Plots the results of an election. It is sensitive to the level of aggregation of the obtained <code>data</code></em>).</p></li>
+<li><p><strong><code><a href="../reference/map_results.html">map_results()</a></code></strong>: Georeferencia los resultados de una elección (<em>Maps the results of an election</em>).</p></li>
+<li><p><strong><code><a href="../reference/plot_speech.html">plot_speech()</a></code></strong>: Grafica la frecuencia relativa de palabras en los discursos presidenciales (<em>Plots presidential speeches words frequency</em>).</p></li>
+</ul>
+<hr>
+</div>
+<div id="ejemplos-examples" class="section level2">
+<h2 class="hasAnchor">
+<a href="#ejemplos-examples" class="anchor"></a>EJEMPLOS (<em>Examples</em>)</h2>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">polAr</span>)</pre></body></html></div>
 <div id="visualización-de-resultados-data-viz" class="section level3">
 <h3 class="hasAnchor">
@@ -125,7 +139,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#heeqjgxnrg .gt_table {
+#orjuowkehw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -148,7 +162,7 @@
   border-left-color: #D3D3D3;
 }
 
-#heeqjgxnrg .gt_heading {
+#orjuowkehw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -160,7 +174,7 @@
   border-right-color: #D3D3D3;
 }
 
-#heeqjgxnrg .gt_title {
+#orjuowkehw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -170,7 +184,7 @@
   border-bottom-width: 0;
 }
 
-#heeqjgxnrg .gt_subtitle {
+#orjuowkehw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -180,13 +194,13 @@
   border-top-width: 0;
 }
 
-#heeqjgxnrg .gt_bottom_border {
+#orjuowkehw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#heeqjgxnrg .gt_col_headings {
+#orjuowkehw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -201,7 +215,7 @@
   border-right-color: #D3D3D3;
 }
 
-#heeqjgxnrg .gt_col_heading {
+#orjuowkehw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -221,7 +235,7 @@
   overflow-x: hidden;
 }
 
-#heeqjgxnrg .gt_column_spanner_outer {
+#orjuowkehw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -233,15 +247,15 @@
   padding-right: 4px;
 }
 
-#heeqjgxnrg .gt_column_spanner_outer:first-child {
+#orjuowkehw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#heeqjgxnrg .gt_column_spanner_outer:last-child {
+#orjuowkehw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#heeqjgxnrg .gt_column_spanner {
+#orjuowkehw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -253,7 +267,7 @@
   width: 100%;
 }
 
-#heeqjgxnrg .gt_group_heading {
+#orjuowkehw .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -275,7 +289,7 @@
   vertical-align: middle;
 }
 
-#heeqjgxnrg .gt_empty_group_heading {
+#orjuowkehw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -290,19 +304,19 @@
   vertical-align: middle;
 }
 
-#heeqjgxnrg .gt_striped {
+#orjuowkehw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#heeqjgxnrg .gt_from_md > :first-child {
+#orjuowkehw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#heeqjgxnrg .gt_from_md > :last-child {
+#orjuowkehw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#heeqjgxnrg .gt_row {
+#orjuowkehw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -321,7 +335,7 @@
   overflow-x: hidden;
 }
 
-#heeqjgxnrg .gt_stub {
+#orjuowkehw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -333,7 +347,7 @@
   padding-left: 12px;
 }
 
-#heeqjgxnrg .gt_summary_row {
+#orjuowkehw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -343,7 +357,7 @@
   padding-right: 5px;
 }
 
-#heeqjgxnrg .gt_first_summary_row {
+#orjuowkehw .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -353,7 +367,7 @@
   border-top-color: #D3D3D3;
 }
 
-#heeqjgxnrg .gt_grand_summary_row {
+#orjuowkehw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -363,7 +377,7 @@
   padding-right: 5px;
 }
 
-#heeqjgxnrg .gt_first_grand_summary_row {
+#orjuowkehw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -373,7 +387,7 @@
   border-top-color: #D3D3D3;
 }
 
-#heeqjgxnrg .gt_table_body {
+#orjuowkehw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -382,7 +396,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#heeqjgxnrg .gt_footnotes {
+#orjuowkehw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -396,13 +410,13 @@
   border-right-color: #D3D3D3;
 }
 
-#heeqjgxnrg .gt_footnote {
+#orjuowkehw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#heeqjgxnrg .gt_sourcenotes {
+#orjuowkehw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -416,46 +430,46 @@
   border-right-color: #D3D3D3;
 }
 
-#heeqjgxnrg .gt_sourcenote {
+#orjuowkehw .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#heeqjgxnrg .gt_left {
+#orjuowkehw .gt_left {
   text-align: left;
 }
 
-#heeqjgxnrg .gt_center {
+#orjuowkehw .gt_center {
   text-align: center;
 }
 
-#heeqjgxnrg .gt_right {
+#orjuowkehw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#heeqjgxnrg .gt_font_normal {
+#orjuowkehw .gt_font_normal {
   font-weight: normal;
 }
 
-#heeqjgxnrg .gt_font_bold {
+#orjuowkehw .gt_font_bold {
   font-weight: bold;
 }
 
-#heeqjgxnrg .gt_font_italic {
+#orjuowkehw .gt_font_italic {
   font-style: italic;
 }
 
-#heeqjgxnrg .gt_super {
+#orjuowkehw .gt_super {
   font-size: 65%;
 }
 
-#heeqjgxnrg .gt_footnote_marks {
+#orjuowkehw .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="heeqjgxnrg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
+<div id="orjuowkehw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
 <thead class="gt_header">
 <tr>
 <th colspan="2" class="gt_heading gt_title gt_font_normal" style>CABA - 2011</th>
@@ -575,11 +589,14 @@
 <p><img src="results_files/figure-html/map_results-1.png" width="700"></p>
 </div>
 </div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 
