@@ -1,3 +1,16 @@
+# polAr 0.1.3.5
+
+**Agu 17, 2020: dev version**
+
+* Add new workflow for legislative data with three functions:
+
+
+1. `show_available_bills()` to explore data
+
+2. `plot_bill()` to quickly visualize voting totals
+
+3. `get_bill_votes()` to download invividual voting records
+
 # polAr 0.1.3.4
 
 **Jul 31, 2020: dev version**
@@ -16,7 +29,7 @@
 
 2. `show_arg_codes()`
 
-3. `recode_grids()`
+3. `recode_grid()`
 
 # polAr 0.1.3.3
 

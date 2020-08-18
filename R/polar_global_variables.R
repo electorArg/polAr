@@ -69,7 +69,16 @@ if(getRversion() >= "2.15.1")  utils::globalVariables(c(".",
                                                         "nomdepto_censo", 
                                                         "data",
                                                         "grillas_geofacet", 
-                                                        "name_provincia"))
+                                                        "name_provincia",
+                                                        "camara", 
+                                                        "colour", 
+                                                        "fecha", 
+                                                        "party_long",
+                                                        "party_short", 
+                                                        "seats", 
+                                                        "value", 
+                                                        "x", 
+                                                        "y"))
 
 
 

@@ -1,6 +1,6 @@
 Package: polAr
 Title:  Argentina Political Analysis
-Version: 0.1.3.4
+Version: 0.1.3.5
 Authors@R: 
     c(person(given = "Juan Pablo",
            family = "Ruiz Nicolini",
@@ -54,7 +54,11 @@ Imports:
     grDevices, 
     cowplot, 
     sf, 
-    wordcloud2
+    wordcloud2, 
+    jsonlite, 
+    ggtext, 
+    lubridate, 
+    ggparliament
 Suggests:
     pkgcond,
     knitr,
