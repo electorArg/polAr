@@ -1,6 +1,6 @@
 # PolA(R)
 
-## `POL`ítica `A`gentina usando `R`
+## `POL`ítica `A`rgentina usando `R`
 
 <img src="https://github.com/electorArg/polAr/blob/master/hex/hex-polAr.png?raw=true" width="200">
 
