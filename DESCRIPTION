@@ -1,5 +1,5 @@
 Package: polAr
-Title:  Argentina Political Analysis
+Title: Argentina Political Analysis
 Version: 0.1.3.5
 Authors@R: 
     c(person(given = "Juan Pablo",
@@ -65,5 +65,5 @@ Suggests:
     rmarkdown, 
     utf8, 
     qpdf
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 VignetteBuilder: knitr

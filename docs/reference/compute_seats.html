@@ -13,8 +13,8 @@
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
 
@@ -65,7 +65,7 @@ de mayoría/minoría para Senaor Nacional en función de votos obtenidos
   <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
-      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
@@ -175,8 +175,10 @@ En el caso de Senadores su mandato es de 6 años y se renuevan parcialmente por 
  <span class='kw pkg'>polAr</span><span class='kw ns'>::</span><span class='fu'><a href='get_election_data.html'>get_election_data</a></span>(<span class='kw'>district</span> <span class='kw'>=</span> <span class='st'>"caba"</span>,
                           <span class='kw'>category</span> <span class='kw'>=</span> <span class='st'>"dip"</span>,
                           <span class='kw'>round</span> <span class='kw'>=</span> <span class='st'>"gral"</span>,
-                          <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2007</span>) <span class='kw'>-&gt;</span> <span class='no'>caba_dip_2007</span>
-
+                          <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2007</span>) <span class='kw'>-&gt;</span> <span class='no'>caba_dip_2007</span></div><div class='output co'>#&gt; <span class='warning'>Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.</span>
+#&gt; <span class='warning'>Using compatibility `.name_repair`.</span>
+#&gt; <span class='warning'>This warning is displayed once every 8 hours.</span>
+#&gt; <span class='warning'>Call `lifecycle::last_warnings()` to see where this warning was generated.</span></div><div class='input'>
  <span class='no'>caba_dip_2007</span></div><div class='output co'>#&gt; # A tibble: 32 x 8
 #&gt; # Groups:   codprov [1]
 #&gt;    category round  year codprov name_prov electores listas  votos

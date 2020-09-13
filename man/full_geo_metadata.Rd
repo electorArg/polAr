@@ -4,14 +4,16 @@
 \name{full_geo_metadata}
 \alias{full_geo_metadata}
 \title{Equivalencias de códigos de identificación geográfica}
-\format{Un tibble con 526 filas y 8 variables:
+\format{
+Un tibble con 526 filas y 8 variables:
 \describe{
   \item{codprov, coddepto}{identificadores utilizados por \emph{INDRA} para escrutinios provisorios de elecciones nacionales}
   \item{*_censo}{identificadores de unidades geográficas del \emph{INDEC_}}
   \item{*_iso}{identificadores de {International Organization for Standardization}}
   
   ...
-}}
+}
+}
 \usage{
 full_geo_metadata
 }

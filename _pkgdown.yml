@@ -22,3 +22,8 @@ reference:
   contents:
   - starts_with("make")
   - starts_with("recode")
+template:
+  params:
+    bootswatch: cosmo
+navbar:
+  type: inverse

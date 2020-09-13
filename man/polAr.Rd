@@ -3,7 +3,6 @@
 \docType{package}
 \name{polAr}
 \alias{polAr}
-\alias{polAr-package}
 \title{\code{polAr} package}
 \description{
 Caja de Herramientas para el procesamiento de datos electorales de Argentina

@@ -4,7 +4,8 @@
 \name{tucuman_dip_gral_2017}
 \alias{tucuman_dip_gral_2017}
 \title{Data set de muestra}
-\format{Un data frame con 6 filas y 8 variables:
+\format{
+Un data frame con 6 filas y 8 variables:
 \describe{
   \item{category}{Categoria Electoral}
   \item{round}{Ronda o Truno Electoral}
@@ -15,7 +16,8 @@
   \item{listas}{Codigo de lista o partido}
   \item{votos}{Cantidad de votos absolutos}
   ...
-}}
+}
+}
 \usage{
 tucuman_dip_gral_2017
 }
