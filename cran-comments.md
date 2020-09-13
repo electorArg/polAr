@@ -1,4 +1,13 @@
 ## Resubmission polAr
+
+0 errors √ | 1 warning x | 2 notes x
+
+Travis: passing https://travis-ci.org/github/electorArg/polAr
+
+winbuilder: checked and built
+
+
+## Resubmission polAr
 This is a resubmission -version 0.1.3. As asked by reviewer, in this version I: 
 * Update description in DESCRIPTION file to an English version. 
 * Add translated infromation in README file. 

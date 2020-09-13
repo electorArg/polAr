@@ -1,8 +1,5 @@
-# PolA(R)
 
-## `POL`ítica `A`rgentina usando `R`
-
-<img src="https://github.com/electorArg/polAr/blob/master/hex/hex-polAr.png?raw=true" width="200">
+# `POL`ítica `A`rgentina usando `R` <a><img src="https://github.com/electorArg/polAr/blob/master/hex/hex-polAr.png?raw=true" width="200" align="right" /></a>
 
 
 `{polAr}` brinda herramientas que facilitan el flujo de trabajo para el análisis político - electoral y el acceso a datos de Argentina desde `R` (*`polAr` provides tools that facilitate the workflow for political-electoral analysis and access to data from Argentina from `R`*). 

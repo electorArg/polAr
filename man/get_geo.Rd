@@ -13,7 +13,7 @@ get_geo(geo = NULL, level = "departamento")
 \item{level}{parametro opcional para descargar geometrías a nivel 'departamento' cuando se solicita mapa nacional \code{get_geo(geo = "ARGNTINA", level = "departamento")}.}
 }
 \description{
-Función que descaga (\emph{geometry}) para graficar con mapas
+Función que descarga (\emph{geometry}) para graficar con mapas
 }
 \examples{
 
