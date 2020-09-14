@@ -11,7 +11,9 @@
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/polAr)](https://cran.r-project.org/package=polAr)
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/polAr)](https://cran.r-project.org/package=polAr)
 [![Travis build status](https://travis-ci.org/electorArg/polAr.svg?branch=master)](https://travis-ci.org/electorArg/polAr)
-[![github](https://img.shields.io/badge/devel%20version-0.1.3.2-red.svg)](https://github.com/electorArg/polAr)
+[![github](https://img.shields.io/badge/devel%20version-0.2.0-red.svg)](https://github.com/electorArg/polAr)
+[![DOI](https://zenodo.org/badge/256862665.svg)](https://zenodo.org/badge/latestdoi/256862665)
+
 
 <!-- badges: end -->
 
@@ -56,19 +58,29 @@ Se pueden consultar pequeños ejemplos de uso en las sección [ARTICULOS](https:
 
 ### CITA (*Cite*)
 
-```r
-Juan Pablo Ruiz Nicolini (2020). polAr: Argentina Political Analysis. R package version
-  0.1.3.2. https://github.com/electorArg/polAr
-```
+Para citar `{polAr}` en publicaciones usar (**To cite package ‘polAr’ in publications use**)
 
 ```r
-@Manual{,
-    title = {polAr: Política Argentina usando R},
+  Juan Pablo Ruiz Nicolini (2020). polAr: Argentina
+  Political Analysis. R package version 0.2.0.
+  https://CRAN.R-project.org/package=polAr
+
+
+
+```
+
+
+Una entrada BibTeX para LaTex (**A BibTeX entry for LaTeX users**)
+
+```r
+  @Manual{,
+    title = {polAr: Argentina Political Analysis},
     author = {Juan Pablo {Ruiz Nicolini}},
     year = {2020},
-    note = {R package version 0.0.0.9000},
-    url = {https://github.com/electorArg/polAr},
+    note = {R package version 0.2.0},
+    url = {https://CRAN.R-project.org/package=polAr},
   }
+
 
 
 ```

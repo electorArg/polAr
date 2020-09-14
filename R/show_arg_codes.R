@@ -1,4 +1,4 @@
-#' Diccionario de códigos identificadores de distritos 
+#' Diccionario de códigos identificadores de distritos (geo ID's dictoniary) 
 #'
 #'@description
 #' Función que devuelve un \emph{data.frame} con códigos y equivalencias de identificación de unidades geográficas

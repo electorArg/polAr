@@ -1,4 +1,4 @@
-#' Diccionario de proyectos de ley sometidos a votación
+#' Diccionario de proyectos de ley sometidos a votación (Bills collection)
 #'
 #'@description
 #' Función que devuelve un \emph{data.frame} listado de proyectos de ley con un id por proyecto y cámara legislativa
