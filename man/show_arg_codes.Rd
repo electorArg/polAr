@@ -2,7 +2,8 @@
 % Please edit documentation in R/show_arg_codes.R
 \name{show_arg_codes}
 \alias{show_arg_codes}
-\title{Diccionario de códigos identificadores de distritos}
+\title{Diccionario de códigos identificadores de distritos 
+(\emph{geo ID's dictoniary})}
 \usage{
 show_arg_codes(viewer = TRUE, nivel = "provincias")
 }

@@ -2,7 +2,7 @@
 title: "Data Viz"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{reults}
+  %\VignetteIndexEntry{Data Viz}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

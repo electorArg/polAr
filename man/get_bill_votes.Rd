@@ -2,7 +2,8 @@
 % Please edit documentation in R/get_bill_votes.R
 \name{get_bill_votes}
 \alias{get_bill_votes}
-\title{Obtener votos de un proyecto de ley}
+\title{Obtener votos de un proyecto de ley 
+(\emph{Download bill vote data})}
 \usage{
 get_bill_votes(bill = NULL)
 }

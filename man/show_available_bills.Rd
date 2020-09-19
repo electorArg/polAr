@@ -2,7 +2,8 @@
 % Please edit documentation in R/show_available_bills.R
 \name{show_available_bills}
 \alias{show_available_bills}
-\title{Diccionario de proyectos de ley sometidos a votación}
+\title{Diccionario de proyectos de ley sometidos a votación 
+(\emph{Bills collection})}
 \usage{
 show_available_bills(viewer = TRUE)
 }

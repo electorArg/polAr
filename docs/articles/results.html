@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Data Viz • polAr</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cosmo/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -13,6 +19,7 @@
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="Data Viz">
 <meta property="og:description" content="polAr">
+<meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -139,7 +146,7 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#vljzedznos .gt_table {
+#dqyyhzaivw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -164,7 +171,7 @@
   border-left-color: #D3D3D3;
 }
 
-#vljzedznos .gt_heading {
+#dqyyhzaivw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -176,7 +183,7 @@
   border-right-color: #D3D3D3;
 }
 
-#vljzedznos .gt_title {
+#dqyyhzaivw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -186,7 +193,7 @@
   border-bottom-width: 0;
 }
 
-#vljzedznos .gt_subtitle {
+#dqyyhzaivw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -196,13 +203,13 @@
   border-top-width: 0;
 }
 
-#vljzedznos .gt_bottom_border {
+#dqyyhzaivw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vljzedznos .gt_col_headings {
+#dqyyhzaivw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -217,7 +224,7 @@
   border-right-color: #D3D3D3;
 }
 
-#vljzedznos .gt_col_heading {
+#dqyyhzaivw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -237,7 +244,7 @@
   overflow-x: hidden;
 }
 
-#vljzedznos .gt_column_spanner_outer {
+#dqyyhzaivw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -249,15 +256,15 @@
   padding-right: 4px;
 }
 
-#vljzedznos .gt_column_spanner_outer:first-child {
+#dqyyhzaivw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vljzedznos .gt_column_spanner_outer:last-child {
+#dqyyhzaivw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vljzedznos .gt_column_spanner {
+#dqyyhzaivw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -269,7 +276,7 @@
   width: 100%;
 }
 
-#vljzedznos .gt_group_heading {
+#dqyyhzaivw .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -291,7 +298,7 @@
   vertical-align: middle;
 }
 
-#vljzedznos .gt_empty_group_heading {
+#dqyyhzaivw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -306,15 +313,15 @@
   vertical-align: middle;
 }
 
-#vljzedznos .gt_from_md > :first-child {
+#dqyyhzaivw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vljzedznos .gt_from_md > :last-child {
+#dqyyhzaivw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vljzedznos .gt_row {
+#dqyyhzaivw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -333,7 +340,7 @@
   overflow-x: hidden;
 }
 
-#vljzedznos .gt_stub {
+#dqyyhzaivw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -345,7 +352,7 @@
   padding-left: 12px;
 }
 
-#vljzedznos .gt_summary_row {
+#dqyyhzaivw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -355,7 +362,7 @@
   padding-right: 5px;
 }
 
-#vljzedznos .gt_first_summary_row {
+#dqyyhzaivw .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -365,7 +372,7 @@
   border-top-color: #D3D3D3;
 }
 
-#vljzedznos .gt_grand_summary_row {
+#dqyyhzaivw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -375,7 +382,7 @@
   padding-right: 5px;
 }
 
-#vljzedznos .gt_first_grand_summary_row {
+#dqyyhzaivw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -385,11 +392,11 @@
   border-top-color: #D3D3D3;
 }
 
-#vljzedznos .gt_striped {
+#dqyyhzaivw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vljzedznos .gt_table_body {
+#dqyyhzaivw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -398,7 +405,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#vljzedznos .gt_footnotes {
+#dqyyhzaivw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -412,13 +419,13 @@
   border-right-color: #D3D3D3;
 }
 
-#vljzedznos .gt_footnote {
+#dqyyhzaivw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#vljzedznos .gt_sourcenotes {
+#dqyyhzaivw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -432,46 +439,46 @@
   border-right-color: #D3D3D3;
 }
 
-#vljzedznos .gt_sourcenote {
+#dqyyhzaivw .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#vljzedznos .gt_left {
+#dqyyhzaivw .gt_left {
   text-align: left;
 }
 
-#vljzedznos .gt_center {
+#dqyyhzaivw .gt_center {
   text-align: center;
 }
 
-#vljzedznos .gt_right {
+#dqyyhzaivw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vljzedznos .gt_font_normal {
+#dqyyhzaivw .gt_font_normal {
   font-weight: normal;
 }
 
-#vljzedznos .gt_font_bold {
+#dqyyhzaivw .gt_font_bold {
   font-weight: bold;
 }
 
-#vljzedznos .gt_font_italic {
+#dqyyhzaivw .gt_font_italic {
   font-style: italic;
 }
 
-#vljzedznos .gt_super {
+#dqyyhzaivw .gt_super {
   font-size: 65%;
 }
 
-#vljzedznos .gt_footnote_marks {
+#dqyyhzaivw .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="vljzedznos" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
+<div id="dqyyhzaivw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="table gt_table">
 <thead class="gt_header">
 <tr>
 <th colspan="2" class="gt_heading gt_title gt_font_normal" style>CABA - 2011</th>

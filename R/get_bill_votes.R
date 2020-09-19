@@ -1,4 +1,5 @@
-#' Obtener votos de un proyecto de ley (Download bill vote data)
+#' Obtener votos de un proyecto de ley 
+#' (\emph{Download bill vote data})
 #'
 #'@description
 #' Función que devuelve un \emph{data.frame} con el detalle de los votos individuales de los legisladores a un proyecto de ley. 

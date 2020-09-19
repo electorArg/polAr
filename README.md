@@ -58,7 +58,7 @@ Se pueden consultar pequeños ejemplos de uso en las sección [ARTICULOS](https:
 
 ### CITA (*Cite*)
 
-Para citar `{polAr}` en publicaciones usar (**To cite package ‘polAr’ in publications use**)
+Para citar `{polAr}` en publicaciones usar (*To cite package ‘polAr’ in publications use*)
 
 ```r
   Juan Pablo Ruiz Nicolini (2020). polAr: Argentina
@@ -70,7 +70,7 @@ Para citar `{polAr}` en publicaciones usar (**To cite package ‘polAr’ in pub
 ```
 
 
-Una entrada BibTeX para LaTex (**A BibTeX entry for LaTeX users**)
+Una entrada BibTeX para LaTex (*A BibTeX entry for LaTeX users*)
 
 ```r
   @Manual{,

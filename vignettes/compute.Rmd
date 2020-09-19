@@ -2,7 +2,7 @@
 title: "Cálculos (Computing)"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{compute}
+  %\VignetteIndexEntry{Cálculos (Computing)}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
