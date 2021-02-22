@@ -63,7 +63,7 @@ Para citar `{polAr}` en publicaciones usar (*To cite package ‘polAr’ in publ
 
 ```r
   Juan Pablo Ruiz Nicolini (2020). polAr: Argentina
-  Political Analysis. R package version 0.2.0.
+  Political Analysis. R package version 0.2.0.1
   https://CRAN.R-project.org/package=polAr
 
 
@@ -78,7 +78,7 @@ Una entrada BibTeX para LaTex (*A BibTeX entry for LaTeX users*)
     title = {polAr: Argentina Political Analysis},
     author = {Juan Pablo {Ruiz Nicolini}},
     year = {2020},
-    note = {R package version 0.2.0},
+    note = {R package version 0.2.0.1},
     url = {https://CRAN.R-project.org/package=polAr},
   }
 
