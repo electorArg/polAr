@@ -52,7 +52,7 @@ get_election_data <- function(district = NULL ,
   
   
   
-  ## Check for internet coection
+  ## Check for internet conection
   attempt::stop_if_not(.x = curl::has_internet(),
                        msg = "Internet access was not detected. Please check your connection // 
 No se detecto acceso a internet. Por favor chequear la conexion.")
@@ -208,18 +208,30 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
               levels <- stringr::str_split(string = levels(level = level), pattern = "\\,")
               levels <- stringr::str_squish(levels[[1]])
               
+  
               
-              # get import - RAW or with LEVLES of aggregation
+## FAIL SAFELEY                          
+  url <- paste0("https://github.com/electorArg/PolAr_Data/blob/master/data/",
+         district, "_",
+         category, "_",
+         round,
+         year, ".csv?raw=true")
+  
+  
+  
+  check <- httr::GET(url)
+  
+  httr::stop_for_status(x = check, 
+                        task = "Fail to download election data. Source is not available // La fuente de datos electorales no esta disponible")
+  
+  
+        
+  # get import - RAW or with LEVLES of aggregation
               
 
-              
               if(raw == FALSE) {
          
-           df <-   readr::read_csv(paste0("https://github.com/electorArg/PolAr_Data/blob/master/data/",
-                                             district, "_",
-                                             category, "_",
-                                             round,
-                                             year, ".csv?raw=true"), 
+           df <-   readr::read_csv(url, 
                                    col_types = readr::cols()) %>% 
                dplyr::group_by_at(levels) %>% 
                dplyr::mutate(mesa = as.character(mesa)) %>% ### fix bug (Salta elections detecting mesa as integer)
@@ -237,11 +249,7 @@ Por favor seleccione una eleccipn valida. Consultelas con 'show_available_electi
              } else {
                 
                 
-           df <- readr::read_csv(paste0("https://github.com/electorArg/PolAr_Data/blob/master/data/",
-                                             district, "_",
-                                             category, "_",
-                                             round,
-                                             year, ".csv?raw=true"), 
+           df <- readr::read_csv(url, 
                                  col_types = readr::cols()) %>%
                   dplyr::ungroup() %>% 
                   dplyr::mutate(codprov = as.character(codprov)) %>% 

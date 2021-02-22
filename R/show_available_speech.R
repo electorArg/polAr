@@ -30,8 +30,19 @@ show_available_speech <- function(viewer = FALSE){
                        msg = "No se detecto acceso a internet. Por favor checkea tu conexion.")
   
 
+  
+url <- 'https://github.com/electorArg/PolAr_Data/tree/master/speech'  
+
+## FAIL SAFELEY
+
+check <- httr::GET(url)
+
+httr::stop_for_status(x = check, 
+                      task = "Fail to download data. Source is not available // La fuente de datos no esta disponible")
+
+
 # Get list of files from github data repo
-pg <- xml2::read_html(glue::glue('https://github.com/electorArg/PolAr_Data/tree/master/speech'))
+pg <- xml2::read_html(url)
 
 
 filelist <- rvest::html_nodes(pg, "a") %>%

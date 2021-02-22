@@ -210,22 +210,18 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
     
     # Load geo-grids for 'departamento'
     
-    geofacet <-  readRDS(gzcon(url("https://github.com/electorArg/PolAr_Data/blob/master/geo/grillas_geofacet.rds?raw=true")))
-    
-    facet_select <-  geofacet %>%
+ facet_select <-  grillas_geofacet %>%
       purrr::pluck(paste0(election_district))
     
   datos_depto <-  if(election_district == "BUENOS AIRES"){
       
     
-    facet_select <-  geofacet %>%
+    facet_select <-  grillas_geofacet %>%
       purrr::pluck(paste0("PBA"))    
     
-      seccion <- readr::read_csv("https://raw.githubusercontent.com/electorArg/PolAr_Data/master/geo/secciones_pba.csv",  
-                                 col_types = readr::cols())
-     
+    
     data %>%   
-        dplyr::left_join(seccion, by = "coddepto") %>% 
+        dplyr::left_join(secciones_pba, by = "coddepto") %>% 
         dplyr::ungroup() %>% 
         dplyr::mutate(nombre_lista = forcats::fct_lump(f =nombre_lista,  n = 3, 
                                                      w = votos,

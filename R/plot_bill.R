@@ -1,4 +1,4 @@
-#' Visualizar resultado de una votación
+#' Visualizar resultado de una votación (Plot Vote)
 #'
 #'@description
 #' Función que grafica el resultado de una votación.  

@@ -26,7 +26,7 @@ Función que descarga los discursos presidenciales ante la Asamblea Legislativa 
 }
 \examples{
   
-  get_speech(year = 1949, raw = FALSE)
+  get_speech(year = 1949)
         
    
 }

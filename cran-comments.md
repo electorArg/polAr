@@ -1,3 +1,10 @@
+## Resubmission 
+
+Added httr::stop_for_status() to FAIL SAFELY when internet resources are not available. Checking calls to github in the R directory.  
+
+0 errors √ | 1 warning x | 1 note x
+
+
 ## Resubmission polAr
 
 0 errors √ | 1 warning x | 2 notes x

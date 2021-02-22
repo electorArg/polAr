@@ -11,10 +11,11 @@
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/polAr)](https://cran.r-project.org/package=polAr)
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/polAr)](https://cran.r-project.org/package=polAr)
 [![Travis build status](https://travis-ci.org/electorArg/polAr.svg?branch=master)](https://travis-ci.org/electorArg/polAr)
-[![github](https://img.shields.io/badge/devel%20version-0.2.0-red.svg)](https://github.com/electorArg/polAr)
+[![github](https://img.shields.io/badge/devel%20version-0.2.1-red.svg)](https://github.com/electorArg/polAr)
 [![DOI](https://zenodo.org/badge/256862665.svg)](https://zenodo.org/badge/latestdoi/256862665)
 
 
+[![CRAN status](https://www.r-pkg.org/badges/version/polAr)](https://CRAN.R-project.org/package=polAr)
 <!-- badges: end -->
 
 

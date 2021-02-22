@@ -11,9 +11,6 @@
 #' @param raw boleano que permite descargar discurso en formato \emph{tidy} cuando \code{raw = FALSE}  o crudo caso contrario  
 #' (\emph{boolean that sets if you want to download raw or \emph{tidy} formated speech data}).
 #' 
-#' @example 
-#' 
-#' get_speech(year = 1949, raw = FALSE)
 #'    
 #' @return Devuelve un tibble con clases \code{"spec_tbl_df" "tbl_df" "tbl" "data.frame"} con el contenido de un discurso presidencial en tres variables: 
 #' \code{discurso, presidente, year}. 
@@ -24,7 +21,7 @@
 #' 
 #' @examples 
 #'   
-#'   get_speech(year = 1949, raw = FALSE)
+#'   get_speech(year = 1949)
 #'         
 #'    
 #' @export
@@ -68,18 +65,44 @@ Por favor seleccione una discurso valido. Consultelos con 'show_available_speech
       dplyr::filter(year == speech_year)
     
     
-    df <- readr::read_csv(glue::glue("https://github.com/electorArg/PolAr_Data/blob/master/speech/{get_ids$year}-{get_ids$president}.csv?raw=true"), 
-                            col_types = readr::cols()) 
+    url_tidy <- glue::glue("https://github.com/electorArg/PolAr_Data/blob/master/speech/{get_ids$year}-{get_ids$president}.csv?raw=true")
+    
+    ## FAIL SAFELEY
+    
+    check <- httr::GET(url_tidy)
+    
+    httr::stop_for_status(x = check, 
+                          task = "Fail to download speech data. Source is not available // La fuente de datos de discursos no esta disponible")
+    
+    
+                           
+    df <- readr::read_csv(file = url_tidy, 
+                          col_types = readr::cols()) 
 
     
   }else{  # RAW version of speech
 
-    df <- readr::read_csv("https://raw.githubusercontent.com/electorArg/PolAr_Data/master/speech/raw_opening_speeches.csv",
-    col_types = readr::cols()) %>% 
-      dplyr::filter(year == anio)
+    url_raw <- "https://raw.githubusercontent.com/electorArg/PolAr_Data/master/speech/raw_opening_speeches.csv"
+    
+
+    
+    ## FAIL SAFELEY
+    
+    check <- httr::GET(url_raw)
+    
+    httr::stop_for_status(x = check, 
+                          task = "Fail to download data. Source is not available // La fuente de datos no esta disponible")
+    
+    
+    
+    
+        df <- readr::read_csv(url_raw,
+                              col_types = readr::cols()) %>%
+          dplyr::filter(year == anio)
   }
   
   df
-}
+
+  }
 
 

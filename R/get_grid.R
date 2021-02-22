@@ -16,19 +16,20 @@
 
 get_grid <- function(district = NULL) {
   
+
   # Check parameters
   
   assertthat::assert_that(!is.null(district),
-                          msg = "debe ingresar un district valido. Chequear opciones con 'show_arg_grids()")
+                          msg = "debe ingresar un district valido. Chequear opciones con 'show_arg_codes()")
   
   assertthat::assert_that(is.character(district), 
-                          msg = "district debe ser del tipo 'character'. Chequear opciones con 'show_arg_grids()")
+                          msg = "district debe ser del tipo 'character'. Chequear opciones con 'show_arg_codes()")
   
   assertthat::assert_that(district %in% c("ARGENTINA", "CABA", "CATAMARCA", "CHACO", "CHUBUT", "CORDOBA", "CORRIENTES",
                                           "ENTRE RIOS", "FORMOSA", "JUJUY", "LA PAMPA", "LA RIOJA", "MENDOZA", "MISIONES",
                                           "NEUQUEN","PBA", "RIO NEGRO", "SALTA", "SANTA CRUZ", "SANTA FE", "SANTIAGO DEL ESTERO",
                                           "SAN JUAN", "SAN LUIS", "TIERRA DEL FUEGO", "TUCUMAN", "AGLOMERADOS"),
-                          msg = "no es un district valido. Chequearlos con 'show_arg_grids()")
+                          msg = "no es un district valido. Chequearlos con show_arg_codes()")
   
   
   # Cargo geo-grids

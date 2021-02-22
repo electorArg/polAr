@@ -38,27 +38,36 @@ No se detecto acceso a internet. Por favor chequear la conexion.")
   assertthat::assert_that("listas" %in% colnames(data), 
                           msg = "data is not in a long format. Use 'make_long()' to transform it //
 Los datos no estan en un formato largo. Use 'make_long ()' para transformarlos")
-        x <- data %>% 
-          dplyr::ungroup() %>% 
-          dplyr::select(category, round, year) %>% 
-          dplyr::distinct()
+          
+    
+        category <- unique(data$category)
+        
+        round <- unique(data$round)  
+        
+        year <- unique(data$year) 
         
         
-        category <- x$category
+        url <- glue::glue('https://raw.githubusercontent.com/electorArg/PolAr_Data/master/listas/listas_', 
+                          {category}, '_',  
+                          {round}, 
+                          {year}, '.csv')
         
-        round <- x$round  
+        ## FAIL SAFELEY
         
-        year <- x$year 
+        check <- httr::GET(url)
+        
+        httr::stop_for_status(x = check, 
+                              task = "Fail to download lists data. Source is not available // La fuente de datos de listas no esta disponible")
         
         
-        listas_gh <- readr::read_csv(glue::glue('https://raw.githubusercontent.com/electorArg/PolAr_Data/master/listas/listas_', 
-                                          {category}, '_',  
-                                          {round}, 
-                                          {year}, '.csv'), 
-                                     col_types = readr::cols()) %>% 
-                      dplyr::rename(listas = vot_parCodigo, 
-                                    codprov = vot_proCodigoProvincia, 
-                                    nombre_lista = parDenominacion) 
+        ## GET DATA  
+        
+        listas_gh <- readr::read_csv(file = url, 
+                                     col_types = readr::cols()) %>%
+          dplyr::rename(listas = vot_parCodigo, 
+                        codprov = vot_proCodigoProvincia, 
+                        nombre_lista = parDenominacion)
+    
           
         
        

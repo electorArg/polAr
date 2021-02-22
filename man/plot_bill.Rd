@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_bill.R
 \name{plot_bill}
 \alias{plot_bill}
-\title{Visualizar resultado de una votación}
+\title{Visualizar resultado de una votación (Plot Vote)}
 \usage{
 plot_bill(id = NULL)
 }

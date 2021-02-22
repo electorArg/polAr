@@ -1,3 +1,8 @@
+# polAr 0.2.0.1
+
+New CRAN submission with minor fix to fail gracefully with informative message if internet resources (github) is nos available
+
+
 # polAr 0.2.0
 
 New CRAN submission: 

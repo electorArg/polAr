@@ -5,7 +5,7 @@
 \title{Diccionario de proyectos de ley sometidos a votación 
 (\emph{Bills collection})}
 \usage{
-show_available_bills(viewer = TRUE)
+show_available_bills(viewer = FALSE)
 }
 \arguments{
 \item{viewer}{Por default es \code{TRUE} y  muestra una tabla formateada en el \emph{Viewer} de \emph{RStudio}. Cuando \code{FALSE} imprime en consola.}
