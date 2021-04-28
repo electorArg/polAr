@@ -6,16 +6,15 @@
 
 <!-- badges: start -->
 
-[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/polAr)](https://cran.r-project.org/package=polAr)
-[![CRAN_time_from_release](https://www.r-pkg.org/badges/ago/polAr)](https://cran.r-project.org/package=polAr)
-[![metacran downloads](https://cranlogs.r-pkg.org/badges/polAr)](https://cran.r-project.org/package=polAr)
-[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/polAr)](https://cran.r-project.org/package=polAr)
 [![Travis build status](https://travis-ci.org/electorArg/polAr.svg?branch=master)](https://travis-ci.org/electorArg/polAr)
 [![github](https://img.shields.io/badge/devel%20version-0.2.1-red.svg)](https://github.com/electorArg/polAr)
 [![DOI](https://zenodo.org/badge/256862665.svg)](https://zenodo.org/badge/latestdoi/256862665)
 
 
+*[Archived](https://cloud.r-project.org/web/packages/polAr/index.html) from CRAN (2021-02-24)*
 [![CRAN status](https://www.r-pkg.org/badges/version/polAr)](https://CRAN.R-project.org/package=polAr)
+[![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/polAr)](https://cran.r-project.org/package=polAr)
+
 <!-- badges: end -->
 
 
@@ -23,14 +22,7 @@
 
 ### INSTALACIÓN (*Install*)
 
-*CRAN*
-
-```r
-install.packages("polAr")
-
-```
-
-### Versión en desarrollo (*Development version*) 
+#### Versión en desarrollo (*Development version*) 
 
 ```r
 
@@ -40,7 +32,7 @@ devtools::install_github("electorArg/polAr")
 
 ```
 
-Los cambios y nuevas funciones en el desarrollo del paquete pueden consultarse en detalle en [*changelog*](https://electorarg.github.io/polAr/news/index.html) (*Changes in package development can be found in detail in the [changelog](https://electorarg.github.io/polAr/news/index.html)*).
+Historial de cambios y funciones en el desarrollo del paquete pueden consultarse en detalle en [*changelog*](https://electorarg.github.io/polAr/news/index.html) (*Changes in package development can be found in detail in the [changelog](https://electorarg.github.io/polAr/news/index.html)*).
 
 ---
 
@@ -63,8 +55,8 @@ Para citar `{polAr}` en publicaciones usar (*To cite package ‘polAr’ in publ
 
 ```r
   Juan Pablo Ruiz Nicolini (2020). polAr: Argentina
-  Political Analysis. R package version 0.2.0.1
-  https://CRAN.R-project.org/package=polAr
+  Political Analysis. R package version 0.2.0.1 (dev)
+  https://electorarg.github.io/polAr/
 
 
 
