@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Descarga discursos 
- (<em>Download speeches</em>) — get_speech • polAr</title>
+ (Download speeches) — get_speech • polAr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,7 @@
 
 
 <meta property="og:title" content="Descarga discursos 
- (<em>Download speeches</em>) — get_speech" />
+ (Download speeches) — get_speech" />
 <meta property="og:description" content="Función que descarga los discursos presidenciales ante la Asamblea Legislativa desde 1854 hasta 2020 
  (Function that downloads presidential speeches to de National Legislative Assembly from 1854 to 2020.)" />
 <meta property="og:image" content="/logo.png" />
@@ -91,7 +91,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -123,7 +123,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/electorArg/polAr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -151,7 +151,7 @@
  (<em>Function that downloads presidential speeches to de National Legislative Assembly from 1854 to 2020.</em>)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_speech</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>raw</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>get_speech</span><span class='op'>(</span>year <span class='op'>=</span> <span class='cn'>NULL</span>, raw <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -179,23 +179,24 @@ The object is of <code>class "tbl_df","tbl","data.frame"</code></em>).</p>
     <div class='dont-index'><p><code><a href='plot_speech.html'>plot_speech</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
-  <span class='fu'>get_speech</span>(<span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>1949</span>)</div><div class='output co'>#&gt; # A tibble: 9,233 x 3
+    <pre class="examples"><div class='input'>  
+  <span class='fu'>get_speech</span><span class='op'>(</span>year <span class='op'>=</span> <span class='fl'>1949</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 9,233 x 3</span><span>
 #&gt;    word          presidente  year
-#&gt;    &lt;chr&gt;         &lt;chr&gt;      &lt;dbl&gt;
-#&gt;  1 mensaje       juan_peron  1949
-#&gt;  2 presidencial  juan_peron  1949
-#&gt;  3 excelentísimo juan_peron  1949
-#&gt;  4 señor         juan_peron  1949
-#&gt;  5 presidente    juan_peron  1949
-#&gt;  6 nación        juan_peron  1949
-#&gt;  7 inicia        juan_peron  1949
-#&gt;  8 lectura       juan_peron  1949
-#&gt;  9 mensaje       juan_peron  1949
-#&gt; 10 senores       juan_peron  1949
-#&gt; # ... with 9,223 more rows</div><div class='input'>        
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> mensaje       juan_peron  </span><span style='text-decoration: underline;'>1</span><span>949
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> presidencial  juan_peron  </span><span style='text-decoration: underline;'>1</span><span>949
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> excelentísimo juan_peron  </span><span style='text-decoration: underline;'>1</span><span>949
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> señor         juan_peron  </span><span style='text-decoration: underline;'>1</span><span>949
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> presidente    juan_peron  </span><span style='text-decoration: underline;'>1</span><span>949
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> nación        juan_peron  </span><span style='text-decoration: underline;'>1</span><span>949
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> inicia        juan_peron  </span><span style='text-decoration: underline;'>1</span><span>949
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> lectura       juan_peron  </span><span style='text-decoration: underline;'>1</span><span>949
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> mensaje       juan_peron  </span><span style='text-decoration: underline;'>1</span><span>949
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> senores       juan_peron  </span><span style='text-decoration: underline;'>1</span><span>949
+#&gt; </span><span style='color: #949494;'># ... with 9,223 more rows</span><span></div><div class='input'>        
    
-</div></pre>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -211,7 +212,7 @@ The object is of <code>class "tbl_df","tbl","data.frame"</code></em>).</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

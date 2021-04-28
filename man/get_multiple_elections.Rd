@@ -30,7 +30,7 @@ Esta función permite descargar restultados de una multiplicidad de elecciones a
  (\emph{Function that downloads multiple national electoral data with one call})
 }
 \examples{
-
+\dontrun{
  polAr::show_available_elections() \%>\% 
  dplyr::filter(district == "caba", 
               category == "dip",
@@ -39,7 +39,7 @@ Esta función permite descargar restultados de una multiplicidad de elecciones a
 caba_paso_diputados
                
  get_multiple_elections(caba_paso_diputados)                    
- 
+ }
 }
 \seealso{
 \code{\link{get_election_data}}

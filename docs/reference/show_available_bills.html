@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Diccionario de proyectos de ley sometidos a votación 
-(<em>Bills collection</em>) — show_available_bills • polAr</title>
+(Bills collection) — show_available_bills • polAr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,7 @@
 
 
 <meta property="og:title" content="Diccionario de proyectos de ley sometidos a votación 
-(<em>Bills collection</em>) — show_available_bills" />
+(Bills collection) — show_available_bills" />
 <meta property="og:description" content="Función que devuelve un data.frame listado de proyectos de ley con un id por proyecto y cámara legislativa" />
 <meta property="og:image" content="/logo.png" />
 
@@ -90,7 +90,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -122,7 +122,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/electorArg/polAr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -149,7 +149,7 @@
     <p>Función que devuelve un <em>data.frame</em> listado de proyectos de ley con un id por proyecto y cámara legislativa</p>
     </div>
 
-    <pre class="usage"><span class='fu'>show_available_bills</span>(<span class='kw'>viewer</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>show_available_bills</span><span class='op'>(</span>viewer <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,22 +166,23 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>show_available_bills</span>(<span class='kw'>viewer</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; # A tibble: 3,395 x 5
+<span class='fu'>show_available_bills</span><span class='op'>(</span>viewer <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 3,395 x 5</span><span>
 #&gt;    id         descripcion                                    camara    mes  year
-#&gt;    &lt;chr&gt;      &lt;chr&gt;                                          &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;
-#&gt;  1 3641-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  1993
-#&gt;  2 3652-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  1993
-#&gt;  3 3651-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  1993
-#&gt;  4 3650-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  1993
-#&gt;  5 3649-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  1993
-#&gt;  6 3648-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  1993
-#&gt;  7 3647-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  1993
-#&gt;  8 3646-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  1993
-#&gt;  9 3645-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  1993
-#&gt; 10 3644-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  1993
-#&gt; # ... with 3,385 more rows</div><div class='input'>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                                          </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> 3641-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  </span><span style='text-decoration: underline;'>1</span><span>993
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> 3652-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  </span><span style='text-decoration: underline;'>1</span><span>993
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> 3651-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  </span><span style='text-decoration: underline;'>1</span><span>993
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> 3650-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  </span><span style='text-decoration: underline;'>1</span><span>993
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> 3649-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  </span><span style='text-decoration: underline;'>1</span><span>993
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> 3648-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  </span><span style='text-decoration: underline;'>1</span><span>993
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> 3647-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  </span><span style='text-decoration: underline;'>1</span><span>993
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> 3646-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  </span><span style='text-decoration: underline;'>1</span><span>993
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> 3645-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  </span><span style='text-decoration: underline;'>1</span><span>993
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> 3644-Dipu~ Declarar la necesidad de la Reforma Parcial d~ Diputa~    12  </span><span style='text-decoration: underline;'>1</span><span>993
+#&gt; </span><span style='color: #949494;'># ... with 3,385 more rows</span><span></div><div class='input'>
 
-</div></pre>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -197,7 +198,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

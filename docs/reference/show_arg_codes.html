@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Diccionario de códigos identificadores de distritos 
-(<em>geo ID's dictoniary</em>) — show_arg_codes • polAr</title>
+(geo ID's dictoniary) — show_arg_codes • polAr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,7 @@
 
 
 <meta property="og:title" content="Diccionario de códigos identificadores de distritos 
-(<em>geo ID's dictoniary</em>) — show_arg_codes" />
+(geo ID's dictoniary) — show_arg_codes" />
 <meta property="og:description" content="Función que devuelve un data.frame con códigos y equivalencias de identificación de unidades geográficas" />
 <meta property="og:image" content="/logo.png" />
 
@@ -90,7 +90,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -122,7 +122,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/electorArg/polAr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -149,7 +149,7 @@
     <p>Función que devuelve un <em>data.frame</em> con códigos y equivalencias de identificación de unidades geográficas</p>
     </div>
 
-    <pre class="usage"><span class='fu'>show_arg_codes</span>(<span class='kw'>viewer</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>nivel</span> <span class='kw'>=</span> <span class='st'>"provincias"</span>)</pre>
+    <pre class="usage"><span class='fu'>show_arg_codes</span><span class='op'>(</span>viewer <span class='op'>=</span> <span class='cn'>TRUE</span>, nivel <span class='op'>=</span> <span class='st'>"provincias"</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -167,21 +167,22 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>show_arg_codes</span>(<span class='kw'>viewer</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; # A tibble: 26 x 5
+<span class='fu'>show_arg_codes</span><span class='op'>(</span>viewer <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 26 x 5</span><span>
 #&gt;    id           codprov codprov_censo codprov_iso name_iso                      
-#&gt;    &lt;chr&gt;        &lt;chr&gt;   &lt;chr&gt;         &lt;chr&gt;       &lt;chr&gt;                         
-#&gt;  1 ARGENTINA    " "     " "           AR          Argentina                     
-#&gt;  2 CABA         "01"    "02"          AR-C        Ciudad Autónoma de Buenos Air~
-#&gt;  3 BUENOS AIRES "02"    "06"          AR-B        Buenos Aires                  
-#&gt;  4 CATAMARCA    "03"    "10"          AR-K        Catamarca                     
-#&gt;  5 CORDOBA      "04"    "14"          AR-X        Córdoba                       
-#&gt;  6 CORRIENTES   "05"    "18"          AR-W        Corrientes                    
-#&gt;  7 CHACO        "06"    "22"          AR-H        Chaco                         
-#&gt;  8 CHUBUT       "07"    "26"          AR-U        Chubut                        
-#&gt;  9 ENTRE RIOS   "08"    "30"          AR-E        Entre Ríos                    
-#&gt; 10 FORMOSA      "09"    "34"          AR-P        Formosa                       
-#&gt; # ... with 16 more rows</div><div class='input'>
-</div></pre>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>                         
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> ARGENTINA    </span><span style='color: #949494;'>"</span><span> </span><span style='color: #949494;'>"</span><span>     </span><span style='color: #949494;'>"</span><span> </span><span style='color: #949494;'>"</span><span>           AR          Argentina                     
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> CABA         </span><span style='color: #949494;'>"</span><span>01</span><span style='color: #949494;'>"</span><span>    </span><span style='color: #949494;'>"</span><span>02</span><span style='color: #949494;'>"</span><span>          AR-C        Ciudad Autónoma de Buenos Air~
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> BUENOS AIRES </span><span style='color: #949494;'>"</span><span>02</span><span style='color: #949494;'>"</span><span>    </span><span style='color: #949494;'>"</span><span>06</span><span style='color: #949494;'>"</span><span>          AR-B        Buenos Aires                  
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> CATAMARCA    </span><span style='color: #949494;'>"</span><span>03</span><span style='color: #949494;'>"</span><span>    </span><span style='color: #949494;'>"</span><span>10</span><span style='color: #949494;'>"</span><span>          AR-K        Catamarca                     
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> CORDOBA      </span><span style='color: #949494;'>"</span><span>04</span><span style='color: #949494;'>"</span><span>    </span><span style='color: #949494;'>"</span><span>14</span><span style='color: #949494;'>"</span><span>          AR-X        Córdoba                       
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> CORRIENTES   </span><span style='color: #949494;'>"</span><span>05</span><span style='color: #949494;'>"</span><span>    </span><span style='color: #949494;'>"</span><span>18</span><span style='color: #949494;'>"</span><span>          AR-W        Corrientes                    
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> CHACO        </span><span style='color: #949494;'>"</span><span>06</span><span style='color: #949494;'>"</span><span>    </span><span style='color: #949494;'>"</span><span>22</span><span style='color: #949494;'>"</span><span>          AR-H        Chaco                         
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> CHUBUT       </span><span style='color: #949494;'>"</span><span>07</span><span style='color: #949494;'>"</span><span>    </span><span style='color: #949494;'>"</span><span>26</span><span style='color: #949494;'>"</span><span>          AR-U        Chubut                        
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> ENTRE RIOS   </span><span style='color: #949494;'>"</span><span>08</span><span style='color: #949494;'>"</span><span>    </span><span style='color: #949494;'>"</span><span>30</span><span style='color: #949494;'>"</span><span>          AR-E        Entre Ríos                    
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> FORMOSA      </span><span style='color: #949494;'>"</span><span>09</span><span style='color: #949494;'>"</span><span>    </span><span style='color: #949494;'>"</span><span>34</span><span style='color: #949494;'>"</span><span>          AR-P        Formosa                       
+#&gt; </span><span style='color: #949494;'># ... with 16 more rows</span><span></div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -197,7 +198,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Diccionario de elecciones disponibles 
- (<em>Elections collection</em>) — show_available_elections • polAr</title>
+ (Elections collection) — show_available_elections • polAr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,7 @@
 
 
 <meta property="og:title" content="Diccionario de elecciones disponibles 
- (<em>Elections collection</em>) — show_available_elections" />
+ (Elections collection) — show_available_elections" />
 <meta property="og:description" content="Función que devuelve un tibble con los parámetros necesarios para llamar elecciones con get_election_data 
  (Function that returns a tibble with the necessary parameters to call elections with get_election_data)." />
 <meta property="og:image" content="/logo.png" />
@@ -91,7 +91,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -123,7 +123,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/electorArg/polAr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -151,7 +151,7 @@
  (<em>Function that returns a tibble with the necessary parameters to call elections with</em> <code><a href='get_election_data.html'>get_election_data</a></code>).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>show_available_elections</span>(<span class='kw'>viewer</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>show_available_elections</span><span class='op'>(</span>viewer <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -177,21 +177,22 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
- <span class='fu'>show_available_elections</span>(<span class='kw'>viewer</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; # A tibble: 425 x 5
+ <span class='fu'>show_available_elections</span><span class='op'>(</span>viewer <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 425 x 5</span><span>
 #&gt;    district category round  year  NOMBRE   
-#&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;    
-#&gt;  1 arg      presi    balota 2015  ARGENTINA
-#&gt;  2 arg      presi    gral   2003  ARGENTINA
-#&gt;  3 arg      presi    gral   2007  ARGENTINA
-#&gt;  4 arg      presi    gral   2011  ARGENTINA
-#&gt;  5 arg      presi    gral   2015  ARGENTINA
-#&gt;  6 arg      presi    gral   2019  ARGENTINA
-#&gt;  7 arg      presi    paso   2011  ARGENTINA
-#&gt;  8 arg      presi    paso   2015  ARGENTINA
-#&gt;  9 arg      presi    paso   2019  ARGENTINA
-#&gt; 10 caba     dip      gral   2005  CABA     
-#&gt; # ... with 415 more rows</div><div class='input'> 
-</div></pre>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> arg      presi    balota 2015  ARGENTINA
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> arg      presi    gral   2003  ARGENTINA
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> arg      presi    gral   2007  ARGENTINA
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> arg      presi    gral   2011  ARGENTINA
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> arg      presi    gral   2015  ARGENTINA
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> arg      presi    gral   2019  ARGENTINA
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> arg      presi    paso   2011  ARGENTINA
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> arg      presi    paso   2015  ARGENTINA
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> arg      presi    paso   2019  ARGENTINA
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span> caba     dip      gral   2005  CABA     
+#&gt; </span><span style='color: #949494;'># ... with 415 more rows</span><span></div><div class='input'> 
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -207,7 +208,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Obtiene nombres de listas (<em>Get party names</em>) — get_names • polAr</title>
+<title>Obtiene nombres de listas (Get party names) — get_names • polAr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -46,7 +46,7 @@
 
 
 
-<meta property="og:title" content="Obtiene nombres de listas (<em>Get party names</em>) — get_names" />
+<meta property="og:title" content="Obtiene nombres de listas (Get party names) — get_names" />
 <meta property="og:description" content="Función que agrega el nombre de las listas o partidos como columna a un tibble obtenido con get_election_data(long = TRUE) 
 (Function that adds party labels as a column to a tibble obtained with get_election_data(long = TRUE))." />
 <meta property="og:image" content="/logo.png" />
@@ -89,7 +89,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -121,7 +121,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/electorArg/polAr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -148,7 +148,7 @@
 (<em>Function that adds party labels as a column to a tibble obtained with <code><a href='get_election_data.html'>get_election_data</a>(long = TRUE)</code></em>).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_names</span>(<span class='no'>data</span>)</pre>
+    <pre class="usage"><span class='fu'>get_names</span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -174,29 +174,31 @@ nombres de listas con <code>get_names</code>. Si <code>data</code> es <em>wide</
 <em>wide</em> format you can transform it with <code><a href='make_long.html'>make_long</a></code></em>).</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
- <span class='no'>tucuman_dip_gral_2017</span></div><div class='output co'>#&gt; # A tibble: 6 x 8
-#&gt; # Groups:   codprov [1]
+    <pre class="examples"><div class='input'> 
+ <span class='va'>tucuman_dip_gral_2017</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 6 x 8</span><span>
+#&gt; </span><span style='color: #949494;'># Groups:   codprov [1]</span><span>
 #&gt;   category round  year codprov name_prov electores listas   votos
-#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
-#&gt; 1 dip      gral   2017 23      TUCUMAN     1217274 0180    154930
-#&gt; 2 dip      gral   2017 23      TUCUMAN     1217274 0503     46609
-#&gt; 3 dip      gral   2017 23      TUCUMAN     1217274 0521    319221
-#&gt; 4 dip      gral   2017 23      TUCUMAN     1217274 0548    459257
-#&gt; 5 dip      gral   2017 23      TUCUMAN     1217274 blancos   5920
-#&gt; 6 dip      gral   2017 23      TUCUMAN     1217274 nulos    12947</div><div class='input'>
- <span class='no'>tucuman_dip_gral_2017</span> <span class='kw'>%&gt;%</span>
-     <span class='fu'>get_names</span>()</div><div class='output co'>#&gt; # A tibble: 6 x 9
-#&gt; # Groups:   codprov [1]
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span>
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 0180    </span><span style='text-decoration: underline;'>154</span><span>930
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 0503     </span><span style='text-decoration: underline;'>46</span><span>609
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 0521    </span><span style='text-decoration: underline;'>319</span><span>221
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 0548    </span><span style='text-decoration: underline;'>459</span><span>257
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 blancos   </span><span style='text-decoration: underline;'>5</span><span>920
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 nulos    </span><span style='text-decoration: underline;'>12</span><span>947</div><div class='input'> 
+ <span class='va'>tucuman_dip_gral_2017</span> <span class='op'>%&gt;%</span> 
+     <span class='fu'>get_names</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; </span><span style='color: #949494;'># A tibble: 6 x 9</span><span>
+#&gt; </span><span style='color: #949494;'># Groups:   codprov [1]</span><span>
 #&gt;   category round  year codprov name_prov electores listas   votos nombre_lista  
-#&gt;   &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;chr&gt;         
-#&gt; 1 dip      gral   2017 23      TUCUMAN     1217274 0180    154930 FUERZA REPUBL~
-#&gt; 2 dip      gral   2017 23      TUCUMAN     1217274 0503     46609 FRENTE DE IZQ~
-#&gt; 3 dip      gral   2017 23      TUCUMAN     1217274 0521    319221 CAMBIEMOS PAR~
-#&gt; 4 dip      gral   2017 23      TUCUMAN     1217274 0548    459257 FRENTE JUSTIC~
-#&gt; 5 dip      gral   2017 23      TUCUMAN     1217274 blancos   5920 blancos       
-#&gt; 6 dip      gral   2017 23      TUCUMAN     1217274 nulos    12947 nulos         </div><div class='input'>   
-</div></pre>
+#&gt;   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #949494;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         
+#&gt; </span><span style='color: #BCBCBC;'>1</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 0180    </span><span style='text-decoration: underline;'>154</span><span>930 FUERZA REPUBL~
+#&gt; </span><span style='color: #BCBCBC;'>2</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 0503     </span><span style='text-decoration: underline;'>46</span><span>609 FRENTE DE IZQ~
+#&gt; </span><span style='color: #BCBCBC;'>3</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 0521    </span><span style='text-decoration: underline;'>319</span><span>221 CAMBIEMOS PAR~
+#&gt; </span><span style='color: #BCBCBC;'>4</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 0548    </span><span style='text-decoration: underline;'>459</span><span>257 FRENTE JUSTIC~
+#&gt; </span><span style='color: #BCBCBC;'>5</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 blancos   </span><span style='text-decoration: underline;'>5</span><span>920 blancos       
+#&gt; </span><span style='color: #BCBCBC;'>6</span><span> dip      gral   </span><span style='text-decoration: underline;'>2</span><span>017 23      TUCUMAN     1</span><span style='text-decoration: underline;'>217</span><span>274 nulos    </span><span style='text-decoration: underline;'>12</span><span>947 nulos         </div><div class='input'>   
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -212,7 +214,7 @@ nombres de listas con <code>get_names</code>. Si <code>data</code> es <em>wide</
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

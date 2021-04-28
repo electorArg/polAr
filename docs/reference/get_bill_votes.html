@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Obtener votos de un proyecto de ley 
-(<em>Download bill vote data</em>) — get_bill_votes • polAr</title>
+(Download bill vote data) — get_bill_votes • polAr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,7 @@
 
 
 <meta property="og:title" content="Obtener votos de un proyecto de ley 
-(<em>Download bill vote data</em>) — get_bill_votes" />
+(Download bill vote data) — get_bill_votes" />
 <meta property="og:description" content="Función que devuelve un data.frame con el detalle de los votos individuales de los legisladores a un proyecto de ley." />
 <meta property="og:image" content="/logo.png" />
 
@@ -90,7 +90,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -122,7 +122,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/electorArg/polAr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -149,7 +149,7 @@
     <p>Función que devuelve un <em>data.frame</em> con el detalle de los votos individuales de los legisladores a un proyecto de ley.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_bill_votes</span>(<span class='kw'>bill</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>get_bill_votes</span><span class='op'>(</span>bill <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,21 +166,22 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>get_bill_votes</span>(<span class='kw'>bill</span> <span class='kw'>=</span> <span class='st'>"1926-Diputados"</span>)</div><div class='output co'>#&gt; # A tibble: 257 x 8
+<span class='fu'>get_bill_votes</span><span class='op'>(</span>bill <span class='op'>=</span> <span class='st'>"1926-Diputados"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 257 x 8</span><span>
 #&gt;     name date    votingId legislator    party     region  vote   photoUrl       
-#&gt;    &lt;int&gt; &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;          
-#&gt;  1     1 2009-1~     1926 ACOSTA, Marí~ Frente p~ Catama~ AFIRM~ https://votaci~
-#&gt;  2     2 2009-1~     1926 ACUÑA KUNZ, ~ Unión Cí~ Santa ~ NEGAT~ https://votaci~
-#&gt;  3     3 2009-1~     1926 ACUÑA, Hugo ~ Movimien~ Neuquén AFIRM~ https://votaci~
-#&gt;  4     4 2009-1~     1926 AGOSTO, Walt~ Santa Fe~ Santa ~ NEGAT~ https://votaci~
-#&gt;  5     5 2009-1~     1926 AGUAD, Oscar~ Unión Cí~ Córdoba NEGAT~ https://votaci~
-#&gt;  6     6 2009-1~     1926 AGUIRRE DE S~ Frente p~ La Rio~ AFIRM~ https://votaci~
-#&gt;  7     7 2009-1~     1926 ALBARRACIN, ~ Consenso~ Mendoza NEGAT~ https://votaci~
-#&gt;  8     8 2009-1~     1926 ALBRISI, Cés~ Frente J~ Córdoba NEGAT~ https://votaci~
-#&gt;  9     9 2009-1~     1926 ALCUAZ, Hora~ GEN       Buenos~ NEGAT~ https://votaci~
-#&gt; 10    10 2009-1~     1926 ALFARO, Germ~ Frente p~ Tucumán AFIRM~ https://votaci~
-#&gt; # ... with 247 more rows</div><div class='input'>
-</div></pre>
+#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #949494;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>         </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>     </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>   </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>          
+#&gt; </span><span style='color: #BCBCBC;'> 1</span><span>     1 2009-1~     </span><span style='text-decoration: underline;'>1</span><span>926 ACOSTA, Marí~ Frente p~ Catama~ AFIRM~ https://votaci~
+#&gt; </span><span style='color: #BCBCBC;'> 2</span><span>     2 2009-1~     </span><span style='text-decoration: underline;'>1</span><span>926 ACUÑA KUNZ, ~ Unión Cí~ Santa ~ NEGAT~ https://votaci~
+#&gt; </span><span style='color: #BCBCBC;'> 3</span><span>     3 2009-1~     </span><span style='text-decoration: underline;'>1</span><span>926 ACUÑA, Hugo ~ Movimien~ Neuquén AFIRM~ https://votaci~
+#&gt; </span><span style='color: #BCBCBC;'> 4</span><span>     4 2009-1~     </span><span style='text-decoration: underline;'>1</span><span>926 AGOSTO, Walt~ Santa Fe~ Santa ~ NEGAT~ https://votaci~
+#&gt; </span><span style='color: #BCBCBC;'> 5</span><span>     5 2009-1~     </span><span style='text-decoration: underline;'>1</span><span>926 AGUAD, Oscar~ Unión Cí~ Córdoba NEGAT~ https://votaci~
+#&gt; </span><span style='color: #BCBCBC;'> 6</span><span>     6 2009-1~     </span><span style='text-decoration: underline;'>1</span><span>926 AGUIRRE DE S~ Frente p~ La Rio~ AFIRM~ https://votaci~
+#&gt; </span><span style='color: #BCBCBC;'> 7</span><span>     7 2009-1~     </span><span style='text-decoration: underline;'>1</span><span>926 ALBARRACIN, ~ Consenso~ Mendoza NEGAT~ https://votaci~
+#&gt; </span><span style='color: #BCBCBC;'> 8</span><span>     8 2009-1~     </span><span style='text-decoration: underline;'>1</span><span>926 ALBRISI, Cés~ Frente J~ Córdoba NEGAT~ https://votaci~
+#&gt; </span><span style='color: #BCBCBC;'> 9</span><span>     9 2009-1~     </span><span style='text-decoration: underline;'>1</span><span>926 ALCUAZ, Hora~ GEN       Buenos~ NEGAT~ https://votaci~
+#&gt; </span><span style='color: #BCBCBC;'>10</span><span>    10 2009-1~     </span><span style='text-decoration: underline;'>1</span><span>926 ALFARO, Germ~ Frente p~ Tucumán AFIRM~ https://votaci~
+#&gt; </span><span style='color: #949494;'># ... with 247 more rows</span><span></div><div class='input'>
+</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
@@ -196,7 +197,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

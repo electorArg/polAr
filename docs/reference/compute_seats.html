@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Calcula número de bancas legislativas a repartir en una elección  
- (<em>Computes allocation of legislative seats</em>) — compute_seats • polAr</title>
+ (Computes allocation of legislative seats) — compute_seats • polAr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,7 @@
 
 
 <meta property="og:title" content="Calcula número de bancas legislativas a repartir en una elección  
- (<em>Computes allocation of legislative seats</em>) — compute_seats" />
+ (Computes allocation of legislative seats) — compute_seats" />
 <meta property="og:description" content="Función que calcula la distribución proporcional de escaños para la categoría Diputado Nacional y 
 de mayoría/minoría para Senaor Nacional en función de votos obtenidos
  (Function that computes propotional allocation of Diputados and Senadores seats)" />
@@ -92,7 +92,7 @@ de mayoría/minoría para Senaor Nacional en función de votos obtenidos
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -124,7 +124,7 @@ de mayoría/minoría para Senaor Nacional en función de votos obtenidos
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/electorArg/polAr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -153,7 +153,7 @@ de mayoría/minoría para Senaor Nacional en función de votos obtenidos
  (<em>Function that computes propotional allocation of Diputados and Senadores seats</em>)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>compute_seats</span>(<span class='no'>data</span>)</pre>
+    <pre class="usage"><span class='fu'>compute_seats</span><span class='op'>(</span><span class='va'>data</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -179,41 +179,18 @@ En el caso de Senadores su mandato es de 6 años y se renuevan parcialmente por 
     <div class='dont-index'><p><code><a href='compute_nep.html'>compute_nep</a>, <a href='compute_competitiveness.html'>compute_competitiveness</a>, <a href='compute_disproportion.html'>compute_disproportion</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
- <span class='kw pkg'>polAr</span><span class='kw ns'>::</span><span class='fu'><a href='get_election_data.html'>get_election_data</a></span>(<span class='kw'>district</span> <span class='kw'>=</span> <span class='st'>"caba"</span>,
-                          <span class='kw'>category</span> <span class='kw'>=</span> <span class='st'>"dip"</span>,
-                          <span class='kw'>round</span> <span class='kw'>=</span> <span class='st'>"gral"</span>,
-                          <span class='kw'>year</span> <span class='kw'>=</span> <span class='fl'>2007</span>) <span class='kw'>-&gt;</span> <span class='no'>caba_dip_2007</span></div><div class='output co'>#&gt; <span class='warning'>Warning: The `x` argument of `as_tibble.matrix()` must have unique column names if `.name_repair` is omitted as of tibble 2.0.0.</span>
-#&gt; <span class='warning'>Using compatibility `.name_repair`.</span>
-#&gt; <span class='warning'>This warning is displayed once every 8 hours.</span>
-#&gt; <span class='warning'>Call `lifecycle::last_warnings()` to see where this warning was generated.</span></div><div class='input'>
- <span class='no'>caba_dip_2007</span></div><div class='output co'>#&gt; # A tibble: 32 x 8
-#&gt; # Groups:   codprov [1]
-#&gt;    category round  year codprov name_prov electores listas  votos
-#&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;   &lt;dbl&gt;
-#&gt;  1 dip      gral   2007 01      CABA        2564950 0003   104599
-#&gt;  2 dip      gral   2007 01      CABA        2564950 0005     4634
-#&gt;  3 dip      gral   2007 01      CABA        2564950 0009    79154
-#&gt;  4 dip      gral   2007 01      CABA        2564950 0014    12107
-#&gt;  5 dip      gral   2007 01      CABA        2564950 0020    41071
-#&gt;  6 dip      gral   2007 01      CABA        2564950 0023     4409
-#&gt;  7 dip      gral   2007 01      CABA        2564950 0036    26889
-#&gt;  8 dip      gral   2007 01      CABA        2564950 0037     3177
-#&gt;  9 dip      gral   2007 01      CABA        2564950 0038    33654
-#&gt; 10 dip      gral   2007 01      CABA        2564950 0050   247836
-#&gt; # ... with 22 more rows</div><div class='input'>
-
- <span class='fu'>compute_seats</span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='no'>caba_dip_2007</span>)</div><div class='output co'>#&gt; # A tibble: 7 x 8
-#&gt; # Groups:   year, category, round, codprov, name_prov, listas [7]
-#&gt;   codprov name_prov  year category round listas nombre_lista               seats
-#&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;                      &lt;int&gt;
-#&gt; 1 01      CABA       2007 dip      gral  0252   Al. Coalición Cívica           3
-#&gt; 2 01      CABA       2007 dip      gral  0050   Partido Socialista             2
-#&gt; 3 01      CABA       2007 dip      gral  0134   Alianza Frente para la Vi~     2
-#&gt; 4 01      CABA       2007 dip      gral  0136   Alianza Propuesta Republi~     2
-#&gt; 5 01      CABA       2007 dip      gral  0003   Unión Cívica Radical           1
-#&gt; 6 01      CABA       2007 dip      gral  0137   Alianza Diálogo por Bueno~     1
-#&gt; 7 01      CABA       2007 dip      gral  0138   Alianza Proyecto Sur           1</div><div class='input'>
+    <pre class="examples"><div class='input'> <span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+ <span class='fu'>polAr</span><span class='fu'>::</span><span class='fu'><a href='get_election_data.html'>get_election_data</a></span><span class='op'>(</span>district <span class='op'>=</span> <span class='st'>"caba"</span>, 
+                          category <span class='op'>=</span> <span class='st'>"dip"</span>,
+                          round <span class='op'>=</span> <span class='st'>"gral"</span>, 
+                          year <span class='op'>=</span> <span class='fl'>2007</span><span class='op'>)</span> <span class='op'>-&gt;</span> <span class='va'>caba_dip_2007</span>
+ 
+ <span class='va'>caba_dip_2007</span>                         
+ 
+                          
+ <span class='fu'>compute_seats</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>caba_dip_2007</span><span class='op'>)</span>                         
+          <span class='op'>}</span>
+          
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -230,7 +207,7 @@ En el caso de Senadores su mandato es de 6 años y se renuevan parcialmente por 
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

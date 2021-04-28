@@ -28,7 +28,7 @@ con elecciones presidenciales, o en elecciones de mitad de termino presidencial.
 En el caso de Senadores su mandato es de 6 años y se renuevan parcialmente por grupos de 8 provincias.
 }
 \examples{
-
+ \dontrun{
  polAr::get_election_data(district = "caba", 
                           category = "dip",
                           round = "gral", 
@@ -38,7 +38,8 @@ En el caso de Senadores su mandato es de 6 años y se renuevan parcialmente por 
  
                           
  compute_seats(data = caba_dip_2007)                         
-
+          }
+          
 }
 \seealso{
 \code{\link{compute_nep}, \link{compute_competitiveness}, \link{compute_disproportion}}

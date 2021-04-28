@@ -12,6 +12,7 @@
 
 
 *[Archived](https://cloud.r-project.org/web/packages/polAr/index.html) from CRAN (2021-02-24)*
+
 [![CRAN status](https://www.r-pkg.org/badges/version/polAr)](https://CRAN.R-project.org/package=polAr)
 [![metacran downloads](https://cranlogs.r-pkg.org/badges/grand-total/polAr)](https://cran.r-project.org/package=polAr)
 
@@ -22,7 +23,6 @@
 
 ### INSTALACIÓN (*Install*)
 
-#### Versión en desarrollo (*Development version*) 
 
 ```r
 

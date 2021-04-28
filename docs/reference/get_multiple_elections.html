@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Descarga resultados de múltiples elecciones 
- (<em>Download multiple election electoral data</em>) — get_multiple_elections • polAr</title>
+ (Download multiple election electoral data) — get_multiple_elections • polAr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,7 @@
 
 
 <meta property="og:title" content="Descarga resultados de múltiples elecciones 
- (<em>Download multiple election electoral data</em>) — get_multiple_elections" />
+ (Download multiple election electoral data) — get_multiple_elections" />
 <meta property="og:description" content="Esta función permite descargar restultados de una multiplicidad de elecciones al mismo tiempo. 
  (Function that downloads multiple national electoral data with one call)" />
 <meta property="og:image" content="/logo.png" />
@@ -91,7 +91,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -123,7 +123,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/electorArg/polAr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -151,7 +151,7 @@
  (<em>Function that downloads multiple national electoral data with one call</em>)</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_multiple_elections</span>(<span class='no'>data</span>, <span class='kw'>unnest</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"provincia"</span>)</pre>
+    <pre class="usage"><span class='fu'>get_multiple_elections</span><span class='op'>(</span><span class='va'>data</span>, unnest <span class='op'>=</span> <span class='cn'>FALSE</span>, level <span class='op'>=</span> <span class='st'>"provincia"</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -186,29 +186,16 @@ filas como elecciones se consultaron y dos columnas: <em>id</em> de la eleccion 
     <div class='dont-index'><p><code><a href='get_election_data.html'>get_election_data</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>
- <span class='kw pkg'>polAr</span><span class='kw ns'>::</span><span class='fu'><a href='show_available_elections.html'>show_available_elections</a></span>() <span class='kw'>%&gt;%</span>
- <span class='kw pkg'>dplyr</span><span class='kw ns'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span>(<span class='no'>district</span> <span class='kw'>==</span> <span class='st'>"caba"</span>,
-              <span class='no'>category</span> <span class='kw'>==</span> <span class='st'>"dip"</span>,
-              <span class='no'>round</span> <span class='kw'>==</span> <span class='st'>"paso"</span>) <span class='kw'>-&gt;</span> <span class='no'>caba_paso_diputados</span>
-
-<span class='no'>caba_paso_diputados</span></div><div class='output co'>#&gt; # A tibble: 5 x 5
-#&gt;   district category round year  NOMBRE
-#&gt;   &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; 
-#&gt; 1 caba     dip      paso  2011  CABA  
-#&gt; 2 caba     dip      paso  2013  CABA  
-#&gt; 3 caba     dip      paso  2015  CABA  
-#&gt; 4 caba     dip      paso  2017  CABA  
-#&gt; 5 caba     dip      paso  2019  CABA  </div><div class='input'>
- <span class='fu'>get_multiple_elections</span>(<span class='no'>caba_paso_diputados</span>)</div><div class='output co'>#&gt; # A tibble: 5 x 2
-#&gt; # Groups:   id [5]
-#&gt;   id                 election         
-#&gt;   &lt;glue&gt;             &lt;list&gt;           
-#&gt; 1 caba_dip_paso_2011 &lt;tibble [14 x 8]&gt;
-#&gt; 2 caba_dip_paso_2013 &lt;tibble [15 x 8]&gt;
-#&gt; 3 caba_dip_paso_2015 &lt;tibble [15 x 8]&gt;
-#&gt; 4 caba_dip_paso_2017 &lt;tibble [18 x 8]&gt;
-#&gt; 5 caba_dip_paso_2019 &lt;tibble [14 x 8]&gt;</div><div class='input'> 
+    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
+ <span class='fu'>polAr</span><span class='fu'>::</span><span class='fu'><a href='show_available_elections.html'>show_available_elections</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+ <span class='fu'>dplyr</span><span class='fu'>::</span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>district</span> <span class='op'>==</span> <span class='st'>"caba"</span>, 
+              <span class='va'>category</span> <span class='op'>==</span> <span class='st'>"dip"</span>,
+              <span class='va'>round</span> <span class='op'>==</span> <span class='st'>"paso"</span><span class='op'>)</span> <span class='op'>-&gt;</span> <span class='va'>caba_paso_diputados</span>
+              
+<span class='va'>caba_paso_diputados</span>
+               
+ <span class='fu'>get_multiple_elections</span><span class='op'>(</span><span class='va'>caba_paso_diputados</span><span class='op'>)</span>                    
+ <span class='op'>}</span>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -225,7 +212,7 @@ filas como elecciones se consultaron y dos columnas: <em>id</em> de la eleccion 
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

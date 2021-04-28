@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Carga poligonos geográficos de distritos de Argentina
-  (<em>Load Argentina's districts geometries</em>) — get_geo • polAr</title>
+  (Load Argentina's districts geometries) — get_geo • polAr</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,7 +48,7 @@
 
 
 <meta property="og:title" content="Carga poligonos geográficos de distritos de Argentina
-  (<em>Load Argentina's districts geometries</em>) — get_geo" />
+  (Load Argentina's districts geometries) — get_geo" />
 <meta property="og:description" content="Función que descarga (geometry) para graficar con mapas" />
 <meta property="og:image" content="/logo.png" />
 
@@ -90,7 +90,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -122,7 +122,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/electorArg/polAr/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -149,7 +149,7 @@
     <p>Función que descarga (<em>geometry</em>) para graficar con mapas</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_geo</span>(<span class='kw'>geo</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>level</span> <span class='kw'>=</span> <span class='st'>"departamento"</span>)</pre>
+    <pre class="usage"><span class='fu'>get_geo</span><span class='op'>(</span>geo <span class='op'>=</span> <span class='cn'>NULL</span>, level <span class='op'>=</span> <span class='st'>"departamento"</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -167,31 +167,8 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'>get_geo</span>(<span class='st'>"TUCUMAN"</span>)</div><div class='output co'>#&gt; Simple feature collection with 17 features and 3 fields
-#&gt; geometry type:  MULTIPOLYGON
-#&gt; dimension:      XY
-#&gt; bbox:           xmin: -66.18021 ymin: -28.01389 xmax: -64.48236 ymax: -26.05729
-#&gt; geographic CRS: WGS 84
-#&gt; # A tibble: 17 x 4
-#&gt;    codprov provincia coddepto                                           geometry
-#&gt;  * &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;                                    &lt;MULTIPOLYGON [°]&gt;
-#&gt;  1 23      Tucumán   007      (((-65.69085 -27.53428, -65.689 -27.534, -65.6865~
-#&gt;  2 23      Tucumán   013      (((-64.49823 -26.21605, -64.49509 -26.21878, -64.~
-#&gt;  3 23      Tucumán   001      (((-65.1619 -26.79675, -65.16138 -26.80273, -65.1~
-#&gt;  4 23      Tucumán   005      (((-65.9709 -27.06636, -65.96704 -27.07382, -65.9~
-#&gt;  5 23      Tucumán   012      (((-65.1576 -26.75805, -65.15153 -26.75676, -65.1~
-#&gt;  6 23      Tucumán   003      (((-65.63554 -26.88914, -65.6363 -26.88039, -65.6~
-#&gt;  7 23      Tucumán   009      (((-65.51688 -27.54338, -65.46843 -27.53589, -65.~
-#&gt;  8 23      Tucumán   008      (((-65.56024 -27.61369, -65.55405 -27.61188, -65.~
-#&gt;  9 23      Tucumán   011      (((-65.24537 -26.99677, -65.17278 -27.01164, -65.~
-#&gt; 10 23      Tucumán   002      (((-65.43246 -26.80872, -65.43224 -26.81728, -65.~
-#&gt; 11 23      Tucumán   004      (((-65.91989 -26.97862, -65.91144 -26.97984, -65.~
-#&gt; 12 23      Tucumán   006      (((-65.96279 -27.40045, -65.95687 -27.40206, -65.~
-#&gt; 13 23      Tucumán   010      (((-65.35557 -27.18106, -65.35085 -27.18262, -65.~
-#&gt; 14 23      Tucumán   017      (((-66.10092 -26.21801, -66.08281 -26.23357, -66.~
-#&gt; 15 23      Tucumán   016      (((-65.71485 -26.51275, -65.70031 -26.52126, -65.~
-#&gt; 16 23      Tucumán   014      (((-65.54328 -26.08898, -65.53451 -26.09192, -65.~
-#&gt; 17 23      Tucumán   015      (((-65.25364 -26.78317, -65.25784 -26.79293, -65.~</div><div class='input'>
+<span class='fu'>get_geo</span><span class='op'>(</span><span class='st'>"TUCUMAN"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='error'>Error in get_geo("TUCUMAN"): Not Found (HTTP 404). Failed to Fail to download geo data. Source is not available // La fuente de datos geograficos no esta disponible.</span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -208,7 +185,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
