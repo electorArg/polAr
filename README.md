@@ -71,7 +71,7 @@ Una entrada BibTeX para LaTex (*A BibTeX entry for LaTeX users*)
     author = {Juan Pablo {Ruiz Nicolini}},
     year = {2020},
     note = {R package version 0.2.0.1},
-    url = {https://CRAN.R-project.org/package=polAr},
+    url = {https://electorarg.github.io/polAr/},
   }
 
 
